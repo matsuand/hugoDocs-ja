@@ -1,0 +1,1 @@
+# hugoDocs-ja
