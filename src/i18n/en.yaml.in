@@ -1,0 +1,73 @@
+## .Site.Params.description
+siteParamsDescription:
+  other: The world’s fastest framework for building websites
+
+##
+
+categoryTitle:
+  other: Category
+quickStart:
+  other: Quick Start
+readMore:
+  other: Read More
+
+onThisPage:
+  other: On this page
+inThisSection:
+  other: In this section
+
+searchTheDocs:
+  other: Search the Docs
+
+## site-footer.html
+byThe1:
+  other: "by The "
+byThe2:
+  other: " "
+hugoAuthors:
+  other: Hugo Authors
+fileAnIssue:
+  other: File an Issue
+getHelp:
+  other: Get Help
+
+## Functions page
+syntax:
+  other: Syntax
+returns:
+  other: Returns
+alias:
+  other: Alias
+aliases:
+  other: Aliases
+
+## Categories
+
+ABOUT:
+  other: about
+ASSET MANAGEMENT:
+  other: asset management
+CONTRIBUTE:
+  other: contribute
+CONTENT MANAGEMENT:
+  other: content management
+DEVELOPER TOOLS:
+  other: developer tools
+FUNDAMENTALS:
+  other: fundamentals
+GETTING STARTED:
+  other: getting started
+HOSTING AND DEPLOYMENT:
+  other: hosting and deployment
+HUGO MODULES:
+  other: hugo modules
+INSTALLATION:
+  other: installation
+QUICK REFERENCE:
+  other: quick reference
+TEMPLATES:
+  other: templates
+TROUBLESHOOTING:
+  other: troubleshooting
+VARIABLES:
+  other: variables

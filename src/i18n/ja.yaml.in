@@ -1,0 +1,80 @@
+## .Site.Params.description
+siteParamsDescription:
+  other: 世界でも最速のウェブサイト構築フレームワーク
+
+##
+
+categoryTitle:
+  other: カテゴリー
+quickStart:
+  other: クィックスタート
+readMore:
+  other: 詳しく見る
+
+onThisPage:
+  other: このページ内
+inThisSection:
+  other: このセクション内
+
+searchTheDocs:
+  other: ドキュメント内検索
+
+## site-footer.html
+byThe1:
+  other: " "
+byThe2:
+  other: より
+hugoAuthors:
+  other: Hugo 作者
+fileAnIssue:
+  other: Issue 報告
+getHelp:
+  other: ヘルプ
+
+## Functions page
+syntax:
+  other: 文法
+returns:
+  other: 戻り値
+alias:
+  other: エイリアス
+aliases:
+  other: エイリアス
+
+## Categories
+
+ABOUT:
+  other: Hugo について
+ASSET MANAGEMENT:
+  other: アセット管理
+CONTRIBUTE:
+  other: 貢献
+CONTENT MANAGEMENT:
+  other: コンテント管理
+DEVELOPER TOOLS:
+  other: 開発ツール
+FUNDAMENTALS:
+  other: 基本構成
+GETTING STARTED:
+  other: はじめよう
+HOSTING AND DEPLOYMENT:
+  other: ホスティングと開発
+HUGO MODULES:
+  other: Hugo モジュール
+INSTALLATION:
+  other: インストール
+QUICK REFERENCE:
+  other: クィックリファレンス
+TEMPLATES:
+  other: テンプレート
+TROUBLESHOOTING:
+  other: トラブルシューティング
+VARIABLES:
+  other: 変数
+
+FUNCTIONS:
+  other: 関数
+METHODS:
+  other: メソッド
+COMMANDS:
+  other: コマンド
