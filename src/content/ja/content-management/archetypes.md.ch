@@ -175,29 +175,77 @@ You can use any [template function] within an archetype. As shown above, the def
 @z
 
 @x
-Archetypes receive the following objects and values in [context]:
+Archetypes receive the following [context]:
 @y
-アーキタイプは [コンテキスト][context] (context) 内において、以下のオブジェクトや値を受け取ります。
+アーキタイプは以下の [コンテキスト][context] (context) を受け取ります。
 @z
 
 @x
-- [`Date`]
-- [`Type`]
-- [`File`]
-- [`Site`]
+Date
+: (`string`) The current date and time, formatted in compliance with RFC3339.
 @y
-- [`Date`]
-- [`Type`]
-- [`File`]
-- [`Site`]
+Date
+: (`string`) The current date and time, formatted in compliance with RFC3339.
+@z
+
+@x
+File
+: (`hugolib.fileInfo`) Returns file information for the current page. See [details](/methods/page/file).
+@y
+File
+: (`hugolib.fileInfo`) Returns file information for the current page. See [details](/methods/page/file).
+@z
+
+@x
+Type
+: (`string`) The [content type] inferred from the top-level directory name, or as specified by the `--kind` flag passed to the `hugo new content` command.
+
+[content type]: /getting-started/glossary#content-type
+@y
+Type
+: (`string`) The [content type] inferred from the top-level directory name, or as specified by the `--kind` flag passed to the `hugo new content` command.
+
+[content type]: /getting-started/glossary#content-type
+@z
+
+@x
+Site
+: (`page.Site`) The current site object. See [details](/methods/site/).
+@y
+Site
+: (`page.Site`) The current site object. See [details](/methods/site/).
 @z
 
 % snip URLs...
 
 @x
-As shown above, the default archetype passes `.File.ContentBaseName` as the argument to the `replace` function when populating the title in front matter.
+## Alternate date format
 @y
-上に示したデフォルトのアーキタイプでは `replace` 関数への引数として `.File.ContentBaseName` を受け渡し、フロントマター内のタイトルを生成しています。
+## Alternate date format
+@z
+
+@x
+To insert date and time with an altnerate format, use the [`time.Now`] function:
+
+[`time.Now`]: /functions/time/now/
+@y
+To insert date and time with an altnerate format, use the [`time.Now`] function:
+
+[`time.Now`]: /functions/time/now/
+@z
+
+@x
+{{< code-toggle file=archetypes/default.md fm=true >}}
+title = '{{ replace .File.ContentBaseName `-` ` ` | title }}'
+date = '{{ time.Now.Format "2006-01-02" }}'
+draft = true
+{{< /code-toggle >}}
+@y
+{{< code-toggle file=archetypes/default.md fm=true >}}
+title = '{{ replace .File.ContentBaseName `-` ` ` | title }}'
+date = '{{ time.Now.Format "2006-01-02" }}'
+draft = true
+{{< /code-toggle >}}
 @z
 
 @x
