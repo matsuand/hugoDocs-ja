@@ -1,46 +1,20 @@
 %This is the change file for the original Hugo Documentation file.
 %This is part of Japanese translation version for Hugo Documantation.
 
+% __IMPORT__ 対応
+
 @x
----
 title: ToCSS
 linkTitle: Transpile Sass to CSS
 description: Transpile Sass to CSS.
 categories: [asset management]
 keywords: []
-menu:
-  docs:
-    parent: hugo-pipes
-    returnType: resource.Resource
-    weight: 30
-weight: 30
-action:
-  aliases: [toCSS]
-  returnType: resource.Resource
-  signatures: ['resources.ToCSS [OPTIONS] RESOURCE']
-toc: true
-aliases: [/hugo-pipes/transform-to-css/]
----
 @y
----
 title: ToCSS
 linkTitle: Transpile Sass to CSS
 description: Transpile Sass to CSS.
 categories: [asset management]
 keywords: []
-menu:
-  docs:
-    parent: hugo-pipes
-    returnType: resource.Resource
-    weight: 30
-weight: 30
-action:
-  aliases: [toCSS]
-  returnType: resource.Resource
-  signatures: ['resources.ToCSS [OPTIONS] RESOURCE']
-toc: true
-aliases: [/hugo-pipes/transform-to-css/]
----
 @z
 
 @x
@@ -356,7 +330,7 @@ To install Dart Sass for your builds on GitLab Pages, the `.gitlab-ci.yml` file 
 @x
 ```yaml
 variables:
-  HUGO_VERSION: 0.123.0
+  HUGO_VERSION: 0.123.7
   DART_SASS_VERSION: 1.71.0
   GIT_DEPTH: 0
   GIT_STRATEGY: clone
@@ -386,7 +360,7 @@ pages:
 @y
 ```yaml
 variables:
-  HUGO_VERSION: 0.123.0
+  HUGO_VERSION: 0.123.7
   DART_SASS_VERSION: 1.71.0
   GIT_DEPTH: 0
   GIT_STRATEGY: clone

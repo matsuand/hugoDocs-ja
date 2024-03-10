@@ -232,6 +232,7 @@ bases = \
 	GoVersion.md     \
 	IsDevelopment.md \
 	IsExtended.md    \
+	IsMultihost.md   \
 	IsProduction.md  \
 	IsServer.md      \
 	Version.md       \

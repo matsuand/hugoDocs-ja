@@ -3,6 +3,7 @@
 ##
 
 bases = \
+	imgproc.html \
 	new-in.html
 
 include $(top_srcdir)/build-aux/common.mk
@@ -16,10 +17,10 @@ copyfiles = \
 	datatable-filtered.html    \
 	datatable.html             \
 	deprecated-in.html         \
+	eturl.html                 \
 	funcsig.html               \
 	gomodules-info.html        \
 	img.html                   \
-	imgproc.html               \
 	include.html               \
 	list-pages-in-section.html \
 	module-mounts-note.html    \

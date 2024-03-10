@@ -14,27 +14,13 @@ keywords: []
 @z
 
 @x
-Use the `template` function to execute [internal templates]. For example:
+Use the `template` function to execute [embedded templates]. For example:
 @y
-`template` 関数を使って [内部テンプレート][internal templates] (internal template) を実行します。
+`template` 関数を使って [埋め込みテンプレート][embedded templates] (internal template) を実行します。
 たとえば以下のとおりです。
 @z
 
-@x
-```go-html-template
-{{ range (.Paginate .Pages).Pages }}
-  <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-{{ end }}
-{{ template "_internal/pagination.html" . }}
-```
-@y
-```go-html-template
-{{ range (.Paginate .Pages).Pages }}
-  <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-{{ end }}
-{{ template "_internal/pagination.html" . }}
-```
-@z
+% snip code...
 
 @x
 You can also use the `template` function to execute a defined template:
@@ -42,25 +28,7 @@ You can also use the `template` function to execute a defined template:
 `template` 関数は、定義済みテンプレートの実行に用いることもできます。
 @z
 
-@x
-```go-html-template
-{{ template "foo" (dict "answer" 42) }}
-@y
-```go-html-template
-{{ template "foo" (dict "answer" 42) }}
-@z
-
-@x
-{{ define "foo" }}
-  {{ printf "The answer is %v." .answer }}
-{{ end }}
-```
-@y
-{{ define "foo" }}
-  {{ printf "The answer is %v." .answer }}
-{{ end }}
-```
-@z
+% snip code...
 
 @x
 The example above can be rewritten using an [inline partial] template:
@@ -68,30 +36,6 @@ The example above can be rewritten using an [inline partial] template:
 上の例は、[インライン部分テンプレート][inline partial] を使って、以下のように書き換えることもできます。
 @z
 
-@x
-```go-html-template
-{{ partial "inline/foo.html" (dict "answer" 42) }}
-@y
-```go-html-template
-{{ partial "inline/foo.html" (dict "answer" 42) }}
-@z
-
-@x
-{{ define "partials/inline/foo.html" }}
-  {{ printf "The answer is %v." .answer }}
-{{ end }}
-```
-@y
-{{ define "partials/inline/foo.html" }}
-  {{ printf "The answer is %v." .answer }}
-{{ end }}
-```
-@z
-
-@x
-{{% include "functions/go-template/_common/text-template.md" %}}
-@y
-{{% include "functions/go-template/_common/text-template.md" %}}
-@z
-
+% snip code...
+% snip include...
 % snip links...

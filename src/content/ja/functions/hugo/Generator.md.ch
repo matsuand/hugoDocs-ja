@@ -13,12 +13,4 @@ categories: []
 keywords: []
 @z
 
-@x
-```go-html-template
-{{ hugo.Generator }} → <meta name="generator" content="Hugo 0.123.0">
-```
-@y
-```go-html-template
-{{ hugo.Generator }} → <meta name="generator" content="Hugo 0.123.0">
-```
-@z
+% snip code...

@@ -24,7 +24,7 @@ Hugo provides an alternative to embeddable scripts from Google or other search e
 @z
 
 @x
-## Open source
+## Open-source
 @y
 ## オープンソース {#open-source}
 @z

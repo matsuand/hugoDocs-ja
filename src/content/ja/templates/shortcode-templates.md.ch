@@ -2,17 +2,35 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
+---
 title: Create your own shortcodes
 linkTitle: Shortcode templates
 description: You can extend Hugo's embedded shortcodes by creating your own using the same templating syntax as that for single and list pages.
 categories: [templates]
 keywords: [shortcodes,templates]
+menu:
+  docs:
+    parent: templates
+    weight: 130
+weight: 130
+aliases: [/functions/get]
+toc: true
+---
 @y
-title: ショートコードの生成
+---
+title: Create your own shortcodes
 linkTitle: ショートコードテンプレート
 description: You can extend Hugo's embedded shortcodes by creating your own using the same templating syntax as that for single and list pages.
 categories: [templates]
 keywords: [shortcodes,templates]
+menu:
+  docs:
+    parent: templates
+    weight: 130
+weight: 130
+aliases: [/functions/get]
+toc: true
+---
 @z
 
 @x
@@ -244,9 +262,9 @@ most helpful when the condition depends on either of the values, or both:
 @z
 
 @x
-If a closing shortcode is used, the `.Inner` variable will be populated with the content between the opening and closing shortcodes. To check if `.Inner` contains anything other than white space:
+If a closing shortcode is used, the `.Inner` variable will be populated with the content between the opening and closing shortcodes. To check if `.Inner` contains anything other than whitespace:
 @y
-If a closing shortcode is used, the `.Inner` variable will be populated with the content between the opening and closing shortcodes. To check if `.Inner` contains anything other than white space:
+If a closing shortcode is used, the `.Inner` variable will be populated with the content between the opening and closing shortcodes. To check if `.Inner` contains anything other than whitespace:
 @z
 
 @x
@@ -1009,4 +1027,36 @@ The same inline shortcode can be reused later in the same content file, with dif
 ```
 @z
 
-% snip links...
+@x
+[basic content files]: /content-management/formats/
+[built-in shortcode]: /content-management/shortcodes/
+[config]: /getting-started/configuration/
+[Content Management: Shortcodes]: /content-management/shortcodes/#using-hugo-s-built-in-shortcodes
+[source organization]: /getting-started/directory-structure/
+[docsshortcodes]: https://github.com/gohugoio/hugo/tree/master/docs/layouts/shortcodes
+[figure]: /content-management/shortcodes/#figure
+[hugosc]: /content-management/shortcodes/#using-hugo-s-built-in-shortcodes
+[lookup order]: /templates/lookup-order/
+[pagevars]: /methods/page/
+[`.Parent`]: /methods/shortcode/parent/
+[`.Position`]: /methods/shortcode/position/
+[spfscs]: https://github.com/spf13/spf13.com/tree/master/layouts/shortcodes
+[vimeoexample]: #single-flexible-example-vimeo
+[youtubeshortcode]: /content-management/shortcodes/#youtube
+@y
+[basic content files]: /content-management/formats/
+[built-in shortcode]: /content-management/shortcodes/
+[config]: /getting-started/configuration/
+[Content Management: Shortcodes]: /content-management/shortcodes/#using-hugo-s-built-in-shortcodes
+[source organization]: /getting-started/directory-structure/
+[docsshortcodes]: https://github.com/gohugoio/hugo/tree/master/docs/layouts/shortcodes
+[figure]: /content-management/shortcodes/#figure
+[hugosc]: /content-management/shortcodes/#using-hugo-s-built-in-shortcodes
+[lookup order]: /templates/lookup-order/
+[pagevars]: /methods/page/
+[`.Parent`]: /methods/shortcode/parent/
+[`.Position`]: /methods/shortcode/position/
+[spfscs]: https://github.com/spf13/spf13.com/tree/master/layouts/shortcodes
+[vimeoexample]: #single-flexible-example-vimeo
+[youtubeshortcode]: /content-management/shortcodes/#youtube
+@z

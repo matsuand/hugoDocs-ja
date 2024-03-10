@@ -9,8 +9,8 @@ bases = \
 	_index.md                \
 	base.md                  \
 	data-templates.md        \
+	embedded.md              \
 	homepage.md              \
-	internal.md              \
 	introduction.md          \
 	lookup-order.md          \
 	menu-templates.md        \

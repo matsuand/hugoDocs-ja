@@ -39,10 +39,10 @@ The `PlainWords` method on a `Page` object calls the [`Plain`] method, then uses
 
 @x
 {{% note %}}
-_Fields splits the string s around each instance of one or more consecutive white space characters, as defined by [`unicode.IsSpace`], returning a slice of substrings of s or an empty slice if s contains only white space._
+_Fields splits the string s around each instance of one or more consecutive whitespace characters, as defined by [`unicode.IsSpace`], returning a slice of substrings of s or an empty slice if s contains only whitespace._
 @y
 {{% note %}}
-_Fields splits the string s around each instance of one or more consecutive white space characters, as defined by [`unicode.IsSpace`], returning a slice of substrings of s or an empty slice if s contains only white space._
+_Fields splits the string s around each instance of one or more consecutive whitespace characters, as defined by [`unicode.IsSpace`], returning a slice of substrings of s or an empty slice if s contains only whitespace._
 @z
 
 @x

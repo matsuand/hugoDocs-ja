@@ -155,11 +155,11 @@ Link render hook templates receive the following context:
 
 @x
 {{% note %}}
-With inline elements such as images and links, remove leading and trailing white space using the `{{‑ ‑}}` delimiter notation to prevent white space between adjacent inline elements and text.
+With inline elements such as images and links, remove leading and trailing whitespace using the `{{‑ ‑}}` delimiter notation to prevent whitespace between adjacent inline elements and text.
 {{% /note %}}
 @y
 {{% note %}}
-With inline elements such as images and links, remove leading and trailing white space using the `{{‑ ‑}}` delimiter notation to prevent white space between adjacent inline elements and text.
+With inline elements such as images and links, remove leading and trailing whitespace using the `{{‑ ‑}}` delimiter notation to prevent whitespace between adjacent inline elements and text.
 {{% /note %}}
 @z
 

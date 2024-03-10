@@ -2,35 +2,17 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: Multilingual mode
 linkTitle: Multilingual
 description: Hugo supports the creation of websites with multiple languages side by side.
 categories: [content management]
 keywords: [multilingual,i18n,internationalization]
-menu:
-  docs:
-    parent: content-management
-    weight: 230
-weight: 230
-toc: true
-aliases: [/content/multilingual/,/tutorials/create-a-multilingual-site/]
----
 @y
----
 title: マルチ言語モード
 linkTitle: マルチ言語
 description: Hugo が作り出すウェブサイトでは、マルチ言語ページの共存をサポートしています。
 categories: [content management]
 keywords: [multilingual,i18n,internationalization]
-menu:
-  docs:
-    parent: content-management
-    weight: 230
-weight: 230
-toc: true
-aliases: [/content/multilingual/,/tutorials/create-a-multilingual-site/]
----
 @z
 
 @x
@@ -391,15 +373,9 @@ Note that you cannot disable the default content language.
 @z
 
 @x
-From **Hugo 0.31** we support multiple languages in a multihost configuration. See [this issue](https://github.com/gohugoio/hugo/issues/4027) for details.
+Hugo supports multiple languages in a multihost configuration. This means you can configure a `baseURL` per `language`.
 @y
-From **Hugo 0.31** we support multiple languages in a multihost configuration. See [this issue](https://github.com/gohugoio/hugo/issues/4027) for details.
-@z
-
-@x
-This means that you can now configure a `baseURL` per `language`:
-@y
-This means that you can now configure a `baseURL` per `language`:
+Hugo supports multiple languages in a multihost configuration. This means you can configure a `baseURL` per `language`.
 @z
 
 @x
@@ -421,34 +397,30 @@ Example:
 @x
 {{< code-toggle file=hugo >}}
 [languages]
-[languages.fr]
-baseURL = "https://example.fr"
-languageName = "Français"
-weight = 1
-title = "En Français"
-@y
-{{< code-toggle file=hugo >}}
-[languages]
-[languages.fr]
-baseURL = "https://example.fr"
-languageName = "Français"
-weight = 1
-title = "En Français"
-@z
-
-@x
-[languages.en]
-baseURL = "https://example.org/"
-languageName = "English"
-weight = 2
-title = "In English"
+  [languages.en]
+    baseURL = 'https://en.example.org/'
+    languageName = 'English'
+    title = 'In English'
+    weight = 2
+  [languages.fr]
+    baseURL = 'https://fr.example.org'
+    languageName = 'Français'
+    title = 'En Français'
+    weight = 1
 {{</ code-toggle >}}
 @y
-[languages.en]
-baseURL = "https://example.org/"
-languageName = "English"
-weight = 2
-title = "In English"
+{{< code-toggle file=hugo >}}
+[languages]
+  [languages.en]
+    baseURL = 'https://en.example.org/'
+    languageName = 'English'
+    title = 'In English'
+    weight = 2
+  [languages.fr]
+    baseURL = 'https://fr.example.org'
+    languageName = 'Français'
+    title = 'En Français'
+    weight = 1
 {{</ code-toggle >}}
 @z
 
@@ -877,243 +849,15 @@ The above also uses the [`i18n` function][i18func] described in the next section
 @z
 
 @x
-Hugo uses [go-i18n] to support string translations. [See the project's source repository][go-i18n-source] to find tools that will help you manage your translation workflows.
+See the [`lang.Translate`] template function.
 @y
-Hugo uses [go-i18n] to support string translations. [See the project's source repository][go-i18n-source] to find tools that will help you manage your translation workflows.
+See the [`lang.Translate`] template function.
 @z
 
 @x
-Translations are collected from the `themes/<THEME>/i18n/` folder (built into the theme), as well as translations present in `i18n/` at the root of your project. In the `i18n`, the translations will be merged and take precedence over what is in the theme folder. Language files should be named according to [RFC 5646] with names such as `en-US.toml`, `fr.toml`, etc.
+[`lang.Translate`]: /functions/lang/translate
 @y
-Translations are collected from the `themes/<THEME>/i18n/` folder (built into the theme), as well as translations present in `i18n/` at the root of your project. In the `i18n`, the translations will be merged and take precedence over what is in the theme folder. Language files should be named according to [RFC 5646] with names such as `en-US.toml`, `fr.toml`, etc.
-@z
-
-@x
-Artificial languages with private use subtags as defined in [RFC 5646 &#167; 2.2.7](https://datatracker.ietf.org/doc/html/rfc5646#section-2.2.7) are also supported. You may omit the `art-x-` prefix for brevity. For example:
-@y
-Artificial languages with private use subtags as defined in [RFC 5646 &#167; 2.2.7](https://datatracker.ietf.org/doc/html/rfc5646#section-2.2.7) are also supported. You may omit the `art-x-` prefix for brevity. For example:
-@z
-
-@x
-```text
-art-x-hugolang
-hugolang
-```
-@y
-```text
-art-x-hugolang
-hugolang
-```
-@z
-
-@x
-Private use subtags must not exceed 8 alphanumeric characters.
-@y
-Private use subtags must not exceed 8 alphanumeric characters.
-@z
-
-@x
-### Query basic translation
-@y
-### Query basic translation
-@z
-
-@x
-From within your templates, use the [`i18n`] function like this:
-@y
-From within your templates, use the [`i18n`] function like this:
-@z
-
-% snip link...
-
-@x
-```go-html-template
-{{ i18n "home" }}
-```
-@y
-```go-html-template
-{{ i18n "home" }}
-```
-@z
-
-@x
-The function will search for the `"home"` id:
-@y
-The function will search for the `"home"` id:
-@z
-
-@x
-{{< code-toggle file=i18n/en-US >}}
-[home]
-other = "Home"
-{{< /code-toggle >}}
-@y
-{{< code-toggle file=i18n/en-US >}}
-[home]
-other = "Home"
-{{< /code-toggle >}}
-@z
-
-@x
-The result will be
-@y
-The result will be
-@z
-
-@x
-```text
-Home
-```
-@y
-```text
-Home
-```
-@z
-
-@x
-### Query a flexible translation with variables
-@y
-### Query a flexible translation with variables
-@z
-
-@x
-Often you will want to use the page variables in the translation strings. To do so, pass the `.` context when calling `i18n`:
-@y
-Often you will want to use the page variables in the translation strings. To do so, pass the `.` context when calling `i18n`:
-@z
-
-@x
-```go-html-template
-{{ i18n "wordCount" . }}
-```
-@y
-```go-html-template
-{{ i18n "wordCount" . }}
-```
-@z
-
-@x
-The function will pass the `.` context to the `"wordCount"` id:
-@y
-The function will pass the `.` context to the `"wordCount"` id:
-@z
-
-@x
-{{< code-toggle file=i18n/en-US >}}
-[wordCount]
-other = "This article has {{ .WordCount }} words."
-{{< /code-toggle >}}
-@y
-{{< code-toggle file=i18n/en-US >}}
-[wordCount]
-other = "This article has {{ .WordCount }} words."
-{{< /code-toggle >}}
-@z
-
-@x
-Assume `.WordCount` in the context has value is 101. The result will be:
-@y
-Assume `.WordCount` in the context has value is 101. The result will be:
-@z
-
-@x
-```text
-This article has 101 words.
-```
-@y
-```text
-This article has 101 words.
-```
-@z
-
-@x
-### Query a singular/plural translation
-@y
-### Query a singular/plural translation
-@z
-
-@x
-To enable pluralization when translating, pass a map with a numeric `.Count` property to the `i18n` function. The example below uses `.ReadingTime` variable which has a built-in `.Count` property.
-@y
-To enable pluralization when translating, pass a map with a numeric `.Count` property to the `i18n` function. The example below uses `.ReadingTime` variable which has a built-in `.Count` property.
-@z
-
-@x
-```go-html-template
-{{ i18n "readingTime" .ReadingTime }}
-```
-@y
-```go-html-template
-{{ i18n "readingTime" .ReadingTime }}
-```
-@z
-
-@x
-The function will read `.Count` from `.ReadingTime` and evaluate whether the number is singular (`one`) or plural (`other`). After that, it will pass to `readingTime` id in `i18n/en-US.toml` file:
-@y
-The function will read `.Count` from `.ReadingTime` and evaluate whether the number is singular (`one`) or plural (`other`). After that, it will pass to `readingTime` id in `i18n/en-US.toml` file:
-@z
-
-@x
-{{< code-toggle file=i18n/en-US >}}
-[readingTime]
-one = "One minute to read"
-other = "{{ .Count }} minutes to read"
-{{< /code-toggle >}}
-@y
-{{< code-toggle file=i18n/en-US >}}
-[readingTime]
-one = "One minute to read"
-other = "{{ .Count }} minutes to read"
-{{< /code-toggle >}}
-@z
-
-@x
-Assuming `.ReadingTime.Count` in the context has value is 525600. The result will be:
-@y
-Assuming `.ReadingTime.Count` in the context has value is 525600. The result will be:
-@z
-
-@x
-```text
-525600 minutes to read
-```
-@y
-```text
-525600 minutes to read
-```
-@z
-
-@x
-If `.ReadingTime.Count` in the context has value is 1. The result is:
-@y
-If `.ReadingTime.Count` in the context has value is 1. The result is:
-@z
-
-@x
-```text
-One minute to read
-```
-@y
-```text
-One minute to read
-```
-@z
-
-@x
-In case you need to pass a custom data: (`(dict "Count" numeric_value_only)` is minimum requirement)
-@y
-In case you need to pass a custom data: (`(dict "Count" numeric_value_only)` is minimum requirement)
-@z
-
-@x
-```go-html-template
-{{ i18n "readingTime" (dict "Count" 25 "FirstArgument" true "SecondArgument" false "Etc" "so on, so far") }}
-```
-@y
-```go-html-template
-{{ i18n "readingTime" (dict "Count" 25 "FirstArgument" true "SecondArgument" false "Etc" "so on, so far") }}
-```
+[`lang.Translate`]: /functions/lang/translate
 @z
 
 @x
@@ -1508,23 +1252,7 @@ With a more complex menu structure, create a [configuration directory] and split
 With a more complex menu structure, create a [configuration directory] and split the menu entries into multiple files, one file per language. For example:
 @z
 
-@x
-```text
-config/
-└── _default/
-    ├── menus.de.toml
-    ├── menus.en.toml
-    └── hugo.toml
-```
-@y
-```text
-config/
-└── _default/
-    ├── menus.de.toml
-    ├── menus.en.toml
-    └── hugo.toml
-```
-@z
+% snip text...
 
 @x
 {{< code-toggle file=config/_default/menus.de >}}
@@ -1592,15 +1320,7 @@ When rendering the text that appears in menu each entry, the [example menu templ
 When rendering the text that appears in menu each entry, the [example menu template] does this:
 @z
 
-@x
-```go-html-template
-{{ or (T .Identifier) .Name | safeHTML }}
-```
-@y
-```go-html-template
-{{ or (T .Identifier) .Name | safeHTML }}
-```
-@z
+% snip code...
 
 @x
 It queries the translation table for the current language using the menu entry's `identifier` and returns the translated string. If the translation table does not exist, or if the `identifier` key is not present in the translation table, it falls back to `name`.
@@ -1674,17 +1394,7 @@ services = 'Leistungen'
 {{< / code-toggle >}}
 @z
 
-@x
-[example menu template]: /templates/menu-templates/#example
-[automatically]: /content-management/menus/#define-automatically
-[in front matter]: /content-management/menus/#define-in-front-matter
-[in site configuration]: /content-management/menus/#define-in-site-configuration
-@y
-[example menu template]: /templates/menu-templates/#example
-[automatically]: /content-management/menus/#define-automatically
-[in front matter]: /content-management/menus/#define-in-front-matter
-[in site configuration]: /content-management/menus/#define-in-site-configuration
-@z
+% snip links...
 
 @x
 ## Missing translations
@@ -1726,17 +1436,7 @@ To track down missing translation strings, run Hugo with the `--printI18nWarning
 To track down missing translation strings, run Hugo with the `--printI18nWarnings` flag:
 @z
 
-@x
-```sh
-hugo --printI18nWarnings | grep i18n
-i18n|MISSING_TRANSLATION|en|wordCount
-```
-@y
-```sh
-hugo --printI18nWarnings | grep i18n
-i18n|MISSING_TRANSLATION|en|wordCount
-```
-@z
+% snip code...
 
 @x
 ## Multilingual themes support
@@ -1776,17 +1476,7 @@ If you organize content with translations in the same directory:
 If you organize content with translations in the same directory:
 @z
 
-@x
-```sh
-hugo new content post/test.en.md
-hugo new content post/test.de.md
-```
-@y
-```sh
-hugo new content post/test.en.md
-hugo new content post/test.de.md
-```
-@z
+% snip code...
 
 @x
 If you organize content with translations in different directories:
@@ -1794,16 +1484,5 @@ If you organize content with translations in different directories:
 If you organize content with translations in different directories:
 @z
 
-@x
-```sh
-hugo new content content/en/post/test.md
-hugo new content content/de/post/test.md
-```
-@y
-```sh
-hugo new content content/en/post/test.md
-hugo new content content/de/post/test.md
-```
-@z
-
+% snip code...
 % snip links...

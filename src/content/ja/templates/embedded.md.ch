@@ -2,41 +2,15 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
-title: Internal templates
-description: Hugo ships with a group of boilerplate templates that cover the most common use cases for static websites.
+title: Embedded templates
+description: Hugo provides embedded templates for common use cases.
 categories: [templates]
 keywords: [internal, analytics,]
-menu:
-  docs:
-    parent: templates
-    weight: 190
-weight: 190
-toc: true
----
 @y
----
-title: 内部テンプレート
-description: Hugo ships with a group of boilerplate templates that cover the most common use cases for static websites.
+title: 埋め込みテンプレート
+description: Hugo provides embedded templates for common use cases.
 categories: [templates]
 keywords: [internal, analytics,]
-menu:
-  docs:
-    parent: templates
-    weight: 190
-weight: 190
-toc: true
----
-@z
-
-@x
-{{% note %}}
-While the following internal templates are called similar to partials, they do *not* observe the partial template lookup order.
-{{% /note %}}
-@y
-{{% note %}}
-While the following internal templates are called similar to partials, they do *not* observe the partial template lookup order.
-{{% /note %}}
 @z
 
 @x
@@ -70,9 +44,33 @@ To override Hugo's embedded Disqus template, copy the [source code] to a file wi
 @z
 
 @x
-Hugo includes an embedded template for [Disqus comments][disqus], a popular commenting system for both static and dynamic websites. To effectively use Disqus, secure a Disqus "shortname" by [signing up for the free service][disqussignup].
+Hugo includes an embedded template for [Disqus], a popular commenting system for both static and dynamic websites. To effectively use Disqus, secure a Disqus "shortname" by [signing up] for the free service.
 @y
-Hugo includes an embedded template for [Disqus comments][disqus], a popular commenting system for both static and dynamic websites. To effectively use Disqus, secure a Disqus "shortname" by [signing up for the free service][disqussignup].
+Hugo includes an embedded template for [Disqus], a popular commenting system for both static and dynamic websites. To effectively use Disqus, secure a Disqus "shortname" by [signing up] for the free service.
+@z
+
+@x
+[Disqus]: https://disqus.com
+[signing up]: https://disqus.com/profile/signup/
+@y
+[Disqus]: https://disqus.com
+[signing up]: https://disqus.com/profile/signup/
+@z
+
+@x
+To include the embedded template:
+@y
+To include the embedded template:
+@z
+
+@x
+```go-html-template
+{{ template "_internal/disqus.html" . }}
+```
+@y
+```go-html-template
+{{ template "_internal/disqus.html" . }}
+```
 @z
 
 @x
@@ -122,35 +120,13 @@ You can also set the following in the front matter for a given piece of content:
 @z
 
 @x
-* `disqus_identifier`
-* `disqus_title`
-* `disqus_url`
+- `disqus_identifier`
+- `disqus_title`
+- `disqus_url`
 @y
-* `disqus_identifier`
-* `disqus_title`
-* `disqus_url`
-@z
-
-@x
-### Use the Disqus template
-@y
-### Use the Disqus template
-@z
-
-@x
-To add Disqus, include the following line in the templates where you want your comments to appear:
-@y
-To add Disqus, include the following line in the templates where you want your comments to appear:
-@z
-
-@x
-```go-html-template
-{{ template "_internal/disqus.html" . }}
-```
-@y
-```go-html-template
-{{ template "_internal/disqus.html" . }}
-```
+- `disqus_identifier`
+- `disqus_title`
+- `disqus_url`
 @z
 
 @x
@@ -282,6 +258,22 @@ Hugo includes an embedded template supporting [Google Analytics 4].
 @z
 
 @x
+To include the embedded template:
+@y
+To include the embedded template:
+@z
+
+@x
+```go-html-template
+{{ template "_internal/google_analytics.html" . }}
+```
+@y
+```go-html-template
+{{ template "_internal/google_analytics.html" . }}
+```
+@z
+
+@x
 ### Configure Google Analytics
 @y
 ### Configure Google Analytics
@@ -308,31 +300,9 @@ ID = "G-MEASUREMENT_ID"
 @z
 
 @x
-### Use the Google Analytics template
+To use this value in your own template, access the configured ID with `{{ site.Config.Services.GoogleAnalytics.ID }}`.
 @y
-### Use the Google Analytics template
-@z
-
-@x
-Include the Google Analytics internal template in your templates where you want the code to appear:
-@y
-Include the Google Analytics internal template in your templates where you want the code to appear:
-@z
-
-@x
-```go-html-template
-{{ template "_internal/google_analytics.html" . }}
-```
-@y
-```go-html-template
-{{ template "_internal/google_analytics.html" . }}
-```
-@z
-
-@x
-To create your own template, access the configured ID with `{{ site.Config.Services.GoogleAnalytics.ID }}`.
-@y
-To create your own template, access the configured ID with `{{ site.Config.Services.GoogleAnalytics.ID }}`.
+To use this value in your own template, access the configured ID with `{{ site.Config.Services.GoogleAnalytics.ID }}`.
 @z
 
 @x
@@ -371,6 +341,22 @@ This format is used for Facebook and some other sites.
 @y
 Hugo includes an embedded template for the [Open Graph protocol](https://ogp.me/), metadata that enables a page to become a rich object in a social graph.
 This format is used for Facebook and some other sites.
+@z
+
+@x
+To include the embedded template:
+@y
+To include the embedded template:
+@z
+
+@x
+```go-html-template
+{{ template "_internal/opengraph.html" . }}
+```
+@y
+```go-html-template
+{{ template "_internal/opengraph.html" . }}
+```
 @z
 
 @x
@@ -464,28 +450,6 @@ If using YouTube this will produce a og:video tag like `<meta property="og:video
 @z
 
 @x
-### Use the Open Graph template
-@y
-### Use the Open Graph template
-@z
-
-@x
-To add Open Graph metadata, include the following line between the `<head>` tags in your templates:
-@y
-To add Open Graph metadata, include the following line between the `<head>` tags in your templates:
-@z
-
-@x
-```go-html-template
-{{ template "_internal/opengraph.html" . }}
-```
-@y
-```go-html-template
-{{ template "_internal/opengraph.html" . }}
-```
-@z
-
-@x
 ## Schema
 @y
 ## Schema
@@ -528,18 +492,18 @@ Hugo includes an embedded template to render [microdata] `meta` elements within 
 @z
 
 @x
-To call the embedded template from your templates:
+To include the embedded template:
 @y
-To call the embedded template from your templates:
+To include the embedded template:
 @z
 
 @x
 ```go-html-template
-{{ template "_internal/schema.xml" . }}
+{{ template "_internal/schema.html" . }}
 ```
 @y
 ```go-html-template
-{{ template "_internal/schema.xml" . }}
+{{ template "_internal/schema.html" . }}
 ```
 @z
 
@@ -579,6 +543,22 @@ metadata used to attach rich media to Tweets linking to your site.
 @y
 Hugo includes an embedded template for [Twitter Cards](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards),
 metadata used to attach rich media to Tweets linking to your site.
+@z
+
+@x
+To include the embedded template:
+@y
+To include the embedded template:
+@z
+
+@x
+```go-html-template
+{{ template "_internal/twitter_cards.html" . }}
+```
+@y
+```go-html-template
+{{ template "_internal/twitter_cards.html" . }}
+```
 @z
 
 @x
@@ -669,34 +649,4 @@ NOTE: The `@` will be added for you
 ```html
 <meta name="twitter:site" content="@GoHugoIO"/>
 ```
-@z
-
-@x
-### Use the Twitter Cards template
-@y
-### Use the Twitter Cards template
-@z
-
-@x
-To add Twitter card metadata, include the following line immediately after the `<head>` element in your templates:
-@y
-To add Twitter card metadata, include the following line immediately after the `<head>` element in your templates:
-@z
-
-@x
-```go-html-template
-{{ template "_internal/twitter_cards.html" . }}
-```
-@y
-```go-html-template
-{{ template "_internal/twitter_cards.html" . }}
-```
-@z
-
-@x
-[disqus]: https://disqus.com
-[disqussignup]: https://disqus.com/profile/signup/
-@y
-[disqus]: https://disqus.com
-[disqussignup]: https://disqus.com/profile/signup/
 @z

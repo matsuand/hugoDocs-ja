@@ -225,13 +225,9 @@ Site
 @z
 
 @x
-To insert date and time with an altnerate format, use the [`time.Now`] function:
-
-[`time.Now`]: /functions/time/now/
+To insert date and time with an alternate format, use the [`time.Now`] function:
 @y
-To insert date and time with an altnerate format, use the [`time.Now`] function:
-
-[`time.Now`]: /functions/time/now/
+To insert date and time with an alternate format, use the [`time.Now`] function:
 @z
 
 @x

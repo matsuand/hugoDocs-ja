@@ -6,7 +6,7 @@
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 ">Improve this page</a>
 @y
-<a href="{{.Site.Params.ghrepo }}edit/master/content/{{ .Language.Lang }}/{{ .File.Path }}" class="
+<a href="{{.Site.Params.ghrepo }}edit/main/src/content/{{ .Language.Lang }}/{{ .File.Path }}.ch" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 ">ページの変更</a>
 @z

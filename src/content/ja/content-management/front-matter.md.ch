@@ -290,22 +290,12 @@ If `true`, the page will not be rendered unless you pass the `--buildDrafts` fla
 @z
 
 @x
-(`bool`) Set to `true` if the content language is in the [CJK] family. This value determines how Hugo calculates word count, and affects the values returned by the [`WordCount`], [`FuzzyWordCount`], and [`Summary`] methods on a `Page` object.
+(`bool`) Set to `true` if the content language is in the [CJK] family. This value determines how Hugo calculates word count, and affects the values returned by the [`WordCount`], [`FuzzyWordCount`], [`ReadingTime`], and [`Summary`] methods on a `Page` object.
 @y
-(`bool`) Set to `true` if the content language is in the [CJK] family. This value determines how Hugo calculates word count, and affects the values returned by the [`WordCount`], [`FuzzyWordCount`], and [`Summary`] methods on a `Page` object.
+(`bool`) Set to `true` if the content language is in the [CJK] family. This value determines how Hugo calculates word count, and affects the values returned by the [`WordCount`], [`FuzzyWordCount`], [`ReadingTime`], and [`Summary`] methods on a `Page` object.
 @z
 
-@x
-[`fuzzywordcount`]: /methods/page/wordcount/
-[`summary`]: /methods/page/summary/
-[`wordcount`]: /methods/page/wordcount/
-[cjk]: /getting-started/glossary/#cjk
-@y
-[`fuzzywordcount`]: /methods/page/wordcount/
-[`summary`]: /methods/page/summary/
-[`wordcount`]: /methods/page/wordcount/
-[cjk]: /getting-started/glossary/#cjk
-@z
+% snip links...
 
 @x
 ###### keywords
@@ -608,9 +598,9 @@ path
 @z
 
 @x
-(`string`) Conceptually different than the page `description`, the summary either summarizes the content or serves a teaser to encourage readers to visit the page. Access this value from a template using the [`Summary`] method on a `Page` object.
+(`string`) Conceptually different than the page `description`, the summary either summarizes the content or serves as a teaser to encourage readers to visit the page. Access this value from a template using the [`Summary`] method on a `Page` object.
 @y
-(`string`) Conceptually different than the page `description`, the summary either summarizes the content or serves a teaser to encourage readers to visit the page. Access this value from a template using the [`Summary`] method on a `Page` object.
+(`string`) Conceptually different than the page `description`, the summary either summarizes the content or serves as a teaser to encourage readers to visit the page. Access this value from a template using the [`Summary`] method on a `Page` object.
 @z
 
 @x
@@ -644,9 +634,9 @@ path
 @z
 
 @x
-(`string`) An arbitrary value used to relate two or mote translations of the same page, useful when the translated pages do not share a common path. Access this value from a template using the [`TranslationKey`] method on a `Page` object.
+(`string`) An arbitrary value used to relate two or more translations of the same page, useful when the translated pages do not share a common path. Access this value from a template using the [`TranslationKey`] method on a `Page` object.
 @y
-(`string`) An arbitrary value used to relate two or mote translations of the same page, useful when the translated pages do not share a common path. Access this value from a template using the [`TranslationKey`] method on a `Page` object.
+(`string`) An arbitrary value used to relate two or more translations of the same page, useful when the translated pages do not share a common path. Access this value from a template using the [`TranslationKey`] method on a `Page` object.
 @z
 
 @x

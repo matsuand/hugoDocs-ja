@@ -38,13 +38,13 @@ While hugo server is high performance, it is a webserver with limited options.
 @z
 
 @x
-'hugo server' will by default write and server files from disk, but you can
-render to memory by using the '--renderToMemory' flag. This can be faster
-in some cases, but it will consume more memory.
+The `hugo server` command will by default write and serve files from disk, but
+you can render to memory by using the `--renderToMemory` flag. This can be
+faster in some cases, but it will consume more memory.
 @y
-'hugo server' will by default write and server files from disk, but you can
-render to memory by using the '--renderToMemory' flag. This can be faster
-in some cases, but it will consume more memory.
+The `hugo server` command will by default write and serve files from disk, but
+you can render to memory by using the `--renderToMemory` flag. This can be
+faster in some cases, but it will consume more memory.
 @z
 
 @x

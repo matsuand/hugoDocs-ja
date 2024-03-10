@@ -294,13 +294,13 @@ Hugo will take this AsciiDoc and create a table of contents store it in the page
 @z
 
 @x
-[conditionals]: /templates/introduction/#conditionals
+[conditionals]: /templates/introduction/#conditional-blocks
 [front matter]: /content-management/front-matter/
 [pagevars]: /methods/page/
 [partials]: /templates/partials/
 [single page template]: /templates/single-page-templates/
 @y
-[conditionals]: /templates/introduction/#conditionals
+[conditionals]: /templates/introduction/#conditional-blocks
 [front matter]: /content-management/front-matter/
 [pagevars]: /methods/page/
 [partials]: /templates/partials/

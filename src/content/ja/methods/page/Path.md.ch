@@ -276,7 +276,7 @@ Methods|Functions|Shortcodes
 @z
 
 @x
-[`urls.Ref`]: functions/urls/ref/
+[`urls.Ref`]: /functions/urls/ref/
 [`urls.RelRef`]: /functions/urls/relref/
 [`Page.GetPage`]: /methods/page/getpage/
 [`Site.GetPage`]: /methods/site/getpage/
@@ -287,7 +287,7 @@ Methods|Functions|Shortcodes
 [`Shortcode.Ref`]: /methods/shortcode/ref
 [`Shortcode.RelRef`]: /methods/shortcode/relref
 @y
-[`urls.Ref`]: functions/urls/ref/
+[`urls.Ref`]: /functions/urls/ref/
 [`urls.RelRef`]: /functions/urls/relref/
 [`Page.GetPage`]: /methods/page/getpage/
 [`Site.GetPage`]: /methods/site/getpage/

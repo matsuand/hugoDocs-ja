@@ -4,7 +4,7 @@
 @x
 ---
 title: strings.ContainsNonSpace
-description: Reports whether the given string contains any non-space characters as defined by Unicode’s White Space property.
+description: Reports whether the given string contains any non-space characters as defined by Unicode's White Space property.
 categories: []
 keywords: []
 action:
@@ -22,7 +22,7 @@ aliases: [/functions/strings.containsnonspace]
 @y
 ---
 title: strings.ContainsNonSpace
-description: Reports whether the given string contains any non-space characters as defined by Unicode’s White Space property.
+description: Reports whether the given string contains any non-space characters as defined by Unicode's White Space property.
 categories: []
 keywords: []
 action:
@@ -60,9 +60,9 @@ aliases: [/functions/strings.containsnonspace]
 @z
 
 @x
-Common white space characters include:
+Common whitespace characters include:
 @y
-Common white space characters include:
+Common whitespace characters include:
 @z
 
 @x

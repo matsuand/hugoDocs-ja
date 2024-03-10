@@ -14,7 +14,7 @@ keywords: []
 @z
 
 @x
-The `where` function returns the given collection, removing elements that do not satisfy the comparison condition. The comparison condition is comprised of the `KEY`, `OPERATOR`, and `VALUE` arguments:
+The `where` function returns the given collection, removing elements that do not satisfy the comparison condition. The comparison condition is composed of the `KEY`, `OPERATOR`, and `VALUE` arguments:
 @y
 `where` 関数は指定されたコレクションに対して、比較条件に合致しない要素を取り除いたコレクションを返します。比較条件は `KEY`、`OPERATOR`、`VALUE` の引数により構成されます。
 @z
@@ -40,17 +40,7 @@ Hugo will test for equality if you do not provide an `OPERATOR` argument. For ex
 たとえば以下です。
 @z
 
-@x
-```go-html-template
-{{ $pages := where .Site.RegularPages "Section" "books" }}
-{{ $books := where .Site.Data.books "genres" "suspense" }}
-```
-@y
-```go-html-template
-{{ $pages := where .Site.RegularPages "Section" "books" }}
-{{ $books := where .Site.Data.books "genres" "suspense" }}
-```
-@z
+% snip code...
 
 @x
 ## Arguments
@@ -91,21 +81,8 @@ KEY
 : (`string`) The key of the page or map value to compare with `VALUE`. With page collections, commonly used comparison keys are `Section`, `Type`, and `Params`. To compare with a member of the page `Params` map, [chain] the subkey as shown below:
 @z
 
-@x
-```go-html-template
-{{ $result := where .Site.RegularPages "Params.foo" "bar" }}
-```
-@y
-```go-html-template
-{{ $result := where .Site.RegularPages "Params.foo" "bar" }}
-```
-@z
-
-@x
-[chain]: /getting-started/glossary/#chain
-@y
-[chain]: /getting-started/glossary/#chain
-@z
+% snip code...
+% snip link...
 
 @x
 OPERATOR
@@ -259,23 +236,8 @@ Compare the value of the given field to a [`string`]:
 Compare the value of the given field to a [`string`]:
 @z
 
-@x
-[`string`]: /getting-started/glossary/#string
-@y
-[`string`]: /getting-started/glossary/#string
-@z
-
-@x
-```go-html-template
-{{ $pages := where .Site.RegularPages "Section" "eq" "books" }}
-{{ $pages := where .Site.RegularPages "Section" "ne" "books" }}
-```
-@y
-```go-html-template
-{{ $pages := where .Site.RegularPages "Section" "eq" "books" }}
-{{ $pages := where .Site.RegularPages "Section" "ne" "books" }}
-```
-@z
+% snip link...
+% snip code...
 
 @x
 ## Numeric comparison
@@ -289,39 +251,8 @@ Compare the value of the given field to an [`int`] or [`float`]:
 Compare the value of the given field to an [`int`] or [`float`]:
 @z
 
-@x
-[`int`]: /getting-started/glossary/#int
-[`float`]: /getting-started/glossary/#float
-@y
-[`int`]: /getting-started/glossary/#int
-[`float`]: /getting-started/glossary/#float
-@z
-
-@x
-```go-html-template
-{{ $books := where site.RegularPages "Section" "eq" "books" }}
-@y
-```go-html-template
-{{ $books := where site.RegularPages "Section" "eq" "books" }}
-@z
-
-@x
-{{ $pages := where $books "Params.price" "eq" 42 }}
-{{ $pages := where $books "Params.price" "ne" 42.67 }}
-{{ $pages := where $books "Params.price" "ge" 42 }}
-{{ $pages := where $books "Params.price" "gt" 42.67 }}
-{{ $pages := where $books "Params.price" "le" 42 }}
-{{ $pages := where $books "Params.price" "lt" 42.67 }}
-```
-@y
-{{ $pages := where $books "Params.price" "eq" 42 }}
-{{ $pages := where $books "Params.price" "ne" 42.67 }}
-{{ $pages := where $books "Params.price" "ge" 42 }}
-{{ $pages := where $books "Params.price" "gt" 42.67 }}
-{{ $pages := where $books "Params.price" "le" 42 }}
-{{ $pages := where $books "Params.price" "lt" 42.67 }}
-```
-@z
+% snip links...
+% snip code...
 
 @x
 ## Boolean comparison
@@ -335,33 +266,8 @@ Compare the value of the given field to a [`bool`]:
 Compare the value of the given field to a [`bool`]:
 @z
 
-@x
-[`bool`]: /getting-started/glossary/#bool
-@y
-[`bool`]: /getting-started/glossary/#bool
-@z
-
-@x
-```go-html-template
-{{ $books := where site.RegularPages "Section" "eq" "books" }}
-@y
-```go-html-template
-{{ $books := where site.RegularPages "Section" "eq" "books" }}
-@z
-
-@x
-{{ $pages := where $books "Params.fiction" "eq" true }}
-{{ $pages := where $books "Params.fiction" "eq" false }}
-{{ $pages := where $books "Params.fiction" "ne" true }}
-{{ $pages := where $books "Params.fiction" "ne" false }}
-```
-@y
-{{ $pages := where $books "Params.fiction" "eq" true }}
-{{ $pages := where $books "Params.fiction" "eq" false }}
-{{ $pages := where $books "Params.fiction" "ne" true }}
-{{ $pages := where $books "Params.fiction" "ne" false }}
-```
-@z
+% snip link...
+% snip code...
 
 @x
 ## Member comparison
@@ -375,13 +281,7 @@ Compare a [`scalar`] to a [`slice`].
 Compare a [`scalar`] to a [`slice`].
 @z
 
-@x
-[`scalar`]: /getting-started/glossary/#scalar
-[`slice`]: /getting-started/glossary/#slice
-@y
-[`scalar`]: /getting-started/glossary/#scalar
-[`slice`]: /getting-started/glossary/#slice
-@z
+% snip links...
 
 @x
 For example, to return a collection of pages where the `color` page parameter is either "red" or "yellow":
@@ -389,23 +289,7 @@ For example, to return a collection of pages where the `color` page parameter is
 For example, to return a collection of pages where the `color` page parameter is either "red" or "yellow":
 @z
 
-@x
-```go-html-template
-{{ $fruit := where site.RegularPages "Section" "eq" "fruit" }}
-@y
-```go-html-template
-{{ $fruit := where site.RegularPages "Section" "eq" "fruit" }}
-@z
-
-@x
-{{ $colors := slice "red" "yellow" }}
-{{ $pages := where $fruit "Params.color" "in" $colors }}
-```
-@y
-{{ $colors := slice "red" "yellow" }}
-{{ $pages := where $fruit "Params.color" "in" $colors }}
-```
-@z
+% snip code...
 
 @x
 To return a collection of pages where the "color" page parameter is neither "red" nor "yellow":
@@ -413,23 +297,7 @@ To return a collection of pages where the "color" page parameter is neither "red
 To return a collection of pages where the "color" page parameter is neither "red" nor "yellow":
 @z
 
-@x
-```go-html-template
-{{ $fruit := where site.RegularPages "Section" "eq" "fruit" }}
-@y
-```go-html-template
-{{ $fruit := where site.RegularPages "Section" "eq" "fruit" }}
-@z
-
-@x
-{{ $colors := slice "red" "yellow" }}
-{{ $pages := where $fruit "Params.color" "not in" $colors }}
-```
-@y
-{{ $colors := slice "red" "yellow" }}
-{{ $pages := where $fruit "Params.color" "not in" $colors }}
-```
-@z
+% snip code...
 
 @x
 ## Intersection comparison
@@ -449,23 +317,7 @@ For example, to return a collection of pages where any of the terms in the "genr
 For example, to return a collection of pages where any of the terms in the "genres" taxonomy are "suspense" or "romance":
 @z
 
-@x
-```go-html-template
-{{ $books := where site.RegularPages "Section" "eq" "books" }}
-@y
-```go-html-template
-{{ $books := where site.RegularPages "Section" "eq" "books" }}
-@z
-
-@x
-{{ $genres := slice "suspense" "romance" }}
-{{ $pages := where $books "Params.genres" "intersect" $genres }}
-```
-@y
-{{ $genres := slice "suspense" "romance" }}
-{{ $pages := where $books "Params.genres" "intersect" $genres }}
-```
-@z
+% snip code...
 
 @x
 ## Regular expression comparison
@@ -485,15 +337,7 @@ To return a collection of pages where the "author" page parameter begins with ei
 To return a collection of pages where the "author" page parameter begins with either "victor" or "Victor":
 @z
 
-@x
-```go-html-template
-{{ $pages := where .Site.RegularPages "Params.author" "like" `(?i)^victor` }}
-```
-@y
-```go-html-template
-{{ $pages := where .Site.RegularPages "Params.author" "like" `(?i)^victor` }}
-```
-@z
+% snip code...
 
 @x
 {{% include "functions/_common/regular-expressions.md" %}}
@@ -537,17 +381,7 @@ For example, to return a collection of pages that were created before the curren
 For example, to return a collection of pages that were created before the current year:
 @z
 
-@x
-```go-html-template
-{{ $startOfYear := time.AsTime (printf "%d-01-01" now.Year) }}
-{{ $pages := where .Site.RegularPages "Date" "lt" $startOfYear }}
-```
-@y
-```go-html-template
-{{ $startOfYear := time.AsTime (printf "%d-01-01" now.Year) }}
-{{ $pages := where .Site.RegularPages "Date" "lt" $startOfYear }}
-```
-@z
+% snip code...
 
 @x
 ### Custom dates
@@ -605,45 +439,15 @@ To return a collection of future events:
 To return a collection of future events:
 @z
 
-@x
-```go-html-template
-{{ $events := where .Site.RegularPages "Type" "events" }}
-{{ $futureEvents := where $events "Params.eventDate" "gt" now }}
-```
-@y
-```go-html-template
-{{ $events := where .Site.RegularPages "Type" "events" }}
-{{ $futureEvents := where $events "Params.eventDate" "gt" now }}
-```
-@z
+% snip code...
 
 @x
-When working with YAML or JSON, or quoted TOML values, custom dates are strings; you cannot compare them with `time.Time` values. String comparisons may be possible if the custom date layout is consistent from one page to the next. However, to be safe, filter the pages by ranging through the collection:
+When working with YAML or JSON, or quoted TOML values, custom dates are strings; you cannot compare them with `time.Time` values. String comparisons may be possible if the custom date layout is consistent from one page to the next. To be safe, filter the pages by ranging through the collection:
 @y
-When working with YAML or JSON, or quoted TOML values, custom dates are strings; you cannot compare them with `time.Time` values. String comparisons may be possible if the custom date layout is consistent from one page to the next. However, to be safe, filter the pages by ranging through the collection:
+When working with YAML or JSON, or quoted TOML values, custom dates are strings; you cannot compare them with `time.Time` values. String comparisons may be possible if the custom date layout is consistent from one page to the next. To be safe, filter the pages by ranging through the collection:
 @z
 
-@x
-```go-html-template
-{{ $events := where .Site.RegularPages "Type" "events" }}
-{{ $futureEvents := slice }}
-{{ range $events }}
-  {{ if gt (time.AsTime .Params.eventDate) now }}
-    {{ $futureEvents = $futureEvents | append . }}
-  {{ end }}
-{{ end }}
-```
-@y
-```go-html-template
-{{ $events := where .Site.RegularPages "Type" "events" }}
-{{ $futureEvents := slice }}
-{{ range $events }}
-  {{ if gt (time.AsTime .Params.eventDate) now }}
-    {{ $futureEvents = $futureEvents | append . }}
-  {{ end }}
-{{ end }}
-```
-@z
+% snip code...
 
 @x
 ## Nil comparison
@@ -657,15 +461,7 @@ To return a collection of pages where the "color" parameter is present in front 
 To return a collection of pages where the "color" parameter is present in front matter, compare to `nil`:
 @z
 
-@x
-```go-html-template
-{{ $pages := where .Site.RegularPages "Params.color" "ne" nil }}
-```
-@y
-```go-html-template
-{{ $pages := where .Site.RegularPages "Params.color" "ne" nil }}
-```
-@z
+% snip code...
 
 @x
 To return a collection of pages where the "color" parameter is not present in front matter, compare to `nil`:
@@ -673,15 +469,7 @@ To return a collection of pages where the "color" parameter is not present in fr
 To return a collection of pages where the "color" parameter is not present in front matter, compare to `nil`:
 @z
 
-@x
-```go-html-template
-{{ $pages := where .Site.RegularPages "Params.color" "eq" nil }}
-```
-@y
-```go-html-template
-{{ $pages := where .Site.RegularPages "Params.color" "eq" nil }}
-```
-@z
+% snip code...
 
 @x
 In both examples above, note that `nil` is not quoted.
@@ -701,27 +489,7 @@ These are equivalent:
 These are equivalent:
 @z
 
-@x
-```go-html-template
-{{ $pages := where .Site.RegularPages "Type" "tutorials" }}
-{{ $pages = where $pages "Params.level" "eq" "beginner" }}
-```
-@y
-```go-html-template
-{{ $pages := where .Site.RegularPages "Type" "tutorials" }}
-{{ $pages = where $pages "Params.level" "eq" "beginner" }}
-```
-@z
-
-@x
-```go-html-template
-{{ $pages := where (where .Site.RegularPages "Type" "tutorials") "Params.level" "eq" "beginner" }}
-```
-@y
-```go-html-template
-{{ $pages := where (where .Site.RegularPages "Type" "tutorials") "Params.level" "eq" "beginner" }}
-```
-@z
+% snip code...
 
 @x
 ## Portable section comparison
@@ -737,15 +505,7 @@ Useful for theme authors, avoid hardcoding section names by using the `where` fu
 
 % snip link...
 
-@x
-```go-html-template
-{{ $pages := where .Site.RegularPages "Section" "in" .Site.MainSections }}
-```
-@y
-```go-html-template
-{{ $pages := where .Site.RegularPages "Section" "in" .Site.MainSections }}
-```
-@z
+% snip code...
 
 @x
 With this construct, a theme author can instruct users to specify their main sections in the site configuration:
@@ -783,27 +543,7 @@ Consider this site content:
 Consider this site content:
 @z
 
-@x
-```text
-content/
-├── posts/
-│   ├── _index.md
-│   ├── post-1.md  <-- front matter: exclude = false
-│   ├── post-2.md  <-- front matter: exclude = true
-│   └── post-3.md  <-- front matter: exclude not defined
-└── _index.md
-```
-@y
-```text
-content/
-├── posts/
-│   ├── _index.md
-│   ├── post-1.md  <-- front matter: exclude = false
-│   ├── post-2.md  <-- front matter: exclude = true
-│   └── post-3.md  <-- front matter: exclude not defined
-└── _index.md
-```
-@z
+% snip text...
 
 @x
 The first two pages have an "exclude" field in front matter, but the last page does not. When testing for _equality_, the third page is _excluded_ from the result. When testing for _inequality_, the third page is _included_ in the result.
@@ -823,23 +563,7 @@ This template:
 This template:
 @z
 
-@x
-```go-html-template
-<ul>
-  {{ range where .Site.RegularPages "Params.exclude" "eq" false }}
-    <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-  {{ end }}
-</ul>
-```
-@y
-```go-html-template
-<ul>
-  {{ range where .Site.RegularPages "Params.exclude" "eq" false }}
-    <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-  {{ end }}
-</ul>
-```
-@z
+% snip code...
 
 @x
 Is rendered to:
@@ -847,19 +571,7 @@ Is rendered to:
 Is rendered to:
 @z
 
-@x
-```html
-<ul>
-  <li><a href="/posts/post-1/">Post 1</a></li>
-</ul>
-```
-@y
-```html
-<ul>
-  <li><a href="/posts/post-1/">Post 1</a></li>
-</ul>
-```
-@z
+% snip code...
 
 @x
 This template:
@@ -867,23 +579,7 @@ This template:
 This template:
 @z
 
-@x
-```go-html-template
-<ul>
-  {{ range where .Site.RegularPages "Params.exclude" "eq" true }}
-    <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-  {{ end }}
-</ul>
-```
-@y
-```go-html-template
-<ul>
-  {{ range where .Site.RegularPages "Params.exclude" "eq" true }}
-    <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-  {{ end }}
-</ul>
-```
-@z
+% snip code...
 
 @x
 Is rendered to:
@@ -891,19 +587,7 @@ Is rendered to:
 Is rendered to:
 @z
 
-@x
-```html
-<ul>  
-  <li><a href="/posts/post-2/">Post 2</a></li>
-</ul>
-```
-@y
-```html
-<ul>  
-  <li><a href="/posts/post-2/">Post 2</a></li>
-</ul>
-```
-@z
+% snip code...
 
 @x
 ### Inequality test
@@ -917,23 +601,7 @@ This template:
 This template:
 @z
 
-@x
-```go-html-template
-<ul>
-  {{ range where .Site.RegularPages "Params.exclude" "ne" false }}
-    <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-  {{ end }}
-</ul>
-```
-@y
-```go-html-template
-<ul>
-  {{ range where .Site.RegularPages "Params.exclude" "ne" false }}
-    <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-  {{ end }}
-</ul>
-```
-@z
+% snip code...
 
 @x
 Is rendered to:
@@ -941,21 +609,7 @@ Is rendered to:
 Is rendered to:
 @z
 
-@x
-```html
-<ul>
-  <li><a href="/posts/post-2/">Post 2</a></li>
-  <li><a href="/posts/post-3/">Post 3</a></li>
-</ul>
-```
-@y
-```html
-<ul>
-  <li><a href="/posts/post-2/">Post 2</a></li>
-  <li><a href="/posts/post-3/">Post 3</a></li>
-</ul>
-```
-@z
+% snip code...
 
 @x
 This template:
@@ -963,23 +617,7 @@ This template:
 This template:
 @z
 
-@x
-```go-html-template
-<ul>
-  {{ range where .Site.RegularPages "Params.exclude" "ne" true }}
-    <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-  {{ end }}
-</ul>
-```
-@y
-```go-html-template
-<ul>
-  {{ range where .Site.RegularPages "Params.exclude" "ne" true }}
-    <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-  {{ end }}
-</ul>
-```
-@z
+% snip code...
 
 @x
 Is rendered to:
@@ -987,21 +625,7 @@ Is rendered to:
 Is rendered to:
 @z
 
-@x
-```html
-<ul>
-  <li><a href="/posts/post-1/">Post 1</a></li>
-  <li><a href="/posts/post-3/">Post 3</a></li>
-</ul>
-```
-@y
-```html
-<ul>
-  <li><a href="/posts/post-1/">Post 1</a></li>
-  <li><a href="/posts/post-3/">Post 3</a></li>
-</ul>
-```
-@z
+% snip code...
 
 @x
 To exclude a page with an undefined field from a boolean _inequality_ test:
@@ -1027,27 +651,7 @@ This template:
 This template:
 @z
 
-@x
-```go-html-template
-{{ $p1 := where .Site.RegularPages "Params.exclude" "ne" true }}
-{{ $p2 := where .Site.RegularPages "Params.exclude" "eq" nil  }}
-<ul>
-  {{ range $p1 | complement $p2 }}
-    <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-  {{ end }}
-</ul>
-```
-@y
-```go-html-template
-{{ $p1 := where .Site.RegularPages "Params.exclude" "ne" true }}
-{{ $p2 := where .Site.RegularPages "Params.exclude" "eq" nil  }}
-<ul>
-  {{ range $p1 | complement $p2 }}
-    <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-  {{ end }}
-</ul>
-```
-@z
+% snip code...
 
 @x
 Is rendered to:
@@ -1055,19 +659,7 @@ Is rendered to:
 Is rendered to:
 @z
 
-@x
-```html
-<ul>
-  <li><a href="/posts/post-1/">Post 1</a></li>
-</ul>
-```
-@y
-```html
-<ul>
-  <li><a href="/posts/post-1/">Post 1</a></li>
-</ul>
-```
-@z
+% snip code...
 
 @x
 This template:
@@ -1075,27 +667,7 @@ This template:
 This template:
 @z
 
-@x
-```go-html-template
-{{ $p1 := where .Site.RegularPages "Params.exclude" "ne" false }}
-{{ $p2 := where .Site.RegularPages "Params.exclude" "eq" nil  }}
-<ul>
-  {{ range $p1 | complement $p2 }}
-    <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-  {{ end }}
-</ul>
-```
-@y
-```go-html-template
-{{ $p1 := where .Site.RegularPages "Params.exclude" "ne" false }}
-{{ $p2 := where .Site.RegularPages "Params.exclude" "eq" nil  }}
-<ul>
-  {{ range $p1 | complement $p2 }}
-    <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-  {{ end }}
-</ul>
-```
-@z
+% snip code...
 
 @x
 Is rendered to:
@@ -1103,16 +675,4 @@ Is rendered to:
 Is rendered to:
 @z
 
-@x
-```html
-<ul>
-  <li><a href="/posts/post-1/">Post 2</a></li>
-</ul>
-```
-@y
-```html
-<ul>
-  <li><a href="/posts/post-1/">Post 2</a></li>
-</ul>
-```
-@z
+% snip code...

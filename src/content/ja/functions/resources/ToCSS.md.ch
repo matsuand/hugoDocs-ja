@@ -1,73 +1,22 @@
 %This is the change file for the original Hugo Documentation file.
 %This is part of Japanese translation version for Hugo Documantation.
 
-@x
----
-title: resources.ToCSS
-description: Transpiles Sass to CSS.
-categories: []
-keywords: []
-action:
-  aliases: [toCSS]
-  related:
-    - functions/resources/Fingerprint
-    - functions/resources/Minify
-    - functions/resources/PostCSS
-    - functions/resources/PostProcess
-  returnType: resource.Resource
-  signatures: ['resources.ToCSS [OPTIONS] RESOURCE']
-toc: true
----
-@y
----
-title: resources.ToCSS
-description: Transpiles Sass to CSS.
-categories: []
-keywords: []
-action:
-  aliases: [toCSS]
-  related:
-    - functions/resources/Fingerprint
-    - functions/resources/Minify
-    - functions/resources/PostCSS
-    - functions/resources/PostProcess
-  returnType: resource.Resource
-  signatures: ['resources.ToCSS [OPTIONS] RESOURCE']
-toc: true
----
-@z
+% import 対応
+% snip 対応
 
 @x
-```go-html-template
-{{ with resources.Get "sass/main.scss" }}
-  {{ $opts := dict "transpiler" "libsass" "targetPath" "css/style.css" }}
-  {{ with . | toCSS $opts }}
-    {{ if hugo.IsDevelopment }}
-      <link rel="stylesheet" href="{{ .RelPermalink }}">
-    {{ else }}
-      {{ with . | minify | fingerprint }}
-        <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-      {{ end }}
-    {{ end }}
-  {{ end }}
-{{ end }}
-```
+title: resources.ToCSS
+description: Transpiles Sass to CSS.
+categories: []
+keywords: []
 @y
-```go-html-template
-{{ with resources.Get "sass/main.scss" }}
-  {{ $opts := dict "transpiler" "libsass" "targetPath" "css/style.css" }}
-  {{ with . | toCSS $opts }}
-    {{ if hugo.IsDevelopment }}
-      <link rel="stylesheet" href="{{ .RelPermalink }}">
-    {{ else }}
-      {{ with . | minify | fingerprint }}
-        <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-      {{ end }}
-    {{ end }}
-  {{ end }}
-{{ end }}
-```
+title: resources.ToCSS
+description: Transpiles Sass to CSS.
+categories: []
+keywords: []
 @z
+
+% snip code...
 
 @x
 Transpile Sass to CSS using the LibSass transpiler included in Hugo's extended edition, or [install Dart Sass](#dart-sass) to use the latest features of the Sass language.
@@ -81,13 +30,7 @@ Sass has two forms of syntax: [SCSS] and [indented]. Hugo supports both.
 Sass has two forms of syntax: [SCSS] and [indented]. Hugo supports both.
 @z
 
-@x
-[scss]: https://sass-lang.com/documentation/syntax#scss
-[indented]: https://sass-lang.com/documentation/syntax#the-indented-syntax
-@y
-[scss]: https://sass-lang.com/documentation/syntax#scss
-[indented]: https://sass-lang.com/documentation/syntax#the-indented-syntax
-@z
+% snip links...
 
 @x
 ## Options
@@ -119,7 +62,7 @@ vars
 : (`map`) A map of key/value pairs that will be available in the `hugo:vars` namespace. Useful for [initializing Sass variables from Hugo templates](https://discourse.gohugo.io/t/42053/).
 @z
 
-@x
+@x import 対応
 ```scss
 // LibSass
 __IMPORT__ "hugo:vars";
@@ -179,33 +122,7 @@ includePaths
 : (`slice`) A slice of paths, relative to the project root, that the transpiler will use when resolving `@use` and `@import` statements.
 @z
 
-@x
-```go-html-template
-{{ $opts := dict
-  "transpiler" "dartsass"
-  "targetPath" "css/style.css"
-  "vars" site.Params.styles
-  "enableSourceMap" (not hugo.IsProduction) 
-  "includePaths" (slice "node_modules/bootstrap/scss")
-}}
-{{ with resources.Get "sass/main.scss" | toCSS $opts | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-{{ end }}
-```
-@y
-```go-html-template
-{{ $opts := dict
-  "transpiler" "dartsass"
-  "targetPath" "css/style.css"
-  "vars" site.Params.styles
-  "enableSourceMap" (not hugo.IsProduction) 
-  "includePaths" (slice "node_modules/bootstrap/scss")
-}}
-{{ with resources.Get "sass/main.scss" | toCSS $opts | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-{{ end }}
-```
-@z
+% snip code...
 
 @x
 ## Dart Sass
@@ -327,17 +244,7 @@ To install Dart Sass for your builds on GitHub Pages, add this step to the GitHu
 To install Dart Sass for your builds on GitHub Pages, add this step to the GitHub Pages workflow file:
 @z
 
-@x
-```yaml
-- name: Install Dart Sass
-  run: sudo snap install dart-sass
-```
-@y
-```yaml
-- name: Install Dart Sass
-  run: sudo snap install dart-sass
-```
-@z
+% snip code...
 
 @x
 If you are using GitHub Pages for the first time with your repository, GitHub provides a [starter workflow] for Hugo that includes Dart Sass. This is the simplest way to get started.
@@ -357,67 +264,7 @@ To install Dart Sass for your builds on GitLab Pages, the `.gitlab-ci.yml` file 
 To install Dart Sass for your builds on GitLab Pages, the `.gitlab-ci.yml` file should look something like this:
 @z
 
-@x
-```yaml
-variables:
-  HUGO_VERSION: 0.123.0
-  DART_SASS_VERSION: 1.71.0
-  GIT_DEPTH: 0
-  GIT_STRATEGY: clone
-  GIT_SUBMODULE_STRATEGY: recursive
-  TZ: America/Los_Angeles
-image:
-  name: golang:1.20-buster
-pages:
-  script:
-    # Install Dart Sass
-    - curl -LJO https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz
-    - tar -xf dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz
-    - cp -r dart-sass/* /usr/local/bin
-    - rm -rf dart-sass*
-    # Install Hugo
-    - curl -LJO https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb
-    - apt install -y ./hugo_extended_${HUGO_VERSION}_linux-amd64.deb
-    - rm hugo_extended_${HUGO_VERSION}_linux-amd64.deb
-    # Build
-    - hugo --gc --minify
-  artifacts:
-    paths:
-      - public
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-```
-@y
-```yaml
-variables:
-  HUGO_VERSION: 0.123.0
-  DART_SASS_VERSION: 1.71.0
-  GIT_DEPTH: 0
-  GIT_STRATEGY: clone
-  GIT_SUBMODULE_STRATEGY: recursive
-  TZ: America/Los_Angeles
-image:
-  name: golang:1.20-buster
-pages:
-  script:
-    # Install Dart Sass
-    - curl -LJO https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz
-    - tar -xf dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz
-    - cp -r dart-sass/* /usr/local/bin
-    - rm -rf dart-sass*
-    # Install Hugo
-    - curl -LJO https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb
-    - apt install -y ./hugo_extended_${HUGO_VERSION}_linux-amd64.deb
-    - rm hugo_extended_${HUGO_VERSION}_linux-amd64.deb
-    # Build
-    - hugo --gc --minify
-  artifacts:
-    paths:
-      - public
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-```
-@z
+% snip code...
 
 @x
 #### Netlify
@@ -431,43 +278,7 @@ To install Dart Sass for your builds on Netlify, the `netlify.toml` file should 
 To install Dart Sass for your builds on Netlify, the `netlify.toml` file should look something like this:
 @z
 
-@x
-```toml
-[build.environment]
-HUGO_VERSION = "0.123.0"
-DART_SASS_VERSION = "1.71.0"
-TZ = "America/Los_Angeles"
-@y
-```toml
-[build.environment]
-HUGO_VERSION = "0.123.0"
-DART_SASS_VERSION = "1.71.0"
-TZ = "America/Los_Angeles"
-@z
-
-@x
-[build]
-publish = "public"
-command = """\
-  curl -LJO https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz && \
-  tar -xf dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz && \
-  rm dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz && \
-  export PATH=/opt/build/repo/dart-sass:$PATH && \
-  hugo --gc --minify \
-  """
-```
-@y
-[build]
-publish = "public"
-command = """\
-  curl -LJO https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz && \
-  tar -xf dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz && \
-  rm dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz && \
-  export PATH=/opt/build/repo/dart-sass:$PATH && \
-  hugo --gc --minify \
-  """
-```
-@z
+% snip code...
 
 @x
 ### Example
@@ -481,37 +292,7 @@ To transpile with Dart Sass, set `transpiler` to `dartsass` in the options map p
 To transpile with Dart Sass, set `transpiler` to `dartsass` in the options map passed to `resources.ToCSS`. For example:
 @z
 
-@x
-```go-html-template
-{{ with resources.Get "sass/main.scss" }}
-  {{ $opts := dict "transpiler" "dartsass" "targetPath" "css/style.css" }}
-  {{ with . | toCSS $opts }}
-    {{ if hugo.IsDevelopment }}
-      <link rel="stylesheet" href="{{ .RelPermalink }}">
-    {{ else }}
-      {{ with . | minify | fingerprint }}
-        <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-      {{ end }}
-    {{ end }}
-  {{ end }}
-{{ end }}
-```
-@y
-```go-html-template
-{{ with resources.Get "sass/main.scss" }}
-  {{ $opts := dict "transpiler" "dartsass" "targetPath" "css/style.css" }}
-  {{ with . | toCSS $opts }}
-    {{ if hugo.IsDevelopment }}
-      <link rel="stylesheet" href="{{ .RelPermalink }}">
-    {{ else }}
-      {{ with . | minify | fingerprint }}
-        <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-      {{ end }}
-    {{ end }}
-  {{ end }}
-{{ end }}
-```
-@z
+% snip code...
 
 @x
 ### Miscellaneous
@@ -525,28 +306,4 @@ If you build Hugo from source and run `mage test -v`, the test will fail if you 
 If you build Hugo from source and run `mage test -v`, the test will fail if you install Dart Sass as a Snap package. This is due to the Snap package's strict confinement model.
 @z
 
-@x
-[brew.sh]: https://brew.sh/
-[chocolatey.org]: https://community.chocolatey.org/packages/sass
-[ci/cd]: https://en.wikipedia.org/wiki/CI/CD
-[dart sass]: https://sass-lang.com/dart-sass
-[libsass]: https://sass-lang.com/libsass
-[prebuilt binaries]: https://github.com/sass/dart-sass/releases/latest
-[scoop.sh]: https://scoop.sh/#/apps?q=sass
-[site configuration]: /getting-started/configuration/#configure-build
-[snap package]: /installation/linux/#snap
-[snapcraft.io]: https://snapcraft.io/dart-sass
-[starter workflow]: https://github.com/actions/starter-workflows/blob/main/pages/hugo.yml
-@y
-[brew.sh]: https://brew.sh/
-[chocolatey.org]: https://community.chocolatey.org/packages/sass
-[ci/cd]: https://en.wikipedia.org/wiki/CI/CD
-[dart sass]: https://sass-lang.com/dart-sass
-[libsass]: https://sass-lang.com/libsass
-[prebuilt binaries]: https://github.com/sass/dart-sass/releases/latest
-[scoop.sh]: https://scoop.sh/#/apps?q=sass
-[site configuration]: /getting-started/configuration/#configure-build
-[snap package]: /installation/linux/#snap
-[snapcraft.io]: https://snapcraft.io/dart-sass
-[starter workflow]: https://github.com/actions/starter-workflows/blob/main/pages/hugo.yml
-@z
+% snip links...

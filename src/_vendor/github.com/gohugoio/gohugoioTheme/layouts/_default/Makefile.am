@@ -5,13 +5,13 @@
 SUBDIRS = _markup
 
 bases = \
+	baseof.html \
 	page.html
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/content.mk
 
 copyfiles = \
-	baseof.html             \
 	documentation-home.html \
 	list.html               \
 	single.html             \

@@ -81,11 +81,11 @@ Access the custom parameters by [chaining] the [identifiers]:
 
 @x
 {{ $layout := .Site.Params.layouts.rfc_1123 }}
-{{ .Site.LastChange.Format $layout }} → Tue, 17 Oct 2023 13:21:02 PDT
+{{ .Site.Lastmod.Format $layout }} → Tue, 17 Oct 2023 13:21:02 PDT
 ```
 @y
 {{ $layout := .Site.Params.layouts.rfc_1123 }}
-{{ .Site.LastChange.Format $layout }} → Tue, 17 Oct 2023 13:21:02 PDT
+{{ .Site.Lastmod.Format $layout }} → Tue, 17 Oct 2023 13:21:02 PDT
 ```
 @z
 

@@ -101,7 +101,7 @@ A template called with the `.Page.Render` method. See&nbsp;[details](/templates/
 
 ###### context
 
-Represented by a dot "." within a [template action](#template-action), context is the current location in a data structure. For example, while iterating over a [collection](#collection) of pages, the context within each iteration is the page's data structure. The context received by each template depends on template type and/or how it was called. See&nbsp;[details](/templates/introduction/#the-dot).
+Represented by a dot "." within a [template action](#template-action), context is the current location in a data structure. For example, while iterating over a [collection](#collection) of pages, the context within each iteration is the page's data structure. The context received by each template depends on template type and/or how it was called. See&nbsp;[details](/templates/introduction/#context).
 
 ###### default sort order
 
@@ -366,6 +366,14 @@ A numbered sequence of elements. Unlike Go's [array](#array) data type, slices a
 
 A sequence of bytes. For example, `"What is 6 times 7?"`&nbsp;.
 
+###### string literal (interpreted)
+
+Interpreted string literals are character sequences between double quotes, as in "foo". Within the quotes, any character may appear except a newline and an unescaped double quote. The text between the quotes forms the value of the literal, with backslash escapes interpreted. See [details](https://go.dev/ref/spec#String_literals).
+
+###### string literal (raw)
+
+Raw string literals are character sequences between backticks, as in \`bar\`. Within the backticks, any character may appear except a backtick. Backslashes have no special meaning and the string may contain newlines. Carriage return characters ('\r') inside raw string literals are discarded from the raw string value. See [details](https://go.dev/ref/spec#String_literals).
+
 ###### taxonomic weight
 
 Defined in front matter and unique to each taxonomy, this [weight](#weight) determines the sort order of page collections contained within a [taxonomy object](#taxonomy-object). See&nbsp;[details](/templates/taxonomy-templates/#assign-weight).
@@ -521,7 +529,7 @@ An [array](#array), [slice](#slice), or [map](#map).
 
 ###### context
 
-Represented by a dot "." within a [template action](#template-action), context is the current location in a data structure. For example, while iterating over a [collection](#collection) of pages, the context within each iteration is the page's data structure. The context received by each template depends on template type and/or how it was called. See&nbsp;[details](/templates/introduction/#the-dot).
+Represented by a dot "." within a [template action](#template-action), context is the current location in a data structure. For example, while iterating over a [collection](#collection) of pages, the context within each iteration is the page's data structure. The context received by each template depends on template type and/or how it was called. See&nbsp;[details](/templates/introduction/#context).
 
 ###### default sort order
 
@@ -785,6 +793,14 @@ A numbered sequence of elements. Unlike Go's [array](#array) data type, slices a
 ###### string
 
 A sequence of bytes. For example, `"What is 6 times 7?"`&nbsp;.
+
+###### string literal (interpreted)
+
+Interpreted string literals are character sequences between double quotes, as in "foo". Within the quotes, any character may appear except a newline and an unescaped double quote. The text between the quotes forms the value of the literal, with backslash escapes interpreted. See [details](https://go.dev/ref/spec#String_literals).
+
+###### string literal (raw)
+
+Raw string literals are character sequences between backticks, as in \`bar\`. Within the backticks, any character may appear except a backtick. Backslashes have no special meaning and the string may contain newlines. Carriage return characters ('\r') inside raw string literals are discarded from the raw string value. See [details](https://go.dev/ref/spec#String_literals).
 
 ###### taxonomic weight
 

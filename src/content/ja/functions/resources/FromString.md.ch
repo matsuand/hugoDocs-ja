@@ -61,7 +61,7 @@ Let's say you need to publish a file named "site.json" in the root of your publi
 ```json
 {
   "build_date": "2024-02-19T12:27:05-08:00",
-  "hugo_version": "0.123.0",
+  "hugo_version": "0.123.7",
   "last_modified": "2024-02-19T12:01:42-08:00"
 }
 ```
@@ -69,7 +69,7 @@ Let's say you need to publish a file named "site.json" in the root of your publi
 ```json
 {
   "build_date": "2024-02-19T12:27:05-08:00",
-  "hugo_version": "0.123.0",
+  "hugo_version": "0.123.7",
   "last_modified": "2024-02-19T12:01:42-08:00"
 }
 ```
@@ -88,7 +88,7 @@ Place this in your baseof.html template:
   {{ $m := dict
     "hugo_version" hugo.Version
     "build_date" (now.Format $rfc3339)
-    "last_modified" (site.LastChange.Format $rfc3339)
+    "last_modified" (site.Lastmod.Format $rfc3339)
   }}
   {{ $json := jsonify $m }}
   {{ $r := resources.FromString "site.json" $json }}
@@ -102,7 +102,7 @@ Place this in your baseof.html template:
   {{ $m := dict
     "hugo_version" hugo.Version
     "build_date" (now.Format $rfc3339)
-    "last_modified" (site.LastChange.Format $rfc3339)
+    "last_modified" (site.Lastmod.Format $rfc3339)
   }}
   {{ $json := jsonify $m }}
   {{ $r := resources.FromString "site.json" $json }}
@@ -143,7 +143,7 @@ Combine `resources.FromString` with [`resources.ExecuteAsTemplate`] if your stri
     {{ $m := dict
       "hugo_version" hugo.Version
       "build_date" (now.Format $rfc3339)
-      "last_modified" (site.LastChange.Format $rfc3339)
+      "last_modified" (site.Lastmod.Format $rfc3339)
     }}
     {{ $json := jsonify $m }}
     `
@@ -161,7 +161,7 @@ Combine `resources.FromString` with [`resources.ExecuteAsTemplate`] if your stri
     {{ $m := dict
       "hugo_version" hugo.Version
       "build_date" (now.Format $rfc3339)
-      "last_modified" (site.LastChange.Format $rfc3339)
+      "last_modified" (site.Lastmod.Format $rfc3339)
     }}
     {{ $json := jsonify $m }}
     `

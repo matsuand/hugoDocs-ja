@@ -11,11 +11,13 @@ commithash = `(cd @abs_origdir@ && git log -1 --pretty=format:"%h") | sed "s|\-|
 bases = \
 	boxes-section-summaries.html \
 	hero.html                    \
+	maintenance-pages-table.html \
 	page-edit.html               \
 	pagelayout.html              \
 	related.html                 \
 	right-sidebar.html           \
 	site-footer.html             \
+	site-scripts.html            \
 	site-search.html             \
 	social-follow.html
 
@@ -28,7 +30,6 @@ copyfiles = \
 	gtag.html                                      \
 	head-additions.html                            \
 	icon-link.html                                 \
-	maintenance-pages-table.html                   \
 	math.html                                      \
 	nav-links-docs-mobile.html                     \
 	nav-links-docs.html                            \
@@ -41,7 +42,6 @@ copyfiles = \
 	previous-next-links-in-section.html            \
 	previous-next-links.html                       \
 	site-manifest.html                             \
-	site-scripts.html                              \
 	summary.html                                   \
 	tags.html
 
