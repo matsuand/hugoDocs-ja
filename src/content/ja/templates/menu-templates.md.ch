@@ -180,9 +180,9 @@ Call the partial above, passing a menu ID and the current page in context.
 @z
 
 @x
-Regardless of how you [define menu entries], an entry associated with a page has access to page variables and methods.
+Regardless of how you [define menu entries], an entry associated with a page has access to page context.
 @y
-Regardless of how you [define menu entries], an entry associated with a page has access to page variables and methods.
+Regardless of how you [define menu entries], an entry associated with a page has access to page context.
 @z
 
 @x

@@ -41,10 +41,10 @@ Applicable to JPEG and TIFF images, the `Exif` method on an image `Resource` obj
 
 @x
 Date
-: (`time.Time`) Returns the image creation date/time. Format with the [`time.Format`]function.
+: (`time.Time`) Returns the image creation date/time. Format with the [`time.Format`] function.
 @y
 Date
-: (`time.Time`) Returns the image creation date/time. Format with the [`time.Format`]function.
+: (`time.Time`) Returns the image creation date/time. Format with the [`time.Format`] function.
 @z
 
 @x

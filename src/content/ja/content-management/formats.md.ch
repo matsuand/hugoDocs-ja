@@ -2,33 +2,15 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: Content formats
 description: Both HTML and Markdown are supported content formats.
 categories: [content management]
 keywords: [markdown,asciidoc,pandoc,content format]
-menu:
-  docs:
-    parent: content-management
-    weight: 40
-weight: 40
-toc: true
-aliases: [/content/markdown-extras/,/content/supported-formats/,/doc/supported-formats/]
----
 @y
----
 title: コンテントフォーマット
 description: Both HTML and Markdown are supported content formats.
 categories: [content management]
 keywords: [markdown,asciidoc,pandoc,content format]
-menu:
-  docs:
-    parent: content-management
-    weight: 40
-weight: 40
-toc: true
-aliases: [/content/markdown-extras/,/content/supported-formats/,/doc/supported-formats/]
----
 @z
 
 @x
@@ -45,7 +27,7 @@ You can put any file type into your `/content` directories, but Hugo uses the `m
 * Layout applied
 @y
 * HTML に変換されるマークダウン。
-* [Shortcodes](/content-management/shortcodes/)
+* [ショートコード](/content-management/shortcodes/)
 * 適用されるレイアウト。
 @z
 
@@ -64,7 +46,7 @@ Hugo における現時点でのコンテントフォーマットは以下のと
 @x
 | Name  | Markup identifiers | Comment |
 | ------------- | ------------- |-------------|
-| Goldmark  | `markdown`, `goldmark`  |Note that you can set the default handler of `md` and `Markdown` to something else, see [Configure Markup](/getting-started/configuration-markup/).|
+| Goldmark  | `markdown`, `goldmark`  |Note that you can set the default handler of `md` and `markdown` to something else, see [Configure Markup](/getting-started/configuration-markup/).|
 |Emacs Org-Mode|`org`|See [go-org](https://github.com/niklasfasching/go-org).|
 |AsciiDoc|`asciidocext`, `adoc`, `ad`|Needs [Asciidoctor][ascii] installed.|
 |RST|`rst`|Needs [RST](https://docutils.sourceforge.io/rst.html) installed.|
@@ -73,18 +55,18 @@ Hugo における現時点でのコンテントフォーマットは以下のと
 @y
 | 名前  | マークアップ識別子 | 内容説明 |
 | ------------- | ------------- |-------------|
-| Goldmark  | `markdown`, `goldmark`  |Note that you can set the default handler of `md` and `Markdown` to something else, see [Configure Markup](/getting-started/configuration-markup/).|
-|Emacs Org-Mode|`org`|[go-org](https://github.com/niklasfasching/go-org) 参照。|
-|AsciiDoc|`asciidocext`, `adoc`, `ad`|[Asciidoctor][ascii] インストール要。|
-|RST|`rst`|[RST](https://docutils.sourceforge.io/rst.html) インストール要。|
-|Pandoc|`pandoc`, `pdc`|[Pandoc](https://www.pandoc.org/) インストール要。|
+| Goldmark  | `markdown`, `goldmark`  |Note that you can set the default handler of `md` and `markdown` to something else, see [Configure Markup](/getting-started/configuration-markup/).|
+|Emacs Org-Mode|`org`|[go-org](https://github.com/niklasfasching/go-org) 参照|
+|AsciiDoc|`asciidocext`, `adoc`, `ad`|[Asciidoctor][ascii] インストール要|
+|RST|`rst`|[RST](https://docutils.sourceforge.io/rst.html) インストール要|
+|Pandoc|`pandoc`, `pdc`|[Pandoc](https://www.pandoc.org/) インストール要|
 |HTML|`html`, `htm`|To be treated as a content file, with layout, shortcodes etc., it must have front matter. If not, it will be copied as-is.|
 @z
 
 @x
-The `markup identifier` is fetched from either the `markup` variable in front matter or from the file extension. For markup-related configuration, see [Configure Markup](/getting-started/configuration-markup/).
+The `markup` identifier is fetched from either the `markup` field in front matter or from the file extension. For markup-related configuration, see [Configure Markup](/getting-started/configuration-markup/).
 @y
-マークアップ識別子は、フロントマターの `markup` 変数、またはファイル拡張子から割り当てられます。
+マークアップ識別子は、フロントマターの `markup` フィールドまたはファイル拡張子から割り当てられます。
 マークアップ関連の設定については [マークアップの設定](/getting-started/configuration-markup/) を参照してください。
 @z
 

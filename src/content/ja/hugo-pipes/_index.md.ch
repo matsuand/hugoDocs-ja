@@ -2,29 +2,13 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: Hugo Pipes
-linkTitle: Overview
+linkTitle: In this section
 categories: []
 keywords: []
-menu:
-  docs:
-    identifier: hugo-pipes-overview
-    parent: hugo-pipes
-    weight: 10
-weight: 10
----
 @y
----
-title: Hugo Pipes
-linkTitle: Overview
+title: Hugo パイプ
+linkTitle: 本節
 categories: []
 keywords: []
-menu:
-  docs:
-    identifier: hugo-pipes-overview
-    parent: hugo-pipes
-    weight: 10
-weight: 10
----
 @z

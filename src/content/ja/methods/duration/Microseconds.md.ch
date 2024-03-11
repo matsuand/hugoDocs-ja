@@ -2,41 +2,15 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: Microseconds
 description: Returns the time.Duration value as an integer microsecond count.
 categories: []
 keywords: []
-action:
-  related:
-    - functions/time/Duration
-    - functions/time/ParseDuration
-  returnType: int64
-  signatures: [DURATION.Microseconds]
----
 @y
----
 title: Microseconds
-description: Returns the time.Duration value as an integer microsecond count.
+description: time.Duration の値を整数のマイクロ秒として返します。
 categories: []
 keywords: []
-action:
-  related:
-    - functions/time/Duration
-    - functions/time/ParseDuration
-  returnType: int64
-  signatures: [DURATION.Microseconds]
----
 @z
 
-@x
-```go-html-template
-{{ $d = time.ParseDuration "3.5h2.5m1.5s" }}
-{{ $d.Microseconds }} → 12751500000
-```
-@y
-```go-html-template
-{{ $d = time.ParseDuration "3.5h2.5m1.5s" }}
-{{ $d.Microseconds }} → 12751500000
-```
-@z
+% snip code...

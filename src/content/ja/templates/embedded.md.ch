@@ -1,6 +1,8 @@
 %This is the change file for the original Hugo Documentation file.
 %This is part of Japanese translation version for Hugo Documantation.
 
+% snip 対応
+
 @x
 title: Embedded templates
 description: Hugo provides embedded templates for common use cases.
@@ -371,49 +373,7 @@ Hugo's Open Graph template is configured using a mix of configuration variables 
 Hugo's Open Graph template is configured using a mix of configuration variables and [front-matter](/content-management/front-matter/) on individual pages.
 @z
 
-@x
-{{< code-toggle file=hugo >}}
-[params]
-  title = "My cool site"
-  images = ["site-feature-image.jpg"]
-  description = "Text about my cool site"
-[taxonomies]
-  series = "series"
-{{</ code-toggle >}}
-@y
-{{< code-toggle file=hugo >}}
-[params]
-  title = "My cool site"
-  images = ["site-feature-image.jpg"]
-  description = "Text about my cool site"
-[taxonomies]
-  series = "series"
-{{</ code-toggle >}}
-@z
-
-@x
-{{< code-toggle file=content/blog/my-post.md >}}
-title = "Post title"
-description = "Text about this post"
-date = "2006-01-02"
-images = ["post-cover.png"]
-audio = []
-videos = []
-series = []
-tags = []
-{{</ code-toggle >}}
-@y
-{{< code-toggle file=content/blog/my-post.md >}}
-title = "Post title"
-description = "Text about this post"
-date = "2006-01-02"
-images = ["post-cover.png"]
-audio = []
-videos = []
-series = []
-tags = []
-{{</ code-toggle >}}
-@z
+% snip code...
 
 @x
 Hugo uses the page title and description for the title and description metadata.

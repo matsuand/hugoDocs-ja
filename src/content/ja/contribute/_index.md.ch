@@ -2,35 +2,17 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: Contribute to the Hugo project
-linkTitle: Overview
+linkTitle: In this section
 description: Contribute to Hugo development, documentation, and themes.
 categories: []
 keywords: []
-menu:
-  docs:
-    identifier: contribute-overview
-    parent: contribute
-    weight: 10
-weight: 10
-aliases: [/tutorials/how-to-contribute-to-hugo/,/community/contributing/]
----
 @y
----
-title: Contribute to the Hugo project
-linkTitle: Overview
+title: Hugo プロジェクトへの貢献
+linkTitle: 本節
 description: Contribute to Hugo development, documentation, and themes.
 categories: []
 keywords: []
-menu:
-  docs:
-    identifier: contribute-overview
-    parent: contribute
-    weight: 10
-weight: 10
-aliases: [/tutorials/how-to-contribute-to-hugo/,/community/contributing/]
----
 @z
 
 @x

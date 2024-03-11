@@ -4,7 +4,7 @@
 @x
 ---
 title: fmt.Warnidf
-description: Log a suppressable WARNING from a template.
+description: Log a suppressible WARNING from a template.
 categories: []
 keywords: []
 action:
@@ -20,7 +20,7 @@ aliases: [/functions/warnidf]
 @y
 ---
 title: fmt.Warnidf
-description: Log a suppressable WARNING from a template.
+description: Log a suppressible WARNING from a template.
 categories: []
 keywords: []
 action:

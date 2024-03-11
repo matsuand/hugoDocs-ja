@@ -2,33 +2,15 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: Related content
 description: List related content in "See Also" sections.
 categories: [content management]
 keywords: [content]
-menu:
-  docs:
-    parent: content-management
-    weight: 110
-weight: 110
-toc: true
-aliases: [/content/related/,/related/]
----
 @y
----
-title: Related content
+title: 関連コンテント
 description: List related content in "See Also" sections.
 categories: [content management]
 keywords: [content]
-menu:
-  docs:
-    parent: content-management
-    weight: 110
-weight: 110
-toc: true
-aliases: [/content/related/,/related/]
----
 @z
 
 @x
@@ -40,7 +22,7 @@ Hugo uses a set of factors to identify a page's related content based on front m
 @x
 ## List related content
 @y
-## List related content
+## 関連コンテントの一覧 {#list-related-content}
 @z
 
 @x
@@ -113,13 +95,7 @@ fragments
 : (`slice`) A list of special keywords that is used for indices configured as type "fragments". This will match the [fragment] identifiers of the documents.
 @z
 
-@x
-[fragment]: /getting-started/glossary/#fragment
-[`keyVals`]: /functions/collections/keyvals/
-@y
-[fragment]: /getting-started/glossary/#fragment
-[`keyVals`]: /functions/collections/keyvals/
-@z
+% snip links...
 
 @x
 A fictional example using all of the above options:
@@ -127,27 +103,7 @@ A fictional example using all of the above options:
 A fictional example using all of the above options:
 @z
 
-@x
-```go-html-template
-{{ $page := . }}
-{{ $opts := dict
-  "indices" (slice "tags" "keywords")
-  "document" $page
-  "namedSlices" (slice (keyVals "tags" "hugo" "rocks") (keyVals "date" $page.Date))
-  "fragments" (slice "heading-1" "heading-2")
-}}
-```
-@y
-```go-html-template
-{{ $page := . }}
-{{ $opts := dict
-  "indices" (slice "tags" "keywords")
-  "document" $page
-  "namedSlices" (slice (keyVals "tags" "hugo" "rocks") (keyVals "date" $page.Date))
-  "fragments" (slice "heading-1" "heading-2")
-}}
-```
-@z
+% snip code...
 
 @x
 {{% note %}}
@@ -177,31 +133,7 @@ Hugo can index the headings in your content and use this to find related content
 Hugo can index the headings in your content and use this to find related content. You can enable this by adding a index of type `fragments` to your `related` configuration:
 @z
 
-@x
-{{< code-toggle file=hugo >}}
-[related]
-threshold    = 20
-includeNewer = true
-toLower      = false
-[[related.indices]]
-name        = "fragmentrefs"
-type        = "fragments"
-applyFilter = true
-weight      = 80
-{{< /code-toggle >}}
-@y
-{{< code-toggle file=hugo >}}
-[related]
-threshold    = 20
-includeNewer = true
-toLower      = false
-[[related.indices]]
-name        = "fragmentrefs"
-type        = "fragments"
-applyFilter = true
-weight      = 80
-{{< /code-toggle >}}
-@z
+% snip code...
 
 @x
 * The `name` maps to a optional front matter slice attribute that can be used to link from the page level down to the fragment/heading level.
@@ -211,55 +143,7 @@ weight      = 80
 * If `applyFilter`is enabled, the `.HeadingsFiltered` on each page in the result will reflect the filtered headings. This is useful if you want to show the headings in the related content listing:
 @z
 
-@x
-```go-html-template
-{{ $related := .Site.RegularPages.Related . | first 5 }}
-{{ with $related }}
-  <h2>See Also</h2>
-  <ul>
-    {{ range $i, $p := . }}
-      <li>
-        <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-        {{ with .HeadingsFiltered }}
-          <ul>
-            {{ range . }}
-              {{ $link := printf "%s#%s" $p.RelPermalink .ID | safeURL }}
-              <li>
-                <a href="{{ $link }}">{{ .Title }}</a>
-              </li>
-            {{ end }}
-          </ul>
-        {{ end }}
-      </li>
-    {{ end }}
-  </ul>
-{{ end }}
-```
-@y
-```go-html-template
-{{ $related := .Site.RegularPages.Related . | first 5 }}
-{{ with $related }}
-  <h2>See Also</h2>
-  <ul>
-    {{ range $i, $p := . }}
-      <li>
-        <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-        {{ with .HeadingsFiltered }}
-          <ul>
-            {{ range . }}
-              {{ $link := printf "%s#%s" $p.RelPermalink .ID | safeURL }}
-              <li>
-                <a href="{{ $link }}">{{ .Title }}</a>
-              </li>
-            {{ end }}
-          </ul>
-        {{ end }}
-      </li>
-    {{ end }}
-  </ul>
-{{ end }}
-```
-@z
+% snip code...
 
 @x
 ## Configure related content

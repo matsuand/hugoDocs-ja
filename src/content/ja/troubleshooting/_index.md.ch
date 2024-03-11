@@ -2,35 +2,17 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: Troubleshooting
-linkTitle: Overview
+linkTitle: In this section
 description: Use these techniques when troubleshooting your site.
 categories: []
 keywords: []
-menu:
-  docs:
-    identifier: troubleshooting-overview
-    parent: troubleshooting
-    weight: 10
-weight: 10
-aliases: [/templates/template-debugging/]
----
 @y
----
-title: Troubleshooting
-linkTitle: Overview
+title: トラブルシューティング
+linkTitle: 本節
 description: Use these techniques when troubleshooting your site.
 categories: []
 keywords: []
-menu:
-  docs:
-    identifier: troubleshooting-overview
-    parent: troubleshooting
-    weight: 10
-weight: 10
-aliases: [/templates/template-debugging/]
----
 @z
 
 @x

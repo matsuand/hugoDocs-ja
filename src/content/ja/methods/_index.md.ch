@@ -3,13 +3,13 @@
 
 @x
 title: Methods
-linkTitle: Overview
+linkTitle: In this section
 description: A list of Hugo template methods including examples.
 categories: []
 keywords: []
 @y
 title: メソッド
-linkTitle: 概要
+linkTitle: 本節
 description: Hugo のテンプレートメソッドの一覧を利用例とともに示します。
 categories: []
 keywords: []

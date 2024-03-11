@@ -18,7 +18,7 @@ toc: true
 ---
 @y
 ---
-title: Create your own shortcodes
+title: 独自のショートコードテンプレート生成
 linkTitle: ショートコードテンプレート
 description: You can extend Hugo's embedded shortcodes by creating your own using the same templating syntax as that for single and list pages.
 categories: [templates]
@@ -341,10 +341,10 @@ $.Page.Params
 
 @x
 $.Page.Site.Params
-: refers to global variables as defined in your [site's configuration file][config].
+: refers to parameters defined in your site configuration.
 @y
 $.Page.Site.Params
-: refers to global variables as defined in your [site's configuration file][config].
+: refers to parameters defined in your site configuration.
 @z
 
 @x
@@ -354,9 +354,9 @@ $.Page.Site.Params
 @z
 
 @x
-The `.IsNamedParams` variable checks whether the shortcode declaration uses named parameters and returns a boolean value.
+The `.IsNamedParams` method checks whether the shortcode declaration uses named parameters and returns a boolean value.
 @y
-The `.IsNamedParams` variable checks whether the shortcode declaration uses named parameters and returns a boolean value.
+The `.IsNamedParams` method checks whether the shortcode declaration uses named parameters and returns a boolean value.
 @z
 
 @x
@@ -904,40 +904,42 @@ This will output the following HTML. Note how the first two `img` shortcodes inh
 @z
 
 @x
-Use the [errorf](/functions/fmt/errorf) template function and [`.Position`] shortcode method to get useful error messages in shortcodes:
+Use the [`errorf`] template function with the [`Name`] and [`Position`] shortcode methods to generate useful error messages:
 @y
-Use the [errorf](/functions/fmt/errorf) template function and [`.Position`] shortcode method to get useful error messages in shortcodes:
+Use the [`errorf`] template function with the [`Name`] and [`Position`] shortcode methods to generate useful error messages:
 @z
 
 @x
-```sh
+{{< code file=layouts/shortcodes/greeting.html >}}
 {{ with .Get "name" }}
+  <p>Hello, my name is {{ . }}.</p>
 {{ else }}
-{{ errorf "missing value for parameter 'name': %s" .Position }}
+  {{ errorf "The %q shortcode requires a 'name' parameter. See %s" .Name .Position }}
 {{ end }}
-```
+{{< /code >}}
 @y
-```sh
+{{< code file=layouts/shortcodes/greeting.html >}}
 {{ with .Get "name" }}
+  <p>Hello, my name is {{ . }}.</p>
 {{ else }}
-{{ errorf "missing value for parameter 'name': %s" .Position }}
+  {{ errorf "The %q shortcode requires a 'name' parameter. See %s" .Name .Position }}
 {{ end }}
-```
+{{< /code >}}
 @z
 
 @x
-When the above fails, you will see an `ERROR` log similar to the below:
+When the above fails, you will see an `ERROR` message such as:
 @y
-When the above fails, you will see an `ERROR` log similar to the below:
+When the above fails, you will see an `ERROR` message such as:
 @z
 
 @x
 ```sh
-ERROR 2018/11/07 10:05:55 missing value for parameter name: "/Users/bep/dev/go/gohugoio/hugo/docs/content/en/variables/shortcodes.md:32:1"
+ERROR The "greeting" shortcode requires a 'name' parameter. See "/home/user/project/content/_index.md:12:1"
 ```
 @y
 ```sh
-ERROR 2018/11/07 10:05:55 missing value for parameter name: "/Users/bep/dev/go/gohugoio/hugo/docs/content/en/variables/shortcodes.md:32:1"
+ERROR The "greeting" shortcode requires a 'name' parameter. See "/home/user/project/content/_index.md:12:1"
 ```
 @z
 
@@ -1028,35 +1030,27 @@ The same inline shortcode can be reused later in the same content file, with dif
 @z
 
 @x
-[basic content files]: /content-management/formats/
+[`.Parent`]: /methods/shortcode/parent/
+[`errorf`]: /functions/fmt/errorf/
+[`Name`]: /methods/shortcode/name/
+[`Position`]: /methods/shortcode/position/
 [built-in shortcode]: /content-management/shortcodes/
-[config]: /getting-started/configuration/
-[Content Management: Shortcodes]: /content-management/shortcodes/#using-hugo-s-built-in-shortcodes
-[source organization]: /getting-started/directory-structure/
-[docsshortcodes]: https://github.com/gohugoio/hugo/tree/master/docs/layouts/shortcodes
 [figure]: /content-management/shortcodes/#figure
-[hugosc]: /content-management/shortcodes/#using-hugo-s-built-in-shortcodes
 [lookup order]: /templates/lookup-order/
 [pagevars]: /methods/page/
-[`.Parent`]: /methods/shortcode/parent/
-[`.Position`]: /methods/shortcode/position/
-[spfscs]: https://github.com/spf13/spf13.com/tree/master/layouts/shortcodes
+[source organization]: /getting-started/directory-structure/
 [vimeoexample]: #single-flexible-example-vimeo
 [youtubeshortcode]: /content-management/shortcodes/#youtube
 @y
-[basic content files]: /content-management/formats/
+[`.Parent`]: /methods/shortcode/parent/
+[`errorf`]: /functions/fmt/errorf/
+[`Name`]: /methods/shortcode/name/
+[`Position`]: /methods/shortcode/position/
 [built-in shortcode]: /content-management/shortcodes/
-[config]: /getting-started/configuration/
-[Content Management: Shortcodes]: /content-management/shortcodes/#using-hugo-s-built-in-shortcodes
-[source organization]: /getting-started/directory-structure/
-[docsshortcodes]: https://github.com/gohugoio/hugo/tree/master/docs/layouts/shortcodes
 [figure]: /content-management/shortcodes/#figure
-[hugosc]: /content-management/shortcodes/#using-hugo-s-built-in-shortcodes
 [lookup order]: /templates/lookup-order/
 [pagevars]: /methods/page/
-[`.Parent`]: /methods/shortcode/parent/
-[`.Position`]: /methods/shortcode/position/
-[spfscs]: https://github.com/spf13/spf13.com/tree/master/layouts/shortcodes
+[source organization]: /getting-started/directory-structure/
 [vimeoexample]: #single-flexible-example-vimeo
 [youtubeshortcode]: /content-management/shortcodes/#youtube
 @z

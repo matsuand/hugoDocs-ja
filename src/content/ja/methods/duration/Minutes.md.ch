@@ -2,41 +2,15 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: Minutes
 description: Returns the time.Duration value as a floating point number of minutes.
 categories: []
 keywords: []
-action:
-  related:
-    - functions/time/Duration
-    - functions/time/ParseDuration
-  returnType: float64
-  signatures: [DURATION.Minutes]
----
 @y
----
 title: Minutes
-description: Returns the time.Duration value as a floating point number of minutes.
+description: time.Duration の値を分単位の浮動小数点数値として返します。
 categories: []
 keywords: []
-action:
-  related:
-    - functions/time/Duration
-    - functions/time/ParseDuration
-  returnType: float64
-  signatures: [DURATION.Minutes]
----
 @z
 
-@x
-```go-html-template
-{{ $d = time.ParseDuration "3.5h2.5m1.5s" }}
-{{ $d.Minutes }} → 212.525
-```
-@y
-```go-html-template
-{{ $d = time.ParseDuration "3.5h2.5m1.5s" }}
-{{ $d.Minutes }} → 212.525
-```
-@z
+% snip code...

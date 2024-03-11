@@ -2,31 +2,15 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: Image processing
 description: Resize, crop, rotate, filter, and convert images.
 categories: [content management,fundamentals]
 keywords: [resources,images]
-menu:
-  docs:
-    parent: content-management
-    weight: 90
-toc: true
-weight: 90
----
 @y
----
 title: イメージ処理
 description: イメージのリサイズ、刈り込み、回転、フィルタリング、変換を行います。
 categories: [content management,fundamentals]
 keywords: [resources,images]
-menu:
-  docs:
-    parent: content-management
-    weight: 90
-toc: true
-weight: 90
----
 @z
 
 @x
@@ -54,23 +38,7 @@ A page resource is a file within a [page bundle]. A page bundle is a directory w
 そしてページバンドルとは、ディレクトリのルートに `index.md` ファイルまたは `_index.md` ファイルを含むディレクトリのことです。
 @z
 
-@x
-```text
-content/
-└── posts/
-    └── post-1/           <-- page bundle
-        ├── index.md
-        └── sunset.jpg    <-- page resource
-```
-@y
-```text
-content/
-└── posts/
-    └── post-1/           <-- ページバンドル
-        ├── index.md
-        └── sunset.jpg    <-- ページリソース
-```
-@z
+% snip text...
 
 @x
 To access an image as a page resource:
@@ -78,15 +46,7 @@ To access an image as a page resource:
 ページリソースとしてイメージにアクセスするには以下のようにします。
 @z
 
-@x
-```go-html-template
-{{ $image := .Resources.Get "sunset.jpg" }}
-```
-@y
-```go-html-template
-{{ $image := .Resources.Get "sunset.jpg" }}
-```
-@z
+% snip code...
 
 @x
 ### Global resource
@@ -120,15 +80,7 @@ To access an image as a global resource:
 グローバルリソースとしてイメージにアクセスするには以下のようにします。
 @z
 
-@x
-```go-html-template
-{{ $image := resources.Get "images/sunset.jpg" }}
-```
-@y
-```go-html-template
-{{ $image := resources.Get "images/sunset.jpg" }}
-```
-@z
+% snip code...
 
 @x
 ### Remote resource
@@ -144,15 +96,7 @@ A remote resource is a file on a remote server, accessible via HTTP or HTTPS. To
 リモートリソースとしてイメージにアクセスするには以下のようにします。
 @z
 
-@x
-```go-html-template
-{{ $image := resources.GetRemote "https://gohugo.io/img/hugo-logo.png" }}
-```
-@y
-```go-html-template
-{{ $image := resources.GetRemote "https://gohugo.io/img/hugo-logo.png" }}
-```
-@z
+% snip code...
 
 @x
 ## Image rendering
@@ -172,17 +116,7 @@ Example 1: Throws an error if the resource is not found.
 例 1: リソースが見つからない場合にエラーをスローする
 @z
 
-@x
-```go-html-template
-{{ $image := .Resources.GetMatch "sunset.jpg" }}
-<img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}">
-```
-@y
-```go-html-template
-{{ $image := .Resources.GetMatch "sunset.jpg" }}
-<img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}">
-```
-@z
+% snip code...
 
 @x
 Example 2: Skips image rendering if the resource is not found.
@@ -190,21 +124,7 @@ Example 2: Skips image rendering if the resource is not found.
 例 2: リソースが見つからない場合にイメージレンダリングをスキップする
 @z
 
-@x
-```go-html-template
-{{ $image := .Resources.GetMatch "sunset.jpg" }}
-{{ with $image }}
-  <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}">
-{{ end }}
-```
-@y
-```go-html-template
-{{ $image := .Resources.GetMatch "sunset.jpg" }}
-{{ with $image }}
-  <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}">
-{{ end }}
-```
-@z
+% snip code...
 
 @x
 Example 3: A more concise way to skip image rendering if the resource is not found.
@@ -212,19 +132,7 @@ Example 3: A more concise way to skip image rendering if the resource is not fou
 例 3: リソースが見つからなかった場合にイメージレンダリングをスキップする、より簡単な方法
 @z
 
-@x
-```go-html-template
-{{ with .Resources.GetMatch "sunset.jpg" }}
-  <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}">
-{{ end }}
-```
-@y
-```go-html-template
-{{ with .Resources.GetMatch "sunset.jpg" }}
-  <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}">
-{{ end }}
-```
-@z
+% snip code...
 
 @x
 Example 4: Skips rendering if there's problem accessing a remote resource.
@@ -232,33 +140,7 @@ Example 4: Skips rendering if there's problem accessing a remote resource.
 例 4: リモートリソースへのアクセスに問題が発生した場合にレンダリングをスキップする
 @z
 
-@x
-```go-html-template
-{{ $u := "https://gohugo.io/img/hugo-logo.png" }}
-{{ with resources.GetRemote $u }}
-  {{ with .Err }}
-    {{ errorf "%s" . }}
-  {{ else }}
-    <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}">
-  {{ end }}
-{{ else }}
-  {{ errorf "Unable to get remote resource %q" $u }}
-{{ end }}
-```
-@y
-```go-html-template
-{{ $u := "https://gohugo.io/img/hugo-logo.png" }}
-{{ with resources.GetRemote $u }}
-  {{ with .Err }}
-    {{ errorf "%s" . }}
-  {{ else }}
-    <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}">
-  {{ end }}
-{{ else }}
-  {{ errorf "Unable to get remote resource %q" $u }}
-{{ end }}
-```
-@z
+% snip code...
 
 @x
 ## Image processing methods
@@ -323,17 +205,7 @@ You can also use this method apply image processing that does not need any scali
 You can also use this method apply image processing that does not need any scaling, e.g. format conversions:
 @z
 
-@x
-```go-html-template
-{{/* Convert the image from JPG to PNG. */}}
-{{ $png := $jpg.Process "png" }}
-```
-@y
-```go-html-template
-{{/* Convert the image from JPG to PNG. */}}
-{{ $png := $jpg.Process "png" }}
-```
-@z
+% snip code...
 
 @x
 Some more examples:
@@ -341,31 +213,7 @@ Some more examples:
 Some more examples:
 @z
 
-@x
-```go-html-template
-{{/* Rotate the image 90 degrees counter-clockwise. */}}
-{{ $image := $image.Process "r90" }}
-@y
-```go-html-template
-{{/* Rotate the image 90 degrees counter-clockwise. */}}
-{{ $image := $image.Process "r90" }}
-@z
-
-@x
-{{/* Scaling actions. */}}
-{{ $image := $image.Process "resize 600x" }}
-{{ $image := $image.Process "crop 600x400" }}
-{{ $image := $image.Process "fit 600x400" }}
-{{ $image := $image.Process "fill 600x400" }}
-```
-@y
-{{/* Scaling actions. */}}
-{{ $image := $image.Process "resize 600x" }}
-{{ $image := $image.Process "crop 600x400" }}
-{{ $image := $image.Process "fit 600x400" }}
-{{ $image := $image.Process "fill 600x400" }}
-```
-@z
+% snip code...
 
 @x
 ### Resize
@@ -388,29 +236,21 @@ If you specify both width and height, the resulting image will be disproportiona
 @x
 ```go-html-template
 {{/* Resize to a width of 600px and preserve aspect ratio */}}
-{{ $image := $image.Resize "600x" }}
 @y
 ```go-html-template
 {{/* Resize to a width of 600px and preserve aspect ratio */}}
-{{ $image := $image.Resize "600x" }}
 @z
 
 @x
 {{/* Resize to a height of 400px and preserve aspect ratio */}}
-{{ $image := $image.Resize "x400" }}
 @y
 {{/* Resize to a height of 400px and preserve aspect ratio */}}
-{{ $image := $image.Resize "x400" }}
 @z
 
 @x
 {{/* Resize to a width of 600px and a height of 400px */}}
-{{ $image := $image.Resize "600x400" }}
-```
 @y
 {{/* Resize to a width of 600px and a height of 400px */}}
-{{ $image := $image.Resize "600x400" }}
-```
 @z
 
 @x
@@ -425,15 +265,7 @@ Downscale an image to fit the given dimensions while maintaining aspect ratio. Y
 Downscale an image to fit the given dimensions while maintaining aspect ratio. You must provide both width and height.
 @z
 
-@x
-```go-html-template
-{{ $image := $image.Fit "600x400" }}
-```
-@y
-```go-html-template
-{{ $image := $image.Fit "600x400" }}
-```
-@z
+% snip code...
 
 @x
 ### Fill
@@ -447,15 +279,7 @@ Crop and resize an image to match the given dimensions. You must provide both wi
 Crop and resize an image to match the given dimensions. You must provide both width and height. Use the [`anchor`] option to change the crop box anchor point.
 @z
 
-@x
-```go-html-template
-{{ $image := $image.Fill "600x400" }}
-```
-@y
-```go-html-template
-{{ $image := $image.Fill "600x400" }}
-```
-@z
+% snip code...
 
 @x
 ### Crop
@@ -469,15 +293,7 @@ Crop an image to match the given dimensions without resizing. You must provide b
 Crop an image to match the given dimensions without resizing. You must provide both width and height. Use the [`anchor`] option to change the crop box anchor point.
 @z
 
-@x
-```go-html-template
-{{ $image := $image.Crop "600x400" }}
-```
-@y
-```go-html-template
-{{ $image := $image.Crop "600x400" }}
-```
-@z
+% snip code...
 
 @x
 ### Filter
@@ -491,15 +307,7 @@ Apply one or more [filters] to an image.
 Apply one or more [filters] to an image.
 @z
 
-@x
-```go-html-template
-{{ $image := $image.Filter (images.GaussianBlur 6) (images.Pixelate 8) }}
-```
-@y
-```go-html-template
-{{ $image := $image.Filter (images.GaussianBlur 6) (images.Pixelate 8) }}
-```
-@z
+% snip code...
 
 @x
 Write this in a more functional style using pipes. Hugo applies the filters in the order given.
@@ -507,15 +315,7 @@ Write this in a more functional style using pipes. Hugo applies the filters in t
 Write this in a more functional style using pipes. Hugo applies the filters in the order given.
 @z
 
-@x
-```go-html-template
-{{ $image := $image | images.Filter (images.GaussianBlur 6) (images.Pixelate 8) }}
-```
-@y
-```go-html-template
-{{ $image := $image | images.Filter (images.GaussianBlur 6) (images.Pixelate 8) }}
-```
-@z
+% snip code...
 
 @x
 Sometimes it can be useful to create the filter chain once and then reuse it.
@@ -523,19 +323,7 @@ Sometimes it can be useful to create the filter chain once and then reuse it.
 Sometimes it can be useful to create the filter chain once and then reuse it.
 @z
 
-@x
-```go-html-template
-{{ $filters := slice  (images.GaussianBlur 6) (images.Pixelate 8) }}
-{{ $image1 := $image1.Filter $filters }}
-{{ $image2 := $image2.Filter $filters }}
-```
-@y
-```go-html-template
-{{ $filters := slice  (images.GaussianBlur 6) (images.Pixelate 8) }}
-{{ $image1 := $image1.Filter $filters }}
-{{ $image2 := $image2.Filter $filters }}
-```
-@z
+% snip code...
 
 @x
 ### Colors
@@ -555,15 +343,7 @@ Sometimes it can be useful to create the filter chain once and then reuse it.
 `.Colors` returns a slice of hex strings with the dominant colors in the image using a simple histogram method.
 @z
 
-@x
-```go-html-template
-{{ $colors := $image.Colors }}
-```
-@y
-```go-html-template
-{{ $colors := $image.Colors }}
-```
-@z
+% snip code...
 
 @x
 This method is fast, but if you also scale down your images, it would be good for performance to extract the colors from the scaled down image.
@@ -589,29 +369,7 @@ You may access EXIF data in JPEG and TIFF images. To prevent errors when process
 You may access EXIF data in JPEG and TIFF images. To prevent errors when processing images without EXIF data, wrap the access in a [`with`] statement.
 @z
 
-@x
-```go-html-template
-{{ with $image.Exif }}
-  Date: {{ .Date }}
-  Lat/Long: {{ .Lat }}/{{ .Long }}
-  Tags:
-  {{ range $k, $v := .Tags }}
-    TAG: {{ $k }}: {{ $v }}
-  {{ end }}
-{{ end }}
-```
-@y
-```go-html-template
-{{ with $image.Exif }}
-  Date: {{ .Date }}
-  Lat/Long: {{ .Lat }}/{{ .Long }}
-  Tags:
-  {{ range $k, $v := .Tags }}
-    TAG: {{ $k }}: {{ $v }}
-  {{ end }}
-{{ end }}
-```
-@z
+% snip code...
 
 @x
 You may also access EXIF fields individually, using the [`lang.FormatNumber`] function to format the fields as needed.
@@ -619,74 +377,46 @@ You may also access EXIF fields individually, using the [`lang.FormatNumber`] fu
 You may also access EXIF fields individually, using the [`lang.FormatNumber`] function to format the fields as needed.
 @z
 
+% snip code...
+
 @x
-```go-html-template
-{{ with $image.Exif }}
-  <ul>
-    {{ with .Date }}<li>Date: {{ .Format "January 02, 2006" }}</li>{{ end }}
-    {{ with .Tags.ApertureValue }}<li>Aperture: {{ lang.FormatNumber 2 . }}</li>{{ end }}
-    {{ with .Tags.BrightnessValue }}<li>Brightness: {{ lang.FormatNumber 2 . }}</li>{{ end }}
-    {{ with .Tags.ExposureTime }}<li>Exposure Time: {{ . }}</li>{{ end }}
-    {{ with .Tags.FNumber }}<li>F Number: {{ . }}</li>{{ end }}
-    {{ with .Tags.FocalLength }}<li>Focal Length: {{ . }}</li>{{ end }}
-    {{ with .Tags.ISOSpeedRatings }}<li>ISO Speed Ratings: {{ . }}</li>{{ end }}
-    {{ with .Tags.LensModel }}<li>Lens Model: {{ . }}</li>{{ end }}
-  </ul>
-{{ end }}
-```
+#### EXIF methods
 @y
-```go-html-template
-{{ with $image.Exif }}
-  <ul>
-    {{ with .Date }}<li>Date: {{ .Format "January 02, 2006" }}</li>{{ end }}
-    {{ with .Tags.ApertureValue }}<li>Aperture: {{ lang.FormatNumber 2 . }}</li>{{ end }}
-    {{ with .Tags.BrightnessValue }}<li>Brightness: {{ lang.FormatNumber 2 . }}</li>{{ end }}
-    {{ with .Tags.ExposureTime }}<li>Exposure Time: {{ . }}</li>{{ end }}
-    {{ with .Tags.FNumber }}<li>F Number: {{ . }}</li>{{ end }}
-    {{ with .Tags.FocalLength }}<li>Focal Length: {{ . }}</li>{{ end }}
-    {{ with .Tags.ISOSpeedRatings }}<li>ISO Speed Ratings: {{ . }}</li>{{ end }}
-    {{ with .Tags.LensModel }}<li>Lens Model: {{ . }}</li>{{ end }}
-  </ul>
-{{ end }}
-```
+#### EXIF methods
 @z
 
 @x
-#### EXIF variables
+Date
+: (`time.Time`) Returns the image creation date/time. Format with the [`time.Format`]function.
 @y
-#### EXIF variables
+Date
+: (`time.Time`) Returns the image creation date/time. Format with the [`time.Format`]function.
+@z
+
+% snip link...
+
+@x
+Lat
+: (`float64`) Returns the GPS latitude in degrees.
+@y
+Lat
+: (`float64`) Returns the GPS latitude in degrees.
 @z
 
 @x
-.Date
-: Image creation date/time. Format with the [time.Format] function.
+Long
+: (`float64`) Returns the GPS longitude in degrees.
 @y
-.Date
-: Image creation date/time. Format with the [time.Format] function.
+Long
+: (`float64`) Returns the GPS longitude in degrees.
 @z
 
 @x
-.Lat
-: GPS latitude in degrees.
+Tags
+: (`exif.Tags`) Returns a collection of the available EXIF tags for this image. You may include or exclude specific tags from this collection in the [site configuration].
 @y
-.Lat
-: GPS latitude in degrees.
-@z
-
-@x
-.Long
-: GPS longitude in degrees.
-@y
-.Long
-: GPS longitude in degrees.
-@z
-
-@x
-.Tags
-: A collection of the available EXIF tags for this image. You may include or exclude specific tags from this collection in the [site configuration](#exif-data).
-@y
-.Tags
-: A collection of the available EXIF tags for this image. You may include or exclude specific tags from this collection in the [site configuration](#exif-data).
+Tags
+: (`exif.Tags`) Returns a collection of the available EXIF tags for this image. You may include or exclude specific tags from this collection in the [site configuration].
 @z
 
 @x
@@ -713,25 +443,7 @@ With the [`Resize`] method you must specify width, height, or both. The [`Fit`],
 With the [`Resize`] method you must specify width, height, or both. The [`Fit`], [`Fill`], and [`Crop`] methods require both width and height. All dimensions are in pixels.
 @z
 
-@x
-```go-html-template
-{{ $image := $image.Resize "600x" }}
-{{ $image := $image.Resize "x400" }}
-{{ $image := $image.Resize "600x400" }}
-{{ $image := $image.Fit "600x400" }}
-{{ $image := $image.Fill "600x400" }}
-{{ $image := $image.Crop "600x400" }}
-```
-@y
-```go-html-template
-{{ $image := $image.Resize "600x" }}
-{{ $image := $image.Resize "x400" }}
-{{ $image := $image.Resize "600x400" }}
-{{ $image := $image.Fit "600x400" }}
-{{ $image := $image.Fill "600x400" }}
-{{ $image := $image.Crop "600x400" }}
-```
-@z
+% snip code...
 
 @x
 ### Rotation
@@ -745,15 +457,7 @@ Rotates an image counter-clockwise by the given angle. Hugo performs rotation _b
 Rotates an image counter-clockwise by the given angle. Hugo performs rotation _before_ scaling. For example, if the original image is 600x400 and you wish to rotate the image 90 degrees counter-clockwise while scaling it by 50%:
 @z
 
-@x
-```go-html-template
-{{ $image = $image.Resize "200x r90" }}
-```
-@y
-```go-html-template
-{{ $image = $image.Resize "200x r90" }}
-```
-@z
+% snip code...
 
 @x
 In the example above, the width represents the desired width _after_ rotation.
@@ -767,23 +471,7 @@ To rotate an image without scaling, use the dimensions of the original image:
 To rotate an image without scaling, use the dimensions of the original image:
 @z
 
-@x
-```go-html-template
-{{ with .Resources.GetMatch "sunset.jpg" }}
-  {{ with .Resize (printf "%dx%d r90" .Height .Width) }}
-    <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}">
-  {{ end }}
-{{ end }}
-```
-@y
-```go-html-template
-{{ with .Resources.GetMatch "sunset.jpg" }}
-  {{ with .Resize (printf "%dx%d r90" .Height .Width) }}
-    <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}">
-  {{ end }}
-{{ end }}
-```
-@z
+% snip code...
 
 @x
 In the example above, on the second line, we have reversed width and height to reflect the desired dimensions _after_ rotation.
@@ -815,15 +503,7 @@ For example, if you have a 400x200 image with a bird in the upper left quadrant,
 For example, if you have a 400x200 image with a bird in the upper left quadrant, you can create a 200x100 thumbnail containing the bird:
 @z
 
-@x
-```go-html-template
-{{ $image.Crop "200x100 TopLeft" }}
-```
-@y
-```go-html-template
-{{ $image.Crop "200x100 TopLeft" }}
-```
-@z
+% snip code...
 
 @x
 If you apply [rotation](#rotation) when using the [`Crop`] or [`Fill`] method, specify the anchor relative to the rotated image.
@@ -843,15 +523,7 @@ By default, Hugo encodes the image in the source format. You may convert the ima
 By default, Hugo encodes the image in the source format. You may convert the image to another format by specifying `bmp`, `gif`, `jpeg`, `jpg`, `png`, `tif`, `tiff`, or `webp`.
 @z
 
-@x
-```go-html-template
-{{ $image.Resize "600x webp" }}
-```
-@y
-```go-html-template
-{{ $image.Resize "600x webp" }}
-```
-@z
+% snip code...
 
 @x
 To convert an image without scaling, use the dimensions of the original image:
@@ -859,23 +531,7 @@ To convert an image without scaling, use the dimensions of the original image:
 To convert an image without scaling, use the dimensions of the original image:
 @z
 
-@x
-```go-html-template
-{{ with .Resources.GetMatch "sunset.jpg" }}
-  {{ with .Resize (printf "%dx%d webp" .Width .Height) }}
-    <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}">
-  {{ end }}
-{{ end }}
-```
-@y
-```go-html-template
-{{ with .Resources.GetMatch "sunset.jpg" }}
-  {{ with .Resize (printf "%dx%d webp" .Width .Height) }}
-    <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}">
-  {{ end }}
-{{ end }}
-```
-@z
+% snip code...
 
 @x
 ### Quality
@@ -895,15 +551,7 @@ The default value is 75. You may override the default value in the [site configu
 The default value is 75. You may override the default value in the [site configuration].
 @z
 
-@x
-```go-html-template
-{{ $image.Resize "600x webp q50" }}
-```
-@y
-```go-html-template
-{{ $image.Resize "600x webp q50" }}
-```
-@z
+% snip code...
 
 @x
 ### Hint
@@ -917,11 +565,7 @@ Applicable to WebP images, this option corresponds to a set of predefined encodi
 Applicable to WebP images, this option corresponds to a set of predefined encoding parameters, and is equivalent to the `-preset` flag for the [`cwebp`] encoder.
 @z
 
-@x
-[`cwebp`]: https://developers.google.com/speed/webp/docs/cwebp
-@y
-[`cwebp`]: https://developers.google.com/speed/webp/docs/cwebp
-@z
+% snip link...
 
 @x
 Value|Example
@@ -947,15 +591,7 @@ The default value is `photo`. You may override the default value in the [site co
 The default value is `photo`. You may override the default value in the [site configuration].
 @z
 
-@x
-```go-html-template
-{{ $image.Resize "600x webp picture" }}
-```
-@y
-```go-html-template
-{{ $image.Resize "600x webp picture" }}
-```
-@z
+% snip code...
 
 @x
 ### Background color
@@ -981,15 +617,7 @@ The default value is `#ffffff` (white). You may override the default value in th
 The default value is `#ffffff` (white). You may override the default value in the [site configuration].
 @z
 
-@x
-```go-html-template
-{{ $image.Resize "600x jpg #b31280" }}
-```
-@y
-```go-html-template
-{{ $image.Resize "600x jpg #b31280" }}
-```
-@z
+% snip code...
 
 @x
 ### Resampling filter
@@ -1029,15 +657,7 @@ The default value is `Box`. You may override the default value in the [site conf
 The default value is `Box`. You may override the default value in the [site configuration].
 @z
 
-@x
-```go-html-template
-{{ $image.Resize "600x400 Lanczos" }}
-```
-@y
-```go-html-template
-{{ $image.Resize "600x400 Lanczos" }}
-```
-@z
+% snip code...
 
 @x
 See [github.com/disintegration/imaging] for the complete list of resampling filters. If you wish to improve image quality at the expense of performance, you may wish to experiment with the alternative filters.
@@ -1111,15 +731,7 @@ Call the shortcode from your Markdown like this:
 Call the shortcode from your Markdown like this:
 @z
 
-@x
-```go-html-template
-{{</* imgproc "sunset.jpg" "resize 300x" /*/>}}
-```
-@y
-```go-html-template
-{{</* imgproc "sunset.jpg" "resize 300x" /*/>}}
-```
-@z
+% snip code...
 
 @x
 {{% note %}}
@@ -1321,14 +933,5 @@ If you change image processing methods or options, or if you rename or remove im
 If you change image processing methods or options, or if you rename or remove images, the `resources` directory will contain unused images. To remove the unused images, perform garbage collection with:
 @z
 
-@x
-```sh
-hugo --gc
-```
-@y
-```sh
-hugo --gc
-```
-@z
-
+% snip code...
 % snip URLs...

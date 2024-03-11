@@ -2,35 +2,17 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: Content management
-linkTitle: Overview
+linkTitle: In this section
 description: Hugo makes managing large static sites easy with support for archetypes, content types, menus, cross references, summaries, and more.
 categories: []
 keywords: []
-menu:
-  docs:
-    identifier: content-management-overview
-    parent: content-management
-    weight: 10
-weight: 10
-aliases: [/content/,/content/organization]
----
 @y
----
 title: コンテント管理
-linkTitle: 概要
+linkTitle: 本節
 description: Hugo makes managing large static sites easy with support for archetypes, content types, menus, cross references, summaries, and more.
 categories: []
 keywords: []
-menu:
-  docs:
-    identifier: content-management-overview
-    parent: content-management
-    weight: 10
-weight: 10
-aliases: [/content/,/content/organization]
----
 @z
 
 @x

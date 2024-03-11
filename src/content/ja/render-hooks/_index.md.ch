@@ -2,41 +2,21 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: Render hooks
-linkTitle: Overview
+linkTitle: In this section
 description: Create render hooks to override the rendering of Markdown to HTML.
 categories: []
 keywords: []
-menu:
-  docs:
-    identifier: render-hooks-overview
-    parent: render-hooks
-    weight: 10
-weight: 10
-showSectionMenu: false
-aliases: [/templates/render-hooks/]
----
 @y
----
-title: Render hooks
-linkTitle: Overview
+title: レンダーフック
+linkTitle: 本節
 description: Create render hooks to override the rendering of Markdown to HTML.
 categories: []
 keywords: []
-menu:
-  docs:
-    identifier: render-hooks-overview
-    parent: render-hooks
-    weight: 10
-weight: 10
-showSectionMenu: false
-aliases: [/templates/render-hooks/]
----
 @z
 
 @x
 Create render hooks to override the rendering of Markdown to HTML.
 @y
-Create render hooks to override the rendering of Markdown to HTML.
+レンダーフックを生成して Markdown から HTML へのレンダリング処理をオーバーライドします。
 @z

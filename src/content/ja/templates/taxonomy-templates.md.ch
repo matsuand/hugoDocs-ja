@@ -2,15 +2,33 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
+---
 title: Taxonomy templates
 description: Taxonomy templating includes taxonomy list pages, taxonomy terms pages, and using taxonomies in your single page templates.
 categories: [templates]
 keywords: [taxonomies,metadata,front matter,terms,templates]
+menu:
+  docs:
+    parent: templates
+    weight: 90
+weight: 90
+toc: true
+aliases: [/taxonomies/displaying/,/templates/terms/,/indexes/displaying/,/taxonomies/templates/,/indexes/ordering/, /templates/taxonomies/, /templates/taxonomy/]
+---
 @y
+---
 title: 分類テンプレート
 description: Taxonomy templating includes taxonomy list pages, taxonomy terms pages, and using taxonomies in your single page templates.
 categories: [templates]
 keywords: [taxonomies,metadata,front matter,terms,templates]
+menu:
+  docs:
+    parent: templates
+    weight: 90
+weight: 90
+toc: true
+aliases: [/taxonomies/displaying/,/templates/terms/,/indexes/displaying/,/taxonomies/templates/,/indexes/ordering/, /templates/taxonomies/, /templates/taxonomy/]
+---
 @z
 
 @x
@@ -42,9 +60,9 @@ Hugo provides multiple ways to use taxonomies throughout your project templates:
 @z
 
 @x
-Taxonomy list page templates are lists and therefore have all the variables and methods available to [list pages][lists].
+Taxonomy list page templates are lists and therefore have all the methods available to [list pages][lists].
 @y
-Taxonomy list page templates are lists and therefore have all the variables and methods available to [list pages][lists].
+Taxonomy list page templates are lists and therefore have all the methods available to [list pages][lists].
 @z
 
 @x
@@ -260,9 +278,9 @@ type WeightedPages []WeightedPage
 @z
 
 @x
-If you need to display custom metadata for each taxonomy term, you will need to create a page for that term at `/content/<TAXONOMY>/<TERM>/_index.md` and add your metadata in its front matter, [as explained in the taxonomies documentation](/content-management/taxonomies/#add-custom-metadata-to-a-taxonomy-or-term). Based on the Actors taxonomy example shown there, within your taxonomy terms template, you may access your custom fields by iterating through the variable `.Pages` as such:
+If you need to display custom metadata for each taxonomy term, you will need to create a page for that term at `/content/<TAXONOMY>/<TERM>/_index.md` and add your metadata in its front matter, [as explained in the taxonomies documentation](/content-management/taxonomies/#add-custom-metadata-to-a-taxonomy-or-term). Based on the Actors taxonomy example shown there, within your taxonomy terms template, you may access your custom fields by ranging over the page collection returned by the [`Pages`] method:
 @y
-If you need to display custom metadata for each taxonomy term, you will need to create a page for that term at `/content/<TAXONOMY>/<TERM>/_index.md` and add your metadata in its front matter, [as explained in the taxonomies documentation](/content-management/taxonomies/#add-custom-metadata-to-a-taxonomy-or-term). Based on the Actors taxonomy example shown there, within your taxonomy terms template, you may access your custom fields by iterating through the variable `.Pages` as such:
+If you need to display custom metadata for each taxonomy term, you will need to create a page for that term at `/content/<TAXONOMY>/<TERM>/_index.md` and add your metadata in its front matter, [as explained in the taxonomies documentation](/content-management/taxonomies/#add-custom-metadata-to-a-taxonomy-or-term). Based on the Actors taxonomy example shown there, within your taxonomy terms template, you may access your custom fields by ranging over the page collection returned by the [`Pages`] method:
 @z
 
 @x
@@ -781,4 +799,18 @@ Because taxonomies are lists, the [`.GetPage` function][getpage] can be used to 
 {{< /code >}}
 @z
 
-% snip links...
+@x
+[`Pages`]: /methods/page/pages/
+[getpage]: /methods/page/getpage/
+[lists]: /templates/lists/
+[renderlists]: /templates/lists/
+[single page template]: /templates/single-page-templates/
+[sitevars]: /methods/site/
+@y
+[`Pages`]: /methods/page/pages/
+[getpage]: /methods/page/getpage/
+[lists]: /templates/lists/
+[renderlists]: /templates/lists/
+[single page template]: /templates/single-page-templates/
+[sitevars]: /methods/site/
+@z

@@ -2,29 +2,15 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: CodeOwners
 description: Returns of slice of code owners for the given page, derived from the CODEOWNERS file in the root of the project directory.
 categories: []
 keywords: []
-action:
-  related:
-    - methods/page/GitInfo
-  returnType: '[]string'
-  signatures: [PAGE.CodeOwners]
----
 @y
----
 title: CodeOwners
 description: Returns of slice of code owners for the given page, derived from the CODEOWNERS file in the root of the project directory.
 categories: []
 keywords: []
-action:
-  related:
-    - methods/page/GitInfo
-  returnType: '[]string'
-  signatures: [PAGE.CodeOwners]
----
 @z
 
 @x
@@ -61,15 +47,7 @@ To use the `CodeOwners` method you must enable access to your local Git reposito
 To use the `CodeOwners` method you must enable access to your local Git repository:
 @z
 
-@x
-{{< code-toggle file=hugo >}}
-enableGitInfo = true
-{{< /code-toggle >}}
-@y
-{{< code-toggle file=hugo >}}
-enableGitInfo = true
-{{< /code-toggle >}}
-@z
+% snip code...
 
 @x
 Consider this project structure:
@@ -77,27 +55,7 @@ Consider this project structure:
 Consider this project structure:
 @z
 
-@x
-```text
-my-project/
-├── content/
-│   ├── books/
-│   │   └── les-miserables.md
-│   └── films/
-│       └── the-hunchback-of-notre-dame.md
-└── CODEOWNERS
-```
-@y
-```text
-my-project/
-├── content/
-│   ├── books/
-│   │   └── les-miserables.md
-│   └── films/
-│       └── the-hunchback-of-notre-dame.md
-└── CODEOWNERS
-```
-@z
+% snip text...
 
 @x
 And this CODEOWNERS file:
@@ -105,19 +63,7 @@ And this CODEOWNERS file:
 And this CODEOWNERS file:
 @z
 
-@x
-```text
-* @jdoe
-/content/books/ @tjones
-/content/films/ @mrichards @rsmith
-```
-@y
-```text
-* @jdoe
-/content/books/ @tjones
-/content/films/ @mrichards @rsmith
-```
-@z
+% snip text...
 
 @x
 The table below shows the slice of code owners returned for each file:
@@ -143,19 +89,7 @@ Render the code owners for each content page:
 Render the code owners for each content page:
 @z
 
-@x
-```go-html-template
-{{ range .CodeOwners }}
-  {{ . }}
-{{ end }}
-```
-@y
-```go-html-template
-{{ range .CodeOwners }}
-  {{ . }}
-{{ end }}
-```
-@z
+% snip text...
 
 @x
 Combine this method with [`resources.GetRemote`] to retrieve names and avatars from your Git provider by querying their API.
@@ -163,8 +97,4 @@ Combine this method with [`resources.GetRemote`] to retrieve names and avatars f
 Combine this method with [`resources.GetRemote`] to retrieve names and avatars from your Git provider by querying their API.
 @z
 
-@x
-[`resources.GetRemote`]: /functions/resources/getremote/
-@y
-[`resources.GetRemote`]: /functions/resources/getremote/
-@z
+% snip link...

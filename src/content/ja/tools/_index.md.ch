@@ -2,33 +2,17 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: Developer tools
-linkTitle: Overview
+linkTitle: In this section
 description: In addition to Hugo's powerful CLI, there is a large number of community-developed tool chains for Hugo developers.
 categories: []
 keywords: []
-menu:
-  docs:
-    identifier: developer-tools-overview
-    parent: developer-tools
-    weight: 10
-weight: 10
----
 @y
----
 title: 開発ツール
-linkTitle: 概要
+linkTitle: 本節
 description: In addition to Hugo's powerful CLI, there is a large number of community-developed tool chains for Hugo developers.
 categories: []
 keywords: []
-menu:
-  docs:
-    identifier: developer-tools-overview
-    parent: developer-tools
-    weight: 10
-weight: 10
----
 @z
 
 @x
@@ -43,10 +27,4 @@ One of Hugo's greatest strengths is its passionate---and always evolving---devel
 [See the popularity of Hugo compared with other static site generators.][staticgen]
 @z
 
-@x
-[staticgen]: https://staticgen.com
-[syntax]: /content-management/syntax-highlighting/
-@y
-[staticgen]: https://staticgen.com
-[syntax]: /content-management/syntax-highlighting/
-@z
+% snip links...

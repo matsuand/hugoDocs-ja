@@ -1,6 +1,8 @@
 %This is the change file for the original Hugo Documentation file.
 %This is part of Japanese translation version for Hugo Documantation.
 
+% snip 対応
+
 @x
 title: Introduction to templating
 linkTitle: Introduction
@@ -116,9 +118,9 @@ In the example above the dot represents the `Page` object, and we call its [`Tit
 % snip links...
 
 @x
-The current context may change within a template. For example, at the top of a template the context might be a `Page` object, but we can rebind the context to another value or object within [`range`] or [`with`] blocks.
+The current context may change within a template. For example, at the top of a template the context might be a `Page` object, but we rebind the context to another value or object within [`range`] or [`with`] blocks.
 @y
-The current context may change within a template. For example, at the top of a template the context might be a `Page` object, but we can rebind the context to another value or object within [`range`] or [`with`] blocks.
+The current context may change within a template. For example, at the top of a template the context might be a `Page` object, but we rebind the context to another value or object within [`range`] or [`with`] blocks.
 @z
 
 % snip links...
@@ -316,9 +318,9 @@ You can also split [raw string literals] over two or more lines. For example, th
 @z
 
 @x
-A variable is a user-defined [identifier] prefaced with a dollar sign (`$`), representing a value of any data type, initialized or assigned within a template action. For example, `$foo` and `$bar` are variables.
+A variable is a user-defined [identifier] prepended with a dollar sign (`$`), representing a value of any data type, initialized or assigned within a template action. For example, `$foo` and `$bar` are variables.
 @y
-A variable is a user-defined [identifier] prefaced with a dollar sign (`$`), representing a value of any data type, initialized or assigned within a template action. For example, `$foo` and `$bar` are variables.
+A variable is a user-defined [identifier] prepended with a dollar sign (`$`), representing a value of any data type, initialized or assigned within a template action. For example, `$foo` and `$bar` are variables.
 @z
 
 % snip link...
@@ -445,15 +447,7 @@ When calling a function, separate the arguments from the function, and from each
 When calling a function, separate the arguments from the function, and from each other, with a space. For example:
 @z
 
-@x
-```go-html-template
-{{ $total := add 1 2 3 4 }} → 10
-```
-@y
-```go-html-template
-{{ $total := add 1 2 3 4 }} → 10
-```
-@z
+% snip code...
 
 @x
 ## Methods
@@ -473,15 +467,7 @@ The most commonly accessed objects are the [`Page`] and [`Site`] objects. This i
 The most commonly accessed objects are the [`Page`] and [`Site`] objects. This is a small sampling of the [methods] available to each object.
 @z
 
-@x
-[`Site`]: /methods/site/
-[`Page`]: /methods/page/
-[methods]: /methods/
-@y
-[`Site`]: /methods/site/
-[`Page`]: /methods/page/
-[methods]: /methods/
-@z
+% snip links...
 
 @x
 Object|Method|Description
@@ -591,17 +577,7 @@ Template comments are similar to template actions. Paired opening and closing br
 Template comments are similar to template actions. Paired opening and closing braces represent the beginning and end of a comment. For example:
 @z
 
-@x
-```text
-{{/* This is an inline comment. */}}
-{{- /* This is an inline comment with adjacent whitespace removed. */ -}}
-```
-@y
-```text
-{{/* This is an inline comment. */}}
-{{- /* This is an inline comment with adjacent whitespace removed. */ -}}
-```
-@z
+% snip text...
 
 @x
 Code within a comment is not parsed, executed, or displayed. Comments may be inline, as shown above, or in block form:
@@ -683,33 +659,8 @@ Use the [`template`] function to include one or more of Hugo's [embedded templat
 [embedded templates]: /templates/embedded/
 @z
 
-@x
-```go-html-template
-{{ template "_internal/google_analytics.html" . }}
-{{ template "_internal/opengraph" . }}
-{{ template "_internal/pagination.html" . }}
-{{ template "_internal/schema.html" . }}
-{{ template "_internal/twitter_cards.html" . }}
-```
-@y
-```go-html-template
-{{ template "_internal/google_analytics.html" . }}
-{{ template "_internal/opengraph" . }}
-{{ template "_internal/pagination.html" . }}
-{{ template "_internal/schema.html" . }}
-{{ template "_internal/twitter_cards.html" . }}
-```
-@z
-
-@x
-[`partial`]: /functions/partials/include/
-[`partialCached`]: /functions/partials/includecached/
-[`template`]: functions/go-template/template/
-@y
-[`partial`]: /functions/partials/include/
-[`partialCached`]: /functions/partials/includecached/
-[`template`]: functions/go-template/template/
-@z
+% snip code...
+% snip links...
 
 @x
 Use the [`partial`] or [`partialCached`] function to include one or more [partial templates]:
@@ -723,17 +674,7 @@ Use the [`partial`] or [`partialCached`] function to include one or more [partia
 [partial templates]: /templates/partials
 @z
 
-@x
-```go-html-template
-{{ partial "breadcrumbs.html" . }}
-{{ partialCached "css.html" . }}
-```
-@y
-```go-html-template
-{{ partial "breadcrumbs.html" . }}
-{{ partialCached "css.html" . }}
-```
-@z
+% snip code...
 
 @x
 Create your partial templates in the layouts/partials directory.
@@ -791,33 +732,7 @@ See documentation for [`if`], [`else`], and [`end`].
 [`end`]: /functions/go-template/end/
 @z
 
-@x
-```go-html-template
-{{ $var := 12 }}
-{{ if eq $var 6 }}
-  {{ print "var is 6" }}
-{{ else if eq $var 7 }}
-  {{ print "var is 7" }}
-{{ else if eq $var 42 }}
-  {{ print "var is 42" }}
-{{ else }}
-  {{ print "var is something else" }}
-{{ end }}
-```
-@y
-```go-html-template
-{{ $var := 12 }}
-{{ if eq $var 6 }}
-  {{ print "var is 6" }}
-{{ else if eq $var 7 }}
-  {{ print "var is 7" }}
-{{ else if eq $var 42 }}
-  {{ print "var is 42" }}
-{{ else }}
-  {{ print "var is something else" }}
-{{ end }}
-```
-@z
+% snip code...
 
 @x
 ### Logical operators
@@ -831,51 +746,8 @@ See documentation for [`and`] and [`or`].
 See documentation for [`and`] and [`or`].
 @z
 
-@x
-[`and`]: /functions/go-template/and
-[`or`]: /functions/go-template/or
-@y
-[`and`]: /functions/go-template/and
-[`or`]: /functions/go-template/or
-@z
-
-@x
-```go-html-template
-{{ $v1 := true }}
-{{ $v2 := false }}
-{{ $result := false }}
-@y
-```go-html-template
-{{ $v1 := true }}
-{{ $v2 := false }}
-{{ $result := false }}
-@z
-
-@x
-{{ if and $v1 $v2 }}
-  {{ $result = true }}
-{{ end }}
-{{ $result }} → false
-@y
-{{ if and $v1 $v2 }}
-  {{ $result = true }}
-{{ end }}
-{{ $result }} → false
-@z
-
-@x
-{{ if or $v1 $v2 }}
-  {{ $result = true }}
-{{ end }}
-{{ $result }} → true
-```
-@y
-{{ if or $v1 $v2 }}
-  {{ $result = true }}
-{{ end }}
-{{ $result }} → true
-```
-@z
+% snip links...
+% snip code...
 
 @x
 ### Loops
@@ -896,26 +768,6 @@ See documentation for [`range`], [`else`], and [`end`].
 @z
 
 @x
-```go-html-template
-{{ $s := slice "foo" "bar" "baz" }}
-{{ range $s }}
-  <p>{{ . }}</p>
-{{ else }}
-  <p>The collection is empty</p>
-{{ end }}
-```
-@y
-```go-html-template
-{{ $s := slice "foo" "bar" "baz" }}
-{{ range $s }}
-  <p>{{ . }}</p>
-{{ else }}
-  <p>The collection is empty</p>
-{{ end }}
-```
-@z
-
-@x
 Use the [`seq`] function to loop a specified number of times:
 @y
 Use the [`seq`] function to loop a specified number of times:
@@ -925,24 +777,6 @@ Use the [`seq`] function to loop a specified number of times:
 [`seq`]: /functions/collections/seq
 @y
 [`seq`]: /functions/collections/seq
-@z
-
-@x
-```go-html-template
-{{ $total := 0 }}
-{{ range seq 4 }}
-  {{ $total = add $total . }}
-{{ end }}
-{{ $total }} → 10
-```
-@y
-```go-html-template
-{{ $total := 0 }}
-{{ range seq 4 }}
-  {{ $total = add $total . }}
-{{ end }}
-{{ $total }} → 10
-```
 @z
 
 @x
@@ -957,31 +791,8 @@ See documentation for [`with`], [`else`], and [`end`].
 See documentation for [`with`], [`else`], and [`end`].
 @z
 
-@x
-[`with`]: /functions/go-template/with/
-@y
-[`with`]: /functions/go-template/with/
-@z
-
-@x
-```go-html-template
-{{ $var := "foo" }}
-{{ with $var }}
-  {{ . }} → foo
-{{ else }}
-  {{ print "var is falsy" }}
-{{ end }}
-```
-@y
-```go-html-template
-{{ $var := "foo" }}
-{{ with $var }}
-  {{ . }} → foo
-{{ else }}
-  {{ print "var is falsy" }}
-{{ end }}
-```
-@z
+% snip link...
+% snip code...
 
 @x
 ### Access site parameters

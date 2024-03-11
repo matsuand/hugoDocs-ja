@@ -34,15 +34,9 @@ aliases: [/content/summaries/,/content-management/content-summaries/]
 @z
 
 @x
-<!--more-->
+With the use of the [`Summary`] method on `Page` object, Hugo generates summaries of content to use as a short version in summary views.
 @y
-<!--more-->
-@z
-
-@x
-With the use of the `.Summary` [page variable][pagevariables], Hugo generates summaries of content to use as a short version in summary views.
-@y
-With the use of the `.Summary` [page variable][pagevariables], Hugo generates summaries of content to use as a short version in summary views.
+With the use of the [`Summary`] method on `Page` object, Hugo generates summaries of content to use as a short version in summary views.
 @z
 
 @x
@@ -62,9 +56,9 @@ With the use of the `.Summary` [page variable][pagevariables], Hugo generates su
 @z
 
 @x
-It is natural to accompany the summary with links to the original content, and a common design pattern is to see this link in the form of a "Read More ..." button. See the `.RelPermalink`, `.Permalink`, and `.Truncated` [page variables][pagevariables].
+It is natural to accompany the summary with links to the original content, and a common design pattern is to see this link in the form of a "Read More ..." button. See the [`RelPermalink`], [`Permalink`], and [`Truncated`] methods.
 @y
-It is natural to accompany the summary with links to the original content, and a common design pattern is to see this link in the form of a "Read More ..." button. See the `.RelPermalink`, `.Permalink`, and `.Truncated` [page variables][pagevariables].
+It is natural to accompany the summary with links to the original content, and a common design pattern is to see this link in the form of a "Read More ..." button. See the [`RelPermalink`], [`Permalink`], and [`Truncated`] methods.
 @z
 
 @x
@@ -276,11 +270,17 @@ Note how the `.Truncated` boolean variable value may be used to hide the "Read M
 @z
 
 @x
+[`Permalink`]: /methods/page/permalink/
+[`RelPermalink`]: /methods/page/relpermalink/
+[`Summary`]: /methods/page/summary/
+[`Truncated`]: /methods/page/truncated/
 [org]: /content-management/formats/
-[pagevariables]: /methods/page/
 [section template]: /templates/section-templates/
 @y
+[`Permalink`]: /methods/page/permalink/
+[`RelPermalink`]: /methods/page/relpermalink/
+[`Summary`]: /methods/page/summary/
+[`Truncated`]: /methods/page/truncated/
 [org]: /content-management/formats/
-[pagevariables]: /methods/page/
 [section template]: /templates/section-templates/
 @z

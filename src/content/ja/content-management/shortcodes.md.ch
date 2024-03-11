@@ -172,9 +172,9 @@ The `<` character indicates that the shortcode's inner content does *not* need f
 @z
 
 @x
-You can call shortcodes within other shortcodes by creating your own templates that leverage the `.Parent` variable. `.Parent` allows you to check the context in which the shortcode is being called. See [Shortcode templates][sctemps].
+You can call shortcodes within other shortcodes by creating your own templates that leverage the `.Parent` method. `.Parent` allows you to check the context in which the shortcode is being called. See [Shortcode templates][sctemps].
 @y
-You can call shortcodes within other shortcodes by creating your own templates that leverage the `.Parent` variable. `.Parent` allows you to check the context in which the shortcode is being called. See [Shortcode templates][sctemps].
+You can call shortcodes within other shortcodes by creating your own templates that leverage the `.Parent` method. `.Parent` allows you to check the context in which the shortcode is being called. See [Shortcode templates][sctemps].
 @z
 
 @x

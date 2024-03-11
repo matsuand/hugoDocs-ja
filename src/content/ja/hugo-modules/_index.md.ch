@@ -4,13 +4,13 @@
 @x
 ---
 title: Hugo Modules
-linkTitle: Overview
+linkTitle: In this section
 description: How to use Hugo Modules.
 categories: []
 keywords: []
 menu:
   docs:
-    identifier: hugo-modules-overview
+    identifier: hugo-modules-in-this-section
     parent: modules
     weight: 10
 weight: 10
@@ -20,13 +20,13 @@ aliases: [/themes/overview/,/themes/]
 @y
 ---
 title: Hugo Modules
-linkTitle: Overview
+linkTitle: In this section
 description: How to use Hugo Modules.
 categories: []
 keywords: []
 menu:
   docs:
-    identifier: hugo-modules-overview
+    identifier: hugo-modules-in-this-section
     parent: modules
     weight: 10
 weight: 10

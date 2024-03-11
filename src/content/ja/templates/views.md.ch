@@ -2,15 +2,31 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
+---
 title: Content view templates
 description: Hugo can render alternative views of your content, useful in list and summary views.
 categories: [templates]
 keywords: [views]
+menu:
+  docs:
+    parent: templates
+    weight: 110
+weight: 110
+toc: true
+---
 @y
+---
 title: コンテントビューテンプレート
 description: Hugo can render alternative views of your content, useful in list and summary views.
 categories: [templates]
 keywords: [views]
+menu:
+  docs:
+    parent: templates
+    weight: 110
+weight: 110
+toc: true
+---
 @z
 
 @x
@@ -102,9 +118,9 @@ Hugo also has support for a default content template to be used in the event tha
 @z
 
 @x
-The following is the [lookup order][lookup] for content views:
+The following is the [lookup order] for content views:
 @y
-The following is the [lookup order][lookup] for content views:
+The following is the [lookup order] for content views:
 @z
 
 @x
@@ -174,9 +190,9 @@ In this example, `.Render` is passed into the template to call the [render funct
 @z
 
 @x
-Hugo will pass the entire page object to the following `summary.html` view template. (See [Page Variables][pagevars] for a complete list.)
+Hugo passes the page object to the following `summary.html` view template.
 @y
-Hugo will pass the entire page object to the following `summary.html` view template. (See [Page Variables][pagevars] for a complete list.)
+Hugo passes the page object to the following `summary.html` view template.
 @z
 
 @x
@@ -235,4 +251,16 @@ Continuing on the previous example, we can change our render function to use a s
 {{< /code >}}
 @z
 
-% snip links...
+@x
+[lists]: /templates/lists/
+[render]: /methods/page/render/
+[single]: /templates/single-page-templates/
+[summaries]: /content-management/summaries/
+[taxonomylists]: /templates/taxonomy-templates/
+@y
+[lists]: /templates/lists/
+[render]: /methods/page/render/
+[single]: /templates/single-page-templates/
+[summaries]: /content-management/summaries/
+[taxonomylists]: /templates/taxonomy-templates/
+@z

@@ -474,9 +474,17 @@ outputs:
 @z
 
 @x
-Each `Page` has both an `.OutputFormats` (all formats, including the current) and an `.AlternativeOutputFormats` variable, the latter of which is useful for creating a `link rel` list in your site's `<head>`:
+Each `Page` object has both an [`OutputFormats`] method (all formats, including the current) and an [`AlternativeOutputFormats`] method, the latter of which is useful for creating a `link rel` list in your site's `<head>`:
 @y
-Each `Page` has both an `.OutputFormats` (all formats, including the current) and an `.AlternativeOutputFormats` variable, the latter of which is useful for creating a `link rel` list in your site's `<head>`:
+Each `Page` object has both an [`OutputFormats`] method (all formats, including the current) and an [`AlternativeOutputFormats`] method, the latter of which is useful for creating a `link rel` list in your site's `<head>`:
+@z
+
+@x
+[`OutputFormats`]: /methods/page/outputformats
+[`AlternativeOutputFormats`]: /methods/page/alternativeoutputformats
+@y
+[`OutputFormats`]: /methods/page/outputformats
+[`AlternativeOutputFormats`]: /methods/page/alternativeoutputformats
 @z
 
 @x
@@ -500,9 +508,17 @@ Each `Page` has both an `.OutputFormats` (all formats, including the current) an
 @z
 
 @x
-The `Permalink` and `RelPermalink` methods on a `Page` object return the first output format defined for that page (usually `HTML` if nothing else is defined). This is regardless of the template from which they are called.
+The [`Permalink`] and [`RelPermalink`] methods on a `Page` object return the first output format defined for that page (usually `HTML` if nothing else is defined). This is regardless of the template from which they are called.
 @y
-The `Permalink` and `RelPermalink` methods on a `Page` object return the first output format defined for that page (usually `HTML` if nothing else is defined). This is regardless of the template from which they are called.
+The [`Permalink`] and [`RelPermalink`] methods on a `Page` object return the first output format defined for that page (usually `HTML` if nothing else is defined). This is regardless of the template from which they are called.
+@z
+
+@x
+[`Permalink`]: /methods/page/permalink
+[`RelPermalink`]: /methods/page/relpermalink
+@y
+[`Permalink`]: /methods/page/permalink
+[`RelPermalink`]: /methods/page/relpermalink
 @z
 
 @x
