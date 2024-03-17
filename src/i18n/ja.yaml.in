@@ -31,6 +31,10 @@ fileAnIssue:
 getHelp:
   other: ヘルプ
 
+## partials/related.html
+SeeAlso:
+  other: "関連項目"
+
 ## shortcodes/new-in.html
 NewIn1:
   other: " "
