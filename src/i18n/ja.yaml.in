@@ -19,7 +19,7 @@ inThisSection:
 searchTheDocs:
   other: ドキュメント内検索
 
-## site-footer.html
+## partials/site-footer.html
 byThe1:
   other: " "
 byThe2:
@@ -30,6 +30,12 @@ fileAnIssue:
   other: Issue 報告
 getHelp:
   other: ヘルプ
+
+## shortcodes/new-in.html
+NewIn1:
+  other: " "
+NewIn2:
+  other: " の新機能"
 
 ## Functions page
 syntax:

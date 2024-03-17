@@ -19,7 +19,7 @@ inThisSection:
 searchTheDocs:
   other: Search the Docs
 
-## site-footer.html
+## partials/site-footer.html
 byThe1:
   other: "by The "
 byThe2:
@@ -30,6 +30,12 @@ fileAnIssue:
   other: File an Issue
 getHelp:
   other: Get Help
+
+## shortcodes/new-in.html
+NewIn1:
+  other: "New in "
+NewIn2:
+  other: ""
 
 ## Functions page
 syntax:
