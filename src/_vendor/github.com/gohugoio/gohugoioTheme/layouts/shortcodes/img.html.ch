@@ -2,6 +2,8 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 % stylesheet 対応 (workaround..)
+%   RelPermalink から Permalink に変更
+%   イメージの場合 en を参照する
 
 @x
 {{- /* Render. */}}
@@ -15,10 +17,10 @@
 {{- end }}
 @y
 {{- /* Render. */}}
-{{ $flink := (replace $fi.RelPermalink "/hugoDocs-ja/en" "" ) }}
+{{ $flink := (replace $fi.Permalink "/hugoDocs-ja/en" "" ) }}
 {{- if $example }}
   <p>Original</p>
-  {{ $link := (replace $i.RelPermalink "/hugoDocs-ja/en" "" ) }}
+  {{ $link := (replace $i.Permalink "/hugoDocs-ja/en" "" ) }}
   <img class='di ba b--black-20' style="width: initial;" src="{{ $link }}" alt="{{ $alt }}">
   <p>Processed</p>
   <img class='di ba b--black-20' style="width: initial;" src="{{ $flink }}" alt="{{ $alt }}">
