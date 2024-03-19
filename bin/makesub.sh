@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # $1	Makefile name
 # $2	directory where the merge files will be created in
