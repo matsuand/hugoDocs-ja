@@ -15,7 +15,9 @@
         {{ $link := .RelPermalink }}
         <link
           rel="stylesheet"
-          href="{{ replace $link "/hugoDocs-ja/en" "" }}"
+          {{ $link := replace $link "/matsuand/hugoDocs-ja/en" "" }}
+          {{ $link := replace $link "/hugoDocs-ja/en" "" }}
+          href="{{ $link }}"
           integrity="{{ .Data.Integrity }}"
           crossorigin="anonymous" />
 @z

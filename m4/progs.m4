@@ -23,3 +23,14 @@ AC_SUBST(absORIGDIR)
 
 abs_origdir=`(cd $ORIGDIR && pwd)`
 AC_SUBST(abs_origdir)
+
+HOSTURL=https://gohugo.io/
+AC_ARG_WITH(hosturl,
+[  --with-hosturl=URL      Specify host URL [[URL=https://gohugo.io/]]],
+[
+  if test "${with_hosturl}" ; then
+    HOSTURL=${with_hosturl}
+  fi
+]
+)
+AC_SUBST(HOSTURL)

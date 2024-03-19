@@ -676,6 +676,7 @@ CPPFLAGS
 LDFLAGS
 CFLAGS
 CC
+HOSTURL
 abs_origdir
 absORIGDIR
 ORIGDIR
@@ -759,6 +760,7 @@ enable_option_checking
 enable_silent_rules
 enable_maintainer_mode
 with_origdir
+with_hosturl
 enable_dependency_tracking
 '
       ac_precious_vars='build_alias
@@ -1410,6 +1412,7 @@ Optional Packages:
   --with-PACKAGE[=ARG]    use PACKAGE [ARG=yes]
   --without-PACKAGE       do not use PACKAGE (same as --with-PACKAGE=no)
   --with-origdir=DIR      Specify ORIG source directory [DIR=../hugoDocs]
+  --with-hosturl=URL      Specify host URL [URL=https://gohugo.io/]
 
 Some influential environment variables:
   CC          C compiler command
@@ -3236,6 +3239,21 @@ absORIGDIR=`(cd $ORIGDIR && pwd)`
 
 
 abs_origdir=`(cd $ORIGDIR && pwd)`
+
+
+HOSTURL=https://gohugo.io/
+
+# Check whether --with-hosturl was given.
+if test ${with_hosturl+y}
+then :
+  withval=$with_hosturl;
+  if test "${with_hosturl}" ; then
+    HOSTURL=${with_hosturl}
+  fi
+
+
+fi
+
 
 
 
