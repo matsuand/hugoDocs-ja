@@ -7,7 +7,7 @@
         <figure style="padding: 0.25rem; margin: 2rem 0; background-color: #cccc">
           <img style="max-width: 100%; width: auto; height: auto;" src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="">
 @y
-        {{ $link := .RelPermalink }}
+        {{ $link := (replace .RelPermalink "/hugoDocs-ja/en" "" ) }}
         <figure style="padding: 0.25rem; margin: 2rem 0; background-color: #cccc">
-          <img style="max-width: 100%; width: auto; height: auto;" src="{{ replace $link "/hugoDocs-ja/en" "" }}" width="{{ .Width }}" height="{{ .Height }}" alt="">
+          <img style="max-width: 100%; width: auto; height: auto;" src="{{ $link }}" width="{{ .Width }}" height="{{ .Height }}" alt="">
 @z

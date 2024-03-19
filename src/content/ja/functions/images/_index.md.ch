@@ -2,27 +2,17 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: Image functions
 linkTitle: images
 description: Use these functions to create an image filter, apply an image filter to an image, and to retrieve image information.
 categories: []
 keywords: []
-menu:
-  docs:
-    parent: functions
----
 @y
----
-title: Image functions
+title: Image 関数
 linkTitle: images
 description: Use these functions to create an image filter, apply an image filter to an image, and to retrieve image information.
 categories: []
 keywords: []
-menu:
-  docs:
-    parent: functions
----
 @z
 
 @x

@@ -3,6 +3,7 @@
 ##
 
 bases = \
+	img.html     \
 	imgproc.html \
 	new-in.html
 
@@ -20,7 +21,6 @@ copyfiles = \
 	eturl.html                 \
 	funcsig.html               \
 	gomodules-info.html        \
-	img.html                   \
 	include.html               \
 	list-pages-in-section.html \
 	module-mounts-note.html    \
