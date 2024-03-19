@@ -62,7 +62,7 @@ jobs:
         run: |
           cd build/src
           sed -i -e "/baseURL/s@https://gohugo.io/@https://github.com/matsuand/hugoDocs-ja/@g" \
-            hugo.yaml
+            hugo.toml
       - name: Build with Hugo
         env:
           # For maximum backward compatibility with Hugo modules
