@@ -10,7 +10,7 @@ keywords: [configuration,toml,yaml,json]
 @y
 title: Hugo の設定
 linkTitle: 設定
-description: How to configure your Hugo site.
+description: Hugo サイトを設定する方法について示します。
 categories: [getting started,fundamentals]
 keywords: [configuration,toml,yaml,json]
 @z
@@ -24,111 +24,48 @@ keywords: [configuration,toml,yaml,json]
 @x
 Create a site configuration file in the root of your project directory, naming it `hugo.toml`, `hugo.yaml`, or `hugo.json`, with that order of precedence.
 @y
-Create a site configuration file in the root of your project directory, naming it `hugo.toml`, `hugo.yaml`, or `hugo.json`, with that order of precedence.
+サイトを設定するファイルを、プロジェクトディレクトリのルートに生成します。
+名前は `hugo.toml`、`hugo.yaml`、`hugo.json` のいずれかとします。
+この順番で優先的に取り扱われます。
 @z
 
-@x
-```text
-my-project/
-└── hugo.toml
-```
-@y
-```text
-my-project/
-└── hugo.toml
-```
-@z
+% snip text...
 
-@x
-{{% note %}}
+@x note
 With v0.109.0 and earlier the basename of the site configuration file was `config` instead of `hugo`. You can use either, but should transition to the new naming convention when practical.
-{{% /note %}}
 @y
-{{% note %}}
-With v0.109.0 and earlier the basename of the site configuration file was `config` instead of `hugo`. You can use either, but should transition to the new naming convention when practical.
-{{% /note %}}
+v0.109.0 以前ではサイト設定ファイルのベース名は `hugo` ではなく `config` でした。
+今でも古いものを用いることができますが、これから利用していくにあたっては、新しい名前を用いるようにしてください。
 @z
 
 @x
 A simple example:
 @y
-A simple example:
+以下はその単純な例です。
 @z
 
-@x
-{{< code-toggle file=hugo >}}
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'ABC Widgets, Inc.'
-[params]
-subtitle = 'The Best Widgets on Earth'
-[params.contact]
-email = 'info@example.org'
-phone = '+1 202-555-1212'
-{{< /code-toggle >}}
-@y
-{{< code-toggle file=hugo >}}
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'ABC Widgets, Inc.'
-[params]
-subtitle = 'The Best Widgets on Earth'
-[params.contact]
-email = 'info@example.org'
-phone = '+1 202-555-1212'
-{{< /code-toggle >}}
-@z
+% snip code...
 
 @x
 To use a different configuration file when building your site, use the `--config` flag:
 @y
-To use a different configuration file when building your site, use the `--config` flag:
+サイトビルド時に別の設定ファイルを利用する場合は `--config` フラグを使います。
 @z
 
-@x
-```sh
-hugo --config other.toml
-```
-@y
-```sh
-hugo --config other.toml
-```
-@z
+% snip code...
 
 @x
 Combine two or more configuration files, with left-to-right precedence:
 @y
-Combine two or more configuration files, with left-to-right precedence:
+複数の設定ファイルを連結する場合は、左のものから順に優先されます。
 @z
 
-@x
-```sh
-hugo --config a.toml,b.yaml,c.json
-```
-@y
-```sh
-hugo --config a.toml,b.yaml,c.json
-```
-@z
+% snip command...
 
-@x
-{{% note %}}
+@x note
 See the specifications for each file format: [TOML], [YAML], and [JSON].
 @y
-{{% note %}}
-See the specifications for each file format: [TOML], [YAML], and [JSON].
-@z
-
-@x
-[TOML]: https://toml.io/en/latest
-[YAML]: https://yaml.org/spec/
-[JSON]: https://datatracker.ietf.org/doc/html/rfc7159
-{{% /note %}}
-@y
-[TOML]: https://toml.io/en/latest
-[YAML]: https://yaml.org/spec/
-[JSON]: https://datatracker.ietf.org/doc/html/rfc7159
-{{% /note %}}
+[TOML]、[YAML]、[JSON] の各フォーマットごとの仕様を参照してください。
 @z
 
 @x
@@ -143,50 +80,13 @@ Instead of a single site configuration file, split your configuration by [enviro
 Instead of a single site configuration file, split your configuration by [environment], root configuration key, and language. For example:
 @z
 
-@x
-[environment]: /getting-started/glossary/#environment
-@y
-[environment]: /getting-started/glossary/#environment
-@z
+% snip link...
+% snip text...
 
 @x
-```text
-my-project/
-└── config/
-    ├── _default/
-    │   ├── hugo.toml
-    │   ├── menus.en.toml
-    │   ├── menus.de.toml
-    │   └── params.toml
-    ├── production/
-    │   ├── hugo.toml
-    │   └── params.toml
-    └── staging/
-        ├── hugo.toml
-        └── params.toml
-```
+The root configuration keys are `build`, `caches`, `cascade`, `deployment`, `frontmatter`, `imaging`, `languages`, `markup`, `mediatypes`, `menus`, `minify`, `module`, `outputformats`, `outputs`, `params`, `permalinks`, `privacy`, `related`, `security`, `segments`, `server`, `services`, `sitemap`, and `taxonomies`.
 @y
-```text
-my-project/
-└── config/
-    ├── _default/
-    │   ├── hugo.toml
-    │   ├── menus.en.toml
-    │   ├── menus.de.toml
-    │   └── params.toml
-    ├── production/
-    │   ├── hugo.toml
-    │   └── params.toml
-    └── staging/
-        ├── hugo.toml
-        └── params.toml
-```
-@z
-
-@x
-The root configuration keys are `build`, `caches`, `cascade`, `deployment`, `frontmatter`, `imaging`, `languages`, `markup`, `mediatypes`, `menus`, `minify`, `module`, `outputformats`, `outputs`, `params`, `permalinks`, `privacy`, `related`, `security`, `server`, `services`, `sitemap`, and `taxonomies`.
-@y
-The root configuration keys are `build`, `caches`, `cascade`, `deployment`, `frontmatter`, `imaging`, `languages`, `markup`, `mediatypes`, `menus`, `minify`, `module`, `outputformats`, `outputs`, `params`, `permalinks`, `privacy`, `related`, `security`, `server`, `services`, `sitemap`, and `taxonomies`.
+The root configuration keys are `build`, `caches`, `cascade`, `deployment`, `frontmatter`, `imaging`, `languages`, `markup`, `mediatypes`, `menus`, `minify`, `module`, `outputformats`, `outputs`, `params`, `permalinks`, `privacy`, `related`, `security`, `segments`, `server`, `services`, `sitemap`, and `taxonomies`.
 @z
 
 @x
@@ -201,27 +101,7 @@ When splitting the configuration by root key, omit the root key in the given fil
 When splitting the configuration by root key, omit the root key in the given file. For example, these are equivalent:
 @z
 
-@x
-{{< code-toggle file=hugo >}}
-[params]
-foo = 'bar'
-{{< /code-toggle >}}
-@y
-{{< code-toggle file=hugo >}}
-[params]
-foo = 'bar'
-{{< /code-toggle >}}
-@z
-
-@x
-{{< code-toggle file=params >}}
-foo = 'bar'
-{{< /code-toggle >}}
-@y
-{{< code-toggle file=params >}}
-foo = 'bar'
-{{< /code-toggle >}}
-@z
+% snip code...
 
 @x
 ### Recursive parsing
@@ -235,27 +115,7 @@ Hugo parses the `config` directory recursively, allowing you to organize the fil
 Hugo parses the `config` directory recursively, allowing you to organize the files into subdirectories. For example:
 @z
 
-@x
-```text
-my-project/
-└── config/
-    └── _default/
-        ├── navigation/
-        │   ├── menus.de.toml
-        │   └── menus.en.toml
-        └── hugo.toml
-```
-@y
-```text
-my-project/
-└── config/
-    └── _default/
-        ├── navigation/
-        │   ├── menus.de.toml
-        │   └── menus.en.toml
-        └── hugo.toml
-```
-@z
+% snip text...
 
 @x
 ### Example
@@ -263,39 +123,7 @@ my-project/
 ### Example
 @z
 
-@x
-```text
-my-project/
-└── config/
-    ├── _default/
-    │   ├── hugo.toml
-    │   ├── menus.en.toml
-    │   ├── menus.de.toml
-    │   └── params.toml
-    ├── production/
-    │   ├── hugo.toml
-    │   └── params.toml
-    └── staging/
-        ├── hugo.toml
-        └── params.toml
-```
-@y
-```text
-my-project/
-└── config/
-    ├── _default/
-    │   ├── hugo.toml
-    │   ├── menus.en.toml
-    │   ├── menus.de.toml
-    │   └── params.toml
-    ├── production/
-    │   ├── hugo.toml
-    │   └── params.toml
-    └── staging/
-        ├── hugo.toml
-        └── params.toml
-```
-@z
+% snip text...
 
 @x
 Considering the structure above, when running `hugo --environment staging`, Hugo will use every setting from `config/_default` and merge `staging`'s on top of those.
@@ -315,17 +143,7 @@ Let's take an example to understand this better. Let's say you are using Google 
 [Google tag ID]: https://support.google.com/tagmanager/answer/12326985?hl=en
 @z
 
-@x
-{{< code-toggle file=hugo copy=false >}}
-[services.googleAnalytics]
-ID = 'G-XXXXXXXXX'
-{{< /code-toggle >}}
-@y
-{{< code-toggle file=hugo copy=false >}}
-[services.googleAnalytics]
-ID = 'G-XXXXXXXXX'
-{{< /code-toggle >}}
-@z
+% snip code...
 
 @x
 Now consider the following scenario:
@@ -385,17 +203,7 @@ To satisfy these requirements, configure your site as follows:
     Include this section only:
 @z
 
-@x
-    {{< code-toggle file=hugo copy=false >}}
-    [services.googleAnalytics]
-    ID = 'G-PPPPPPPPP'
-    {{< /code-toggle >}}
-@y
-    {{< code-toggle file=hugo copy=false >}}
-    [services.googleAnalytics]
-    ID = 'G-PPPPPPPPP'
-    {{< /code-toggle >}}
-@z
+% snip code...
 
 @x
     You do not need to include other parameters in this file. Include only those parameters that are specific to your production environment. Hugo will merge these parameters with the default configuration.
@@ -421,17 +229,7 @@ To satisfy these requirements, configure your site as follows:
     Include this section only:
 @z
 
-@x
-    {{< code-toggle file=hugo copy=false >}}
-    [services.googleAnalytics]
-    ID = 'G-SSSSSSSSS'
-    {{< /code-toggle >}}
-@y
-    {{< code-toggle file=hugo copy=false >}}
-    [services.googleAnalytics]
-    ID = 'G-SSSSSSSSS'
-    {{< /code-toggle >}}
-@z
+% snip code...
 
 @x
     You do not need to include other parameters in this file. Include only those parameters that are specific to your staging environment. Hugo will merge these parameters with the default configuration.
@@ -578,9 +376,9 @@ See [Configure Build](#configure-build).
 @z
 
 @x
-(`bool`) Include content with publishdate in the future. Default is `false`.
+(`bool`) Include content with a future publication date. Default is `false`.
 @y
-(`bool`) Include content with publishdate in the future. Default is `false`.
+(`bool`) Include content with a future publication date. Default is `false`.
 @z
 
 @x
@@ -602,9 +400,9 @@ See [Configure File Caches](#configure-file-caches).
 @z
 
 @x
-Pass down down default configuration values (front matter) to pages in the content tree. The options in site config is the same as in page front matter, see [Front Matter Cascade](/content-management/front-matter#cascade).
+Pass down default configuration values (front matter) to pages in the content tree. The options in site config is the same as in page front matter, see [Front Matter Cascade](/content-management/front-matter#cascade).
 @y
-Pass down down default configuration values (front matter) to pages in the content tree. The options in site config is the same as in page front matter, see [Front Matter Cascade](/content-management/front-matter#cascade).
+Pass down default configuration values (front matter) to pages in the content tree. The options in site config is the same as in page front matter, see [Front Matter Cascade](/content-management/front-matter#cascade).
 @z
 
 @x
@@ -1002,9 +800,9 @@ Module configuration see [module configuration](/hugo-modules/configuration/).
 @z
 
 @x
-See [Configure Output Formats](#configure-additional-output-formats).
+See [custom output formats].
 @y
-See [Configure Output Formats](#configure-additional-output-formats).
+See [custom output formats].
 @z
 
 @x
@@ -1156,9 +954,9 @@ See [Menus](/content-management/menus/#define-automatically).
 @z
 
 @x
-See [Security Policy](/about/security-model/#security-policy).
+See [Security Policy](/about/security/#security-policy).
 @y
-See [Security Policy](/about/security-model/#security-policy).
+See [Security Policy](/about/security/#security-policy).
 @z
 
 @x
@@ -1293,21 +1091,13 @@ See [module configuration](/hugo-modules/configuration/#module-configuration-imp
 (`bool`) Watch filesystem for changes and recreate as needed. Default is `false`.
 @z
 
-@x
-{{% note %}}
+@x note
 If you are developing your site on a \*nix machine, here is a handy shortcut for finding a configuration option from the command line:
-```txt
-cd ~/sites/yourhugosite
-hugo config | grep emoji
-```
 @y
-{{% note %}}
 If you are developing your site on a \*nix machine, here is a handy shortcut for finding a configuration option from the command line:
-```txt
-cd ~/sites/yourhugosite
-hugo config | grep emoji
-```
 @z
+
+% snip text...
 
 @x
 which shows output like
@@ -1315,17 +1105,7 @@ which shows output like
 which shows output like
 @z
 
-@x
-```txt
-enableemoji: true
-```
-{{% /note %}}
-@y
-```txt
-enableemoji: true
-```
-{{% /note %}}
-@z
+% snip text...
 
 @x
 ## Configure build
@@ -1441,43 +1221,7 @@ The `build.cachebusters` configuration option was added to support development u
 The `build.cachebusters` configuration option was added to support development using Tailwind 3.x's JIT compiler where a `build` configuration may look like this:
 @z
 
-@x
-{{< code-toggle file=hugo >}}
-[build]
-  [build.buildStats]
-    enable = true
-  [[build.cachebusters]]
-    source = "assets/watching/hugo_stats\\.json"
-    target = "styles\\.css"
-  [[build.cachebusters]]
-    source = "(postcss|tailwind)\\.config\\.js"
-    target = "css"
-  [[build.cachebusters]]
-    source = "assets/.*\\.(js|ts|jsx|tsx)"
-    target = "js"
-  [[build.cachebusters]]
-    source = "assets/.*\\.(.*)$"
-    target = "$1"
-{{< /code-toggle >}}
-@y
-{{< code-toggle file=hugo >}}
-[build]
-  [build.buildStats]
-    enable = true
-  [[build.cachebusters]]
-    source = "assets/watching/hugo_stats\\.json"
-    target = "styles\\.css"
-  [[build.cachebusters]]
-    source = "(postcss|tailwind)\\.config\\.js"
-    target = "css"
-  [[build.cachebusters]]
-    source = "assets/.*\\.(js|ts|jsx|tsx)"
-    target = "js"
-  [[build.cachebusters]]
-    source = "assets/.*\\.(.*)$"
-    target = "$1"
-{{< /code-toggle >}}
-@z
+% snip code...
 
 @x
 When `buildStats` {{< new-in 0.115.1 >}} is enabled, Hugo writes a `hugo_stats.json` file on each build with HTML classes etc. that's used in the rendered output. Changes to this file will trigger a rebuild of the `styles.css` file. You also need to add `hugo_stats.json` to Hugo's server watcher. See [Hugo Starter Tailwind Basic](https://github.com/bep/hugo-starter-tailwind-basic) for a running example.
@@ -1513,35 +1257,7 @@ This is only relevant when running `hugo server`, and it allows to set HTTP head
 This is only relevant when running `hugo server`, and it allows to set HTTP headers during development, which allows you to test out your Content Security Policy and similar. The configuration format matches [Netlify's](https://docs.netlify.com/routing/headers/#syntax-for-the-netlify-configuration-file) with slightly more powerful [Glob matching](https://github.com/gobwas/glob):
 @z
 
-@x
-{{< code-toggle file=hugo >}}
-[server]
-[[server.headers]]
-for = "/**"
-@y
-{{< code-toggle file=hugo >}}
-[server]
-[[server.headers]]
-for = "/**"
-@z
-
-@x
-[server.headers.values]
-X-Frame-Options = "DENY"
-X-XSS-Protection = "1; mode=block"
-X-Content-Type-Options = "nosniff"
-Referrer-Policy = "strict-origin-when-cross-origin"
-Content-Security-Policy = "script-src localhost:1313"
-{{< /code-toggle >}}
-@y
-[server.headers.values]
-X-Frame-Options = "DENY"
-X-XSS-Protection = "1; mode=block"
-X-Content-Type-Options = "nosniff"
-Referrer-Policy = "strict-origin-when-cross-origin"
-Content-Security-Policy = "script-src localhost:1313"
-{{< /code-toggle >}}
-@z
+% snip code...
 
 @x
 Since this is "development only", it may make sense to put it below the `development` environment:
@@ -1549,33 +1265,7 @@ Since this is "development only", it may make sense to put it below the `develop
 Since this is "development only", it may make sense to put it below the `development` environment:
 @z
 
-@x
-{{< code-toggle file=config/development/server >}}
-[[headers]]
-for = "/**"
-@y
-{{< code-toggle file=config/development/server >}}
-[[headers]]
-for = "/**"
-@z
-
-@x
-[headers.values]
-X-Frame-Options = "DENY"
-X-XSS-Protection = "1; mode=block"
-X-Content-Type-Options = "nosniff"
-Referrer-Policy = "strict-origin-when-cross-origin"
-Content-Security-Policy = "script-src localhost:1313"
-{{< /code-toggle >}}
-@y
-[headers.values]
-X-Frame-Options = "DENY"
-X-XSS-Protection = "1; mode=block"
-X-Content-Type-Options = "nosniff"
-Referrer-Policy = "strict-origin-when-cross-origin"
-Content-Security-Policy = "script-src localhost:1313"
-{{< /code-toggle >}}
-@z
+% snip code...
 
 @x
 You can also specify simple redirects rules for the server. The syntax is again similar to Netlify's.
@@ -1589,23 +1279,7 @@ Note that a `status` code of 200 will trigger a [URL rewrite](https://docs.netli
 Note that a `status` code of 200 will trigger a [URL rewrite](https://docs.netlify.com/routing/redirects/rewrites-proxies/), which is what you want in SPA situations, e.g:
 @z
 
-@x
-{{< code-toggle file=config/development/server >}}
-[[redirects]]
-from = "/myspa/**"
-to = "/myspa/"
-status = 200
-force = false
-{{< /code-toggle >}}
-@y
-{{< code-toggle file=config/development/server >}}
-[[redirects]]
-from = "/myspa/**"
-to = "/myspa/"
-status = 200
-force = false
-{{< /code-toggle >}}
-@z
+% snip code...
 
 @x
 Setting `force=true` will make a redirect even if there is existing content in the path. Note that before Hugo 0.76 `force` was the default behavior, but this is inline with how Netlify does it.
@@ -1631,21 +1305,7 @@ Hugo will, by default, render all 404 errors when running `hugo server` with the
 Hugo will, by default, render all 404 errors when running `hugo server` with the `404.html` template. Note that if you have already added one or more redirects to your [server configuration](#configure-server), you need to add the 404 redirect explicitly, e.g:
 @z
 
-@x
-{{< code-toggle file=config/development/server >}}
-[[redirects]]
-from   = "/**"
-to     = "/404.html"
-status = 404
-{{< /code-toggle >}}
-@y
-{{< code-toggle file=config/development/server >}}
-[[redirects]]
-from   = "/**"
-to     = "/404.html"
-status = 404
-{{< /code-toggle >}}
-@z
+% snip code...
 
 @x
 ## Configure title case
@@ -1845,15 +1505,7 @@ To ignore files ending with `.foo` or `.boo`:
 To ignore files ending with `.foo` or `.boo`:
 @z
 
-@x
-{{< code-toggle file=hugo >}}
-ignoreFiles = ['\.foo$', '\.boo$']
-{{< /code-toggle >}}
-@y
-{{< code-toggle file=hugo >}}
-ignoreFiles = ['\.foo$', '\.boo$']
-{{< /code-toggle >}}
-@z
+% snip code...
 
 @x
 To ignore a file using the absolute file path:
@@ -1861,15 +1513,7 @@ To ignore a file using the absolute file path:
 To ignore a file using the absolute file path:
 @z
 
-@x
-{{< code-toggle file=hugo >}}
-ignoreFiles = ['^/home/user/project/content/test\.md$']
-{{< /code-toggle >}}
-@y
-{{< code-toggle file=hugo >}}
-ignoreFiles = ['^/home/user/project/content/test\.md$']
-{{< /code-toggle >}}
-@z
+% snip code...
 
 @x
 ## Configure front matter
@@ -1907,17 +1551,7 @@ If you, as an example, have a non-standard date parameter in some of your conten
 If you, as an example, have a non-standard date parameter in some of your content, you can override the setting for `date`:
 @z
 
-@x
-{{< code-toggle file=hugo >}}
-[frontmatter]
-date = ["myDate", ":default"]
-{{< /code-toggle >}}
-@y
-{{< code-toggle file=hugo >}}
-[frontmatter]
-date = ["myDate", ":default"]
-{{< /code-toggle >}}
-@z
+% snip code...
 
 @x
 The `:default` is a shortcut to the default settings. The above will set `.Date` to the date value in `myDate` if present, if not we will look in `date`,`publishDate`, `lastmod` and pick the first valid date.
@@ -1951,17 +1585,7 @@ An example:
 An example:
 @z
 
-@x
-{{< code-toggle file=hugo >}}
-[frontmatter]
-lastmod = ["lastmod", ":fileModTime", ":default"]
-{{< /code-toggle >}}
-@y
-{{< code-toggle file=hugo >}}
-[frontmatter]
-lastmod = ["lastmod", ":fileModTime", ":default"]
-{{< /code-toggle >}}
-@z
+% snip code...
 
 @x
 The above will try first to extract the value for `.Lastmod` starting with the `lastmod` front matter parameter, then the content file's modification timestamp. The last, `:default` should not be needed here, but Hugo will finally look for a valid date in `:git`, `date` and then `publishDate`.
@@ -1983,17 +1607,7 @@ An example:
 An example:
 @z
 
-@x
-{{< code-toggle file=hugo >}}
-[frontmatter]
-date  = [":filename", ":default"]
-{{< /code-toggle >}}
-@y
-{{< code-toggle file=hugo >}}
-[frontmatter]
-date  = [":filename", ":default"]
-{{< /code-toggle >}}
-@z
+% snip code...
 
 @x
 The above will try first to extract the value for `.Date` from the file name, then it will look in front matter parameters `date`, `publishDate` and lastly `lastmod`.
@@ -2007,18 +1621,6 @@ The above will try first to extract the value for `.Date` from the file name, th
 @y
 `:git`
 : This is the Git author date for the last revision of this content file. This will only be set if `--enableGitInfo` is set or `enableGitInfo = true` is set in site configuration.
-@z
-
-@x
-## Configure additional output formats
-@y
-## Configure additional output formats
-@z
-
-@x
-Hugo v0.20 introduced the ability to render your content to multiple output formats (e.g., to JSON, AMP html, or CSV). See [Output Formats] for information on how to add these values to your Hugo project's configuration file.
-@y
-Hugo v0.20 introduced the ability to render your content to multiple output formats (e.g., to JSON, AMP html, or CSV). See [Output Formats] for information on how to add these values to your Hugo project's configuration file.
 @z
 
 @x
@@ -2134,9 +1736,9 @@ This is the directory where Hugo by default will store its file caches. See [Con
 @z
 
 @x
-This can be set using the `cacheDir` config option or via the OS env variable `HUGO_CACHEDIR`.
+This can be set using the `cacheDir` config option or via the OS environment variable `HUGO_CACHEDIR`.
 @y
-This can be set using the `cacheDir` config option or via the OS env variable `HUGO_CACHEDIR`.
+This can be set using the `cacheDir` config option or via the OS environment variable `HUGO_CACHEDIR`.
 @z
 
 @x

@@ -2,35 +2,17 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: Content organization
 linkTitle: Organization
 description: Hugo assumes that the same structure that works to organize your source content is used to organize the rendered site.
 categories: [content management,fundamentals]
 keywords: [sections,content,organization,bundle,resources]
-menu:
-  docs:
-    parent: content-management
-    weight: 20
-weight: 20
-toc: true
-aliases: [/content/sections/]
----
 @y
----
 title: コンテントの構成
 linkTitle: コンテントの構成
 description: Hugo では、ソースコンテントを構築するための構成をそのままレンダリングサイトにも適用するものとしています。
 categories: [content management,fundamentals]
 keywords: [sections,content,organization,bundle,resources]
-menu:
-  docs:
-    parent: content-management
-    weight: 20
-weight: 20
-toc: true
-aliases: [/content/sections/]
----
 @z
 
 @x
@@ -183,7 +165,7 @@ You can create one `_index.md` for your homepage and one in each of your content
 .       ⊢--^-⊣
 .        path    slug
 .       ⊢--^-⊣⊢---^---⊣
-.           filepath
+.           file path
 .       ⊢------^------⊣
 content/posts/_index.md
 ```
@@ -193,7 +175,7 @@ content/posts/_index.md
 .       ⊢--^-⊣
 .        path    slug
 .       ⊢--^-⊣⊢---^---⊣
-.           filepath
+.           file path
 .       ⊢------^------⊣
 content/posts/_index.md
 ```

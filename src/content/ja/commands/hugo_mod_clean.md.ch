@@ -52,25 +52,23 @@ hugo mod clean [flags] [args]
 @z
 
 @x
-```
-      --all                 clean entire module cache
-  -b, --baseURL string      hostname (and path) to the root, e.g. https://spf13.com/
-      --cacheDir string     filesystem path to cache directory
-  -c, --contentDir string   filesystem path to content directory
-  -h, --help                help for clean
-      --pattern string      pattern matching module paths to clean (all if not set), e.g. "**hugo*"
-  -t, --theme strings       themes to use (located in /themes/THEMENAME/)
-```
+      --all                      clean entire module cache
+  -b, --baseURL string           hostname (and path) to the root, e.g. https://spf13.com/
+      --cacheDir string          filesystem path to cache directory
+  -c, --contentDir string        filesystem path to content directory
+  -h, --help                     help for clean
+      --pattern string           pattern matching module paths to clean (all if not set), e.g. "**hugo*"
+      --renderSegments strings   named segments to render (configured in the segments config)
+  -t, --theme strings            themes to use (located in /themes/THEMENAME/)
 @y
-```
-      --all                 clean entire module cache
-  -b, --baseURL string      hostname (and path) to the root, e.g. https://spf13.com/
-      --cacheDir string     filesystem path to cache directory
-  -c, --contentDir string   filesystem path to content directory
-  -h, --help                help for clean
-      --pattern string      pattern matching module paths to clean (all if not set), e.g. "**hugo*"
-  -t, --theme strings       themes to use (located in /themes/THEMENAME/)
-```
+      --all                      clean entire module cache
+  -b, --baseURL string           hostname (and path) to the root, e.g. https://spf13.com/
+      --cacheDir string          filesystem path to cache directory
+  -c, --contentDir string        filesystem path to content directory
+  -h, --help                     help for clean
+      --pattern string           pattern matching module paths to clean (all if not set), e.g. "**hugo*"
+      --renderSegments strings   named segments to render (configured in the segments config)
+  -t, --theme strings            themes to use (located in /themes/THEMENAME/)
 @z
 
 @x
@@ -83,6 +81,7 @@ hugo mod clean [flags] [args]
       --clock string               set the clock used by Hugo, e.g. --clock 2021-11-06T22:30:00.00+09:00
 @y
       --clock string               Hugo が用いる日時を指定します。--clock 2021-11-06T22:30:00.00+09:00
+@z
 @x
       --config string              config file (default is hugo.yaml|json|toml)
 @y

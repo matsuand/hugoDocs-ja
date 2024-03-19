@@ -1,6 +1,8 @@
 %This is the change file for the original Hugo Documentation file.
 %This is part of Japanese translation version for Hugo Documantation.
 
+% git リポジトリ対応／.ch 対応
+
 @x
 			<th class="pv2 ph3 tl f6 fw6 ttu">LastMod</th>
 			<th class="pv2 ph3 tl f6 fw6 ttu">Link</th>

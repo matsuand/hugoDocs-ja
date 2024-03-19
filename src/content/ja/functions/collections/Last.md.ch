@@ -2,83 +2,31 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: collections.Last
 description: Returns the given collection, limited to the last N elements.
 categories: []
 keywords: []
-action:
-  aliases: [last]
-  related:
-    - functions/collections/After
-    - functions/collections/First
-  returnType: any
-  signatures: [collections.Last N COLLECTION]
-aliases: [/functions/last]
----
 @y
----
 title: collections.Last
-description: Returns the given collection, limited to the last N elements.
+description: 指定されたコレクションにおける最後の N 個分の要素を返します。
 categories: []
 keywords: []
-action:
-  aliases: [last]
-  related:
-    - functions/collections/After
-    - functions/collections/First
-  returnType: any
-  signatures: [collections.Last N COLLECTION]
-aliases: [/functions/last]
----
 @z
 
-@x
-```go-html-template
-{{ range last 10 .Pages }}
-  {{ .Render "summary" }}
-{{ end }}
-```
-@y
-```go-html-template
-{{ range last 10 .Pages }}
-  {{ .Render "summary" }}
-{{ end }}
-```
-@z
+% snip code...
 
 @x
 Set `N` to zero to return an empty collection.
 @y
-Set `N` to zero to return an empty collection.
+`N` をゼロに指定すると空のコレクションを返します。
 @z
 
-@x
-```go-html-template
-{{ $emptyPageCollection := last 0 .Pages}}
-```
-@y
-```go-html-template
-{{ $emptyPageCollection := last 0 .Pages}}
-```
-@z
+% snip code...
 
 @x
 Use `last` and [`where`] together.
 @y
-Use `last` and [`where`] together.
+`last` と [`where`] をともに用いた例です。
 @z
 
-@x
-```go-html-template
-{{ range where .Pages "Section" "articles" | last 5 }}
-  {{ .Render "summary" }}
-{{ end }}
-```
-@y
-```go-html-template
-{{ range where .Pages "Section" "articles" | last 5 }}
-  {{ .Render "summary" }}
-{{ end }}
-```
-@z
+% snip code...

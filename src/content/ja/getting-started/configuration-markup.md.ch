@@ -69,46 +69,20 @@ defaultMarkdownHandler|Description
 @z
 
 @x
-To use Asciidoc, Pandoc, or reStructuredText you must install the relevant renderer and update your [security policy].
+To use AsciiDoc, Pandoc, or reStructuredText you must install the relevant renderer and update your [security policy].
 @y
-Asciidoc, Pandoc, reStructuredText を利用する場合は、対応するレンダラーをインストールした上で、[セキュリティポリシー][security policy] を更新する必要があります。
+AsciiDoc, Pandoc, reStructuredText を利用する場合は、対応するレンダラーをインストールした上で、[セキュリティポリシー][security policy] を更新する必要があります。
 @z
 
-@x
-{{% note %}}
+@x note
 Unless you need a unique capability provided by one of the alternate Markdown handlers, we strongly recommend that you use the default setting. Goldmark is fast, well maintained, conforms to the [CommonMark] specification, and is compatible with [GitHub Flavored Markdown] (GFM).
 @y
-{{% note %}}
 Unless you need a unique capability provided by one of the alternate Markdown handlers, we strongly recommend that you use the default setting. Goldmark is fast, well maintained, conforms to the [CommonMark] specification, and is compatible with [GitHub Flavored Markdown] (GFM).
 @z
 
-@x
-[commonmark]: https://spec.commonmark.org/0.30/
-[github flavored markdown]: https://github.github.com/gfm/
-{{% /note %}}
-@y
-[commonmark]: https://spec.commonmark.org/0.30/
-[github flavored markdown]: https://github.github.com/gfm/
-{{% /note %}}
-@z
+% snip links...
 
-@x
-[asciidoc]: https://asciidoc.org/
-[content format]: /content-management/formats/#list-of-content-formats
-[emacs org mode]: https://orgmode.org/
-[goldmark]: https://github.com/yuin/goldmark/
-[pandoc]: https://pandoc.org/
-[restructuredtext]: https://docutils.sourceforge.io/rst.html
-[security policy]: /about/security-model/#security-policy
-@y
-[asciidoc]: https://asciidoc.org/
-[content format]: /content-management/formats/#list-of-content-formats
-[emacs org mode]: https://orgmode.org/
-[goldmark]: https://github.com/yuin/goldmark/
-[pandoc]: https://pandoc.org/
-[restructuredtext]: https://docutils.sourceforge.io/rst.html
-[security policy]: /about/security-model/#security-policy
-@z
+% snip links...
 
 @x
 ## Goldmark
@@ -469,9 +443,9 @@ The embedded link render hook is automatically enabled for multilingual single-h
 @z
 
 @x
-## Asciidoc
+## AsciiDoc
 @y
-## Asciidoc
+## AsciiDoc
 @z
 
 @x
@@ -487,9 +461,9 @@ This is the default configuration for the AsciiDoc Markdown renderer:
 @z
 
 @x
-### Asciidoc settings explained
+### AsciiDoc settings explained
 @y
-### Asciidoc settings explained
+### AsciiDoc settings explained
 @z
 
 @x

@@ -2,33 +2,17 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
-title: Hugo's security model
+title: Security model
+linkTitle: Security 
 description: A summary of Hugo's security model.
 categories: [about]
 keywords: [security,privacy]
-menu:
-  docs:
-    parent: about
-    weight: 50
-weight: 50
-toc: true
-aliases: [/security/]
----
 @y
----
-title: Hugo のセキュリティモデル
+title: セキュリティモデル
+linkTitle: セキュリティ
 description: A summary of Hugo's security model.
 categories: [about]
 keywords: [security,privacy]
-menu:
-  docs:
-    parent: about
-    weight: 50
-weight: 50
-toc: true
-aliases: [/security/]
----
 @z
 
 @x

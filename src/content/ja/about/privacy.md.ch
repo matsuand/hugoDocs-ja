@@ -3,33 +3,33 @@
 
 @x
 ---
-title: Hugo and the General Data Protection Regulation
-linkTitle: Hugo and the GDPR
-description: About how to configure your Hugo site to meet the new regulations.
+title: Privacy
+linkTitle: Privacy
+description: Configure your site to facilitate compliance with regional privacy regulations.
 categories: [about]
 keywords: ["GDPR", "Privacy", "Data Protection"]
 menu:
   docs:
     parent: about
-    weight: 60
-weight: 60
+    weight: 40
+weight: 40
 toc: true
-aliases: [/privacy/,/gdpr/]
+aliases: [/gdpr/,/about/hugo-and-gdpr/]
 ---
 @y
 ---
-title: Hugo and the General Data Protection Regulation
-linkTitle: Hugo and the GDPR
-description: About how to configure your Hugo site to meet the new regulations.
+title: Privacy
+linkTitle: Privacy
+description: Configure your site to facilitate compliance with regional privacy regulations.
 categories: [about]
 keywords: ["GDPR", "Privacy", "Data Protection"]
 menu:
   docs:
     parent: about
-    weight: 60
-weight: 60
+    weight: 40
+weight: 40
 toc: true
-aliases: [/privacy/,/gdpr/]
+aliases: [/gdpr/,/about/hugo-and-gdpr/]
 ---
 @z
 

@@ -51,11 +51,7 @@ In addition to cleaner Markdown, shortcodes can be updated any time to reflect n
 ## Use shortcodes
 @z
 
-@x
-{{< youtube 2xkNJL4gJ9E >}}
-@y
-{{< youtube 2xkNJL4gJ9E >}}
-@z
+% snip youtube...
 
 @x
 In your content files, a shortcode can be called by calling `{{%/* shortcodename parameters */%}}`. Shortcode parameters are space delimited, and parameters with internal spaces can be quoted.
@@ -81,25 +77,7 @@ Here are two examples of paired shortcodes:
 Here are two examples of paired shortcodes:
 @z
 
-@x
-```go-html-template
-{{%/* mdshortcode */%}}Stuff to `process` in the *center*.{{%/* /mdshortcode */%}}
-```
-@y
-```go-html-template
-{{%/* mdshortcode */%}}Stuff to `process` in the *center*.{{%/* /mdshortcode */%}}
-```
-@z
-
-@x
-```go-html-template
-{{</* highlight go */>}} A bunch of code here {{</* /highlight */>}}
-```
-@y
-```go-html-template
-{{</* highlight go */>}} A bunch of code here {{</* /highlight */>}}
-```
-@z
+% snip code...
 
 @x
 The examples above use two different delimiters, the difference being the `%` character in the first and the `<>` characters in the second.
@@ -119,17 +97,7 @@ You can pass multiple lines as parameters to a shortcode by using raw string lit
 You can pass multiple lines as parameters to a shortcode by using raw string literals:
 @z
 
-@x
-```go-html-template
-{{</*  myshortcode `This is some <b>HTML</b>,
-and a new line with a "quoted string".` */>}}
-```
-@y
-```go-html-template
-{{</*  myshortcode `This is some <b>HTML</b>,
-and a new line with a "quoted string".` */>}}
-```
-@z
+% snip code...
 
 @x
 ### Shortcodes with Markdown
@@ -155,15 +123,7 @@ The `<` character indicates that the shortcode's inner content does *not* need f
 The `<` character indicates that the shortcode's inner content does *not* need further rendering. Often shortcodes without Markdown include internal HTML:
 @z
 
-@x
-```go-html-template
-{{</* myshortcode */>}}<p>Hello <strong>World!</strong></p>{{</* /myshortcode */>}}
-```
-@y
-```go-html-template
-{{</* myshortcode */>}}<p>Hello <strong>World!</strong></p>{{</* /myshortcode */>}}
-```
-@z
+% snip code...
 
 @x
 ### Nested shortcodes
@@ -325,15 +285,7 @@ Example usage:
 Example usage:
 @z
 
-@x
-```text
-{{</* figure src="elephant.jpg" title="An elephant at sunset" */>}}
-```
-@y
-```text
-{{</* figure src="elephant.jpg" title="An elephant at sunset" */>}}
-```
-@z
+% snip text...
 
 @x
 Rendered:
@@ -341,21 +293,7 @@ Rendered:
 Rendered:
 @z
 
-@x
-```html
-<figure>
-  <img src="elephant.jpg">
-  <figcaption><h4>An elephant at sunset</h4></figcaption>
-</figure>
-```
-@y
-```html
-<figure>
-  <img src="elephant.jpg">
-  <figcaption><h4>An elephant at sunset</h4></figcaption>
-</figure>
-```
-@z
+% snip html...
 
 @x
 ### gist
@@ -391,15 +329,7 @@ To display a GitHub [gist] with this URL:
 [gist]: https://docs.github.com/en/get-started/writing-on-github/editing-and-sharing-content-with-gists
 @z
 
-@x
-```text
-https://gist.github.com/user/50a7482715eac222e230d1e64dd9a89b
-```
-@y
-```text
-https://gist.github.com/user/50a7482715eac222e230d1e64dd9a89b
-```
-@z
+% snip text...
 
 @x
 Include this in your Markdown:
@@ -407,15 +337,7 @@ Include this in your Markdown:
 Include this in your Markdown:
 @z
 
-@x
-```text
-{{</* gist user 50a7482715eac222e230d1e64dd9a89b */>}}
-```
-@y
-```text
-{{</* gist user 50a7482715eac222e230d1e64dd9a89b */>}}
-```
-@z
+% snip text...
 
 @x
 This will display all files in the gist alphabetically by file name.
@@ -435,15 +357,7 @@ To display a specific file within the gist:
 To display a specific file within the gist:
 @z
 
-@x
-```text
-{{</* gist user 23932424365401ffa5e9d9810102a477 list.html */>}}
-```
-@y
-```text
-{{</* gist user 23932424365401ffa5e9d9810102a477 list.html */>}}
-```
-@z
+% snip text...
 
 @x
 Rendered:
@@ -485,23 +399,7 @@ To display a highlighted code sample:
 To display a highlighted code sample:
 @z
 
-@x
-```text
-{{</* highlight go-html-template */>}}
-{{ range .Pages }}
-  <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-{{ end }}
-{{</* /highlight */>}}
-```
-@y
-```text
-{{</* highlight go-html-template */>}}
-{{ range .Pages }}
-  <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-{{ end }}
-{{</* /highlight */>}}
-```
-@z
+% snip text...
 
 @x
 Rendered:
@@ -535,23 +433,7 @@ To specify one or more [highlighting options], include a quotation-encapsulated,
 [highlighting options]: /functions/transform/highlight/
 @z
 
-@x
-```text
-{{</* highlight go-html-template "lineNos=inline, lineNoStart=42" */>}}
-{{ range .Pages }}
-  <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-{{ end }}
-{{</* /highlight */>}}
-```
-@y
-```text
-{{</* highlight go-html-template "lineNos=inline, lineNoStart=42" */>}}
-{{ range .Pages }}
-  <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-{{ end }}
-{{</* /highlight */>}}
-```
-@z
+% snip text...
 
 @x
 Rendered:
@@ -601,15 +483,7 @@ To display an Instagram post with this URL:
 To display an Instagram post with this URL:
 @z
 
-@x
-```text
-https://www.instagram.com/p/CxOWiQNP2MO/
-```
-@y
-```text
-https://www.instagram.com/p/CxOWiQNP2MO/
-```
-@z
+% snip text...
 
 @x
 Include this in your Markdown:
@@ -617,15 +491,7 @@ Include this in your Markdown:
 Include this in your Markdown:
 @z
 
-@x
-```text
-{{</* instagram CxOWiQNP2MO */>}}
-```
-@y
-```text
-{{</* instagram CxOWiQNP2MO */>}}
-```
-@z
+% snip text...
 
 @x
 Rendered:
@@ -633,11 +499,7 @@ Rendered:
 Rendered:
 @z
 
-@x
-{{< instagram CxOWiQNP2MO >}}
-@y
-{{< instagram CxOWiQNP2MO >}}
-@z
+% snip instagram...
 
 @x
 ### param
@@ -673,15 +535,7 @@ Example usage:
 Example usage:
 @z
 
-@x
-```text
-{{</* param testparam */>}}
-```
-@y
-```text
-{{</* param testparam */>}}
-```
-@z
+% snip text...
 
 @x
 Access nested values by [chaining] the [identifiers]:
@@ -689,23 +543,8 @@ Access nested values by [chaining] the [identifiers]:
 Access nested values by [chaining] the [identifiers]:
 @z
 
-@x
-[chaining]: /getting-started/glossary/#chain
-[identifiers]: /getting-started/glossary/#identifier
-@y
-[chaining]: /getting-started/glossary/#chain
-[identifiers]: /getting-started/glossary/#identifier
-@z
-
-@x
-```text
-{{</* param my.nested.param */>}}
-```
-@y
-```text
-{{</* param my.nested.param */>}}
-```
-@z
+% snip links...
+% snip text...
 
 @x
 ### ref
@@ -747,21 +586,7 @@ Example usage:
 Example usage:
 @z
 
-@x
-```text
-[Post 1]({{%/* ref "/posts/post-1" */%}})
-[Post 1]({{%/* ref "/posts/post-1.md" */%}})
-[Post 1]({{%/* ref "/posts/post-1#foo" */%}})
-[Post 1]({{%/* ref "/posts/post-1.md#foo" */%}})
-```
-@y
-```text
-[Post 1]({{%/* ref "/posts/post-1" */%}})
-[Post 1]({{%/* ref "/posts/post-1.md" */%}})
-[Post 1]({{%/* ref "/posts/post-1#foo" */%}})
-[Post 1]({{%/* ref "/posts/post-1.md#foo" */%}})
-```
-@z
+% snip text...
 
 @x
 Rendered:
@@ -769,21 +594,7 @@ Rendered:
 Rendered:
 @z
 
-@x
-```html
-<a href="http://example.org/posts/post-1/">Post 1</a>
-<a href="http://example.org/posts/post-1/">Post 1</a>
-<a href="http://example.org/posts/post-1/#foo">Post 1</a>
-<a href="http://example.org/posts/post-1/#foo">Post 1</a>
-```
-@y
-```html
-<a href="http://example.org/posts/post-1/">Post 1</a>
-<a href="http://example.org/posts/post-1/">Post 1</a>
-<a href="http://example.org/posts/post-1/#foo">Post 1</a>
-<a href="http://example.org/posts/post-1/#foo">Post 1</a>
-```
-@z
+% snip html...
 
 @x
 ### relref
@@ -825,21 +636,7 @@ Example usage:
 Example usage:
 @z
 
-@x
-```text
-[Post 1]({{%/* relref "/posts/post-1" */%}})
-[Post 1]({{%/* relref "/posts/post-1.md" */%}})
-[Post 1]({{%/* relref "/posts/post-1#foo" */%}})
-[Post 1]({{%/* relref "/posts/post-1.md#foo" */%}})
-```
-@y
-```text
-[Post 1]({{%/* relref "/posts/post-1" */%}})
-[Post 1]({{%/* relref "/posts/post-1.md" */%}})
-[Post 1]({{%/* relref "/posts/post-1#foo" */%}})
-[Post 1]({{%/* relref "/posts/post-1.md#foo" */%}})
-```
-@z
+% snip text...
 
 @x
 Rendered:
@@ -847,21 +644,7 @@ Rendered:
 Rendered:
 @z
 
-@x
-```html
-<a href="/posts/post-1/">Post 1</a>
-<a href="/posts/post-1/">Post 1</a>
-<a href="/posts/post-1/#foo">Post 1</a>
-<a href="/posts/post-1/#foo">Post 1</a>
-```
-@y
-```html
-<a href="/posts/post-1/">Post 1</a>
-<a href="/posts/post-1/">Post 1</a>
-<a href="/posts/post-1/#foo">Post 1</a>
-<a href="/posts/post-1/#foo">Post 1</a>
-```
-@z
+% snip html...
 
 @x
 ### twitter
@@ -897,15 +680,7 @@ To display a Twitter post with this URL:
 To display a Twitter post with this URL:
 @z
 
-@x
-```txt
-https://twitter.com/SanDiegoZoo/status/1453110110599868418
-```
-@y
-```txt
-https://twitter.com/SanDiegoZoo/status/1453110110599868418
-```
-@z
+% snip text...
 
 @x
 Include this in your Markdown:
@@ -913,15 +688,7 @@ Include this in your Markdown:
 Include this in your Markdown:
 @z
 
-@x
-```text
-{{</* twitter user="SanDiegoZoo" id="1453110110599868418" */>}}
-```
-@y
-```text
-{{</* twitter user="SanDiegoZoo" id="1453110110599868418" */>}}
-```
-@z
+% snip text...
 
 @x
 Rendered:
@@ -963,15 +730,7 @@ To display a Vimeo video with this URL:
 To display a Vimeo video with this URL:
 @z
 
-@x
-```text
-https://vimeo.com/channels/staffpicks/55073825
-```
-@y
-```text
-https://vimeo.com/channels/staffpicks/55073825
-```
-@z
+% snip text...
 
 @x
 Include this in your Markdown:
@@ -979,15 +738,7 @@ Include this in your Markdown:
 Include this in your Markdown:
 @z
 
-@x
-```text
-{{</* vimeo 55073825 */>}}
-```
-@y
-```text
-{{</* vimeo 55073825 */>}}
-```
-@z
+% snip text...
 
 @x
 Rendered:
@@ -1001,25 +752,13 @@ Rendered:
 {{< vimeo 55073825 >}}
 @z
 
-@x
-{{% note %}}
+@x note
 If you want to further customize the visual styling of the YouTube or Vimeo output, add a `class` parameter when calling the shortcode. The new `class` will be added to the `<div>` that wraps the `<iframe>` *and* will remove the inline styles. Note that you will need to call the `id` as a named parameter as well. You can also give the vimeo video a descriptive title with `title`.
 @y
-{{% note %}}
 If you want to further customize the visual styling of the YouTube or Vimeo output, add a `class` parameter when calling the shortcode. The new `class` will be added to the `<div>` that wraps the `<iframe>` *and* will remove the inline styles. Note that you will need to call the `id` as a named parameter as well. You can also give the vimeo video a descriptive title with `title`.
 @z
 
-@x
-```go
-{{</* vimeo id="146022717" class="my-vimeo-wrapper-class" title="My vimeo video" */>}}
-```
-{{% /note %}}
-@y
-```go
-{{</* vimeo id="146022717" class="my-vimeo-wrapper-class" title="My vimeo video" */>}}
-```
-{{% /note %}}
-@z
+% snip code...
 
 @x
 ### youtube
@@ -1160,9 +899,9 @@ Using the preceding `youtube` example (without `autoplay="true"`), the following
 @z
 
 @x
-To learn how to configure your Hugo site to meet the new EU privacy regulation, see [Hugo and the GDPR].
+To learn how to configure your Hugo site to meet the new EU privacy regulation, see [privacy protections].
 @y
-To learn how to configure your Hugo site to meet the new EU privacy regulation, see [Hugo and the GDPR].
+To learn how to configure your Hugo site to meet the new EU privacy regulation, see [privacy protections].
 @z
 
 @x

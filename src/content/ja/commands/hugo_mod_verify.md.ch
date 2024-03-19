@@ -52,23 +52,21 @@ hugo mod verify [flags] [args]
 @z
 
 @x
-```
-  -b, --baseURL string      hostname (and path) to the root, e.g. https://spf13.com/
-      --cacheDir string     filesystem path to cache directory
-      --clean               delete module cache for dependencies that fail verification
-  -c, --contentDir string   filesystem path to content directory
-  -h, --help                help for verify
-  -t, --theme strings       themes to use (located in /themes/THEMENAME/)
-```
+  -b, --baseURL string           hostname (and path) to the root, e.g. https://spf13.com/
+      --cacheDir string          filesystem path to cache directory
+      --clean                    delete module cache for dependencies that fail verification
+  -c, --contentDir string        filesystem path to content directory
+  -h, --help                     help for verify
+      --renderSegments strings   named segments to render (configured in the segments config)
+  -t, --theme strings            themes to use (located in /themes/THEMENAME/)
 @y
-```
-  -b, --baseURL string      hostname (and path) to the root, e.g. https://spf13.com/
-      --cacheDir string     filesystem path to cache directory
-      --clean               delete module cache for dependencies that fail verification
-  -c, --contentDir string   filesystem path to content directory
-  -h, --help                help for verify
-  -t, --theme strings       themes to use (located in /themes/THEMENAME/)
-```
+  -b, --baseURL string           hostname (and path) to the root, e.g. https://spf13.com/
+      --cacheDir string          filesystem path to cache directory
+      --clean                    delete module cache for dependencies that fail verification
+  -c, --contentDir string        filesystem path to content directory
+  -h, --help                     help for verify
+      --renderSegments strings   named segments to render (configured in the segments config)
+  -t, --theme strings            themes to use (located in /themes/THEMENAME/)
 @z
 
 @x
@@ -81,6 +79,7 @@ hugo mod verify [flags] [args]
       --clock string               set the clock used by Hugo, e.g. --clock 2021-11-06T22:30:00.00+09:00
 @y
       --clock string               Hugo が用いる日時を指定します。--clock 2021-11-06T22:30:00.00+09:00
+@z
 @x
       --config string              config file (default is hugo.yaml|json|toml)
 @y

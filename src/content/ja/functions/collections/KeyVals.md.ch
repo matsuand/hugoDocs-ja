@@ -2,107 +2,45 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: collections.KeyVals
 description: Returns a KeyVals struct.
 categories: []
 keywords: []
-action:
-  aliases: [keyVals]
-  related:
-    - methods/pages/Related
-  returnType: types.KeyValues
-  signatures: [collections.KeyVals KEY VALUES...]
-aliases: [/functions/keyvals]
----
 @y
----
 title: collections.KeyVals
-description: Returns a KeyVals struct.
+description: キーバリュー構造を返します。
 categories: []
 keywords: []
-action:
-  aliases: [keyVals]
-  related:
-    - methods/pages/Related
-  returnType: types.KeyValues
-  signatures: [collections.KeyVals KEY VALUES...]
-aliases: [/functions/keyvals]
----
 @z
 
 @x
 The primary application for this function is the definition of the `namedSlices` parameter in the options map passed to the [`Related`] method on the `Pages` object.
 @y
-The primary application for this function is the definition of the `namedSlices` parameter in the options map passed to the [`Related`] method on the `Pages` object.
+本関数の主な用途は、`Page` オブジェクトの [`Related`] メソッドに受け渡されるオプションマップ内の `namedSlices` パラメーターを定義することです。
 @z
 
-@x
-[`Related`]: /methods/pages/related/
-@y
-[`Related`]: /methods/pages/related/
-@z
+% snip link...
 
 @x
 See [related content](/content-management/related).
 @y
-See [related content](/content-management/related).
+[関連コンテント](/content-management/related) を参照してください。
 @z
 
-@x
-```go-html-template
-{{ $kv := keyVals "foo" "a" "b" "c" }}
-```
-@y
-```go-html-template
-{{ $kv := keyVals "foo" "a" "b" "c" }}
-```
-@z
+% snip code...
 
 @x
 The resulting data structure is:
 @y
-The resulting data structure is:
+結果のデータ構造は以下です。
 @z
 
-@x
-```json
-{
-  "Key": "foo",
-  "Values": [
-    "a",
-    "b",
-    "c"
-  ]
-}
-```
-@y
-```json
-{
-  "Key": "foo",
-  "Values": [
-    "a",
-    "b",
-    "c"
-  ]
-}
-```
-@z
+% snip code...
 
 @x
 To extract the key and values:
 @y
-To extract the key and values:
+キー (key) や値 (value) の抽出は以下です。
 @z
 
-@x
-```go-html-template
-{{ $kv.Key }} → foo
-{{ $kv.Values }} → [a b c]
-```
-@y
-```go-html-template
-{{ $kv.Key }} → foo
-{{ $kv.Values }} → [a b c]
-```
-@z
+% snip code...

@@ -3,7 +3,7 @@
 
 @x
 identifier = 'about'
-name = 'About Hugo'
+name = 'About'
 pageRef = '/about/'
 weight = 10
 @y

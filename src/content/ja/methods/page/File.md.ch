@@ -2,29 +2,15 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: File
 description: For pages backed by a file, returns file information for the given page.
 categories: []
 keywords: []
-action:
-  related: []
-  returnType: hugolib.fileInfo
-  signatures: [PAGE.File]
-toc: true
----
 @y
----
 title: File
 description: For pages backed by a file, returns file information for the given page.
 categories: []
 keywords: []
-action:
-  related: []
-  returnType: hugolib.fileInfo
-  signatures: [PAGE.File]
-toc: true
----
 @z
 
 @x
@@ -39,28 +25,16 @@ To back one of the pages above with a file, create an _index.md file in the corr
 To back one of the pages above with a file, create an _index.md file in the corresponding directory. For example:
 @z
 
-@x
-```text
-content/
-└── books/
-    ├── _index.md  <-- the top level section page
-    ├── book-1.md
-    └── book-2.md
-```
-@y
-```text
-content/
-└── books/
-    ├── _index.md  <-- the top level section page
-    ├── book-1.md
-    └── book-2.md
-```
-@z
+% snip text...
 
 @x
-Code defensively by verifying file existence as shown in each of the examples below.
+{{% note %}}
+Code defensively by verifying file existence as shown in the examples below.
+{{% /note %}}
 @y
-Code defensively by verifying file existence as shown in each of the examples below.
+{{% note %}}
+Code defensively by verifying file existence as shown in the examples below.
+{{% /note %}}
 @z
 
 @x
@@ -91,19 +65,7 @@ The path separators (slash or backslash) in `Path`, `Dir`, and `Filename` depend
 (`string`) The file name, excluding the extension.
 @z
 
-@x
-```go-html-template
-{{ with .File }}
-  {{ .BaseFileName }}
-{{ end }}
-```
-@y
-```go-html-template
-{{ with .File }}
-  {{ .BaseFileName }}
-{{ end }}
-```
-@z
+% snip code...
 
 @x
 ###### ContentBaseName
@@ -117,19 +79,7 @@ The path separators (slash or backslash) in `Path`, `Dir`, and `Filename` depend
 (`string`) If the page is a branch or leaf bundle, the name of the containing directory, else the `TranslationBaseName`.
 @z
 
-@x
-```go-html-template
-{{ with .File }}
-  {{ .ContentBaseName }}
-{{ end }}
-```
-@y
-```go-html-template
-{{ with .File }}
-  {{ .ContentBaseName }}
-{{ end }}
-```
-@z
+% snip code...
 
 @x
 ###### Dir
@@ -143,19 +93,7 @@ The path separators (slash or backslash) in `Path`, `Dir`, and `Filename` depend
 (`string`) The file path, excluding the file name, relative to the `content` directory.
 @z
 
-@x
-```go-html-template
-{{ with .File }}
-  {{ .Dir }}
-{{ end }}
-```
-@y
-```go-html-template
-{{ with .File }}
-  {{ .Dir }}
-{{ end }}
-```
-@z
+% snip code...
 
 @x
 ###### Ext
@@ -169,19 +107,7 @@ The path separators (slash or backslash) in `Path`, `Dir`, and `Filename` depend
 (`string`) The file extension.
 @z
 
-@x
-```go-html-template
-{{ with .File }}
-  {{ .Ext }}
-{{ end }}
-```
-@y
-```go-html-template
-{{ with .File }}
-  {{ .Ext }}
-{{ end }}
-```
-@z
+% snip code...
 
 @x
 ###### Filename
@@ -195,19 +121,7 @@ The path separators (slash or backslash) in `Path`, `Dir`, and `Filename` depend
 (`string`) The absolute file path.
 @z
 
-@x
-```go-html-template
-{{ with .File }}
-  {{ .Filename }}
-{{ end }}
-```
-@y
-```go-html-template
-{{ with .File }}
-  {{ .Filename }}
-{{ end }}
-```
-@z
+% snip code...
 
 @x
 ###### LogicalName
@@ -221,19 +135,7 @@ The path separators (slash or backslash) in `Path`, `Dir`, and `Filename` depend
 (`string`) The file name.
 @z
 
-@x
-```go-html-template
-{{ with .File }}
-  {{ .LogicalName }}
-{{ end }}
-```
-@y
-```go-html-template
-{{ with .File }}
-  {{ .LogicalName }}
-{{ end }}
-```
-@z
+% snip code...
 
 @x
 ###### Path
@@ -247,19 +149,7 @@ The path separators (slash or backslash) in `Path`, `Dir`, and `Filename` depend
 (`string`) The file path, relative to the `content` directory.
 @z
 
-@x
-```go-html-template
-{{ with .File }}
-  {{ .Path }}
-{{ end }}
-```
-@y
-```go-html-template
-{{ with .File }}
-  {{ .Path }}
-{{ end }}
-```
-@z
+% snip code...
 
 @x
 ###### Section
@@ -273,19 +163,7 @@ The path separators (slash or backslash) in `Path`, `Dir`, and `Filename` depend
 (`string`) The name of the top level section in which the file resides.
 @z
 
-@x
-```go-html-template
-{{ with .File }}
-  {{ .Section }}
-{{ end }}
-```
-@y
-```go-html-template
-{{ with .File }}
-  {{ .Section }}
-{{ end }}
-```
-@z
+% snip code...
 
 @x
 ###### TranslationBaseName
@@ -299,19 +177,7 @@ The path separators (slash or backslash) in `Path`, `Dir`, and `Filename` depend
 (`string`) The file name, excluding the extension and language identifier.
 @z
 
-@x
-```go-html-template
-{{ with .File }}
-  {{ .TranslationBaseName }}
-{{ end }}
-```
-@y
-```go-html-template
-{{ with .File }}
-  {{ .TranslationBaseName }}
-{{ end }}
-```
-@z
+% snip code...
 
 @x
 ###### UniqueID
@@ -325,19 +191,7 @@ The path separators (slash or backslash) in `Path`, `Dir`, and `Filename` depend
 (`string`) The MD5 hash of `.File.Path`.
 @z
 
-@x
-```go-html-template
-{{ with .File }}
-  {{ .UniqueID }}
-{{ end }}
-```
-@y
-```go-html-template
-{{ with .File }}
-  {{ .UniqueID }}
-{{ end }}
-```
-@z
+% snip code...
 
 @x
 ## Examples
@@ -438,47 +292,10 @@ Some of the pages on a site may not be backed by a file. For example:
 @z
 
 @x
-Without a backing file, Hugo will throw a warning if you attempt to access a `.File` property. For example:
+Without a backing file, Hugo will throw an error if you attempt to access a `.File` property. To code defensively, first check for file existence:
 @y
-Without a backing file, Hugo will throw a warning if you attempt to access a `.File` property. For example:
+Without a backing file, Hugo will throw an error if you attempt to access a `.File` property. To code defensively, first check for file existence:
 @z
 
-@x
-```text
-WARN .File.ContentBaseName on zero object. Wrap it in if or with...
-```
-@y
-```text
-WARN .File.ContentBaseName on zero object. Wrap it in if or with...
-```
-@z
-
-@x
-To code defensively, first check for file existence:
-@y
-To code defensively, first check for file existence:
-@z
-
-@x
-```go-html-template
-{{ with .File }}
-  {{ .ContentBaseName }}
-{{ end }}
-```
-@y
-```go-html-template
-{{ with .File }}
-  {{ .ContentBaseName }}
-{{ end }}
-```
-@z
-
-@x
-[section]: /getting-started/glossary/#section
-[taxonomy]: /getting-started/glossary/#taxonomy
-[term]: /getting-started/glossary/#term
-@y
-[section]: /getting-started/glossary/#section
-[taxonomy]: /getting-started/glossary/#taxonomy
-[term]: /getting-started/glossary/#term
-@z
+% snip code...
+% snip links...

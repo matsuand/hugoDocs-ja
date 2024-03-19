@@ -224,13 +224,12 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 bases = \
-	_index.md         \
-	benefits.md       \
-	features.md       \
-	hugo-and-gdpr.md  \
-	license.md        \
-	security-model.md \
-	what-is-hugo.md
+	_index.md       \
+	features.md     \
+	introduction.md \
+	license.md      \
+	privacy.md      \
+	security.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

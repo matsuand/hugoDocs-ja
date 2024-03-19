@@ -4,7 +4,7 @@
 @x
 ---
 title: Markdown attributes
-description: Use mardown attributes to add HTML attributes when rendering Markdown to HTML.
+description: Use Markdown attributes to add HTML attributes when rendering Markdown to HTML.
 categories: [content management]
 keywords: [goldmark,markdown]
 menu:
@@ -17,7 +17,7 @@ toc: true
 @y
 ---
 title: Markdown attributes
-description: Use mardown attributes to add HTML attributes when rendering Markdown to HTML.
+description: Use Markdown attributes to add HTML attributes when rendering Markdown to HTML.
 categories: [content management]
 keywords: [goldmark,markdown]
 menu:

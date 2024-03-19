@@ -2,29 +2,15 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: License
 description: Hugo is released under the Apache 2.0 license.
 categories: [about]
-keywords: [license,apache]
-menu:
-  docs:
-    parent: about
-    weight: 70
-weight: 70
----
+keywords: [apache]
 @y
----
 title: ライセンス
 description: Hugo は Apache 2.0 ライセンスのもとでリリースしています。
 categories: [about]
-keywords: [license,apache]
-menu:
-  docs:
-    parent: about
-    weight: 70
-weight: 70
----
+keywords: [apache]
 @z
 
 @x

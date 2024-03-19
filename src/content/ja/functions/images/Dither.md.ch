@@ -81,10 +81,10 @@ serpentine
 
 @x
 strength
-: (`float`) The strength at which to apply the dithering matrix, typically a value in the range [0, 1]. A value of `1.0` applies the dithering matrix at 100% strength (no modifification of the dither matrix). The `strength` is inversely proportional to contrast; reducing the strength increases the contrast. Setting `strength` to a value such as `0.8` can be useful to reduce noise in the dithered image. Default is `1.0`.
+: (`float`) The strength at which to apply the dithering matrix, typically a value in the range [0, 1]. A value of `1.0` applies the dithering matrix at 100% strength (no modification of the dither matrix). The `strength` is inversely proportional to contrast; reducing the strength increases the contrast. Setting `strength` to a value such as `0.8` can be useful to reduce noise in the dithered image. Default is `1.0`.
 @y
 strength
-: (`float`) The strength at which to apply the dithering matrix, typically a value in the range [0, 1]. A value of `1.0` applies the dithering matrix at 100% strength (no modifification of the dither matrix). The `strength` is inversely proportional to contrast; reducing the strength increases the contrast. Setting `strength` to a value such as `0.8` can be useful to reduce noise in the dithered image. Default is `1.0`.
+: (`float`) The strength at which to apply the dithering matrix, typically a value in the range [0, 1]. A value of `1.0` applies the dithering matrix at 100% strength (no modification of the dither matrix). The `strength` is inversely proportional to contrast; reducing the strength increases the contrast. Setting `strength` to a value such as `0.8` can be useful to reduce noise in the dithered image. Default is `1.0`.
 @z
 
 @x

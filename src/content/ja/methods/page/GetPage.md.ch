@@ -92,9 +92,9 @@ content/
 @z
 
 @x
-The examples below depict the result of rendering works/paintings/the-mona-list.md with a single page template:
+The examples below depict the result of rendering works/paintings/the-mona-lisa.md with a single page template:
 @y
-The examples below depict the result of rendering works/paintings/the-mona-list.md with a single page template:
+The examples below depict the result of rendering works/paintings/the-mona-lisa.md with a single page template:
 @z
 
 @x

@@ -2,123 +2,45 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: cast.ToFloat
 description: Converts a value to a decimal floating-point number (base 10).
 categories: []
 keywords: []
-action:
-  aliases: [float]
-  related:
-    - functions/cast/ToInt
-    - functions/cast/ToString
-  returnType: float64
-  signatures: [cast.ToFloat INPUT]
-aliases: [/functions/float]
----
 @y
----
 title: cast.ToFloat
-description: Converts a value to a decimal floating-point number (base 10).
+description: 10 進数の浮動小数点数値 (基底 10) に変換します。
 categories: []
 keywords: []
-action:
-  aliases: [float]
-  related:
-    - functions/cast/ToInt
-    - functions/cast/ToString
-  returnType: float64
-  signatures: [cast.ToFloat INPUT]
-aliases: [/functions/float]
----
 @z
 
 @x
 With a decimal (base 10) input:
 @y
-With a decimal (base 10) input:
+10 進数 (基底 10) を入力とする場合
 @z
 
-@x
-```go-html-template
-{{ float 11 }} → 11 (float64)
-{{ float "11" }} → 11 (float64)
-@y
-```go-html-template
-{{ float 11 }} → 11 (float64)
-{{ float "11" }} → 11 (float64)
-@z
-
-@x
-{{ float 11.1 }} → 11.1 (float64)
-{{ float "11.1" }} → 11.1 (float64)
-@y
-{{ float 11.1 }} → 11.1 (float64)
-{{ float "11.1" }} → 11.1 (float64)
-@z
-
-@x
-{{ float 11.9 }} → 11.9 (float64)
-{{ float "11.9" }} → 11.9 (float64)
-```
-@y
-{{ float 11.9 }} → 11.9 (float64)
-{{ float "11.9" }} → 11.9 (float64)
-```
-@z
+% snip code...
 
 @x
 With a binary (base 2) input:
 @y
-With a binary (base 2) input:
+バイナリー (基底 2) を入力とする場合
 @z
 
-@x
-```go-html-template
-{{ float 0b11 }} → 3 (float64)
-```
-@y
-```go-html-template
-{{ float 0b11 }} → 3 (float64)
-```
-@z
+% snip code...
 
 @x
 With an octal (base 8) input (use either notation):
 @y
-With an octal (base 8) input (use either notation):
+8 進数 (基底 8) を入力とする場合 (表記方法は複数あり)
 @z
 
-@x
-```go-html-template
-{{ float 011 }} → 9 (float64)
-{{ float "011" }} → 11 (float64)
-@y
-```go-html-template
-{{ float 011 }} → 9 (float64)
-{{ float "011" }} → 11 (float64)
-@z
-
-@x
-{{ float 0o11 }} → 9 (float64)
-```
-@y
-{{ float 0o11 }} → 9 (float64)
-```
-@z
+% snip code...
 
 @x
 With a hexadecimal (base 16) input:
 @y
-With a hexadecimal (base 16) input:
+16 進数 (基底 16) を入力とする場合
 @z
 
-@x
-```go-html-template
-{{ float 0x11 }} → 17 (float64)
-```
-@y
-```go-html-template
-{{ float 0x11 }} → 17 (float64)
-```
-@z
+% snip code...

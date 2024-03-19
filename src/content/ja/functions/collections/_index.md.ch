@@ -2,27 +2,17 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: Collections functions
 linkTitle: collections
 description: Template functions to work with arrays, slices, maps, and page collections.
 categories: []
 keywords: []
-menu:
-  docs:
-    parent: functions
----
 @y
----
 title: Collections 関数
 linkTitle: collections
 description: Template functions to work with arrays, slices, maps, and page collections.
 categories: []
 keywords: []
-menu:
-  docs:
-    parent: functions
----
 @z
 
 @x

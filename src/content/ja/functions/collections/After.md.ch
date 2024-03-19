@@ -2,35 +2,15 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: collections.After
 description: Slices an array to the items after the Nth item.
 categories: []
 keywords: []
-action:
-  aliases: [after]
-  related:
-    - functions/collections/First
-    - functions/collections/Last
-  returnType: any
-  signatures: [collections.After INDEX COLLECTION]
-aliases: [/functions/after]
----
 @y
----
 title: collections.After
 description: Slices an array to the items after the Nth item.
 categories: []
 keywords: []
-action:
-  aliases: [after]
-  related:
-    - functions/collections/First
-    - functions/collections/Last
-  returnType: any
-  signatures: [collections.After INDEX COLLECTION]
-aliases: [/functions/after]
----
 @z
 
 @x
@@ -39,25 +19,7 @@ The following shows `after` being used in conjunction with the [`slice`]function
 The following shows `after` being used in conjunction with the [`slice`]function:
 @z
 
-@x
-```go-html-template
-{{ $data := slice "one" "two" "three" "four" }}
-<ul>
-  {{ range after 2 $data }}
-    <li>{{ . }}</li>
-  {{ end }}
-</ul>
-```
-@y
-```go-html-template
-{{ $data := slice "one" "two" "three" "four" }}
-<ul>
-  {{ range after 2 $data }}
-    <li>{{ . }}</li>
-  {{ end }}
-</ul>
-```
-@z
+% snip code...
 
 @x
 The template above is rendered to:
@@ -65,21 +27,7 @@ The template above is rendered to:
 The template above is rendered to:
 @z
 
-@x
-```html
-<ul>
-  <li>three</li>
-  <li>four</li>
-</ul>
-```
-@y
-```html
-<ul>
-  <li>three</li>
-  <li>four</li>
-</ul>
-```
-@z
+% snip code...
 
 @x
 ## Example of `after` with `first`: 2nd&ndash;4th most recent articles
@@ -153,14 +101,4 @@ You can use `after` in combination with the [`first`] function and Hugo's [power
 {{< /code >}}
 @z
 
-@x
-[`first`]: /functions/collections/first/
-[list/section page]: /templates/section-templates/
-[lists]: /templates/lists/#sort-content
-[`slice`]: /functions/collections/slice/
-@y
-[`first`]: /functions/collections/first/
-[list/section page]: /templates/section-templates/
-[lists]: /templates/lists/#sort-content
-[`slice`]: /functions/collections/slice/
-@z
+% snip links...

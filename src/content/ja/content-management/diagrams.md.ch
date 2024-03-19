@@ -4,7 +4,7 @@
 @x
 ---
 title: Diagrams
-description: Use fenced code blocks and Markdown render hooks to display diagrams.
+description: Use fenced code blocks and Markdown render hooks to include diagrams in your content.
 categories: [content management]
 keywords: [diagrams,drawing]
 menu:
@@ -17,7 +17,7 @@ toc: true
 @y
 ---
 title: Diagrams
-description: Use fenced code blocks and Markdown render hooks to display diagrams.
+description: Use fenced code blocks and Markdown render hooks to include diagrams in your content.
 categories: [content management]
 keywords: [diagrams,drawing]
 menu:

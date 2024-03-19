@@ -10,9 +10,9 @@ description: Create templates to render your content, resources, and data.
 categories: [templates,fundamentals]
 keywords: []
 @y
-title: Introduction to templating
-linkTitle: Introduction
-description: Create templates to render your content, resources, and data.
+title: テンプレート処理の基本
+linkTitle: はじめに
+description: コンテント、リソース、データをレンダリングするためのテンプレートを生成します。
 categories: [templates,fundamentals]
 keywords: []
 @z
@@ -20,7 +20,8 @@ keywords: []
 @x
 A template is a file in the layouts directory of a project, theme, or module. Templates use [variables] , [functions], and [methods] to transform your content, resources, and data into a published page.
 @y
-A template is a file in the layouts directory of a project, theme, or module. Templates use [variables] , [functions], and [methods] to transform your content, resources, and data into a published page.
+テンプレートとは一つのファイルに表されるものであり、プロジェクト、テーマ、モジュールに対応したレイアウトディレクトリ内に置きます。
+テンプレート内においては [変数][variables]、[関数][functions]、[メソッド][methods] を利用して、コンテント、リソース、データの内容を公開ページへと変換します。
 @z
 
 % snip links...
@@ -30,7 +31,7 @@ A template is a file in the layouts directory of a project, theme, or module. Te
 Hugo uses Go's [text/template] and [html/template] packages.
 @y
 {{% note %}}
-Hugo uses Go's [text/template] and [html/template] packages.
+Hugo では Go 言語の [text/template] および [html/template] の各パッケージを用いています。
 @z
 
 @x
@@ -42,7 +43,7 @@ The text/template package implements data-driven templates for generating textua
 @x
 By default, Hugo uses the html/template package when rendering HTML files.
 @y
-By default, Hugo uses the html/template package when rendering HTML files.
+デフォルトにおいて Hugo は html/template パッケージを使って HTML ファイルをレンダリングしています。
 @z
 
 @x
@@ -58,7 +59,7 @@ By default, Hugo uses the html/template package when rendering HTML files.
 @x
 For example, this HTML template initializes the `$v1` and `$v2` variables, then displays them and their product within an HTML paragraph.
 @y
-For example, this HTML template initializes the `$v1` and `$v2` variables, then displays them and their product within an HTML paragraph.
+たとえば以下の HTML テンプレートでは、まず `$v1` と `$v2` という変数を初期化して、HTML の段落内にそれを含めたコードを生成しています。
 @z
 
 % snip code...
@@ -66,25 +67,23 @@ For example, this HTML template initializes the `$v1` and `$v2` variables, then 
 @x
 While HTML templates are the most common, you can create templates for any [output format] including CSV, JSON, RSS, and plain text.
 @y
-While HTML templates are the most common, you can create templates for any [output format] including CSV, JSON, RSS, and plain text.
+HTML テンプレートが最もよく利用されていますが、これ以外にも CSV、JSON、RSS、プレーンテキストなどのように、どのような [出力書式][output format] に対してもテンプレートを生成することができます。
 @z
 
-@x
-[output format]: /templates/output-formats/
-@y
-[output format]: /templates/output-formats/
-@z
+% snip link...
 
 @x
 ## Context
 @y
-## Context
+## コンテキスト {#context}
 @z
 
 @x
 The most important concept to understand before creating a template is _context_, the data passed into each template. The data may be a simple value, or more commonly [objects] and associated [methods].
 @y
-The most important concept to understand before creating a template is _context_, the data passed into each template. The data may be a simple value, or more commonly [objects] and associated [methods].
+テンプレートを作るにあたって理解しておくべき重要な考え方は _コンテキスト_ (context) です。
+これは各テンプレートに受け渡されるデータのことです。
+このデータとは単純な値の場合もありますが、一般的には [オブジェクト][objects] やそれに関連する [メソッド][methods] のこともあります。
 @z
 
 % snip links...
@@ -92,19 +91,20 @@ The most important concept to understand before creating a template is _context_
 @x
 For example, a template for a single page receives a `Page` object, and the `Page` object provides methods to return values or perform actions.
 @y
-For example, a template for a single page receives a `Page` object, and the `Page` object provides methods to return values or perform actions.
+たとえば一つのページに対応するテンプレートは `Page` オブジェクトを受け取ります。
+そしてその `Page` オブジェクトは、値を返したりアクションを実行したりするメソッドを提供します。
 @z
 
 @x
 ### Current context
 @y
-### Current context
+### カレントコンテキスト {#current-context}
 @z
 
 @x
 Within a template, the dot (`.`) represents the current context.
 @y
-Within a template, the dot (`.`) represents the current context.
+テンプレート内において、ドット (`.`) はカレントコンテキスト (current context) を表します。
 @z
 
 % snip code...
@@ -112,7 +112,8 @@ Within a template, the dot (`.`) represents the current context.
 @x
 In the example above the dot represents the `Page` object, and we call its [`Title`] method to return the title as defined in [front matter].
 @y
-In the example above the dot represents the `Page` object, and we call its [`Title`] method to return the title as defined in [front matter].
+上の例におけるドットは `Page` オブジェクトを表しています。
+そして [`Title`] メソッドを呼び出すことによって、[フロントマター][front matter] に定義されているタイトルを返すものです。
 @z
 
 % snip links...
@@ -120,7 +121,9 @@ In the example above the dot represents the `Page` object, and we call its [`Tit
 @x
 The current context may change within a template. For example, at the top of a template the context might be a `Page` object, but we rebind the context to another value or object within [`range`] or [`with`] blocks.
 @y
-The current context may change within a template. For example, at the top of a template the context might be a `Page` object, but we rebind the context to another value or object within [`range`] or [`with`] blocks.
+カレントコンテキストはテンプレート内において変わります。
+たとえばテンプレートの上部において、コンテキストは `Page` オブジェクトとなるはずです。
+しかし [`range`] や [`with`] のブロック内においてコンテキストへのバインドが再度行われるため、別の値や別のオブジェクトに変わります。
 @z
 
 % snip links...
@@ -138,13 +141,13 @@ In the example above, the context changes as we `range` through the [slice] of v
 @x
 ### Template context
 @y
-### Template context
+### テンプレートコンテキスト {#template-context}
 @z
 
 @x
 Within a `range` or `with` block you can access the context passed into the template by prepending a dollar sign (`$`) to the dot:
 @y
-Within a `range` or `with` block you can access the context passed into the template by prepending a dollar sign (`$`) to the dot:
+`range` ブロックや `with` ブロック内においてそのテンプレートに元々受け渡されていたコンテキストにアクセスする場合は、ドットの前にドル記号 (`$`) をつけます。
 @z
 
 % snip code...
@@ -152,7 +155,7 @@ Within a `range` or `with` block you can access the context passed into the temp
 @x
 Hugo renders this to:
 @y
-Hugo renders this to:
+Hugo はこれを以下のようにレンダリングします。
 @z
 
 % snip code...

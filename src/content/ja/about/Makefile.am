@@ -3,13 +3,12 @@
 ##
 
 bases = \
-	_index.md         \
-	benefits.md       \
-	features.md       \
-	hugo-and-gdpr.md  \
-	license.md        \
-	security-model.md \
-	what-is-hugo.md
+	_index.md       \
+	features.md     \
+	introduction.md \
+	license.md      \
+	privacy.md      \
+	security.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/content.mk

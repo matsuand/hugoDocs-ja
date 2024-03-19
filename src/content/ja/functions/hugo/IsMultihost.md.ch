@@ -9,7 +9,8 @@ categories: []
 keywords: []
 action:
   aliases: []
-  related: []
+  related:
+    - /functions/hugo/IsMultilingual
   returnType: bool
   signatures: [hugo.IsMultihost]
 ---
@@ -21,52 +22,67 @@ categories: []
 keywords: []
 action:
   aliases: []
-  related: []
+  related:
+    - /functions/hugo/IsMultilingual
   returnType: bool
   signatures: [hugo.IsMultihost]
 ---
 @z
 
 @x
-{{< new-in v0.123.8 >}}
+{{< new-in v0.124.0 >}}
 @y
-{{< new-in v0.123.8 >}}
+{{< new-in v0.124.0 >}}
 @z
 
 @x
-The `hugo.IsMultihost` function reports whether each configured language has a unique `baseURL`.
+Site configuration:
 @y
-The `hugo.IsMultihost` function reports whether each configured language has a unique `baseURL`.
+Site configuration:
 @z
 
 @x
 {{< code-toggle file=hugo >}}
+defaultContentLanguage = 'de'
+defaultContentLanguageInSubdir = true
 [languages]
+  [languages.de]
+    baseURL = 'https://de.example.org/'
+    languageCode = 'de-DE'
+    languageName = 'Deutsch'
+    title = 'Projekt Dokumentation'
+    weight = 1
   [languages.en]
     baseURL = 'https://en.example.org/'
+    languageCode = 'en-US'
     languageName = 'English'
-    title = 'In English'
+    title = 'Project Documentation'
     weight = 2
-  [languages.fr]
-    baseURL = 'https://fr.example.org'
-    languageName = 'Français'
-    title = 'En Français'
-    weight = 1
 {{< /code-toggle >}}
 @y
 {{< code-toggle file=hugo >}}
+defaultContentLanguage = 'de'
+defaultContentLanguageInSubdir = true
 [languages]
+  [languages.de]
+    baseURL = 'https://de.example.org/'
+    languageCode = 'de-DE'
+    languageName = 'Deutsch'
+    title = 'Projekt Dokumentation'
+    weight = 1
   [languages.en]
     baseURL = 'https://en.example.org/'
+    languageCode = 'en-US'
     languageName = 'English'
-    title = 'In English'
+    title = 'Project Documentation'
     weight = 2
-  [languages.fr]
-    baseURL = 'https://fr.example.org'
-    languageName = 'Français'
-    title = 'En Français'
-    weight = 1
 {{< /code-toggle >}}
+@z
+
+@x
+Template:
+@y
+Template:
 @z
 
 @x

@@ -2,18 +2,18 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: "hugo mod tidy"
 slug: hugo_mod_tidy
 url: /commands/hugo_mod_tidy/
----
+@y
+title: "hugo mod tidy"
+slug: hugo_mod_tidy
+url: /commands/hugo_mod_tidy/
+@z
+
+@x
 ## hugo mod tidy
 @y
----
-title: "hugo mod tidy"
-slug: hugo_mod_tidy
-url: /commands/hugo_mod_tidy/
----
 ## hugo mod tidy
 @z
 
@@ -24,13 +24,9 @@ Remove unused entries in go.mod and go.sum.
 @z
 
 @x
-```
 hugo mod tidy [flags] [args]
-```
 @y
-```
 hugo mod tidy [flags] [args]
-```
 @z
 
 @x
@@ -40,21 +36,28 @@ hugo mod tidy [flags] [args]
 @z
 
 @x
-```
-  -b, --baseURL string      hostname (and path) to the root, e.g. https://spf13.com/
-      --cacheDir string     filesystem path to cache directory
-  -c, --contentDir string   filesystem path to content directory
-  -h, --help                help for tidy
-  -t, --theme strings       themes to use (located in /themes/THEMENAME/)
-```
+  -b, --baseURL string           hostname (and path) to the root, e.g. https://spf13.com/
+      --cacheDir string          filesystem path to cache directory
 @y
-```
-  -b, --baseURL string      hostname (and path) to the root, e.g. https://spf13.com/
-      --cacheDir string     filesystem path to cache directory
-  -c, --contentDir string   filesystem path to content directory
-  -h, --help                help for tidy
-  -t, --theme strings       themes to use (located in /themes/THEMENAME/)
-```
+  -b, --baseURL string           hostname (and path) to the root, e.g. https://spf13.com/
+      --cacheDir string          filesystem path to cache directory
+@z
+@x
+  -c, --contentDir string        filesystem path to content directory
+@y
+  -c, --contentDir string        filesystem path to content directory
+@z
+@x
+  -h, --help                     help for tidy
+      --renderSegments strings   named segments to render (configured in the segments config)
+@y
+  -h, --help                     help for tidy
+      --renderSegments strings   named segments to render (configured in the segments config)
+@z
+@x
+  -t, --theme strings            themes to use (located in /themes/THEMENAME/)
+@y
+  -t, --theme strings            themes to use (located in /themes/THEMENAME/)
 @z
 
 @x
@@ -67,6 +70,7 @@ hugo mod tidy [flags] [args]
       --clock string               set the clock used by Hugo, e.g. --clock 2021-11-06T22:30:00.00+09:00
 @y
       --clock string               Hugo が用いる日時を指定します。--clock 2021-11-06T22:30:00.00+09:00
+@z
 @x
       --config string              config file (default is hugo.yaml|json|toml)
 @y

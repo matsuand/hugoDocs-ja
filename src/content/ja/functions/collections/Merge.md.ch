@@ -2,33 +2,15 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: collections.Merge
 description: Returns the result of merging two or more maps.
 categories: []
 keywords: []
-action:
-  aliases: [merge]
-  related:
-    - functions/collections/Append
-  returnType: any
-  signatures: [collections.Merge MAP MAP...]
-aliases: [/functions/merge]
----
 @y
----
 title: collections.Merge
 description: Returns the result of merging two or more maps.
 categories: []
 keywords: []
-action:
-  aliases: [merge]
-  related:
-    - functions/collections/Append
-  returnType: any
-  signatures: [collections.Merge MAP MAP...]
-aliases: [/functions/merge]
----
 @z
 
 @x
@@ -49,19 +31,7 @@ The following examples use these map definitions:
 The following examples use these map definitions:
 @z
 
-@x
-```go-html-template
-{{ $m1 := dict "x" "foo" }}
-{{ $m2 := dict "x" "bar" "y" "wibble" }}
-{{ $m3 := dict "x" "baz" "y" "wobble" "z" (dict "a" "huey") }}
-```
-@y
-```go-html-template
-{{ $m1 := dict "x" "foo" }}
-{{ $m2 := dict "x" "bar" "y" "wibble" }}
-{{ $m3 := dict "x" "baz" "y" "wobble" "z" (dict "a" "huey") }}
-```
-@z
+% snip code...
 
 @x
 Example 1
@@ -69,25 +39,7 @@ Example 1
 Example 1
 @z
 
-@x
-```go-html-template
-{{ $merged := merge $m1 $m2 $m3 }}
-@y
-```go-html-template
-{{ $merged := merge $m1 $m2 $m3 }}
-@z
-
-@x
-{{ $merged.x }}   → baz
-{{ $merged.y }}   → wobble
-{{ $merged.z.a }} → huey
-```
-@y
-{{ $merged.x }}   → baz
-{{ $merged.y }}   → wobble
-{{ $merged.z.a }} → huey
-```
-@z
+% snip code...
 
 @x
 Example 2
@@ -95,25 +47,7 @@ Example 2
 Example 2
 @z
 
-@x
-```go-html-template
-{{ $merged := merge $m3 $m2 $m1 }}
-@y
-```go-html-template
-{{ $merged := merge $m3 $m2 $m1 }}
-@z
-
-@x
-{{ $merged.x }}   → foo
-{{ $merged.y }}   → wibble
-{{ $merged.z.a }} → huey
-```
-@y
-{{ $merged.x }}   → foo
-{{ $merged.y }}   → wibble
-{{ $merged.z.a }} → huey
-```
-@z
+% snip code...
 
 @x
 Example 3
@@ -121,25 +55,7 @@ Example 3
 Example 3
 @z
 
-@x
-```go-html-template
-{{ $merged := merge $m2 $m3 $m1 }}
-@y
-```go-html-template
-{{ $merged := merge $m2 $m3 $m1 }}
-@z
-
-@x
-{{ $merged.x }}   → foo
-{{ $merged.y }}   → wobble
-{{ $merged.z.a }} → huey
-```
-@y
-{{ $merged.x }}   → foo
-{{ $merged.y }}   → wobble
-{{ $merged.z.a }} → huey
-```
-@z
+% snip code...
 
 @x
 Example 4
@@ -147,25 +63,7 @@ Example 4
 Example 4
 @z
 
-@x
-```go-html-template
-{{ $merged := merge $m1 $m3 $m2 }}
-@y
-```go-html-template
-{{ $merged := merge $m1 $m3 $m2 }}
-@z
-
-@x
-{{ $merged.x }}   → bar
-{{ $merged.y }}   → wibble
-{{ $merged.z.a }} → huey
-```
-@y
-{{ $merged.x }}   → bar
-{{ $merged.y }}   → wibble
-{{ $merged.z.a }} → huey
-```
-@z
+% snip code...
 
 @x
 {{% note %}}

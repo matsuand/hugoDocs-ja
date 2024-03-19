@@ -77,6 +77,7 @@ hugo gen man [flags] [args]
       --clock string               set the clock used by Hugo, e.g. --clock 2021-11-06T22:30:00.00+09:00
 @y
       --clock string               Hugo が用いる日時を指定します。--clock 2021-11-06T22:30:00.00+09:00
+@z
 @x
       --config string              config file (default is hugo.yaml|json|toml)
 @y

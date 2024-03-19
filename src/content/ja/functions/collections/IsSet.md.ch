@@ -2,104 +2,41 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: collections.IsSet
 description: Reports whether the key exists within the collection.
 categories: []
 keywords: []
-action:
-  aliases: [isset]
-  related:
-    - functions/go-template/if
-    - functions/go-template/with
-  returnType: bool
-  signatures: [collections.IsSet COLLECTION KEY]
-aliases: [/functions/isset]
----
 @y
----
 title: collections.IsSet
-description: Reports whether the key exists within the collection.
+description: コレクション内にキーが存在するかどうかを返します。
 categories: []
 keywords: []
-action:
-  aliases: [isset]
-  related:
-    - functions/go-template/if
-    - functions/go-template/with
-  returnType: bool
-  signatures: [collections.IsSet COLLECTION KEY]
-aliases: [/functions/isset]
----
 @z
 
 @x
 For example, consider this site configuration:
 @y
-For example, consider this site configuration:
+例えば以下のようなサイト設定があったとします。
 @z
 
-@x
-{{< code-toggle file=hugo >}}
-[params]
-showHeroImage = false
-{{< /code-toggle >}}
-@y
-{{< code-toggle file=hugo >}}
-[params]
-showHeroImage = false
-{{< /code-toggle >}}
-@z
+% snip code...
 
 @x
 It the value of `showHeroImage` is `true`, we can detect that it exists using either `if` or `with`:
 @y
-It the value of `showHeroImage` is `true`, we can detect that it exists using either `if` or `with`:
+`showHeroImage` の値が `true` であるとき、それが存在することは `if` または `with` を使って確認することができます。
 @z
 
-@x
-```go-html-template
-{{ if site.Params.showHeroImage }}
-  {{ site.Params.showHeroImage }} → true
-{{ end }}
-@y
-```go-html-template
-{{ if site.Params.showHeroImage }}
-  {{ site.Params.showHeroImage }} → true
-{{ end }}
-@z
-
-@x
-{{ with site.Params.showHeroImage }}
-  {{ . }} → true
-{{ end }}
-```
-@y
-{{ with site.Params.showHeroImage }}
-  {{ . }} → true
-{{ end }}
-```
-@z
+% snip code...
 
 @x
 But if the value of `showHeroImage` is `false`, we can't use either `if` or `with` to detect its existence. In this case, you must use the `isset` function:
 @y
-But if the value of `showHeroImage` is `false`, we can't use either `if` or `with` to detect its existence. In this case, you must use the `isset` function:
+しかし `showHeroImage` が `false` であるときは、`if` や `with` を使ってもその存在を確認することができません。
+こういった場合には `isset` 関数を用いなければなりません。
 @z
 
-@x
-```go-html-template
-{{ if isset site.Params "showheroimage" }}
-  <p>The showHeroImage parameter is set to {{ site.Params.showHeroImage }}.<p>
-{{ end }}
-```
-@y
-```go-html-template
-{{ if isset site.Params "showheroimage" }}
-  <p>The showHeroImage parameter is set to {{ site.Params.showHeroImage }}.<p>
-{{ end }}
-```
-@z
+% snip code...
 
 @x
 {{% note %}}
@@ -107,6 +44,7 @@ When using the `isset` function you must reference the key using lower case. See
 {{% /note %}}
 @y
 {{% note %}}
-When using the `isset` function you must reference the key using lower case. See the previous example.
+`isset` 関数を用いるにあたって、参照のために用いるキーは小文字としなければなりません。
+上の例を確認してください。
 {{% /note %}}
 @z

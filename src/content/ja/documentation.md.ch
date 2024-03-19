@@ -2,27 +2,13 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: Hugo Documentation
 linkTitle: Hugo
 description: Hugo is the world's fastest static website engine. It's written in Go (aka Golang) and developed by bep, spf13 and friends.
-menu:
-  main:
-    weight: 1
-weight: 1
-layout: documentation-home
----
 @y
----
 title: Hugo ドキュメント
 linkTitle: Hugo
 description: Hugo は世界最速の静的ウェブサイトエンジンです。Go 言語を用いており、bep、spf13、など数々の仲間たちによって開発されています。
-menu:
-  main:
-    weight: 1
-weight: 1
-layout: documentation-home
----
 @z
 
 @x
@@ -38,19 +24,7 @@ Hugo は処理速度を最適化し、柔軟性を考慮して設計されてい
 高度なテンプレートシステムや高速なリソースアセットパイプラインにより、Hugo はほんの数秒で完全なサイトを構築します。
 @z
 
-@x
-[bep]: https://github.com/bep
-[spf13]: https://github.com/spf13
-[friends]: https://github.com/gohugoio/hugo/graphs/contributors
-[go]: https://go.dev/
-[static site generator]: https://en.wikipedia.org/wiki/Static_site_generator
-@y
-[bep]: https://github.com/bep
-[spf13]: https://github.com/spf13
-[friends]: https://github.com/gohugoio/hugo/graphs/contributors
-[go]: https://go.dev/
-[static site generator]: https://en.wikipedia.org/wiki/Static_site_generator
-@z
+% snip links...
 
 @x
 Below you will find some of the most common and helpful pages from our documentation.

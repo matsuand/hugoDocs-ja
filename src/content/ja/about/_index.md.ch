@@ -4,19 +4,19 @@
 @x
 title: About Hugo
 linkTitle: In this section
-description: Hugo's features, roadmap, license, and motivation.
+description: Learn about Hugo and its features, security model, and privacy protections.
 categories: []
 keywords: []
 @y
 title: Hugo について
 linkTitle: 本節
-description: Hugo's features, roadmap, license, and motivation.
+description: Learn about Hugo and its features, security model, and privacy protections.
 categories: []
 keywords: []
 @z
 
 @x
-Hugo is not your average static site generator.
+Learn about Hugo and its features, privacy protections, and security model.
 @y
-Hugo は単純な静的サイトジェネレーター (static site generator) ではありません。
+ここでは Hugo そのものと、プライバシー防止、セキュリティモデルといった機能を学びます。
 @z

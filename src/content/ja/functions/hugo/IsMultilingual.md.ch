@@ -3,42 +3,34 @@
 
 @x
 ---
-title: IsMultiLingual
+title: hugo.IsMultilingual
 description: Reports whether there are two or more configured languages.
 categories: []
 keywords: []
 action:
-  related: []
+  related:
+    - /functions/hugo/IsMultihost
   returnType: bool
-  signatures: [SITE.IsMultiLingual]
+  signatures: [hugo.IsMultilingual]
 ---
 @y
 ---
-title: IsMultiLingual
+title: hugo.IsMultilingual
 description: Reports whether there are two or more configured languages.
 categories: []
 keywords: []
 action:
-  related: []
+  related:
+    - /functions/hugo/IsMultihost
   returnType: bool
-  signatures: [SITE.IsMultiLingual]
+  signatures: [hugo.IsMultilingual]
 ---
 @z
 
 @x
-{{% deprecated-in 0.124.0 %}}
-Use [`hugo.IsMultilingual`] instead.
+{{< new-in v0.124.0 >}}
 @y
-{{% deprecated-in 0.124.0 %}}
-Use [`hugo.IsMultilingual`] instead.
-@z
-
-@x
-[`hugo.IsMultilingual`]: /functions/hugo/ismultilingual/
-{{% /deprecated-in %}}
-@y
-[`hugo.IsMultilingual`]: /functions/hugo/ismultilingual/
-{{% /deprecated-in %}}
+{{< new-in v0.124.0 >}}
 @z
 
 @x
@@ -89,10 +81,10 @@ Template:
 
 @x
 ```go-html-template
-{{ .Site.IsMultiLingual }} → true
+{{ hugo.IsMultilingual }} → true
 ```
 @y
 ```go-html-template
-{{ .Site.IsMultiLingual }} → true
+{{ hugo.IsMultilingual }} → true
 ```
 @z

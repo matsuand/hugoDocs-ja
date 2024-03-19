@@ -8,7 +8,7 @@ categories: [getting started]
 keywords: [usage,livereload,command,flags]
 @y
 title: 基本操作
-description: Hugo's command line interface (CLI) is fully featured but simple to use, even for those with limited experience working from the command line.
+description: Hugo のコマンドラインインターフェース (command line interface; CLI) の機能は充実していて、しかも操作が簡単です。たとえコマンドライン操作の経験が少ない方でも安心して利用できます。
 categories: [getting started]
 keywords: [usage,livereload,command,flags]
 @z
@@ -119,15 +119,14 @@ Hugo does not clear the `public` directory before building your site. Existing f
 {{% note %}}
 Hugo はサイトの構築にあたって `public` ディレクトリをクリアしません。
 既存のファイルは上書きされ、ファイル削除は行われません。
-この動作は意図的なものであって、
-This behavior is intentional to prevent the inadvertent removal of files that you may have added to the `public` directory after the build.
+この動作は意図的なものであって、ビルドした後に `public` ディレクトリに何かファイルを追加する場合があるかもしれないため、それを不用意に削除しないようにしているものです。
 @z
 
 @x
 Depending on your needs, you may wish to manually clear the contents of the public directory before every build.
 {{% /note %}}
 @y
-Depending on your needs, you may wish to manually clear the contents of the public directory before every build.
+作業での必要に応じて、ビルドを行う際には、毎回 public ディレクトリを手動で削除することをお勧めします。
 {{% /note %}}
 @z
 

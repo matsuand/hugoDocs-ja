@@ -44,9 +44,9 @@ action:
 @z
 
 @x
-Any JavaScript resource file can be transpiled and "tree shaken" using `js.Build` which takes for argument either a string for the filepath or a dict of options listed below.
+Any JavaScript resource file can be transpiled and "tree shaken" using `js.Build` which takes for argument either a string for the file path or a dict of options listed below.
 @y
-Any JavaScript resource file can be transpiled and "tree shaken" using `js.Build` which takes for argument either a string for the filepath or a dict of options listed below.
+Any JavaScript resource file can be transpiled and "tree shaken" using `js.Build` which takes for argument either a string for the file path or a dict of options listed below.
 @z
 
 @x
@@ -241,6 +241,68 @@ sourceMap
 @y
 sourceMap
 : (`string`) Whether to generate `inline` or `external` source maps from esbuild. External source maps will be written to the target with the output file name + ".map". Input source maps can be read from js.Build and node modules and combined into the output source maps. By default, source maps are not created.
+@z
+
+@x
+JSX {{< new-in 0.124.0 >}}
+: (`string`) How to handle/transform JSX syntax. One of: `transform`, `preserve`, `automatic`. Default is `transform`. Notably, the `automatic` transform was introduced in React 17+ and will cause the necessary JSX helper functions to be imported automatically. See https://esbuild.github.io/api/#jsx
+@y
+JSX {{< new-in 0.124.0 >}}
+: (`string`) How to handle/transform JSX syntax. One of: `transform`, `preserve`, `automatic`. Default is `transform`. Notably, the `automatic` transform was introduced in React 17+ and will cause the necessary JSX helper functions to be imported automatically. See https://esbuild.github.io/api/#jsx
+@z
+
+@x
+JSXImportSource {{< new-in 0.124.0 >}}
+: (`string`) Which library to use to automatically import its JSX helper functions from. This only works if `JSX` is set to `automatic`. The specified library needs to be installed through NPM and expose certain exports. See https://esbuild.github.io/api/#jsx-import-source
+@y
+JSXImportSource {{< new-in 0.124.0 >}}
+: (`string`) Which library to use to automatically import its JSX helper functions from. This only works if `JSX` is set to `automatic`. The specified library needs to be installed through NPM and expose certain exports. See https://esbuild.github.io/api/#jsx-import-source
+@z
+
+@x
+The combination of `JSX` and `JSXImportSource` is helpful if you want to use a non-React JSX library like Preact, e.g.:
+@y
+The combination of `JSX` and `JSXImportSource` is helpful if you want to use a non-React JSX library like Preact, e.g.:
+@z
+
+@x
+```go-html-template
+{{ $js := resources.Get "js/main.jsx" | js.Build (dict "JSX" "automatic" "JSXImportSource" "preact") }}
+```
+@y
+```go-html-template
+{{ $js := resources.Get "js/main.jsx" | js.Build (dict "JSX" "automatic" "JSXImportSource" "preact") }}
+```
+@z
+
+@x
+With the above, you can use Preact components and JSX without having to manually import `h` and `Fragment` every time:
+@y
+With the above, you can use Preact components and JSX without having to manually import `h` and `Fragment` every time:
+@z
+
+@x
+```jsx
+import { render } from 'preact';
+@y
+```jsx
+import { render } from 'preact';
+@z
+
+@x
+const App = () => <>Hello world!</>;
+@y
+const App = () => <>Hello world!</>;
+@z
+
+@x
+const container = document.getElementById('app');
+if (container) render(<App />, container);
+```
+@y
+const container = document.getElementById('app');
+if (container) render(<App />, container);
+```
 @z
 
 @x
