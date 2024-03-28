@@ -340,7 +340,7 @@ A single value, one of [string](#string), [integer](#integer), [floating point](
 
 ###### scratch pad
 
-Conceptually, a [map](#map) with [methods](#method) to set, get, update, and delete values. Attach the data structure to a `Page` object using the [`Scratch`] or [`Store`] methods, or created a locally scoped scratch pad using the [`newScratch`] function.
+Conceptually, a [map](#map) with [methods](#method) to set, get, update, and delete values. Attach the data structure to a `Page` object using the [`Scratch`] or [`Store`] methods, or create a locally scoped scratch pad using the [`newScratch`] function.
 
 [`Scratch`]: /methods/page/scratch/
 [`Store`]: /methods/page/store/
@@ -459,9 +459,30 @@ Contained within a [taxonomy object](#taxonomy-object), a weighted page is a [ma
 [V](#variable)&nbsp;
 [W](#walk)&nbsp;
 
+###### int
+
+[integer](#integer) 参照。
+
+###### integer
+
+A numeric data type without a fractional component. For example, `42`.
+
+###### アーキタイプ (archetype) {#archetype}
+
+新たなコンテントに応じたテンプレートのこと。
+[詳細はこちら](/content-management/archetypes/) を参照。
+
 ###### アクション (action) {#action}
 
 [テンプレートアクション](#template-action) 参照。
+
+###### コレクション (collection) {#collection}
+
+[配列](#array)(array), [スライス](#slice)(slice), [マップ](#map)(map) のこと。
+
+###### コンテキスト (context) {#context}
+
+Represented by a dot "." within a [template action](#template-action), context is the current location in a data structure. For example, while iterating over a [collection](#collection) of pages, the context within each iteration is the page's data structure. The context received by each template depends on template type and/or how it was called. See&nbsp;[details](/templates/introduction/#context).
 
 ###### コンテントフォーマット (content format) {#content-format}
 
@@ -478,6 +499,27 @@ A classification of content inferred from the top-level directory name or the `t
 `.Page.Render` メソッドを使って呼び出されるテンプレートのこと。
 詳細は [こちら](/templates/views/) を参照のこと。
 
+###### CJK
+
+A collective term for the Chinese, Japanese, and Korean languages. See [details](https://en.wikipedia.org/wiki/CJK_characters).
+
+###### 配列 (array) {#array}
+
+A numbered sequence of elements. Unlike Go's [slice](#slice) data type, an array has a fixed length. [Elements](#element) within an array can be [scalars](#scalar), slices, [maps](#map), pages, or other arrays. See the [Go&nbsp;documentation](https://go.dev/ref/spec#Array_types) for details.
+
+###### バンドル (bundle) {#bundle}
+
+[ページバンドル](#page-bundle) を参照。
+
+###### 引数 (argument) {#argument}
+
+A [scalar](#scalar), [array](#array), [slice](#slice), [map](#map), or [object](#object) passed to a [function](#function), [method](#method), or [shortcode](#shortcode).
+
+###### ビルド (build) {#build}
+
+HTML ファイル、あるいはイメージ、CSS、Javascript といったアセット (assets) を持った静的サイトを生成すること。
+ビルド処理ではレンダリングとリソースの変換処理が行われます。
+
 ###### ブーリアン値 (boolean) {#boolean}
 
 2 つの値 `true` か `false` のいずれかをとるデータ型。
@@ -486,30 +528,13 @@ A classification of content inferred from the top-level directory name or the `t
 
 [ブーリアン値](#boolean) 参照。
 
-###### ビルド (build) {#build}
-
-HTML ファイル、あるいはイメージ、CSS、Javascript といったアセット (assets) を持った静的サイトを生成すること。
-ビルド処理ではレンダリングとリソースの変換処理が行われます。
-
-###### archetype
-
-A template for new content. See&nbsp;[details](/content-management/archetypes/).
-
-###### argument
-
-A [scalar](#scalar), [array](#array), [slice](#slice), [map](#map), or [object](#object) passed to a [function](#function), [method](#method), or [shortcode](#shortcode).
-
-###### array
-
-A numbered sequence of elements. Unlike Go's [slice](#slice) data type, an array has a fixed length. [Elements](#element) within an array can be [scalars](#scalar), slices, [maps](#map), pages, or other arrays. See the [Go&nbsp;documentation](https://go.dev/ref/spec#Array_types) for details.
-
-###### branch bundle
+###### ブランチバンドル (branch bundle) {#branch-bundle}
 
 A [page bundle](#page-bundle) with an&nbsp;_index.md file and zero or more [resources](#resource). Analogous to a physical branch, a branch bundle may have descendants including regular pages, [leaf bundles](/getting-started/glossary/#leaf-bundle), and other branch bundles. See&nbsp;[details](/content-management/page-bundles/).
 
-###### bundle
+###### 変数 (variable) {#variable}
 
-See [page bundle](#page-bundle).
+A user-defined [identifier](#identifier) prepended with a `$` symbol, representing a value of any data type, initialized or assigned within a [template action](#template-action). For example, `$foo`&nbsp;and&nbsp;`$bar` are variables.
 
 ###### cache
 
@@ -518,18 +543,6 @@ A software component that stores data so that future requests for the same data 
 ###### chain
 
 Within a template, to connect one or more [identifiers](#identifier) with a dot. An identifier can represent a method, object, or field. For example, `.Site.Params.author.name` or `.Date.UTC.Hour`.
-
-###### CJK
-
-A collective term for the Chinese, Japanese, and Korean languages. See [details](https://en.wikipedia.org/wiki/CJK_characters).
-
-###### collection
-
-An [array](#array), [slice](#slice), or [map](#map).
-
-###### context
-
-Represented by a dot "." within a [template action](#template-action), context is the current location in a data structure. For example, while iterating over a [collection](#collection) of pages, the context within each iteration is the page's data structure. The context received by each template depends on template type and/or how it was called. See&nbsp;[details](/templates/introduction/#context).
 
 ###### default sort order
 
@@ -590,14 +603,6 @@ A file within the assets directory, or within any directory [mounted](/hugo-modu
 ###### identifier
 
 A string that represents a variable, method, object, or field. It must conform to Go's [language specification](https://go.dev/ref/spec#Identifiers), beginning with a letter or underscore, followed by zero or more letters, digits, or underscores.
-
-###### int
-
-See [integer](#integer).
-
-###### integer
-
-A numeric data type without a fractional component. For example, `42`.
 
 ###### internationalization
 
@@ -768,7 +773,7 @@ A single value, one of [string](#string), [integer](#integer), [floating point](
 
 ###### scratch pad
 
-Conceptually, a [map](#map) with [methods](#method) to set, get, update, and delete values. Attach the data structure to a `Page` object using the [`Scratch`] or [`Store`] methods, or created a locally scoped scratch pad using the [`newScratch`] function.
+Conceptually, a [map](#map) with [methods](#method) to set, get, update, and delete values. Attach the data structure to a `Page` object using the [`Scratch`] or [`Store`] methods, or create a locally scoped scratch pad using the [`newScratch`] function.
 
 [`Scratch`]: /methods/page/scratch
 [`Store`]: /methods/page/store
@@ -849,10 +854,6 @@ See [content type](#content-type).
 ###### unmarshal
 
 To transform a serialized object into a data structure. For example, transforming a JSON file into a [map](#map) that you can access within a template. See [marshal](#marshal).
-
-###### variable
-
-A user-defined [identifier](#identifier) prepended with a `$` symbol, representing a value of any data type, initialized or assigned within a [template action](#template-action). For example, `$foo`&nbsp;and&nbsp;`$bar` are variables.
 
 ###### walk
 

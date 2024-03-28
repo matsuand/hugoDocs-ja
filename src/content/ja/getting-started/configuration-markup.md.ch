@@ -449,9 +449,9 @@ The embedded link render hook is automatically enabled for multilingual single-h
 @z
 
 @x
-This is the default configuration for the AsciiDoc Markdown renderer:
+This is the default configuration for the AsciiDoc renderer:
 @y
-This is the default configuration for the AsciiDoc Markdown renderer:
+This is the default configuration for the AsciiDoc renderer:
 @z
 
 @x

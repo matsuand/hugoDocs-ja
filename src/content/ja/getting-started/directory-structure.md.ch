@@ -26,15 +26,7 @@ Hugo において新たなサイトを生成すると、プロジェクトのス
 たとえば以下のコマンドを実行します。
 @z
 
-@x
-```sh
-hugo new site my-site
-```
-@y
-```sh
-hugo new site my-site
-```
-@z
+% snip command...
 
 @x
 Creates this directory structure:
@@ -43,33 +35,9 @@ Creates this directory structure:
 @z
 
 @x
-```txt
-my-site/
-├── archetypes/
-│   └── default.md
-├── assets/
-├── content/
-├── data/
-├── i18n/
-├── layouts/
-├── static/
-├── themes/
 └── hugo.toml         <-- site configuration
-```
 @y
-```txt
-my-site/
-├── archetypes/
-│   └── default.md
-├── assets/
-├── content/
-├── data/
-├── i18n/
-├── layouts/
-├── static/
-├── themes/
 └── hugo.toml         <-- サイト設定
-```
 @z
 
 @x
@@ -79,37 +47,9 @@ Depending on requirements, you may wish to organize your site configuration into
 @z
 
 @x
-```txt
-my-site/
-├── archetypes/
-│   └── default.md
-├── assets/
 ├── config/           <-- site configuration
-│   └── _default/
-│       └── hugo.toml
-├── content/
-├── data/
-├── i18n/
-├── layouts/
-├── static/
-└── themes/
-```
 @y
-```txt
-my-site/
-├── archetypes/
-│   └── default.md
-├── assets/
 ├── config/           <-- サイト設定
-│   └── _default/
-│       └── hugo.toml
-├── content/
-├── data/
-├── i18n/
-├── layouts/
-├── static/
-└── themes/
-```
 @z
 
 @x
@@ -120,41 +60,11 @@ When you build your site, Hugo creates a `public` directory, and typically a `re
 @z
 
 @x
-```txt
-my-site/
-├── archetypes/
-│   └── default.md
-├── assets/
-├── config/       
-│   └── _default/
-│       └── hugo.toml
-├── content/
-├── data/
-├── i18n/
-├── layouts/
 ├── public/       <-- created when you build your site
 ├── resources/    <-- created when you build your site
-├── static/
-└── themes/
-```
 @y
-```txt
-my-site/
-├── archetypes/
-│   └── default.md
-├── assets/
-├── config/       
-│   └── _default/
-│       └── hugo.toml
-├── content/
-├── data/
-├── i18n/
-├── layouts/
 ├── public/       <-- サイトビルド時に生成
 ├── resources/    <-- サイトビルド時に生成
-├── static/
-└── themes/
-```
 @z
 
 @x
@@ -234,10 +144,10 @@ layouts
 
 @x
 public
-: The `public` directory contains the published website, generated when you run the `hugo` command. Hugo recreates this directory and its content as needed. See&nbsp;[details](/getting-started/usage/#build-your-site).
+: The `public` directory contains the published website, generated when you run the `hugo` or `hugo server` commands. Hugo recreates this directory and its content as needed. See&nbsp;[details](/getting-started/usage/#build-your-site).
 @y
 public
-: The `public` directory contains the published website, generated when you run the `hugo` command. Hugo recreates this directory and its content as needed. See&nbsp;[details](/getting-started/usage/#build-your-site).
+: The `public` directory contains the published website, generated when you run the `hugo` or `hugo server` commands. Hugo recreates this directory and its content as needed. See&nbsp;[details](/getting-started/usage/#build-your-site).
 @z
 
 @x
@@ -277,76 +187,12 @@ Hugo creates a union file system, allowing you to mount two or more directories 
 @z
 
 @x
-```text
-home/
-└── user/
-    ├── my-site/            
-    │   ├── content/
-    │   │   ├── books/
-    │   │   │   ├── _index.md
-    │   │   │   ├── book-1.md
-    │   │   │   └── book-2.md
-    │   │   └── _index.md
-    │   ├── themes/
-    │   │   └── my-theme/
-    │   └── hugo.toml
-    └── shared-content/     
-        └── films/
-            ├── _index.md
-            ├── film-1.md
-            └── film-2.md
-```
-@y
-```text
-home/
-└── user/
-    ├── my-site/            
-    │   ├── content/
-    │   │   ├── books/
-    │   │   │   ├── _index.md
-    │   │   │   ├── book-1.md
-    │   │   │   └── book-2.md
-    │   │   └── _index.md
-    │   ├── themes/
-    │   │   └── my-theme/
-    │   └── hugo.toml
-    └── shared-content/     
-        └── films/
-            ├── _index.md
-            ├── film-1.md
-            └── film-2.md
-```
-@z
-
-@x
 You can include the shared content when you build your site using mounts. In your site configuration:
 @y
 You can include the shared content when you build your site using mounts. In your site configuration:
 @z
 
-@x
-{{< code-toggle file=hugo >}}
-[[module.mounts]]
-source = 'content'
-target = 'content'
-@y
-{{< code-toggle file=hugo >}}
-[[module.mounts]]
-source = 'content'
-target = 'content'
-@z
-
-@x
-[[module.mounts]]
-source = '/home/user/shared-content'
-target = 'content'
-{{< /code-toggle >}}
-@y
-[[module.mounts]]
-source = '/home/user/shared-content'
-target = 'content'
-{{< /code-toggle >}}
-@z
+% snip code...
 
 @x
 {{% note %}}
@@ -370,45 +216,7 @@ After mounting, the union file system has this structure:
 After mounting, the union file system has this structure:
 @z
 
-@x
-```text
-home/
-└── user/
-    └── my-site/
-        ├── content/
-        │   ├── books/
-        │   │   ├── _index.md
-        │   │   ├── book-1.md
-        │   │   └── book-2.md
-        │   ├── films/
-        │   │   ├── _index.md
-        │   │   ├── film-1.md
-        │   │   └── film-2.md
-        │   └── _index.md
-        ├── themes/
-        │   └── my-theme/
-        └── hugo.toml
-```
-@y
-```text
-home/
-└── user/
-    └── my-site/
-        ├── content/
-        │   ├── books/
-        │   │   ├── _index.md
-        │   │   ├── book-1.md
-        │   │   └── book-2.md
-        │   ├── films/
-        │   │   ├── _index.md
-        │   │   ├── film-1.md
-        │   │   └── film-2.md
-        │   └── _index.md
-        ├── themes/
-        │   └── my-theme/
-        └── hugo.toml
-```
-@z
+% snip text...
 
 @x
 {{% note %}}
@@ -444,15 +252,7 @@ Hugo generates a functional theme skeleton when you create a new theme. For exam
 Hugo generates a functional theme skeleton when you create a new theme. For example, this command:
 @z
 
-@x
-```text
-hugo new theme my-theme
-```
-@y
-```text
-hugo new theme my-theme
-```
-@z
+% snip command...
 
 @x
 Creates this directory structure (subdirectories not shown):
@@ -460,37 +260,7 @@ Creates this directory structure (subdirectories not shown):
 Creates this directory structure (subdirectories not shown):
 @z
 
-@x
-```text
-my-theme/
-├── archetypes/
-├── assets/
-├── content/
-├── data/
-├── i18n/
-├── layouts/
-├── static/
-├── LICENSE
-├── README.md
-├── hugo.toml
-└── theme.toml
-```
-@y
-```text
-my-theme/
-├── archetypes/
-├── assets/
-├── content/
-├── data/
-├── i18n/
-├── layouts/
-├── static/
-├── LICENSE
-├── README.md
-├── hugo.toml
-└── theme.toml
-```
-@z
+% snip text...
 
 @x
 Using the union file system described above, Hugo mounts each of these directories to the corresponding location in the project. When two files have the same path, the file in the project directory takes precedence. This allows you, for example, to override a theme's template by placing a copy in the same location within the project directory.
