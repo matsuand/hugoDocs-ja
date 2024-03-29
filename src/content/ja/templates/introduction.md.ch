@@ -567,10 +567,10 @@ Do not attempt to use HTML comment delimiters to comment out template code.
 @z
 
 @x
-Hugo strips HTML comments when rendering a page, but first evaluates any template code within the HTML comment delimiters. Depending on the template code within the HTML comment delimeters, this could cause unexpected results or fail the build.
+Hugo strips HTML comments when rendering a page, but first evaluates any template code within the HTML comment delimiters. Depending on the template code within the HTML comment delimiters, this could cause unexpected results or fail the build.
 {{% /note %}}
 @y
-Hugo strips HTML comments when rendering a page, but first evaluates any template code within the HTML comment delimiters. Depending on the template code within the HTML comment delimeters, this could cause unexpected results or fail the build.
+Hugo strips HTML comments when rendering a page, but first evaluates any template code within the HTML comment delimiters. Depending on the template code within the HTML comment delimiters, this could cause unexpected results or fail the build.
 {{% /note %}}
 @z
 

@@ -237,10 +237,10 @@ keywords: []
 
 @x
 [Segmentation]
-: Reduce build time and cost by partioning your sites into segments. For example, render the home page and the "news section" every hour, and render the entire site once a week.
+: Reduce build time and cost by partitioning your sites into segments. For example, render the home page and the "news section" every hour, and render the entire site once a week.
 @y
 [Segmentation]
-: Reduce build time and cost by partioning your sites into segments. For example, render the home page and the "news section" every hour, and render the entire site once a week.
+: Reduce build time and cost by partitioning your sites into segments. For example, render the home page and the "news section" every hour, and render the entire site once a week.
 @z
 
 @x
