@@ -30,6 +30,16 @@ action:
 @z
 
 @x
+<!-- Do not remove the manual summary divider below. -->
+<!-- If you do, you will break its first literal usage on this page. -->
+<!--more-->
+@y
+<!-- Do not remove the manual summary divider below. -->
+<!-- If you do, you will break its first literal usage on this page. -->
+<!--more-->
+@z
+
+@x
 There are three ways to define the [content summary]:
 @y
 There are three ways to define the [content summary]:
@@ -37,11 +47,11 @@ There are three ways to define the [content summary]:
 
 @x
 1. Let Hugo create the summary based on the first 70 words. You can change the number of words by setting the `summaryLength` in your site configuration.
-2. Manually split the content with a `<--more-->` tag in Markdown. Everything before the tag is included in the summary.
+2. Manually split the content with a `<!--more-->` tag in Markdown. Everything before the tag is included in the summary.
 3. Create a `summary` field in front matter.
 @y
 1. Let Hugo create the summary based on the first 70 words. You can change the number of words by setting the `summaryLength` in your site configuration.
-2. Manually split the content with a `<--more-->` tag in Markdown. Everything before the tag is included in the summary.
+2. Manually split the content with a `<!--more-->` tag in Markdown. Everything before the tag is included in the summary.
 3. Create a `summary` field in front matter.
 @z
 

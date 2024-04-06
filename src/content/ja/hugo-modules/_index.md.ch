@@ -54,10 +54,10 @@ Hugo Modules are powered by Go Modules. For more information about Go Modules, s
 @z
 
 @x
-- [https://github.com/golang/go/wiki/Modules](https://github.com/golang/go/wiki/Modules)
+- [https://go.dev/wiki/Modules](https://go.dev/wiki/Modules)
 - [https://go.dev/blog/using-go-modules](https://go.dev/blog/using-go-modules)
 @y
-- [https://github.com/golang/go/wiki/Modules](https://github.com/golang/go/wiki/Modules)
+- [https://go.dev/wiki/Modules](https://go.dev/wiki/Modules)
 - [https://go.dev/blog/using-go-modules](https://go.dev/blog/using-go-modules)
 @z
 

@@ -243,7 +243,7 @@ my-project/
 
 @x
 ```go-html-template
-{{ $data := "" }}
+{{ $data := dict }}
 {{ $p := "data/books.json" }}
 {{ with resources.Get $p }}
   {{ $data = .Content | transform.Unmarshal }}
@@ -253,7 +253,7 @@ my-project/
 ```
 @y
 ```go-html-template
-{{ $data := "" }}
+{{ $data := dict }}
 {{ $p := "data/books.json" }}
 {{ with resources.Get $p }}
   {{ $data = .Content | transform.Unmarshal }}
@@ -297,7 +297,7 @@ my-project/
 
 @x
 ```go-html-template
-{{ $data := "" }}
+{{ $data := dict }}
 {{ $p := "books.json" }}
 {{ with .Resources.Get $p }}
   {{ $data = .Content | transform.Unmarshal }}
@@ -307,7 +307,7 @@ my-project/
 ```
 @y
 ```go-html-template
-{{ $data := "" }}
+{{ $data := dict }}
 {{ $p := "books.json" }}
 {{ with .Resources.Get $p }}
   {{ $data = .Content | transform.Unmarshal }}
@@ -331,7 +331,7 @@ Consider using the [`resources.GetRemote`] function with [`transform.Unmarshal`]
 
 @x
 ```go-html-template
-{{ $data := "" }}
+{{ $data := dict }}
 {{ $u := "https://example.org/books.json" }}
 {{ with resources.GetRemote $u }}
   {{ with .Err }}
@@ -345,7 +345,7 @@ Consider using the [`resources.GetRemote`] function with [`transform.Unmarshal`]
 ```
 @y
 ```go-html-template
-{{ $data := "" }}
+{{ $data := dict }}
 {{ $u := "https://example.org/books.json" }}
 {{ with resources.GetRemote $u }}
   {{ with .Err }}

@@ -775,10 +775,10 @@ To override Hugo's embedded `vimeo` shortcode, copy the [source code] to a file 
 @z
 
 @x
-[source code]: {{% eturl vimeo %}}
+[source code]: {{% eturl youtube %}}
 {{% /note %}}
 @y
-[source code]: {{% eturl vimeo %}}
+[source code]: {{% eturl youtube %}}
 {{% /note %}}
 @z
 

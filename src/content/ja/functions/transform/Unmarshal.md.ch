@@ -117,10 +117,10 @@ assets/
 
 @x
 ```go-html-template
-{{ $data := "" }}
+{{ $data := dict }}
 {{ $path := "data/books.json" }}
 {{ with resources.Get $path }}
-  {{ with unmarshal .Content }}
+  {{ with .Content | transform.Unmarshal }}
     {{ $data = . }}
   {{ end }}
 {{ else }}
@@ -128,10 +128,10 @@ assets/
 {{ end }}
 @y
 ```go-html-template
-{{ $data := "" }}
+{{ $data := dict }}
 {{ $path := "data/books.json" }}
 {{ with resources.Get $path }}
-  {{ with unmarshal .Content }}
+  {{ with .Content | transform.Unmarshal }}
     {{ $data = . }}
   {{ end }}
 {{ else }}
@@ -185,10 +185,10 @@ content/
 
 @x
 ```go-html-template
-{{ $data := "" }}
+{{ $data := dict }}
 {{ $path := "books.json" }}
 {{ with .Resources.Get $path }}
-  {{ with unmarshal .Content }}
+  {{ with .Content | transform.Unmarshal }}
     {{ $data = . }}
   {{ end }}
 {{ else }}
@@ -196,10 +196,10 @@ content/
 {{ end }}
 @y
 ```go-html-template
-{{ $data := "" }}
+{{ $data := dict }}
 {{ $path := "books.json" }}
 {{ with .Resources.Get $path }}
-  {{ with unmarshal .Content }}
+  {{ with .Content | transform.Unmarshal }}
     {{ $data = . }}
   {{ end }}
 {{ else }}
@@ -233,7 +233,7 @@ A remote resource is a file on a remote server, accessible via HTTP or HTTPS.
 
 @x
 ```go-html-template
-{{ $data := "" }}
+{{ $data := dict }}
 {{ $url := "https://example.org/books.json" }}
 {{ with resources.GetRemote $url }}
   {{ with .Err }}
@@ -246,7 +246,7 @@ A remote resource is a file on a remote server, accessible via HTTP or HTTPS.
 {{ end }}
 @y
 ```go-html-template
-{{ $data := "" }}
+{{ $data := dict }}
 {{ $url := "https://example.org/books.json" }}
 {{ with resources.GetRemote $url }}
   {{ with .Err }}
@@ -401,7 +401,7 @@ Get the remote data:
 
 @x
 ```go-html-template
-{{ $data := "" }}
+{{ $data := dict }}
 {{ $url := "https://example.org/books/index.xml" }}
 {{ with resources.GetRemote $url }}
   {{ with .Err }}
@@ -415,7 +415,7 @@ Get the remote data:
 ```
 @y
 ```go-html-template
-{{ $data := "" }}
+{{ $data := dict }}
 {{ $url := "https://example.org/books/index.xml" }}
 {{ with resources.GetRemote $url }}
   {{ with .Err }}

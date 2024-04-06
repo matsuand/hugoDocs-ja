@@ -235,7 +235,7 @@ my-project/
 
 @x
 ```go-html-template
-{{ $data := "" }}
+{{ $data := dict }}
 {{ $p := "data/pets.csv" }}
 {{ with resources.Get $p }}
   {{ $opts := dict "delimiter" "," }}
@@ -246,7 +246,7 @@ my-project/
 ```
 @y
 ```go-html-template
-{{ $data := "" }}
+{{ $data := dict }}
 {{ $p := "data/pets.csv" }}
 {{ with resources.Get $p }}
   {{ $opts := dict "delimiter" "," }}
@@ -291,7 +291,7 @@ my-project/
 
 @x
 ```go-html-template
-{{ $data := "" }}
+{{ $data := dict }}
 {{ $p := "pets.csv" }}
 {{ with .Resources.Get $p }}
   {{ $opts := dict "delimiter" "," }}
@@ -302,7 +302,7 @@ my-project/
 ```
 @y
 ```go-html-template
-{{ $data := "" }}
+{{ $data := dict }}
 {{ $p := "pets.csv" }}
 {{ with .Resources.Get $p }}
   {{ $opts := dict "delimiter" "," }}
@@ -327,7 +327,7 @@ Consider using the [`resources.GetRemote`] function with [`transform.Unmarshal`]
 
 @x
 ```go-html-template
-{{ $data := "" }}
+{{ $data := dict }}
 {{ $u := "https://example.org/pets.csv" }}
 {{ with resources.GetRemote $u }}
   {{ with .Err }}
@@ -342,7 +342,7 @@ Consider using the [`resources.GetRemote`] function with [`transform.Unmarshal`]
 ```
 @y
 ```go-html-template
-{{ $data := "" }}
+{{ $data := dict }}
 {{ $u := "https://example.org/pets.csv" }}
 {{ with resources.GetRemote $u }}
   {{ with .Err }}
