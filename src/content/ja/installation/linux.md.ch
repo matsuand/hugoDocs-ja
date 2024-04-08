@@ -1,33 +1,23 @@
 %This is the change file for the original Hugo Documentation file.
 %This is part of Japanese translation version for Hugo Documantation.
 
+% snip 対応
+
 @x
----
 title: Linux
 description: Install Hugo on Linux.
 categories: [installation]
 keywords: []
-menu:
-  docs:
-    parent: installation
-    weight: 30
-weight: 30
-toc: true
----
-{{% include "installation/_common/01-editions.md" %}}
 @y
----
 title: Linux
 description: Hugo を Linux にインストールします。
 categories: [installation]
 keywords: []
-menu:
-  docs:
-    parent: installation
-    weight: 30
-weight: 30
-toc: true
----
+@z
+
+@x
+{{% include "installation/_common/01-editions.md" %}}
+@y
 {{% include "installation/_common/01-editions.md" %}}
 @z
 
@@ -268,27 +258,7 @@ You can also download Debian packages from the [latest release] page.
 Debian パッケージは [最新リリース][latest release] のページからもダウンロードすることができます。
 @z
 
-@x
-[Debian]: https://www.debian.org/
-[elementary OS]: https://elementary.io/
-[KDE neon]: https://neon.kde.org/
-[Linux Lite]: https://www.linuxliteos.com/
-[Linux Mint]: https://linuxmint.com/
-[MX Linux]: https://mxlinux.org/
-[Pop!_OS]: https://pop.system76.com/
-[Ubuntu]: https://ubuntu.com/
-[Zorin OS]: https://zorin.com/os/
-@y
-[Debian]: https://www.debian.org/
-[elementary OS]: https://elementary.io/
-[KDE neon]: https://neon.kde.org/
-[Linux Lite]: https://www.linuxliteos.com/
-[Linux Mint]: https://linuxmint.com/
-[MX Linux]: https://mxlinux.org/
-[Pop!_OS]: https://pop.system76.com/
-[Ubuntu]: https://ubuntu.com/
-[Zorin OS]: https://zorin.com/os/
-@z
+% snip links...
 
 @x
 ### Fedora
@@ -303,25 +273,8 @@ Derivatives of the [Fedora] distribution of Linux include [CentOS], [Red Hat Ent
 Hugo 拡張エディションをインストールするには以下を実行します。
 @z
 
-@x
-```sh
-sudo dnf install hugo
-```
-@y
-```sh
-sudo dnf install hugo
-```
-@z
-
-@x
-[CentOS]: https://www.centos.org/
-[Fedora]: https://getfedora.org/
-[Red Hat Enterprise Linux]: https://www.redhat.com/
-@y
-[CentOS]: https://www.centos.org/
-[Fedora]: https://getfedora.org/
-[Red Hat Enterprise Linux]: https://www.redhat.com/
-@z
+% snip command...
+% snip links...
 
 @x
 ### Gentoo
@@ -330,7 +283,7 @@ sudo dnf install hugo
 @z
 
 @x
-Derivatives of the [Gentoo] distribution of Linux include [Calculate Linux], [Funtoo], and others. Follow the instructions below to install the extended edition of Hugo:
+Derivatives of the [Gentoo] distribution of Linux include [Calculate Linux], [Funtoo], and others. To install the extended edition of Hugo:
 @y
 [Gentoo] から派生したディストリビューションには [Calculate Linux], [Funtoo] などがあります。
 Hugo 拡張エディションをインストールするには、以下の手順を実行します。

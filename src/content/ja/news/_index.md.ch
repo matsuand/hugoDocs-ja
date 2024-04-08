@@ -2,13 +2,7 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
-title: Hugo News
-aliases: [/release-notes/]
----
+title: News
 @y
----
-title: Hugo ニュース
-aliases: [/release-notes/]
----
+title: ニュース
 @z

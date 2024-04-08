@@ -87,7 +87,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-subdir = src
+subdir = src/layouts
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/progs.m4 \
 	$(top_srcdir)/configure.ac
@@ -151,9 +151,7 @@ am__define_uniq_tagged_files = \
     if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; \
   done | $(am__uniquify_input)`
 DIST_SUBDIRS = $(SUBDIRS)
-am__DIST_COMMON = $(srcdir)/Makefile.in \
-	$(top_srcdir)/build-aux/common.mk \
-	$(top_srcdir)/build-aux/main.mk
+am__DIST_COMMON = $(srcdir)/Makefile.in
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 am__relativize = \
   dir0=`pwd`; \
@@ -231,7 +229,7 @@ STRIP = @STRIP@
 VERSION = @VERSION@
 absORIGDIR = @absORIGDIR@
 abs_builddir = @abs_builddir@
-abs_origdir = @abs_origdir@/$(thisdir)
+abs_origdir = @abs_origdir@
 abs_srcdir = @abs_srcdir@
 abs_top_builddir = @abs_top_builddir@
 abs_top_srcdir = @abs_top_srcdir@
@@ -282,44 +280,11 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = _vendor config content i18n layouts
-bases = \
-	hugo.toml
-
-thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
-abs_thisdir = @abs_srcdir@
-from1_dir = ${shell echo $(abs_origdir) | sed -e "s|content/ja|content/en|"}
-from2_dir = $(srcdir)
-changes = $(bases:=.ch) # change files
-transes = $(bases)      # translated files
-EXTRA_DIST = $(changes)
-copydirs = \
-	archetypes \
-	assets     \
-	data       \
-	src        \
-	static
-
-copyfiles = \
-	.cspell.json        \
-	.editorconfig       \
-	.markdownlint.yaml  \
-	.markdownlintignore \
-	.textlintignore     \
-	LICENSE.md          \
-	README.md           \
-	go.mod              \
-	go.sum              \
-	hugo.work           \
-	hugo_stats.json     \
-	hugoreleaser.toml   \
-	netlify.toml        \
-	pull-theme.sh
-
+SUBDIRS = news partials
 all: all-recursive
 
 .SUFFIXES:
-$(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir)/build-aux/common.mk $(top_srcdir)/build-aux/main.mk $(am__configure_deps)
+$(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am  $(am__configure_deps)
 	@for dep in $?; do \
 	  case '$(am__configure_deps)' in \
 	    *$$dep*) \
@@ -328,9 +293,9 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign src/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign src/layouts/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --foreign src/Makefile
+	  $(AUTOMAKE) --foreign src/layouts/Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
 	  *config.status*) \
@@ -339,7 +304,6 @@ Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	    echo ' cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__maybe_remake_depfiles)'; \
 	    cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__maybe_remake_depfiles);; \
 	esac;
-$(top_srcdir)/build-aux/common.mk $(top_srcdir)/build-aux/main.mk $(am__empty):
 
 $(top_builddir)/config.status: $(top_srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
@@ -623,48 +587,6 @@ uninstall-am:
 
 .PRECIOUS: Makefile
 
-
-.PHONY: all ctie
-all: ctie
-ctie:
-	@if test ! -x "$(top_builddir)/$@/$@"; then \
-	  $(MAKE) -C $(top_builddir)/$@ $@ >/dev/null; \
-	fi
-
-.PHONY: all
-all: $(transes)
-
-submakename ?= Makefile.sub
-
--include $(submakename)
-$(submakename): $(top_srcdir)/bin/makesub.sh $(srcdir)/Makefile.am $(top_builddir)/config.log
-	@$(top_srcdir)/bin/makesub.sh $(submakename) . $(transes)
-
-@MAINT@.PHONY: chbuild
-@MAINT@chbuild: $(addprefix $(abs_thisdir)/, $(changes))
-@MAINT@$(addprefix $(abs_thisdir)/, $(changes)):
-@MAINT@	@if test ! -f $@; then \
-@MAINT@	  $(top_srcdir)/bin/buildch.perl `echo $@ | \
-@MAINT@	    sed -e "s|^$(abs_thisdir)|$(abs_origdir)|" \
-@MAINT@	    -e "s|\.ch$$||"` $@; \
-@MAINT@	fi
-
-.PHONY: all _copydirs _copyfiles
-all: _copydirs _copyfiles
-
-_copydirs:
-	@for d in $(copydirs); do \
-	  if test ! -d $$d; then \
-	    cp -pR $(absORIGDIR)/$$d .; \
-	  fi \
-	done
-
-_copyfiles:
-	@for f in $(copyfiles); do \
-	  if test ! -e $$f; then \
-	    cp -p $(absORIGDIR)/$$f .; \
-	  fi \
-	done
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
