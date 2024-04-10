@@ -991,26 +991,16 @@ Any of the above can be omitted.
 Any of the above can be omitted.
 @z
 
-@x
-{{% note %}}
-With a multilingual site it may be more efficient to define the `cascade` values in your site configuration to avoid duplicating the `cascade` values on the section page for each language.
+@x note
+With a multilingual site it may be more efficient to define the `cascade` values in your site configuration to avoid duplicating the `cascade` values on the section, taxonomy, or term page for each language.
 @y
-{{% note %}}
-With a multilingual site it may be more efficient to define the `cascade` values in your site configuration to avoid duplicating the `cascade` values on the section page for each language.
+With a multilingual site it may be more efficient to define the `cascade` values in your site configuration to avoid duplicating the `cascade` values on the section, taxonomy, or term page for each language.
 @z
 
 @x
-With a multilingual site, if you choose to define the `cascade` values in front matter, you must create a [node] page for each language; the `lang` keyword is ignored.
+With a multilingual site, if you choose to define the `cascade` values in front matter, you must create a section, taxonomy, or term page for each language; the `lang` keyword is ignored.
 @y
-With a multilingual site, if you choose to define the `cascade` values in front matter, you must create a [node] page for each language; the `lang` keyword is ignored.
-@z
-
-@x
-[node]: /getting-started/glossary/#node
-{{% /note %}}
-@y
-[node]: /getting-started/glossary/#node
-{{% /note %}}
+With a multilingual site, if you choose to define the `cascade` values in front matter, you must create a section, taxonomy, or term page for each language; the `lang` keyword is ignored.
 @z
 
 @x

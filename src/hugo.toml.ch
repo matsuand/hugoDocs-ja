@@ -81,11 +81,11 @@ ID = 'G-MBZGKNMDWC'
 @x
 [outputs]
   home    = ["HTML", "RSS", "REDIR", "HEADERS"]
-  section = ["HTML", "RSS"]
+  section = ["HTML"]
 @y
 [outputs]
   home    = ["HTML", "RSS", "REDIR", "HEADERS"]
-  section = ["HTML", "RSS"]
+  section = ["HTML"]
 @z
 
 @x

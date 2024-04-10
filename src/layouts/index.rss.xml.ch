@@ -87,7 +87,7 @@
 
 @x
     {{- /* Get content pages from news section. */}}
-    {{- range .Pages }}
+    {{- range where site.RegularPages "Section" "news" }}
       {{- $ctx := dict
         "PublishDate" .PublishDate
         "Title" .Title
@@ -104,7 +104,7 @@
     <lastBuildDate>{{ (index $news_items 0).PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
 @y
     {{- /* Get content pages from news section. */}}
-    {{- range .Pages }}
+    {{- range where site.RegularPages "Section" "news" }}
       {{- $ctx := dict
         "PublishDate" .PublishDate
         "Title" .Title
