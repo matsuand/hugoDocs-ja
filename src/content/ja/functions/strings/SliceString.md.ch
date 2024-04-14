@@ -2,49 +2,29 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: strings.SliceString
-description: Creates a slice of a half-open range, including start and end indices.
+description: Returns a substring of the given string, beginning with the start position and ending before the end position.
 categories: []
 keywords: []
-action:
-  aliases: [slicestr]
-  related: []
-  returnType: string
-  signatures: ['strings.SliceString STRING START [END]']
-aliases: [/functions/slicestr]
----
 @y
----
 title: strings.SliceString
-description: Creates a slice of a half-open range, including start and end indices.
+description: Returns a substring of the given string, beginning with the start position and ending before the end position.
 categories: []
 keywords: []
-action:
-  aliases: [slicestr]
-  related: []
-  returnType: string
-  signatures: ['strings.SliceString STRING START [END]']
-aliases: [/functions/slicestr]
----
 @z
 
 @x
-For example, 1 and 4 creates a slice including elements 1 through&nbsp;3.
-The `end` index can be omitted; it defaults to the string's length.
+The START and END positions are zero-based, where `0` represents the first character of the string. If START is not specified, the substring will begin at position `0`. If END is not specified, the substring will end after the last character.
 @y
-For example, 1 and 4 creates a slice including elements 1 through&nbsp;3.
-The `end` index can be omitted; it defaults to the string's length.
+The START and END positions are zero-based, where `0` represents the first character of the string. If START is not specified, the substring will begin at position `0`. If END is not specified, the substring will end after the last character.
 @z
 
+% snip code...
+
 @x
-```go-html-template
-{{ slicestr "BatMan" 3 }}` → Man
-{{ slicestr "BatMan" 0 3 }}` → Bat
-```
+The START and END arguments represent the endpoints of a [half-open interval], a concept that may be difficult to grasp when first encountered. You may find that the [`strings.Substr`] function is easier to understand.
 @y
-```go-html-template
-{{ slicestr "BatMan" 3 }}` → Man
-{{ slicestr "BatMan" 0 3 }}` → Bat
-```
+The START and END arguments represent the endpoints of a [half-open interval], a concept that may be difficult to grasp when first encountered. You may find that the [`strings.Substr`] function is easier to understand.
 @z
+
+% snip links...

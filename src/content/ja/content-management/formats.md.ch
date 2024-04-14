@@ -51,7 +51,7 @@ Hugo における現時点でのコンテントフォーマットは以下のと
 |AsciiDoc|`asciidocext`, `adoc`, `ad`|Needs [Asciidoctor][ascii] installed.|
 |RST|`rst`|Needs [RST](https://docutils.sourceforge.io/rst.html) installed.|
 |Pandoc|`pandoc`, `pdc`|Needs [Pandoc](https://www.pandoc.org/) installed.|
-|HTML|`html`, `htm`|To be treated as a content file, with layout, shortcodes etc., it must have front matter. If not, it will be copied as-is.|
+|HTML|`html`, `htm`|To be treated as a content file, with layout, shortcodes etc., it must have front matter.|
 @y
 | 名前  | マークアップ識別子 | 内容説明 |
 | ------------- | ------------- |-------------|
@@ -60,7 +60,7 @@ Hugo における現時点でのコンテントフォーマットは以下のと
 |AsciiDoc|`asciidocext`, `adoc`, `ad`|[Asciidoctor][ascii] インストール要|
 |RST|`rst`|[RST](https://docutils.sourceforge.io/rst.html) インストール要|
 |Pandoc|`pandoc`, `pdc`|[Pandoc](https://www.pandoc.org/) インストール要|
-|HTML|`html`, `htm`|To be treated as a content file, with layout, shortcodes etc., it must have front matter. If not, it will be copied as-is.|
+|HTML|`html`, `htm`|To be treated as a content file, with layout, shortcodes etc., it must have front matter.|
 @z
 
 @x

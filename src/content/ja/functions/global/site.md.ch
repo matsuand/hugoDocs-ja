@@ -2,68 +2,32 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: site
 description: Provides global access to the current Site object.
 categories: []
 keywords: []
-action:
-  aliases: []
-  related:
-    - functions/global/page
-  returnType: 
-  signatures: [site]
-aliases: [/functions/site]
----
 @y
----
 title: site
 description: Provides global access to the current Site object.
 categories: []
 keywords: []
-action:
-  aliases: []
-  related:
-    - functions/global/page
-  returnType: 
-  signatures: [site]
-aliases: [/functions/site]
----
 @z
 
 @x
-At the top level of a template that receives the `Site` object in context, these are equivalent:
+Use the `site` function to return the `Site` object regardless of current context.
 @y
-At the top level of a template that receives the `Site` object in context, these are equivalent:
+Use the `site` function to return the `Site` object regardless of current context.
 @z
 
-@x
-```go-html-template
-{{ .Site.Params.foo }}
-{{ site.Params.foo }}
-```
-@y
-```go-html-template
-{{ .Site.Params.foo }}
-{{ site.Params.foo }}
-```
-@z
+% snip code...
 
 @x
-When the `Site` object is not in context, use the global `site` function:
+When the `Site` object is in context you can use the `Site` property:
 @y
-When the `Site` object is not in context, use the global `site` function:
+When the `Site` object is in context you can use the `Site` property:
 @z
 
-@x
-```go-html-template
-{{ site.Params.foo }}
-```
-@y
-```go-html-template
-{{ site.Params.foo }}
-```
-@z
+% snip code...
 
 @x
 {{% note %}}
