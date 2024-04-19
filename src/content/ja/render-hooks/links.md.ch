@@ -106,9 +106,33 @@ Link render hook templates receive the following context:
 @z
 
 @x
-(`page`) A reference to the page containing the link.
+(`page`) A reference to the current page.
 @y
-(`page`) A reference to the page containing the link.
+(`page`) A reference to the current page.
+@z
+
+@x
+###### PageInner
+@y
+###### PageInner
+@z
+
+@x
+{{< new-in 0.125.0 >}}
+@y
+{{< new-in 0.125.0 >}}
+@z
+
+@x
+(`page`) A reference to a page nested via the [`RenderShortcodes`] method. [See details](#pageinner-details).
+@y
+(`page`) A reference to a page nested via the [`RenderShortcodes`] method. [See details](#pageinner-details).
+@z
+
+@x
+[`RenderShortcodes`]: /methods/page/rendershortcodes
+@y
+[`RenderShortcodes`]: /methods/page/rendershortcodes
 @z
 
 @x
@@ -325,4 +349,10 @@ target = 'assets'
 source = 'static'
 target = 'assets'
 {{< /code-toggle >}}
+@z
+
+@x
+{{% include "/render-hooks/_common/pageinner.md" %}}
+@y
+{{% include "/render-hooks/_common/pageinner.md" %}}
 @z

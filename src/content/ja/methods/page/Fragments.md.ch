@@ -83,11 +83,11 @@ Headings
 
 @x
 ```go-html-template
-<pre>{{ .Fragments.Headings | jsonify (dict "indent" "  ") }}</pre>
+<pre>{{ debug.Dump .Fragments.Headings }}</pre>
 ```
 @y
 ```go-html-template
-<pre>{{ .Fragments.Headings | jsonify (dict "indent" "  ") }}</pre>
+<pre>{{ debug.Dump .Fragments.Headings }}</pre>
 ```
 @z
 
@@ -101,11 +101,11 @@ HeadingsMap
 
 @x
 ```go-html-template
-<pre>{{ .Fragments.HeadingsMap | jsonify (dict "indent" "  ") }}</pre>
+<pre>{{ debug.Dump .Fragments.HeadingsMap }}</pre>
 ```
 @y
 ```go-html-template
-<pre>{{ .Fragments.HeadingsMap | jsonify (dict "indent" "  ") }}</pre>
+<pre>{{ debug.Dump .Fragments.HeadingsMap }}</pre>
 ```
 @z
 
@@ -119,11 +119,11 @@ Identifiers
 
 @x
 ```go-html-template
-<pre>{{ .Fragments.Identifiers | jsonify (dict "indent" "  ") }}</pre>
+<pre>{{ debug.Dump .Fragments.Identifiers }}</pre>
 ```
 @y
 ```go-html-template
-<pre>{{ .Fragments.Identifiers | jsonify (dict "indent" "  ") }}</pre>
+<pre>{{ debug.Dump .Fragments.Identifiers }}</pre>
 ```
 @z
 

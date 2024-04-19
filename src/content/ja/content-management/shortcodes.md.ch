@@ -51,7 +51,11 @@ In addition to cleaner Markdown, shortcodes can be updated any time to reflect n
 ## Use shortcodes
 @z
 
-% snip youtube...
+@x
+{{< youtube 2xkNJL4gJ9E >}}
+@y
+{{< youtube 2xkNJL4gJ9E >}}
+@z
 
 @x
 In your content files, a shortcode can be called by calling `{{%/* shortcodename parameters */%}}`. Shortcode parameters are space delimited, and parameters with internal spaces can be quoted.
@@ -77,7 +81,25 @@ Here are two examples of paired shortcodes:
 Here are two examples of paired shortcodes:
 @z
 
-% snip code...
+@x
+```go-html-template
+{{%/* mdshortcode */%}}Stuff to `process` in the *center*.{{%/* /mdshortcode */%}}
+```
+@y
+```go-html-template
+{{%/* mdshortcode */%}}Stuff to `process` in the *center*.{{%/* /mdshortcode */%}}
+```
+@z
+
+@x
+```go-html-template
+{{</* highlight go */>}} A bunch of code here {{</* /highlight */>}}
+```
+@y
+```go-html-template
+{{</* highlight go */>}} A bunch of code here {{</* /highlight */>}}
+```
+@z
 
 @x
 The examples above use two different delimiters, the difference being the `%` character in the first and the `<>` characters in the second.
@@ -97,7 +119,17 @@ You can pass multiple lines as parameters to a shortcode by using raw string lit
 You can pass multiple lines as parameters to a shortcode by using raw string literals:
 @z
 
-% snip code...
+@x
+```go-html-template
+{{</*  myshortcode `This is some <b>HTML</b>,
+and a new line with a "quoted string".` */>}}
+```
+@y
+```go-html-template
+{{</*  myshortcode `This is some <b>HTML</b>,
+and a new line with a "quoted string".` */>}}
+```
+@z
 
 @x
 ### Shortcodes with Markdown
@@ -123,7 +155,15 @@ The `<` character indicates that the shortcode's inner content does *not* need f
 The `<` character indicates that the shortcode's inner content does *not* need further rendering. Often shortcodes without Markdown include internal HTML:
 @z
 
-% snip code...
+@x
+```go-html-template
+{{</* myshortcode */>}}<p>Hello <strong>World!</strong></p>{{</* /myshortcode */>}}
+```
+@y
+```go-html-template
+{{</* myshortcode */>}}<p>Hello <strong>World!</strong></p>{{</* /myshortcode */>}}
+```
+@z
 
 @x
 ### Nested shortcodes
@@ -158,13 +198,15 @@ Use these embedded shortcodes as needed.
 @x
 {{% note %}}
 To override Hugo's embedded `figure` shortcode, copy the [source code] to a file with the same name in the layouts/shortcodes directory.
+@y
+{{% note %}}
+To override Hugo's embedded `figure` shortcode, copy the [source code] to a file with the same name in the layouts/shortcodes directory.
+@z
 
+@x
 [source code]: {{% eturl figure %}}
 {{% /note %}}
 @y
-{{% note %}}
-To override Hugo's embedded `figure` shortcode, copy the [source code] to a file with the same name in the layouts/shortcodes directory.
-
 [source code]: {{% eturl figure %}}
 {{% /note %}}
 @z
@@ -285,7 +327,15 @@ Example usage:
 Example usage:
 @z
 
-% snip text...
+@x
+```text
+{{</* figure src="elephant.jpg" title="An elephant at sunset" */>}}
+```
+@y
+```text
+{{</* figure src="elephant.jpg" title="An elephant at sunset" */>}}
+```
+@z
 
 @x
 Rendered:
@@ -293,7 +343,21 @@ Rendered:
 Rendered:
 @z
 
-% snip html...
+@x
+```html
+<figure>
+  <img src="elephant.jpg">
+  <figcaption><h4>An elephant at sunset</h4></figcaption>
+</figure>
+```
+@y
+```html
+<figure>
+  <img src="elephant.jpg">
+  <figcaption><h4>An elephant at sunset</h4></figcaption>
+</figure>
+```
+@z
 
 @x
 ### gist
@@ -329,7 +393,15 @@ To display a GitHub [gist] with this URL:
 [gist]: https://docs.github.com/en/get-started/writing-on-github/editing-and-sharing-content-with-gists
 @z
 
-% snip text...
+@x
+```text
+https://gist.github.com/user/50a7482715eac222e230d1e64dd9a89b
+```
+@y
+```text
+https://gist.github.com/user/50a7482715eac222e230d1e64dd9a89b
+```
+@z
 
 @x
 Include this in your Markdown:
@@ -337,7 +409,15 @@ Include this in your Markdown:
 Include this in your Markdown:
 @z
 
-% snip text...
+@x
+```text
+{{</* gist user 50a7482715eac222e230d1e64dd9a89b */>}}
+```
+@y
+```text
+{{</* gist user 50a7482715eac222e230d1e64dd9a89b */>}}
+```
+@z
 
 @x
 This will display all files in the gist alphabetically by file name.
@@ -357,7 +437,15 @@ To display a specific file within the gist:
 To display a specific file within the gist:
 @z
 
-% snip text...
+@x
+```text
+{{</* gist user 23932424365401ffa5e9d9810102a477 list.html */>}}
+```
+@y
+```text
+{{</* gist user 23932424365401ffa5e9d9810102a477 list.html */>}}
+```
+@z
 
 @x
 Rendered:
@@ -399,7 +487,23 @@ To display a highlighted code sample:
 To display a highlighted code sample:
 @z
 
-% snip text...
+@x
+```text
+{{</* highlight go-html-template */>}}
+{{ range .Pages }}
+  <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+{{ end }}
+{{</* /highlight */>}}
+```
+@y
+```text
+{{</* highlight go-html-template */>}}
+{{ range .Pages }}
+  <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+{{ end }}
+{{</* /highlight */>}}
+```
+@z
 
 @x
 Rendered:
@@ -433,7 +537,23 @@ To specify one or more [highlighting options], include a quotation-encapsulated,
 [highlighting options]: /functions/transform/highlight/
 @z
 
-% snip text...
+@x
+```text
+{{</* highlight go-html-template "lineNos=inline, lineNoStart=42" */>}}
+{{ range .Pages }}
+  <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+{{ end }}
+{{</* /highlight */>}}
+```
+@y
+```text
+{{</* highlight go-html-template "lineNos=inline, lineNoStart=42" */>}}
+{{ range .Pages }}
+  <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+{{ end }}
+{{</* /highlight */>}}
+```
+@z
 
 @x
 Rendered:
@@ -483,7 +603,15 @@ To display an Instagram post with this URL:
 To display an Instagram post with this URL:
 @z
 
-% snip text...
+@x
+```text
+https://www.instagram.com/p/CxOWiQNP2MO/
+```
+@y
+```text
+https://www.instagram.com/p/CxOWiQNP2MO/
+```
+@z
 
 @x
 Include this in your Markdown:
@@ -491,7 +619,15 @@ Include this in your Markdown:
 Include this in your Markdown:
 @z
 
-% snip text...
+@x
+```text
+{{</* instagram CxOWiQNP2MO */>}}
+```
+@y
+```text
+{{</* instagram CxOWiQNP2MO */>}}
+```
+@z
 
 @x
 Rendered:
@@ -499,7 +635,11 @@ Rendered:
 Rendered:
 @z
 
-% snip instagram...
+@x
+{{< instagram CxOWiQNP2MO >}}
+@y
+{{< instagram CxOWiQNP2MO >}}
+@z
 
 @x
 ### param
@@ -535,7 +675,15 @@ Example usage:
 Example usage:
 @z
 
-% snip text...
+@x
+```text
+{{</* param testparam */>}}
+```
+@y
+```text
+{{</* param testparam */>}}
+```
+@z
 
 @x
 Access nested values by [chaining] the [identifiers]:
@@ -543,8 +691,23 @@ Access nested values by [chaining] the [identifiers]:
 Access nested values by [chaining] the [identifiers]:
 @z
 
-% snip links...
-% snip text...
+@x
+[chaining]: /getting-started/glossary/#chain
+[identifiers]: /getting-started/glossary/#identifier
+@y
+[chaining]: /getting-started/glossary/#chain
+[identifiers]: /getting-started/glossary/#identifier
+@z
+
+@x
+```text
+{{</* param my.nested.param */>}}
+```
+@y
+```text
+{{</* param my.nested.param */>}}
+```
+@z
 
 @x
 ### ref
@@ -586,7 +749,21 @@ Example usage:
 Example usage:
 @z
 
-% snip text...
+@x
+```text
+[Post 1]({{%/* ref "/posts/post-1" */%}})
+[Post 1]({{%/* ref "/posts/post-1.md" */%}})
+[Post 1]({{%/* ref "/posts/post-1#foo" */%}})
+[Post 1]({{%/* ref "/posts/post-1.md#foo" */%}})
+```
+@y
+```text
+[Post 1]({{%/* ref "/posts/post-1" */%}})
+[Post 1]({{%/* ref "/posts/post-1.md" */%}})
+[Post 1]({{%/* ref "/posts/post-1#foo" */%}})
+[Post 1]({{%/* ref "/posts/post-1.md#foo" */%}})
+```
+@z
 
 @x
 Rendered:
@@ -594,7 +771,21 @@ Rendered:
 Rendered:
 @z
 
-% snip html...
+@x
+```html
+<a href="http://example.org/posts/post-1/">Post 1</a>
+<a href="http://example.org/posts/post-1/">Post 1</a>
+<a href="http://example.org/posts/post-1/#foo">Post 1</a>
+<a href="http://example.org/posts/post-1/#foo">Post 1</a>
+```
+@y
+```html
+<a href="http://example.org/posts/post-1/">Post 1</a>
+<a href="http://example.org/posts/post-1/">Post 1</a>
+<a href="http://example.org/posts/post-1/#foo">Post 1</a>
+<a href="http://example.org/posts/post-1/#foo">Post 1</a>
+```
+@z
 
 @x
 ### relref
@@ -636,7 +827,21 @@ Example usage:
 Example usage:
 @z
 
-% snip text...
+@x
+```text
+[Post 1]({{%/* relref "/posts/post-1" */%}})
+[Post 1]({{%/* relref "/posts/post-1.md" */%}})
+[Post 1]({{%/* relref "/posts/post-1#foo" */%}})
+[Post 1]({{%/* relref "/posts/post-1.md#foo" */%}})
+```
+@y
+```text
+[Post 1]({{%/* relref "/posts/post-1" */%}})
+[Post 1]({{%/* relref "/posts/post-1.md" */%}})
+[Post 1]({{%/* relref "/posts/post-1#foo" */%}})
+[Post 1]({{%/* relref "/posts/post-1.md#foo" */%}})
+```
+@z
 
 @x
 Rendered:
@@ -644,7 +849,21 @@ Rendered:
 Rendered:
 @z
 
-% snip html...
+@x
+```html
+<a href="/posts/post-1/">Post 1</a>
+<a href="/posts/post-1/">Post 1</a>
+<a href="/posts/post-1/#foo">Post 1</a>
+<a href="/posts/post-1/#foo">Post 1</a>
+```
+@y
+```html
+<a href="/posts/post-1/">Post 1</a>
+<a href="/posts/post-1/">Post 1</a>
+<a href="/posts/post-1/#foo">Post 1</a>
+<a href="/posts/post-1/#foo">Post 1</a>
+```
+@z
 
 @x
 ### twitter
@@ -680,7 +899,15 @@ To display a Twitter post with this URL:
 To display a Twitter post with this URL:
 @z
 
-% snip text...
+@x
+```txt
+https://twitter.com/SanDiegoZoo/status/1453110110599868418
+```
+@y
+```txt
+https://twitter.com/SanDiegoZoo/status/1453110110599868418
+```
+@z
 
 @x
 Include this in your Markdown:
@@ -688,7 +915,15 @@ Include this in your Markdown:
 Include this in your Markdown:
 @z
 
-% snip text...
+@x
+```text
+{{</* twitter user="SanDiegoZoo" id="1453110110599868418" */>}}
+```
+@y
+```text
+{{</* twitter user="SanDiegoZoo" id="1453110110599868418" */>}}
+```
+@z
 
 @x
 Rendered:
@@ -730,7 +965,15 @@ To display a Vimeo video with this URL:
 To display a Vimeo video with this URL:
 @z
 
-% snip text...
+@x
+```text
+https://vimeo.com/channels/staffpicks/55073825
+```
+@y
+```text
+https://vimeo.com/channels/staffpicks/55073825
+```
+@z
 
 @x
 Include this in your Markdown:
@@ -738,7 +981,15 @@ Include this in your Markdown:
 Include this in your Markdown:
 @z
 
-% snip text...
+@x
+```text
+{{</* vimeo 55073825 */>}}
+```
+@y
+```text
+{{</* vimeo 55073825 */>}}
+```
+@z
 
 @x
 Rendered:
@@ -752,13 +1003,25 @@ Rendered:
 {{< vimeo 55073825 >}}
 @z
 
-@x note
-If you want to further customize the visual styling of the YouTube or Vimeo output, add a `class` parameter when calling the shortcode. The new `class` will be added to the `<div>` that wraps the `<iframe>` *and* will remove the inline styles. Note that you will need to call the `id` as a named parameter as well. You can also give the vimeo video a descriptive title with `title`.
+@x
+{{% note %}}
+If you want to further customize the visual styling, add a `class` parameter when calling the shortcode. The new `class` will be added to the `<div>` that wraps the `<iframe>` *and* will remove the inline styles. Note that you will need to call the `id` as a named parameter as well. You can also give the vimeo video a descriptive title with `title`.
 @y
-If you want to further customize the visual styling of the YouTube or Vimeo output, add a `class` parameter when calling the shortcode. The new `class` will be added to the `<div>` that wraps the `<iframe>` *and* will remove the inline styles. Note that you will need to call the `id` as a named parameter as well. You can also give the vimeo video a descriptive title with `title`.
+{{% note %}}
+If you want to further customize the visual styling, add a `class` parameter when calling the shortcode. The new `class` will be added to the `<div>` that wraps the `<iframe>` *and* will remove the inline styles. Note that you will need to call the `id` as a named parameter as well. You can also give the vimeo video a descriptive title with `title`.
 @z
 
-% snip code...
+@x
+```go
+{{</* vimeo id="146022717" class="my-vimeo-wrapper-class" title="My vimeo video" */>}}
+```
+{{% /note %}}
+@y
+```go
+{{</* vimeo id="146022717" class="my-vimeo-wrapper-class" title="My vimeo video" */>}}
+```
+{{% /note %}}
+@z
 
 @x
 ### youtube
@@ -768,10 +1031,10 @@ If you want to further customize the visual styling of the YouTube or Vimeo outp
 
 @x
 {{% note %}}
-To override Hugo's embedded `vimeo` shortcode, copy the [source code] to a file with the same name in the layouts/shortcodes directory.
+To override Hugo's embedded `youtube` shortcode, copy the [source code] to a file with the same name in the layouts/shortcodes directory.
 @y
 {{% note %}}
-To override Hugo's embedded `vimeo` shortcode, copy the [source code] to a file with the same name in the layouts/shortcodes directory.
+To override Hugo's embedded `youtube` shortcode, copy the [source code] to a file with the same name in the layouts/shortcodes directory.
 @z
 
 @x
@@ -783,113 +1046,157 @@ To override Hugo's embedded `vimeo` shortcode, copy the [source code] to a file 
 @z
 
 @x
-The `youtube` shortcode embeds a responsive video player for [YouTube videos]. Only the ID of the video is required, e.g.:
+To display a YouTube video with this URL:
 @y
-The `youtube` shortcode embeds a responsive video player for [YouTube videos]. Only the ID of the video is required, e.g.:
+To display a YouTube video with this URL:
 @z
 
 @x
-```txt
-https://www.youtube.com/watch?v=w7Ft2ymGmfc
+```text
+https://www.youtube.com/watch?v=0RKpf3rK57I
 ```
 @y
-```txt
-https://www.youtube.com/watch?v=w7Ft2ymGmfc
+```text
+https://www.youtube.com/watch?v=0RKpf3rK57I
 ```
 @z
 
 @x
-#### Example `youtube` input
+Include this in your Markdown:
 @y
-#### Example `youtube` input
+Include this in your Markdown:
 @z
 
 @x
-Copy the YouTube video ID that follows `v=` in the video's URL and pass it to the `youtube` shortcode:
+```text
+{{</* youtube 0RKpf3rK57I */>}}
+```
 @y
-Copy the YouTube video ID that follows `v=` in the video's URL and pass it to the `youtube` shortcode:
+```text
+{{</* youtube 0RKpf3rK57I */>}}
+```
 @z
 
 @x
-{{< code file=example-youtube-input.md >}}
-{{</* youtube w7Ft2ymGmfc */>}}
-{{< /code >}}
+Rendered:
 @y
-{{< code file=example-youtube-input.md >}}
-{{</* youtube w7Ft2ymGmfc */>}}
-{{< /code >}}
+Rendered:
 @z
 
 @x
-Furthermore, you can automatically start playback of the embedded video by setting the `autoplay` parameter to `true`. Remember that you can't mix named and unnamed parameters, so you'll need to assign the yet unnamed video ID to the parameter `id`:
+{{< youtube 0RKpf3rK57I >}}
 @y
-Furthermore, you can automatically start playback of the embedded video by setting the `autoplay` parameter to `true`. Remember that you can't mix named and unnamed parameters, so you'll need to assign the yet unnamed video ID to the parameter `id`:
+{{< youtube 0RKpf3rK57I >}}
 @z
 
 @x
-{{< code file=example-youtube-input-with-autoplay.md >}}
-{{</* youtube id="w7Ft2ymGmfc" autoplay="true" */>}}
-{{< /code >}}
+The youtube shortcode accepts these named parameters:
 @y
-{{< code file=example-youtube-input-with-autoplay.md >}}
-{{</* youtube id="w7Ft2ymGmfc" autoplay="true" */>}}
-{{< /code >}}
+The youtube shortcode accepts these named parameters:
 @z
 
 @x
-For [accessibility reasons](https://dequeuniversity.com/tips/provide-iframe-titles), it's best to provide a title for your YouTube video. You  can do this using the shortcode by providing a `title` parameter. If no title is provided, a default of "YouTube Video" will be used.
+id
+: (`string`) The video `id`. Optional if the `id` is provided as a positional argument as shown in the example above.
 @y
-For [accessibility reasons](https://dequeuniversity.com/tips/provide-iframe-titles), it's best to provide a title for your YouTube video. You  can do this using the shortcode by providing a `title` parameter. If no title is provided, a default of "YouTube Video" will be used.
+id
+: (`string`) The video `id`. Optional if the `id` is provided as a positional argument as shown in the example above.
 @z
 
 @x
-{{< code file=example-youtube-input-with-title.md >}}
-{{</* youtube id="w7Ft2ymGmfc" title="A New Hugo Site in Under Two Minutes" */>}}
-{{< /code >}}
+allowFullScreen {{< new-in 0.125.0 >}}
+: (`bool`) Whether the `iframe` element can activate full screen mode. Default is `true`.
 @y
-{{< code file=example-youtube-input-with-title.md >}}
-{{</* youtube id="w7Ft2ymGmfc" title="A New Hugo Site in Under Two Minutes" */>}}
-{{< /code >}}
+allowFullScreen {{< new-in 0.125.0 >}}
+: (`bool`) Whether the `iframe` element can activate full screen mode. Default is `true`.
 @z
 
 @x
-#### Example `youtube` output
+autoplay {{< new-in 0.125.0 >}}
+: (`bool`) Whether to automatically play the video. Forces `mute` to `true`. Default is `false`.
 @y
-#### Example `youtube` output
+autoplay {{< new-in 0.125.0 >}}
+: (`bool`) Whether to automatically play the video. Forces `mute` to `true`. Default is `false`.
 @z
 
 @x
-Using the preceding `youtube` example, the following HTML will be added to your rendered website's markup:
+class
+: (`string`) The `class` attribute of the wrapping `div` element. When specified, removes the `style` attributes from the `iframe` element and its wrapping `div` element.
 @y
-Using the preceding `youtube` example, the following HTML will be added to your rendered website's markup:
+class
+: (`string`) The `class` attribute of the wrapping `div` element. When specified, removes the `style` attributes from the `iframe` element and its wrapping `div` element.
 @z
 
 @x
-{{< code file=example-youtube-output.html >}}
-{{< youtube id="w7Ft2ymGmfc" autoplay="true" >}}
-{{< /code >}}
+controls {{< new-in 0.125.0 >}}
+: (`bool`) Whether to display the video controls. Default is `true`.
 @y
-{{< code file=example-youtube-output.html >}}
-{{< youtube id="w7Ft2ymGmfc" autoplay="true" >}}
-{{< /code >}}
+controls {{< new-in 0.125.0 >}}
+: (`bool`) Whether to display the video controls. Default is `true`.
 @z
 
 @x
-#### Example `youtube` display
+end {{< new-in 0.125.0 >}}
+: (`int`) The time, measured in seconds from the start of the video, when the player should stop playing the video.
 @y
-#### Example `youtube` display
+end {{< new-in 0.125.0 >}}
+: (`int`) The time, measured in seconds from the start of the video, when the player should stop playing the video.
 @z
 
 @x
-Using the preceding `youtube` example (without `autoplay="true"`), the following simulates the displayed experience for visitors to your website. Naturally, the final display will be contingent on your style sheets and surrounding markup. The video is also include in the [Quick Start of the Hugo documentation][quickstart].
+loading {{< new-in 0.125.0 >}}
+: (`string`) The loading attribute of the `iframe` element, either `eager` or `lazy`. Default is `eager`.
 @y
-Using the preceding `youtube` example (without `autoplay="true"`), the following simulates the displayed experience for visitors to your website. Naturally, the final display will be contingent on your style sheets and surrounding markup. The video is also include in the [Quick Start of the Hugo documentation][quickstart].
+loading {{< new-in 0.125.0 >}}
+: (`string`) The loading attribute of the `iframe` element, either `eager` or `lazy`. Default is `eager`.
 @z
 
 @x
-{{< youtube w7Ft2ymGmfc >}}
+loop {{< new-in 0.125.0 >}}
+: (`bool`) Whether to indefinitely repeat the video. Ignores the `start` and `end` arguments after the first play.  Default is `false`.
 @y
-{{< youtube w7Ft2ymGmfc >}}
+loop {{< new-in 0.125.0 >}}
+: (`bool`) Whether to indefinitely repeat the video. Ignores the `start` and `end` arguments after the first play.  Default is `false`.
+@z
+
+@x
+mute {{< new-in 0.125.0 >}}
+: (`bool`) Whether to mute the video. Always `true` when `autoplay` is `true`. Default is `false`.
+@y
+mute {{< new-in 0.125.0 >}}
+: (`bool`) Whether to mute the video. Always `true` when `autoplay` is `true`. Default is `false`.
+@z
+
+@x
+start {{< new-in 0.125.0 >}}
+: (`int`) The time, measured in seconds from the start of the video, when the player should start playing the video.
+@y
+start {{< new-in 0.125.0 >}}
+: (`int`) The time, measured in seconds from the start of the video, when the player should start playing the video.
+@z
+
+@x
+title
+: (`string`) The `title` attribute of the `iframe` element. Defaults to the title returned by the YouTube oEmbed API.
+@y
+title
+: (`string`) The `title` attribute of the `iframe` element. Defaults to the title returned by the YouTube oEmbed API.
+@z
+
+@x
+Example using some of the above:
+@y
+Example using some of the above:
+@z
+
+@x
+```text
+{{</* youtube id=0RKpf3rK57I start=30 end=60 loading=lazy */>}}
+```
+@y
+```text
+{{</* youtube id=0RKpf3rK57I start=30 end=60 loading=lazy */>}}
+```
 @z
 
 @x
@@ -916,4 +1223,20 @@ To learn more about creating custom shortcodes, see the [shortcode template docu
 To learn more about creating custom shortcodes, see the [shortcode template documentation].
 @z
 
-% snip links...
+@x
+[privacy protections]: /about/privacy/
+[partials]: /templates/partials/
+[quickstart]: /getting-started/quick-start/
+[sctemps]: /templates/shortcode-templates/
+[shortcode template documentation]: /templates/shortcode-templates/
+[Vimeo]: https://vimeo.com/
+[YouTube Videos]: https://www.youtube.com/
+@y
+[privacy protections]: /about/privacy/
+[partials]: /templates/partials/
+[quickstart]: /getting-started/quick-start/
+[sctemps]: /templates/shortcode-templates/
+[shortcode template documentation]: /templates/shortcode-templates/
+[Vimeo]: https://vimeo.com/
+[YouTube Videos]: https://www.youtube.com/
+@z

@@ -104,9 +104,33 @@ title = true
 @z
 
 @x
-(`page`) A reference to the page containing the heading.
+(`page`) A reference to the current page.
 @y
-(`page`) A reference to the page containing the heading.
+(`page`) A reference to the current page.
+@z
+
+@x
+###### PageInner
+@y
+###### PageInner
+@z
+
+@x
+{{< new-in 0.125.0 >}}
+@y
+{{< new-in 0.125.0 >}}
+@z
+
+@x
+(`page`) A reference to a page nested via the [`RenderShortcodes`] method. [See details](#pageinner-details).
+@y
+(`page`) A reference to a page nested via the [`RenderShortcodes`] method. [See details](#pageinner-details).
+@z
+
+@x
+[`RenderShortcodes`]: /methods/page/rendershortcodes
+@y
+[`RenderShortcodes`]: /methods/page/rendershortcodes
 @z
 
 @x
@@ -185,4 +209,10 @@ To add an anchor link to the right of each heading:
   <a href="#{{ .Anchor }}">#</a>
 </h{{ .Level }}>
 {{< /code >}}
+@z
+
+@x
+{{% include "/render-hooks/_common/pageinner.md" %}}
+@y
+{{% include "/render-hooks/_common/pageinner.md" %}}
 @z

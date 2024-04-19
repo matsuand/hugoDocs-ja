@@ -87,6 +87,7 @@ AC_CONFIG_FILES([
 	src/content/ja/functions/resources/_common/Makefile
 	src/content/ja/functions/safe/Makefile
 	src/content/ja/functions/strings/Makefile
+	src/content/ja/functions/strings/Diff/Makefile
 	src/content/ja/functions/templates/Makefile
 	src/content/ja/functions/time/Makefile
 	src/content/ja/functions/time/_common/Makefile
@@ -124,6 +125,7 @@ AC_CONFIG_FILES([
 	src/content/ja/news/Makefile
 	src/content/ja/quick-reference/Makefile
 	src/content/ja/render-hooks/Makefile
+	src/content/ja/render-hooks/_common/Makefile
 	src/content/ja/showcase/Makefile
 	src/content/ja/showcase/1password-support/Makefile
 	src/content/ja/showcase/alora-labs/Makefile
@@ -152,5 +154,6 @@ AC_CONFIG_FILES([
 	src/layouts/news/Makefile
 	src/layouts/partials/Makefile
 	src/layouts/partials/utilities/Makefile
+	src/layouts/shortcodes/Makefile
 ])
 AC_OUTPUT

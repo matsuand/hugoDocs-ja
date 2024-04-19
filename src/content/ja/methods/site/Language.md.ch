@@ -2,31 +2,15 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: Language
 description: Returns the language object for the given site. 
 categories: []
 keywords: []
-action:
-  related:
-    - methods/page/language
-  returnType: langs.Language
-  signatures: [SITE.Language]
-toc: true
----
 @y
----
 title: Language
 description: Returns the language object for the given site. 
 categories: []
 keywords: []
-action:
-  related:
-    - methods/page/language
-  returnType: langs.Language
-  signatures: [SITE.Language]
-toc: true
----
 @z
 
 @x
@@ -44,7 +28,7 @@ You can also use the `Language` method on a `Page` object. See&nbsp;[details].
 @x
 ## Methods
 @y
-## Methods
+## メソッド {#methods}
 @z
 
 @x
@@ -53,23 +37,7 @@ The examples below assume the following in your site configuration:
 The examples below assume the following in your site configuration:
 @z
 
-@x
-{{< code-toggle file=hugo >}}
-[languages.de]
-languageCode = 'de-DE'
-languageDirection = 'ltr'
-languageName = 'Deutsch'
-weight = 1
-{{< /code-toggle >}}
-@y
-{{< code-toggle file=hugo >}}
-[languages.de]
-languageCode = 'de-DE'
-languageDirection = 'ltr'
-languageName = 'Deutsch'
-weight = 1
-{{< /code-toggle >}}
-@z
+% snip code...
 
 @x
 Lang
@@ -79,15 +47,7 @@ Lang
 : (`string`) The language tag as defined by [RFC 5646].
 @z
 
-@x
-```go-html-template
-{{ .Site.Language.Lang }} → de
-```
-@y
-```go-html-template
-{{ .Site.Language.Lang }} → de
-```
-@z
+% snip code...
 
 @x
 LanguageCode
@@ -97,15 +57,7 @@ LanguageCode
 : (`string`) The language code from the site configuration.
 @z
 
-@x
-```go-html-template
-{{ .Site.Language.LanguageCode }} → de-DE
-```
-@y
-```go-html-template
-{{ .Site.Language.LanguageCode }} → de-DE
-```
-@z
+% snip code...
 
 @x
 LanguageDirection
@@ -115,15 +67,7 @@ LanguageDirection
 : (`string`) The language direction from the site configuration, either `ltr` or `rtl`.
 @z
 
-@x
-```go-html-template
-{{ .Site.Language.LanguageDirection }} → ltr
-```
-@y
-```go-html-template
-{{ .Site.Language.LanguageDirection }} → ltr
-```
-@z
+% snip code...
 
 @x
 LanguageName
@@ -133,15 +77,7 @@ LanguageName
 : (`string`) The language name from the site configuration.
 @z
 
-@x
-```go-html-template
-{{ .Site.Language.LanguageName }} → Deutsch
-```
-@y
-```go-html-template
-{{ .Site.Language.LanguageName }} → Deutsch
-```
-@z
+% snip code...
 
 @x
 Weight
@@ -151,20 +87,12 @@ Weight
 : (`int`) The language weight from the site configuration which determines its order in the slice of languages returned by the `Languages` method on a `Site` object.
 @z
 
-@x
-```go-html-template
-{{ .Site.Language.Weight }} → 1
-```
-@y
-```go-html-template
-{{ .Site.Language.Weight }} → 1
-```
-@z
+% snip code...
 
 @x
 ## Example
 @y
-## Example
+## 例 {#example}
 @z
 
 @x

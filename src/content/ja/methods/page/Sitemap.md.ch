@@ -40,11 +40,11 @@ Access to the `Sitemap` method on a `Page` object is restricted to [sitemap temp
 @z
 
 @x
-ChangeFreq
-: (`string`) How frequently a page is likely to change. Valid values are `always`, `hourly`, `daily`, `weekly`, `monthly`, `yearly`, and `never`. Default is "" (change frequency omitted from rendered sitemap).
+changefreq
+: (`string`) How frequently a page is likely to change. Valid values are `always`, `hourly`, `daily`, `weekly`, `monthly`, `yearly`, and `never`. With the default value of `""` Hugo will omit this field from the sitemap. See [details](https://www.sitemaps.org/protocol.html#changefreqdef).
 @y
-ChangeFreq
-: (`string`) How frequently a page is likely to change. Valid values are `always`, `hourly`, `daily`, `weekly`, `monthly`, `yearly`, and `never`. Default is "" (change frequency omitted from rendered sitemap).
+changefreq
+: (`string`) How frequently a page is likely to change. Valid values are `always`, `hourly`, `daily`, `weekly`, `monthly`, `yearly`, and `never`. With the default value of `""` Hugo will omit this field from the sitemap. See [details](https://www.sitemaps.org/protocol.html#changefreqdef).
 @z
 
 @x
@@ -58,11 +58,29 @@ ChangeFreq
 @z
 
 @x
-Priority
-: (`float`) The priority of a page relative to any other page on the site. Valid values range from 0.0 to 1.0. Default is -1 (priority omitted from rendered sitemap).
+disable {{< new-in 0.125.0 >}}
+: (`bool`) Whether to disable page inclusion. Default is `false`. Set to `true` in front matter to exclude the page.
 @y
-Priority
-: (`float`) The priority of a page relative to any other page on the site. Valid values range from 0.0 to 1.0. Default is -1 (priority omitted from rendered sitemap).
+disable {{< new-in 0.125.0 >}}
+: (`bool`) Whether to disable page inclusion. Default is `false`. Set to `true` in front matter to exclude the page.
+@z
+
+@x
+```go-html-template
+{{ .Sitemap.Disable }}
+```
+@y
+```go-html-template
+{{ .Sitemap.Disable }}
+```
+@z
+
+@x
+priority
+: (`float`) The priority of a page relative to any other page on the site. Valid values range from 0.0 to 1.0.  With the default value of `-1` Hugo will omit this field from the sitemap. See [details](https://www.sitemaps.org/protocol.html#priority).
+@y
+priority
+: (`float`) The priority of a page relative to any other page on the site. Valid values range from 0.0 to 1.0.  With the default value of `-1` Hugo will omit this field from the sitemap. See [details](https://www.sitemaps.org/protocol.html#priority).
 @z
 
 @x

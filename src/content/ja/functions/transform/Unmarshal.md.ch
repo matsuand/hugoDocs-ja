@@ -437,11 +437,11 @@ Inspect the data structure:
 
 @x
 ```go-html-template
-<pre>{{ jsonify (dict "indent" "  ") $data }}</pre>
+<pre>{{ debug.Dump $data }}</pre>
 ```
 @y
 ```go-html-template
-<pre>{{ jsonify (dict "indent" "  ") $data }}</pre>
+<pre>{{ debug.Dump $data }}</pre>
 ```
 @z
 
@@ -581,11 +581,11 @@ After retrieving the remote data, inspect the data structure:
 
 @x
 ```go-html-template
-<pre>{{ jsonify (dict "indent" "  ") $data }}</pre>
+<pre>{{ debug.Dump $data }}</pre>
 ```
 @y
 ```go-html-template
-<pre>{{ jsonify (dict "indent" "  ") $data }}</pre>
+<pre>{{ debug.Dump $data }}</pre>
 ```
 @z
 

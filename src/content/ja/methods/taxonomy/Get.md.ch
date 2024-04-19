@@ -117,11 +117,11 @@ To inspect the data structure:
 
 @x
 ```go-html-template
-<pre>{{ jsonify (dict "indent" "  ") $weightedPages }}</pre>
+<pre>{{ debug.Dump $weightedPages }}</pre>
 ```
 @y
 ```go-html-template
-<pre>{{ jsonify (dict "indent" "  ") $weightedPages }}</pre>
+<pre>{{ debug.Dump $weightedPages }}</pre>
 ```
 @z
 

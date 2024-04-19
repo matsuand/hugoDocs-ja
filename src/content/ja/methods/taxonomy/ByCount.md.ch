@@ -93,11 +93,11 @@ To inspect the data structure:
 
 @x
 ```go-html-template
-<pre>{{ jsonify (dict "indent" "  ") $taxonomyObject.ByCount }}</pre>
+<pre>{{ debug.Dump $taxonomyObject.ByCount }}</pre>
 ```
 @y
 ```go-html-template
-<pre>{{ jsonify (dict "indent" "  ") $taxonomyObject.ByCount }}</pre>
+<pre>{{ debug.Dump $taxonomyObject.ByCount }}</pre>
 ```
 @z
 

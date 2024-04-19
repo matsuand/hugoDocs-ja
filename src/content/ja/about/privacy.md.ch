@@ -87,8 +87,6 @@ disable = false
 [privacy.googleAnalytics]
 disable = false
 respectDoNotTrack = false
-anonymizeIP = false
-useSessionStorage = false
 [privacy.instagram]
 disable = false
 simple = false
@@ -112,8 +110,6 @@ disable = false
 [privacy.googleAnalytics]
 disable = false
 respectDoNotTrack = false
-anonymizeIP = false
-useSessionStorage = false
 [privacy.instagram]
 disable = false
 simple = false
@@ -190,37 +186,11 @@ disable = true
 @z
 
 @x
-anonymizeIP
-: Enabling this will make it so the users' IP addresses are anonymized within Google Analytics.
-@y
-anonymizeIP
-: Enabling this will make it so the users' IP addresses are anonymized within Google Analytics.
-@z
-
-@x
 respectDoNotTrack
 : Enabling this will make the GA templates respect the "Do Not Track" HTTP header.
 @y
 respectDoNotTrack
 : Enabling this will make the GA templates respect the "Do Not Track" HTTP header.
-@z
-
-@x
-useSessionStorage
-: Enabling this will disable the use of Cookies and use Session Storage to Store the GA Client ID.
-@y
-useSessionStorage
-: Enabling this will disable the use of Cookies and use Session Storage to Store the GA Client ID.
-@z
-
-@x
-{{% note %}}
-`useSessionStorage` is not supported when using Google Analytics v4 (gtag.js).
-{{% /note %}}
-@y
-{{% note %}}
-`useSessionStorage` is not supported when using Google Analytics v4 (gtag.js).
-{{% /note %}}
 @z
 
 @x

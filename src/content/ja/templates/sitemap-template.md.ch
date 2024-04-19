@@ -2,15 +2,33 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
+---
 title: Sitemap templates
 description: Hugo provides built-in sitemap templates.
 categories: [templates]
 keywords: [sitemap,xml,templates]
+menu:
+  docs:
+    parent: templates
+    weight: 170
+weight: 170
+toc: true
+aliases: [/layout/sitemap/,/templates/sitemap/]
+---
 @y
+---
 title: サイトマップテンプレート
 description: Hugo provides built-in sitemap templates.
 categories: [templates]
 keywords: [sitemap,xml,templates]
+menu:
+  docs:
+    parent: templates
+    weight: 170
+weight: 170
+toc: true
+aliases: [/layout/sitemap/,/templates/sitemap/]
+---
 @z
 
 @x
@@ -46,15 +64,23 @@ With a multilingual project, Hugo generates:
 @z
 
 @x
+[embedded sitemap template]: {{% eturl sitemap %}}
+[embedded sitemapindex template]: {{% eturl sitemapindex %}}
+@y
+[embedded sitemap template]: {{% eturl sitemap %}}
+[embedded sitemapindex template]: {{% eturl sitemapindex %}}
+@z
+
+@x
 ## Configuration
 @y
 ## Configuration
 @z
 
 @x
-Set the default values for [change frequency] and [priority], and the name of the generated file, in your site configuration.
+These are the default sitemap configuration values. They apply to all pages unless overridden in front matter.
 @y
-Set the default values for [change frequency] and [priority], and the name of the generated file, in your site configuration.
+These are the default sitemap configuration values. They apply to all pages unless overridden in front matter.
 @z
 
 @x
@@ -65,26 +91,34 @@ Set the default values for [change frequency] and [priority], and the name of th
 
 @x
 changefreq
-: How frequently a page is likely to change. Valid values are `always`, `hourly`, `daily`, `weekly`, `monthly`, `yearly`, and `never`. Default is `""` (change frequency omitted from rendered sitemap).
+: (`string`) How frequently a page is likely to change. Valid values are `always`, `hourly`, `daily`, `weekly`, `monthly`, `yearly`, and `never`. With the default value of `""` Hugo will omit this field from the sitemap. See [details](https://www.sitemaps.org/protocol.html#changefreqdef).
 @y
 changefreq
-: How frequently a page is likely to change. Valid values are `always`, `hourly`, `daily`, `weekly`, `monthly`, `yearly`, and `never`. Default is `""` (change frequency omitted from rendered sitemap).
+: (`string`) How frequently a page is likely to change. Valid values are `always`, `hourly`, `daily`, `weekly`, `monthly`, `yearly`, and `never`. With the default value of `""` Hugo will omit this field from the sitemap. See [details](https://www.sitemaps.org/protocol.html#changefreqdef).
+@z
+
+@x
+disable {{< new-in 0.125.0 >}}
+: (`bool`) Whether to disable page inclusion. Default is `false`. Set to `true` in front matter to exclude the page.
+@y
+disable {{< new-in 0.125.0 >}}
+: (`bool`) Whether to disable page inclusion. Default is `false`. Set to `true` in front matter to exclude the page.
 @z
 
 @x
 filename
-: The name of the generated file. Default is `sitemap.xml`.
+: (`string`) The name of the generated file. Default is `sitemap.xml`.
 @y
 filename
-: The name of the generated file. Default is `sitemap.xml`.
+: (`string`) The name of the generated file. Default is `sitemap.xml`.
 @z
 
 @x
 priority
-: The priority of a page relative to any other page on the site. Valid values range from 0.0 to 1.0. Default is `-1` (priority omitted from rendered sitemap).
+: (`float`) The priority of a page relative to any other page on the site. Valid values range from 0.0 to 1.0.  With the default value of `-1` Hugo will omit this field from the sitemap. See [details](https://www.sitemaps.org/protocol.html#priority).
 @y
 priority
-: The priority of a page relative to any other page on the site. Valid values range from 0.0 to 1.0. Default is `-1` (priority omitted from rendered sitemap).
+: (`float`) The priority of a page relative to any other page on the site. Valid values range from 0.0 to 1.0.  With the default value of `-1` Hugo will omit this field from the sitemap. See [details](https://www.sitemaps.org/protocol.html#priority).
 @z
 
 @x
@@ -104,6 +138,7 @@ Override the default values for a given page in front matter.
 title = 'News'
 [sitemap]
   changefreq = 'weekly'
+  disable = true
   priority = 0.8
 {{</ code-toggle >}}
 @y
@@ -111,6 +146,7 @@ title = 'News'
 title = 'News'
 [sitemap]
   changefreq = 'weekly'
+  disable = true
   priority = 0.8
 {{</ code-toggle >}}
 @z
@@ -177,4 +213,10 @@ disableKinds = ['sitemap']
 {{</ code-toggle >}}
 @z
 
-% snip links...
+@x
+[`publishDir`]: /getting-started/configuration#publishdir
+[sitemap protocol]: <https://www.sitemaps.org/protocol.html>
+@y
+[`publishDir`]: /getting-started/configuration#publishdir
+[sitemap protocol]: <https://www.sitemaps.org/protocol.html>
+@z

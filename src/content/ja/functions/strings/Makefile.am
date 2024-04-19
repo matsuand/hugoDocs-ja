@@ -2,6 +2,8 @@
 ## This is part of Japanese translation version for Hugo Documantation.
 ##
 
+SUBDIRS = Diff
+
 bases = \
 	Chomp.md            \
 	Contains.md         \

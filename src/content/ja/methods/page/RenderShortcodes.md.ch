@@ -57,20 +57,22 @@ For example:
 
 @x
 {{< code file=layouts/shortcodes/include.html >}}
-{{ $p := site.GetPage (.Get 0) }}
-{{ $p.RenderShortcodes }}
+{{ with site.GetPage (.Get 0) }}
+  {{ .RenderShortcodes }}
+{{ end }}
 {{< /code >}}
 @y
 {{< code file=layouts/shortcodes/include.html >}}
-{{ $p := site.GetPage (.Get 0) }}
-{{ $p.RenderShortcodes }}
+{{ with site.GetPage (.Get 0) }}
+  {{ .RenderShortcodes }}
+{{ end }}
 {{< /code >}}
 @z
 
 @x
-Then in your Markdown:
+Then call the shortcode in your Markdown:
 @y
-Then in your Markdown:
+Then call the shortcode in your Markdown:
 @z
 
 @x

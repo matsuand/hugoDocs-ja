@@ -152,9 +152,33 @@ block = true
 @z
 
 @x
-(`page`) A reference to the page containing the image.
+(`page`) A reference to the current page.
 @y
-(`page`) A reference to the page containing the image.
+(`page`) A reference to the current page.
+@z
+
+@x
+###### PageInner
+@y
+###### PageInner
+@z
+
+@x
+{{< new-in 0.125.0 >}}
+@y
+{{< new-in 0.125.0 >}}
+@z
+
+@x
+(`page`) A reference to a page nested via the [`RenderShortcodes`] method. [See details](#pageinner-details).
+@y
+(`page`) A reference to a page nested via the [`RenderShortcodes`] method. [See details](#pageinner-details).
+@z
+
+@x
+[`RenderShortcodes`]: /methods/page/rendershortcodes
+@y
+[`RenderShortcodes`]: /methods/page/rendershortcodes
 @z
 
 @x
@@ -403,4 +427,10 @@ target = 'assets'
 Note that the embedded image render hook does not perform image processing. Its sole purpose is to resolve Markdown image destinations.
 @y
 Note that the embedded image render hook does not perform image processing. Its sole purpose is to resolve Markdown image destinations.
+@z
+
+@x
+{{% include "/render-hooks/_common/pageinner.md" %}}
+@y
+{{% include "/render-hooks/_common/pageinner.md" %}}
 @z

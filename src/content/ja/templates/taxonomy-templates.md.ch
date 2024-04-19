@@ -102,53 +102,9 @@ See [Template Lookup](/templates/lookup-order/).
 @z
 
 @x
-A Taxonomy is a `map[string]WeightedPages`.
+{{< list-pages-in-section path=/methods/taxonomy/ >}}
 @y
-A Taxonomy is a `map[string]WeightedPages`.
-@z
-
-@x
-.Get TERM
-: Returns the WeightedPages for a given term. For example: ;
-`site.Taxonomies.tags.Get "tag-a"`.
-@y
-.Get TERM
-: Returns the WeightedPages for a given term. For example: ;
-`site.Taxonomies.tags.Get "tag-a"`.
-@z
-
-@x
-.Count TERM
-: The number of pieces of content assigned to the given term. For example: \
-`site.Taxonomies.tags.Count "tag-a"`.
-@y
-.Count TERM
-: The number of pieces of content assigned to the given term. For example: \
-`site.Taxonomies.tags.Count "tag-a"`.
-@z
-
-@x
-.Alphabetical
-: Returns an OrderedTaxonomy (slice) ordered by term.
-@y
-.Alphabetical
-: Returns an OrderedTaxonomy (slice) ordered by term.
-@z
-
-@x
-.ByCount
-: Returns an OrderedTaxonomy (slice) ordered by number of entries.
-@y
-.ByCount
-: Returns an OrderedTaxonomy (slice) ordered by number of entries.
-@z
-
-@x
-.Reverse
-: Returns an OrderedTaxonomy (slice) in reverse order. Must be used with an OrderedTaxonomy.
-@y
-.Reverse
-: Returns an OrderedTaxonomy (slice) in reverse order. Must be used with an OrderedTaxonomy.
+{{< list-pages-in-section path=/methods/taxonomy/ >}}
 @z
 
 @x
@@ -715,51 +671,71 @@ This example will list all taxonomies and their terms, as well as all the conten
 
 @x
 {{< code file=layouts/partials/all-taxonomies.html >}}
-<ul>
-  {{ range $taxonomy, $terms := site.Taxonomies }}
-    <li>
-      {{ with site.GetPage $taxonomy }}
-        <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-      {{ end }}
-      <ul>
-        {{ range $term, $weightedPages := $terms }}
+{{ with .Site.Taxonomies }}
+  {{ $numberOfTerms := 0 }}
+  {{ range $taxonomy, $terms := . }}
+    {{ $numberOfTerms = len . | add $numberOfTerms }}
+  {{ end }}
+@y
+{{< code file=layouts/partials/all-taxonomies.html >}}
+{{ with .Site.Taxonomies }}
+  {{ $numberOfTerms := 0 }}
+  {{ range $taxonomy, $terms := . }}
+    {{ $numberOfTerms = len . | add $numberOfTerms }}
+  {{ end }}
+@z
+
+@x
+  {{ if gt $numberOfTerms 0 }}
+    <ul>
+      {{ range $taxonomy, $terms := . }}
+        {{ with $terms }}
           <li>
             <a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a>
             <ul>
-              {{ range $weightedPages }}
-                <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+              {{ range $term, $weightedPages := . }}
+                <li>
+                  <a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a>
+                  <ul>
+                    {{ range $weightedPages }}
+                      <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+                    {{ end }}
+                  </ul>
+                </li>
               {{ end }}
             </ul>
           </li>
         {{ end }}
-      </ul>
-    </li>
+      {{ end }}
+    </ul>
   {{ end }}
-</ul>
+{{ end }}
 {{< /code >}}
 @y
-{{< code file=layouts/partials/all-taxonomies.html >}}
-<ul>
-  {{ range $taxonomy, $terms := site.Taxonomies }}
-    <li>
-      {{ with site.GetPage $taxonomy }}
-        <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-      {{ end }}
-      <ul>
-        {{ range $term, $weightedPages := $terms }}
+  {{ if gt $numberOfTerms 0 }}
+    <ul>
+      {{ range $taxonomy, $terms := . }}
+        {{ with $terms }}
           <li>
             <a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a>
             <ul>
-              {{ range $weightedPages }}
-                <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+              {{ range $term, $weightedPages := . }}
+                <li>
+                  <a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a>
+                  <ul>
+                    {{ range $weightedPages }}
+                      <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+                    {{ end }}
+                  </ul>
+                </li>
               {{ end }}
             </ul>
           </li>
         {{ end }}
-      </ul>
-    </li>
+      {{ end }}
+    </ul>
   {{ end }}
-</ul>
+{{ end }}
 {{< /code >}}
 @z
 

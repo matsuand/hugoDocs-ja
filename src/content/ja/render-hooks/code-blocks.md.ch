@@ -210,9 +210,33 @@ Code block render hook templates receive the following [context]:
 @z
 
 @x
-(`page`) A reference to the page containing the code block.
+(`page`) A reference to the current page.
 @y
-(`page`) A reference to the page containing the code block.
+(`page`) A reference to the current page.
+@z
+
+@x
+###### PageInner
+@y
+###### PageInner
+@z
+
+@x
+{{< new-in 0.125.0 >}}
+@y
+{{< new-in 0.125.0 >}}
+@z
+
+@x
+(`page`) A reference to a page nested via the [`RenderShortcodes`] method. [See details](#pageinner-details).
+@y
+(`page`) A reference to a page nested via the [`RenderShortcodes`] method. [See details](#pageinner-details).
+@z
+
+@x
+[`RenderShortcodes`]: /methods/page/rendershortcodes
+@y
+[`RenderShortcodes`]: /methods/page/rendershortcodes
 @z
 
 @x
@@ -379,4 +403,10 @@ Hugo includes an [embedded code block render hook] to render [GoAT diagrams].
 @y
 [embedded code block render hook]: {{% eturl render-codeblock-goat %}}
 [GoAT diagrams]: /content-management/diagrams/#goat-diagrams-ascii
+@z
+
+@x
+{{% include "/render-hooks/_common/pageinner.md" %}}
+@y
+{{% include "/render-hooks/_common/pageinner.md" %}}
 @z

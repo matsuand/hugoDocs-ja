@@ -2,6 +2,8 @@
 ## This is part of Japanese translation version for Hugo Documantation.
 ##
 
+SUBDIRS = _common
+
 bases = \
 	_index.md       \
 	code-blocks.md  \

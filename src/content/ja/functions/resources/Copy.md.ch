@@ -66,12 +66,6 @@ The relative URL of the new published resource will be:
 @z
 
 @x
-The target path must be different than the source path, as shown in the example above.
-@y
-The target path must be different than the source path, as shown in the example above.
-@z
-
-@x
 {{% note %}}
 Use the `resources.Copy` function with global, page, and remote resources.
 {{% /note %}}

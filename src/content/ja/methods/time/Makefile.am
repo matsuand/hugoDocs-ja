@@ -17,8 +17,10 @@ bases = \
 	Minute.md     \
 	Month.md      \
 	Nanosecond.md \
+	Round.md      \
 	Second.md     \
 	Sub.md        \
+	Truncate.md   \
 	UTC.md        \
 	Unix.md       \
 	UnixMicro.md  \
