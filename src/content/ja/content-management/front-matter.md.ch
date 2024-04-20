@@ -117,21 +117,13 @@ The most common front matter fields are `date`, `draft`, `title`, and `weight`, 
 The most common front matter fields are `date`, `draft`, `title`, and `weight`, but you can specify metadata using any of fields below.
 @z
 
-@x
-{{% note %}}
+@x note
 The field names below are reserved. For example, you cannot create a custom field named `type`. Create custom fields under the `params` key. See the [parameters] section for details.
 @y
-{{% note %}}
 The field names below are reserved. For example, you cannot create a custom field named `type`. Create custom fields under the `params` key. See the [parameters] section for details.
 @z
 
-@x
-[parameters]: #parameters
-{{% /note %}}
-@y
-[parameters]: #parameters
-{{% /note %}}
-@z
+% snip link...
 
 @x
 ###### aliases
@@ -145,13 +137,7 @@ The field names below are reserved. For example, you cannot create a custom fiel
 (`string array`) An array of one or more aliases, where each alias is a relative URL that will redirect the browser to the current location. Access these values from a template using the [`Aliases`] method on a `Page` object. See the [aliases] section for details.
 @z
 
-@x
-[`aliases`]: /methods/page/aliases/
-[aliases]: /content-management/urls/#aliases
-@y
-[`aliases`]: /methods/page/aliases/
-[aliases]: /content-management/urls/#aliases
-@z
+% snip links...
 
 @x
 ###### build
@@ -183,11 +169,7 @@ The field names below are reserved. For example, you cannot create a custom fiel
 (`map`) A map of front matter keys whose values are passed down to the page’s descendants unless overwritten by self or a closer ancestor’s cascade. See the [cascade] section for details.
 @z
 
-@x
-[cascade]: #cascade
-@y
-[cascade]: #cascade
-@z
+% snip link...
 
 @x
 ###### date
@@ -201,11 +183,7 @@ The field names below are reserved. For example, you cannot create a custom fiel
 (`string`) The date associated with the page, typically the creation date. Note that the TOML format also supports date/time values using unquoted strings. Access this value from a template using the [`Date`] method on a `Page` object.
 @z
 
-@x
-[`date`]: /methods/page/date/
-@y
-[`date`]: /methods/page/date/
-@z
+% snip link...
 
 @x
 ###### description
@@ -219,11 +197,7 @@ The field names below are reserved. For example, you cannot create a custom fiel
 (`string`) Conceptually different than the page `summary`, the description is typically rendered within a `meta` element within the `head` element of the published HTML file. Access this value from a template using the [`Description`] method on a `Page` object.
 @z
 
-@x
-[`description`]: /methods/page/description/
-@y
-[`description`]: /methods/page/description/
-@z
+% snip link...
 
 @x
 ###### draft
@@ -239,11 +213,7 @@ If `true`, the page will not be rendered unless you pass the `--buildDrafts` fla
 If `true`, the page will not be rendered unless you pass the `--buildDrafts` flag to the `hugo` command. Access this value from a template using the [`Draft`] method on a `Page` object.
 @z
 
-@x
-[`draft`]: /methods/page/draft/
-@y
-[`draft`]: /methods/page/draft/
-@z
+% snip link...
 
 @x
 ###### expiryDate
@@ -257,11 +227,7 @@ If `true`, the page will not be rendered unless you pass the `--buildDrafts` fla
 (`string`) The page expiration date. On or after the expiration date, the page will not be rendered unless you pass the `--buildExpired` flag to the `hugo` command. Note that the TOML format also supports date/time values using unquoted strings. Access this value from a template using the [`ExpiryDate`] method on a `Page` object.
 @z
 
-@x
-[`expirydate`]: /methods/page/expirydate/
-@y
-[`expirydate`]: /methods/page/expirydate/
-@z
+% snip link...
 
 @x
 ###### headless
@@ -275,13 +241,7 @@ If `true`, the page will not be rendered unless you pass the `--buildDrafts` fla
 (`bool`) Applicable to [leaf bundles], if `true` this value sets the `render` and `list` [build options] to `never`, creating a headless bundle of [page resources].
 @z
 
-@x
-[leaf bundles]: /content-management/page-bundles/#leaf-bundles
-[page resources]: /content-management/page-resources/
-@y
-[leaf bundles]: /content-management/page-bundles/#leaf-bundles
-[page resources]: /content-management/page-resources/
-@z
+% snip links...
 
 @x
 ###### isCJKLanguage
@@ -309,13 +269,7 @@ If `true`, the page will not be rendered unless you pass the `--buildDrafts` fla
 (`string array`) An array of keywords, typically rendered within a `meta` element within the `head` element of the published HTML file, or used as a [taxonomy] to classify content. Access these values from a template using the [`Keywords`] method on a `Page` object.
 @z
 
-@x
-[`keywords`]: /methods/page/keywords/
-[taxonomy]: /getting-started/glossary/#taxonomy
-@y
-[`keywords`]: /methods/page/keywords/
-[taxonomy]: /getting-started/glossary/#taxonomy
-@z
+% snip links...
 
 @x
 <!-- Added in v0.123.0 but purposefully omitted from documentation. -->
@@ -357,11 +311,7 @@ lang
 (`string`) The date that the page was last modified. Note that the TOML format also supports date/time values using unquoted strings. Access this value from a template using the [`Lastmod`] method on a `Page` object.
 @z
 
-@x
-[`lastmod`]: /methods/page/date/
-@y
-[`lastmod`]: /methods/page/date/
-@z
+% snip link...
 
 @x
 ###### layout
@@ -375,15 +325,7 @@ lang
 (`string`) Provide a template name to [target a specific template],  overriding the default [template lookup order]. Set the value to the base file name of the template, excluding its extension. Access this value from a template using the [`Layout`] method on a `Page` object.
 @z
 
-@x
-[`layout`]: /methods/page/layout/
-[template lookup order]: /templates/lookup-order/
-[target a specific template]: templates/lookup-order/#target-a-template
-@y
-[`layout`]: /methods/page/layout/
-[template lookup order]: /templates/lookup-order/
-[target a specific template]: templates/lookup-order/#target-a-template
-@z
+% snip links...
 
 @x
 ###### linkTitle
@@ -397,11 +339,7 @@ lang
 (`string`) Typically a shorter version of the `title`. Access this value from a template using the [`LinkTitle`] method on a `Page` object.
 @z
 
-@x
-[`linktitle`]: /methods/page/linktitle/
-@y
-[`linktitle`]: /methods/page/linktitle/
-@z
+% snip link...
 
 @x
 ###### markup
@@ -435,11 +373,7 @@ Identifier|Content format
 `rst`|reStructuredText
 @z
 
-@x
-[content formats]: /content-management/formats/
-@y
-[content formats]: /content-management/formats/
-@z
+% snip link...
 
 @x
 ###### menus
@@ -453,11 +387,7 @@ Identifier|Content format
 (`string`,`string array`, or `map`) If set, Hugo adds the page to the given menu or menus. See the [menus] page for details.
 @z
 
-@x
-[menus]: /content-management/menus/#define-in-front-matter
-@y
-[menus]: /content-management/menus/#define-in-front-matter
-@z
+% snip link...
 
 @x
 ###### outputs
@@ -471,11 +401,7 @@ Identifier|Content format
 (`string array`) The [output formats] to render.
 @z
 
-@x
-[output formats]: /templates/output-formats/
-@y
-[output formats]: /templates/output-formats/
-@z
+% snip link...
 
 @x
 <!-- Added in v0.123.0 but purposefully omitted from documentation. -->
@@ -713,25 +639,7 @@ Specify custom page parameters under the `params` key in front matter:
 Specify custom page parameters under the `params` key in front matter:
 @z
 
-@x
-{{< code-toggle file=content/example.md fm=true >}}
-title = 'Example'
-date = 2024-02-02T04:14:54-08:00
-draft = false
-weight = 10
-[params]
-author = 'John Smith'
-{{< /code-toggle >}}
-@y
-{{< code-toggle file=content/example.md fm=true >}}
-title = 'Example'
-date = 2024-02-02T04:14:54-08:00
-draft = false
-weight = 10
-[params]
-author = 'John Smith'
-{{< /code-toggle >}}
-@z
+% snip code...
 
 @x
 Access these values from a template using the [`Params`] or [`Param`] method on a `Page` object.
@@ -739,13 +647,35 @@ Access these values from a template using the [`Params`] or [`Param`] method on 
 Access these values from a template using the [`Params`] or [`Param`] method on a `Page` object.
 @z
 
+% snip links...
+
 @x
-[`param`]: /methods/page/param/
-[`params`]: /methods/page/params/
+Hugo provides [embedded templates] to optionally insert meta data within the `head` element of your rendered pages. These embedded templates expect the following front matter parameters:
 @y
-[`param`]: /methods/page/param/
-[`params`]: /methods/page/params/
+Hugo provides [embedded templates] to optionally insert meta data within the `head` element of your rendered pages. These embedded templates expect the following front matter parameters:
 @z
+
+@x
+Parameter|Data type|Used by these embedded templates
+:--|:--|:--
+`audio`|`[]string`|[`opengraph.html`]
+`images`|`[]string`|[`opengraph.html`], [`schema.html`], [`twitter_cards.html`]
+`videos`|`[]string`|[`opengraph.html`]
+@y
+Parameter|Data type|Used by these embedded templates
+:--|:--|:--
+`audio`|`[]string`|[`opengraph.html`]
+`images`|`[]string`|[`opengraph.html`], [`schema.html`], [`twitter_cards.html`]
+`videos`|`[]string`|[`opengraph.html`]
+@z
+
+@x
+The embedded templates will skip a parameter if not provided in front matter, but will throw an error if the data type is unexpected. 
+@y
+The embedded templates will skip a parameter if not provided in front matter, but will throw an error if the data type is unexpected. 
+@z
+
+% snip links...
 
 @x
 ## Taxonomies
