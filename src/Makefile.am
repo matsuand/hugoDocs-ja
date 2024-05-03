@@ -4,7 +4,7 @@
 
 absORIGDIR = @absORIGDIR@
 
-SUBDIRS = _vendor config content i18n layouts
+SUBDIRS = _vendor config content i18n
 
 bases = \
 	hugo.toml

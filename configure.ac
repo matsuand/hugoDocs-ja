@@ -150,10 +150,5 @@ AC_CONFIG_FILES([
 	src/content/ja/tools/Makefile
 	src/content/ja/troubleshooting/Makefile
 	src/i18n/Makefile
-	src/layouts/Makefile
-	src/layouts/news/Makefile
-	src/layouts/partials/Makefile
-	src/layouts/partials/utilities/Makefile
-	src/layouts/shortcodes/Makefile
 ])
 AC_OUTPUT

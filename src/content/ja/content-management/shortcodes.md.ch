@@ -1104,18 +1104,22 @@ id
 @z
 
 @x
-allowFullScreen {{< new-in 0.125.0 >}}
+allowFullScreen
+{{< new-in 0.125.0 >}}
 : (`bool`) Whether the `iframe` element can activate full screen mode. Default is `true`.
 @y
-allowFullScreen {{< new-in 0.125.0 >}}
+allowFullScreen
+{{< new-in 0.125.0 >}}
 : (`bool`) Whether the `iframe` element can activate full screen mode. Default is `true`.
 @z
 
 @x
-autoplay {{< new-in 0.125.0 >}}
+autoplay
+ {{< new-in 0.125.0 >}}
 : (`bool`) Whether to automatically play the video. Forces `mute` to `true`. Default is `false`.
 @y
-autoplay {{< new-in 0.125.0 >}}
+autoplay
+ {{< new-in 0.125.0 >}}
 : (`bool`) Whether to automatically play the video. Forces `mute` to `true`. Default is `false`.
 @z
 
@@ -1128,59 +1132,71 @@ class
 @z
 
 @x
-controls {{< new-in 0.125.0 >}}
+controls
+{{< new-in 0.125.0 >}}
 : (`bool`) Whether to display the video controls. Default is `true`.
 @y
-controls {{< new-in 0.125.0 >}}
+controls
+{{< new-in 0.125.0 >}}
 : (`bool`) Whether to display the video controls. Default is `true`.
 @z
 
 @x
-end {{< new-in 0.125.0 >}}
+end
+{{< new-in 0.125.0 >}}
 : (`int`) The time, measured in seconds from the start of the video, when the player should stop playing the video.
 @y
-end {{< new-in 0.125.0 >}}
+end
+{{< new-in 0.125.0 >}}
 : (`int`) The time, measured in seconds from the start of the video, when the player should stop playing the video.
 @z
 
 @x
-loading {{< new-in 0.125.0 >}}
+loading
+{{< new-in 0.125.0 >}}
 : (`string`) The loading attribute of the `iframe` element, either `eager` or `lazy`. Default is `eager`.
 @y
-loading {{< new-in 0.125.0 >}}
+loading
+{{< new-in 0.125.0 >}}
 : (`string`) The loading attribute of the `iframe` element, either `eager` or `lazy`. Default is `eager`.
 @z
 
 @x
-loop {{< new-in 0.125.0 >}}
+loop
+{{< new-in 0.125.0 >}}
 : (`bool`) Whether to indefinitely repeat the video. Ignores the `start` and `end` arguments after the first play.  Default is `false`.
 @y
-loop {{< new-in 0.125.0 >}}
+loop
+{{< new-in 0.125.0 >}}
 : (`bool`) Whether to indefinitely repeat the video. Ignores the `start` and `end` arguments after the first play.  Default is `false`.
 @z
 
 @x
-mute {{< new-in 0.125.0 >}}
+mute
+{{< new-in 0.125.0 >}}
 : (`bool`) Whether to mute the video. Always `true` when `autoplay` is `true`. Default is `false`.
 @y
-mute {{< new-in 0.125.0 >}}
+mute
+{{< new-in 0.125.0 >}}
 : (`bool`) Whether to mute the video. Always `true` when `autoplay` is `true`. Default is `false`.
 @z
 
 @x
-start {{< new-in 0.125.0 >}}
+start
+{{< new-in 0.125.0 >}}
 : (`int`) The time, measured in seconds from the start of the video, when the player should start playing the video.
 @y
-start {{< new-in 0.125.0 >}}
+start
+{{< new-in 0.125.0 >}}
 : (`int`) The time, measured in seconds from the start of the video, when the player should start playing the video.
 @z
 
 @x
 title
-: (`string`) The `title` attribute of the `iframe` element. Defaults to the title returned by the YouTube oEmbed API.
+: (`string`) The `title` attribute of the `iframe` element. Defaults to "YouTube video".
 @y
 title
-: (`string`) The `title` attribute of the `iframe` element. Defaults to the title returned by the YouTube oEmbed API.
+: (`string`) The `title` attribute of the `iframe` element. Defaults to "YouTube video".
 @z
 
 @x

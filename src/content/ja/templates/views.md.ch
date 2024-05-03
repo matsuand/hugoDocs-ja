@@ -1,32 +1,18 @@
 %This is the change file for the original Hugo Documentation file.
 %This is part of Japanese translation version for Hugo Documantation.
 
+% snip 対応
+
 @x
----
 title: Content view templates
 description: Hugo can render alternative views of your content, useful in list and summary views.
 categories: [templates]
 keywords: [views]
-menu:
-  docs:
-    parent: templates
-    weight: 110
-weight: 110
-toc: true
----
 @y
----
 title: コンテントビューテンプレート
 description: Hugo can render alternative views of your content, useful in list and summary views.
 categories: [templates]
 keywords: [views]
-menu:
-  docs:
-    parent: templates
-    weight: 110
-weight: 110
-toc: true
----
 @z
 
 @x
@@ -61,55 +47,15 @@ To create a new view, create a template in each of your different content type d
 To create a new view, create a template in each of your different content type directories with the view name. The following example contains an "li" view and a "summary" view for the `posts` and `project` content types. As you can see, these sit next to the [single content view][single] template, `single.html`. You can even provide a specific view for a given type and continue to use the `_default/single.html` for the primary view.
 @z
 
-@x
-```txt
-  ▾ layouts/
-    ▾ posts/
-        li.html
-        single.html
-        summary.html
-    ▾ project/
-        li.html
-        single.html
-        summary.html
-```
-@y
-```txt
-  ▾ layouts/
-    ▾ posts/
-        li.html
-        single.html
-        summary.html
-    ▾ project/
-        li.html
-        single.html
-        summary.html
-```
-@z
+% snip text...
 
 @x
-Hugo also has support for a default content template to be used in the event that a specific content view template has not been provided for that type. Content views can also be defined in the `_default` directory and will work the same as list and single templates who eventually trickle down to the `_default` directory as a matter of the lookup order.
+Hugo also has support for a default content view template to be used in the event that a specific content view template has not been provided for that type. Content views can also be defined in the `_default` directory and will work the same as list and single templates who eventually trickle down to the `_default` directory as a matter of the lookup order.
 @y
-Hugo also has support for a default content template to be used in the event that a specific content view template has not been provided for that type. Content views can also be defined in the `_default` directory and will work the same as list and single templates who eventually trickle down to the `_default` directory as a matter of the lookup order.
+Hugo also has support for a default content view template to be used in the event that a specific content view template has not been provided for that type. Content views can also be defined in the `_default` directory and will work the same as list and single templates who eventually trickle down to the `_default` directory as a matter of the lookup order.
 @z
 
-@x
-```txt
-▾ layouts/
-  ▾ _default/
-      li.html
-      single.html
-      summary.html
-```
-@y
-```txt
-▾ layouts/
-  ▾ _default/
-      li.html
-      single.html
-      summary.html
-```
-@z
+% snip text...
 
 @x
 ## Which template will be rendered?

@@ -72,8 +72,8 @@ Define your [CI/CD](https://docs.gitlab.com/ee/ci/quick_start/) jobs by creating
 @x
 {{< code file=.gitlab-ci.yml copy=true >}}
 variables:
-  DART_SASS_VERSION: 1.72.0
-  HUGO_VERSION: 0.124.0
+  DART_SASS_VERSION: 1.76.0
+  HUGO_VERSION: 0.125.4
   NODE_VERSION: 20.x
   GIT_DEPTH: 0
   GIT_STRATEGY: clone
@@ -82,8 +82,8 @@ variables:
 @y
 {{< code file=.gitlab-ci.yml copy=true >}}
 variables:
-  DART_SASS_VERSION: 1.72.0
-  HUGO_VERSION: 0.124.0
+  DART_SASS_VERSION: 1.76.0
+  HUGO_VERSION: 0.125.4
   NODE_VERSION: 20.x
   GIT_DEPTH: 0
   GIT_STRATEGY: clone

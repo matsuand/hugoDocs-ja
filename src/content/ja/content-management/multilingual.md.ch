@@ -4,27 +4,15 @@
 @x
 title: Multilingual mode
 linkTitle: Multilingual
-description: Hugo supports the creation of websites with multiple languages side by side.
+description: Localize your project for each language and region, including translations, images, dates, currencies, numbers, percentages, and collation sequence. Hugo's multilingual framework supports single-host and multihost configurations.
 categories: [content management]
 keywords: [multilingual,i18n,internationalization]
 @y
 title: マルチ言語モード
 linkTitle: マルチ言語
-description: Hugo が作り出すウェブサイトでは、マルチ言語ページの共存をサポートしています。
+description: 言語や地域ごとにプロジェクトをローカライズします。そこには翻訳、イメージ、日付、通貨、数字、パーセント、照合順序も含まれます。Hugo のマルチ言語フレームワークはシングルホストもマルチホストもサポートします。
 categories: [content management]
 keywords: [multilingual,i18n,internationalization]
-@z
-
-@x
-You should define the available languages in a `languages` section in your site configuration.
-@y
-利用する言語は、サイト設定における `languages` セクション内に定義することが必要です。
-@z
-
-@x
-Also See [Hugo Multilingual Part 1: Content translation].
-@y
-[Hugo Multilingual Part 1: Content translation] も参照してください。
 @z
 
 @x
@@ -122,20 +110,20 @@ subtitle = 'Reference, Tutorials, and Explanations'
 
 @x
 defaultContentLanguage
-: (`string`) The project's default language tag as defined by [RFC 5646]. Must be lower case, and must match one of the defined language keys. Default is `en`. Examples:
+: (`string`) The project's default language key, conforming to the syntax described in [RFC 5646]. This value must match one of the defined language keys. Examples:
 @y
 defaultContentLanguage
-: (`string`) The project's default language tag as defined by [RFC 5646]. Must be lower case, and must match one of the defined language keys. Default is `en`. Examples:
+: (`string`) The project's default language key, conforming to the syntax described in [RFC 5646]. This value must match one of the defined language keys. Examples:
 @z
 
 @x
 - `en`
-- `en-gb`
-- `pt-br`
+- `en-GB`
+- `pt-BR`
 @y
 - `en`
-- `en-gb`
-- `pt-br`
+- `en-GB`
+- `pt-BR`
 @z
 
 @x
@@ -164,10 +152,10 @@ disabled
 
 @x
 languageCode
-: (`string`) The language tag as defined by [RFC 5646]. This value may include upper and lower case characters, hyphens, or underscores, and does not affect localization or URLs. Hugo uses this value to populate the `language` element in the [built-in RSS template], and the `lang` attribute of the `html` element in the [built-in alias template]. Examples:
+: (`string`) The language tag as described in [RFC 5646]. This value does not affect localization or URLs. Hugo uses this value to populate the `language` element in the [built-in RSS template], and the `lang` attribute of the `html` element in the [built-in alias template]. Examples:
 @y
 languageCode
-: (`string`) The language tag as defined by [RFC 5646]. This value may include upper and lower case characters, hyphens, or underscores, and does not affect localization or URLs. Hugo uses this value to populate the `language` element in the [built-in RSS template], and the `lang` attribute of the `html` element in the [built-in alias template]. Examples:
+: (`string`) The language tag as described in [RFC 5646]. This value does not affect localization or URLs. Hugo uses this value to populate the `language` element in the [built-in RSS template], and the `lang` attribute of the `html` element in the [built-in alias template]. Examples:
 @z
 
 @x
@@ -216,13 +204,13 @@ weight
 [`dir`]: https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir
 [built-in RSS template]: https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/_default/rss.xml
 [built-in alias template]: https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/alias.html
-[RFC 5646]: https://datatracker.ietf.org/doc/html/rfc5646
+[RFC 5646]: https://datatracker.ietf.org/doc/html/rfc5646#section-2.1
 [translating by file name]: #translation-by-file-name
 @y
 [`dir`]: https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir
 [built-in RSS template]: https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/_default/rss.xml
 [built-in alias template]: https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/alias.html
-[RFC 5646]: https://datatracker.ietf.org/doc/html/rfc5646
+[RFC 5646]: https://datatracker.ietf.org/doc/html/rfc5646#section-2.1
 [translating by file name]: #translation-by-file-name
 @z
 

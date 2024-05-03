@@ -119,12 +119,12 @@ Without any additional configuration, the following will automatically work:
 @z
 
 @x
-The following demonstrates the relationships between your content organization and the output URL structure for your Hugo website when it renders. These examples assume you are [using pretty URLs][pretty], which is the default behavior for Hugo. The examples also assume a key-value of `baseURL = "https://example.org"` in your [site's configuration file][config].
+The following demonstrates the relationships between your content organization and the output URL structure for your Hugo website when it renders. These examples assume you are [using pretty URLs][pretty], which is the default behavior for Hugo. The examples also assume a key-value of `baseURL = "https://example.org/"` in your [site's configuration file][config].
 @y
 これ以降に例示を行って、Hugo がウェブサイトをレンダリングする際のコンテント構成と出力 URL 構造との関連性を明らかにします。
 例示にあたっては [プリティー URL][pretty] (pretty URL) を用いるものとします。
 それが Hugo のデフォルト動作であるからです。
-また [サイトに対する設定ファイル][config] では `baseURL = "https://example.org"` といったキーバリューによるペア形式での指定を示すものとします。
+また [サイトに対する設定ファイル][config] では `baseURL = "https://example.org/"` といったキーバリューによるペア形式での指定を示すものとします。
 @z
 
 @x

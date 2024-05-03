@@ -180,11 +180,11 @@ To link to another language version of a document, use this syntax:
 @z
 
 @x
-```go-html-template
+```text
 {{</* relref path="document.md" lang="ja" */>}}
 ```
 @y
-```go-html-template
+```text
 {{</* relref path="document.md" lang="ja" */>}}
 ```
 @z
@@ -202,11 +202,11 @@ To link to another Output Format of a document, use this syntax:
 @z
 
 @x
-```go-html-template
+```text
 {{</* relref path="document.md" outputFormat="rss" */>}}
 ```
 @y
-```go-html-template
+```text
 {{</* relref path="document.md" outputFormat="rss" */>}}
 ```
 @z
@@ -224,11 +224,11 @@ When using Markdown document types, Hugo generates element IDs for every heading
 @z
 
 @x
-```md
+```text
 ## Reference
 ```
 @y
-```md
+```text
 ## Reference
 ```
 @z
@@ -256,12 +256,12 @@ Get the permalink to a heading by appending the ID to the path when using the `r
 @z
 
 @x
-```go-html-template
+```text
 {{</* ref "document.md#reference" */>}}
 {{</* relref "document.md#reference" */>}}
 ```
 @y
-```go-html-template
+```text
 {{</* ref "document.md#reference" */>}}
 {{</* relref "document.md#reference" */>}}
 ```
@@ -274,12 +274,12 @@ Generate a custom heading ID by including an attribute. For example:
 @z
 
 @x
-```md
+```text
 ## Reference A {#foo}
 ## Reference B {id="bar"}
 ```
 @y
-```md
+```text
 ## Reference A {#foo}
 ## Reference B {id="bar"}
 ```
@@ -310,13 +310,13 @@ Hugo will generate unique element IDs if the same heading appears more than once
 @z
 
 @x
-```md
+```text
 ## Reference
 ## Reference
 ## Reference
 ```
 @y
-```md
+```text
 ## Reference
 ## Reference
 ## Reference

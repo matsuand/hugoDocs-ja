@@ -1,6 +1,8 @@
 %This is the change file for the original Hugo Documentation file.
 %This is part of Japanese translation version for Hugo Documantation.
 
+% snip 対応
+
 @x
 title: "hugo gen chromastyles"
 slug: hugo_gen_chromastyles
@@ -41,15 +43,7 @@ See https://xyproto.github.io/splash/docs/all.html for a preview of the availabl
 See https://xyproto.github.io/splash/docs/all.html for a preview of the available styles
 @z
 
-@x
-```
-hugo gen chromastyles [flags] [args]
-```
-@y
-```
-hugo gen chromastyles [flags] [args]
-```
-@z
+% snip code...
 
 @x
 ### Options
@@ -58,15 +52,17 @@ hugo gen chromastyles [flags] [args]
 @z
 
 @x
-  -h, --help                    help for chromastyles
-      --highlightStyle string   foreground and background colors for highlighted lines, e.g. --highlightStyle "#fff000 bg:#000fff"
-      --linesStyle string       foreground and background colors for inline line numbers, e.g. --linesStyle "#fff000 bg:#000fff"
-      --style string            highlighter style (see https://xyproto.github.io/splash/docs/) (default "friendly")
+  -h, --help                            help for chromastyles
+      --highlightStyle string           foreground and background colors for highlighted lines, e.g. --highlightStyle "#fff000 bg:#000fff"
+      --lineNumbersInlineStyle string   foreground and background colors for inline line numbers, e.g. --lineNumbersInlineStyle "#fff000 bg:#000fff"
+      --lineNumbersTableStyle string    foreground and background colors for table line numbers, e.g. --lineNumbersTableStyle "#fff000 bg:#000fff"
+      --style string                    highlighter style (see https://xyproto.github.io/splash/docs/) (default "friendly")
 @y
-  -h, --help                    help for chromastyles
-      --highlightStyle string   foreground and background colors for highlighted lines, e.g. --highlightStyle "#fff000 bg:#000fff"
-      --linesStyle string       foreground and background colors for inline line numbers, e.g. --linesStyle "#fff000 bg:#000fff"
-      --style string            highlighter style (see https://xyproto.github.io/splash/docs/) (default "friendly")
+  -h, --help                            help for chromastyles
+      --highlightStyle string           foreground and background colors for highlighted lines, e.g. --highlightStyle "#fff000 bg:#000fff"
+      --lineNumbersInlineStyle string   foreground and background colors for inline line numbers, e.g. --lineNumbersInlineStyle "#fff000 bg:#000fff"
+      --lineNumbersTableStyle string    foreground and background colors for table line numbers, e.g. --lineNumbersTableStyle "#fff000 bg:#000fff"
+      --style string                    highlighter style (see https://xyproto.github.io/splash/docs/) (default "friendly")
 @z
 
 @x

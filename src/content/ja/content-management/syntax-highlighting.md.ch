@@ -39,9 +39,10 @@ See [Configure Highlight](/getting-started/configuration-markup#highlight).
 @z
 
 @x
-If you run with `markup.highlight.noClasses=false` in your site configuration, you need a style sheet.
+If you run with `markup.highlight.noClasses=false` in your site configuration, you need a style sheet. The style sheet will override the style specified in [`markup.highlight.style`](/functions/transform/highlight/#options).
 @y
 サイト設定において `markup.highlight.noClasses=false` を行っている場合はスタイルシートが必要になります。
+スタイルシートは [`markup.highlight.style`](/functions/transform/highlight/#options) に指定されたスタイルによって上書きされます。
 @z
 
 @x

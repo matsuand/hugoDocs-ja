@@ -333,7 +333,8 @@ copydirs = \
 	home-page-sections \
 	hooks              \
 	opengraph          \
-	svg
+	svg                \
+	utilities
 
 all: all-recursive
 

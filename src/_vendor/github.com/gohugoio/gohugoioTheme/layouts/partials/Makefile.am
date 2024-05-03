@@ -52,7 +52,8 @@ copydirs = \
 	home-page-sections \
 	hooks              \
 	opengraph          \
-	svg
+	svg                \
+	utilities
 
 .PHONY: _copydirs
 all: _copydirs
