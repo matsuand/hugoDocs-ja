@@ -28,9 +28,9 @@ action:
 @z
 
 @x
-Conceptually different that a [content summary], a page description is typically used in metadata about the page.
+Conceptually different from a [content summary], a page description is typically used in metadata about the page.
 @y
-Conceptually different that a [content summary], a page description is typically used in metadata about the page.
+Conceptually different from a [content summary], a page description is typically used in metadata about the page.
 @z
 
 @x

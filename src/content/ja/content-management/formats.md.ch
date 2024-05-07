@@ -3,176 +3,246 @@
 
 @x
 title: Content formats
-description: Both HTML and Markdown are supported content formats.
+description: Create your content using Markdown, HTML, Emacs Org Mode, AsciiDoc, Pandoc, or reStructuredText.
 categories: [content management]
 keywords: [markdown,asciidoc,pandoc,content format]
 @y
 title: コンテントフォーマット
-description: Both HTML and Markdown are supported content formats.
+description: Create your content using Markdown, HTML, Emacs Org Mode, AsciiDoc, Pandoc, or reStructuredText.
 categories: [content management]
 keywords: [markdown,asciidoc,pandoc,content format]
 @z
 
 @x
-You can put any file type into your `/content` directories, but Hugo uses the `markup` front matter value if set or the file extension (see `Markup identifiers` in the table below) to determine if the markup needs to be processed, e.g.:
+## Introduction
 @y
-`/content` ディレクトリにはどのようなタイプのファイルでも配置することができます。
-ただし Hugo はマークアップ処理が必要であるかどうかを、フロントマターの `markup` 値の設定の有無、またはファイル拡張子 (マークアップ識別子参照) により判断します。
-処理対象となるのは以下のものです。
+## はじめに {#introduction}
 @z
 
 @x
-* Markdown converted to HTML
-* [Shortcodes](/content-management/shortcodes/) processed
-* Layout applied
+You may mix content formats throughout your site. For example:
 @y
-* HTML に変換されるマークダウン。
-* [ショートコード](/content-management/shortcodes/)
-* 適用されるレイアウト。
+You may mix content formats throughout your site. For example:
+@z
+
+% snip text...
+
+@x
+Regardless of content format, all content must have [front matter], preferably including both `title` and `date`.
+@y
+Regardless of content format, all content must have [front matter], preferably including both `title` and `date`.
 @z
 
 @x
-## List of content formats
+Hugo selects the content renderer based on the `markup` identifier in front matter, falling back to the file extension. See the [comparison table](#comparison) table below for a list of markup identifiers and recognized file extensions.
 @y
-## コンテントフォーマットの一覧 {#list-of-content-formats}
+Hugo selects the content renderer based on the `markup` identifier in front matter, falling back to the file extension. See the [comparison table](#comparison) table below for a list of markup identifiers and recognized file extensions.
 @z
 
 @x
-The current list of content formats in Hugo:
+## Formats
 @y
-Hugo における現時点でのコンテントフォーマットは以下のとおりです。
+## フォーマット {#formats}
 @z
 
 @x
-| Name  | Markup identifiers | Comment |
-| ------------- | ------------- |-------------|
-| Goldmark  | `markdown`, `goldmark`  |Note that you can set the default handler of `md` and `markdown` to something else, see [Configure Markup](/getting-started/configuration-markup/).|
-|Emacs Org-Mode|`org`|See [go-org](https://github.com/niklasfasching/go-org).|
-|AsciiDoc|`asciidocext`, `adoc`, `ad`|Needs [Asciidoctor][ascii] installed.|
-|RST|`rst`|Needs [RST](https://docutils.sourceforge.io/rst.html) installed.|
-|Pandoc|`pandoc`, `pdc`|Needs [Pandoc](https://www.pandoc.org/) installed.|
-|HTML|`html`, `htm`|To be treated as a content file, with layout, shortcodes etc., it must have front matter.|
+### Markdown
 @y
-| 名前  | マークアップ識別子 | 内容説明 |
-| ------------- | ------------- |-------------|
-| Goldmark  | `markdown`, `goldmark`  |Note that you can set the default handler of `md` and `markdown` to something else, see [Configure Markup](/getting-started/configuration-markup/).|
-|Emacs Org-Mode|`org`|[go-org](https://github.com/niklasfasching/go-org) 参照|
-|AsciiDoc|`asciidocext`, `adoc`, `ad`|[Asciidoctor][ascii] インストール要|
-|RST|`rst`|[RST](https://docutils.sourceforge.io/rst.html) インストール要|
-|Pandoc|`pandoc`, `pdc`|[Pandoc](https://www.pandoc.org/) インストール要|
-|HTML|`html`, `htm`|To be treated as a content file, with layout, shortcodes etc., it must have front matter.|
+### Markdown
 @z
 
 @x
-The `markup` identifier is fetched from either the `markup` field in front matter or from the file extension. For markup-related configuration, see [Configure Markup](/getting-started/configuration-markup/).
+Create your content in [Markdown] preceded by front matter.
 @y
-マークアップ識別子は、フロントマターの `markup` フィールドまたはファイル拡張子から割り当てられます。
-マークアップ関連の設定については [マークアップの設定](/getting-started/configuration-markup/) を参照してください。
+Create your content in [Markdown] preceded by front matter.
 @z
 
 @x
-## External helpers
+Markdown is Hugo's default content format. Hugo natively renders Markdown to HTML using [Goldmark]. Goldmark is fast and conforms to the [CommonMark] and [GitHub Flavored Markdown] specifications. You can [configure Goldmark] in your site configuration.
 @y
-## 外部ヘルパー {#external-helpers}
+Markdown is Hugo's default content format. Hugo natively renders Markdown to HTML using [Goldmark]. Goldmark is fast and conforms to the [CommonMark] and [GitHub Flavored Markdown] specifications. You can [configure Goldmark] in your site configuration.
 @z
 
 @x
-Some of the formats in the table above need external helpers installed on your PC. For example, for AsciiDoc files,
-Hugo will try to call the `asciidoctor` command. This means that you will have to install the associated
-tool on your machine to be able to use these formats.
+Hugo provides custom Markdown features including:
 @y
-上の一覧の中のフォーマットに関しては、PC に外部ヘルパープログラムをインストールしておくべきものがあります。
-たとえば AsciiDoc ファイルの場合、Hugo は `asciidoctor` コマンドを呼び出します。
-つまりそのようなフォーマットを利用するためには、PC に関連ツールをインストールしておく必要があるということです。
+Hugo provides custom Markdown features including:
 @z
 
 @x
-Hugo passes reasonable default arguments to these external helpers by default:
+[Attributes]
+: Apply HTML attributes such as `class` and `id` to Markdown images and block elements including blockquotes, fenced code blocks, headings, horizontal rules, lists, paragraphs, and tables.
 @y
-Hugo はそのような外部ヘルパーに対して、デフォルトで以下のような適切な引数を受け渡すものとなっています。
+[Attributes]
+: Apply HTML attributes such as `class` and `id` to Markdown images and block elements including blockquotes, fenced code blocks, headings, horizontal rules, lists, paragraphs, and tables.
 @z
 
 @x
-- `asciidoctor`: `--no-header-footer -`
-- `rst2html`: `--leave-comments --initial-header-level=2`
-- `pandoc`: `--mathjax`
+[Extensions]
+: Leverage the embedded Markdown extensions to create tables, definition lists, footnotes, task lists, and more.
 @y
-- `asciidoctor`: `--no-header-footer -`
-- `rst2html`: `--leave-comments --initial-header-level=2`
-- `pandoc`: `--mathjax`
+[Extensions]
+: Leverage the embedded Markdown extensions to create tables, definition lists, footnotes, task lists, and more.
 @z
 
 @x
-{{% note %}}
-Because additional formats are external commands, generation performance will rely heavily on the performance of the external tool you are using. As this feature is still in its infancy, feedback is welcome.
-{{% /note %}}
+[Mathematics]
+: Include mathematical equations and expressions in Markdown using LaTeX or TeX typesetting syntax.
 @y
-{{% note %}}
-Because additional formats are external commands, generation performance will rely heavily on the performance of the external tool you are using. As this feature is still in its infancy, feedback is welcome.
-{{% /note %}}
+[Mathematics]
+: Include mathematical equations and expressions in Markdown using LaTeX or TeX typesetting syntax.
 @z
 
 @x
-### Asciidoctor
+[Render hooks]
+: Override the conversion of Markdown to HTML when rendering fenced code blocks, headings, images, and links. For example, render every standalone image as an HTML `figure` element.
 @y
-### Asciidoctor
+[Render hooks]
+: Override the conversion of Markdown to HTML when rendering fenced code blocks, headings, images, and links. For example, render every standalone image as an HTML `figure` element.
 @z
 
 @x
-The Asciidoctor community offers a wide set of tools for the AsciiDoc format that can be installed additionally to Hugo.
-[See the Asciidoctor docs for installation instructions](https://asciidoctor.org/docs/install-toolchain/). Make sure that also all
-optional extensions like `asciidoctor-diagram` or `asciidoctor-html5s` are installed if required.
+### HTML
 @y
-The Asciidoctor community offers a wide set of tools for the AsciiDoc format that can be installed additionally to Hugo.
-[See the Asciidoctor docs for installation instructions](https://asciidoctor.org/docs/install-toolchain/). Make sure that also all
-optional extensions like `asciidoctor-diagram` or `asciidoctor-html5s` are installed if required.
+### HTML
 @z
 
 @x
-{{% note %}}
-External `asciidoctor` command requires Hugo rendering to _disk_ to a specific destination directory. It is required to run Hugo with the command option `--destination`.
-{{% /note %}}
+Create your content in [HTML] preceded by front matter. The content is typically what you would place within an HTML document's `body` or `main` element.
 @y
-{{% note %}}
-External `asciidoctor` command requires Hugo rendering to _disk_ to a specific destination directory. It is required to run Hugo with the command option `--destination`.
-{{% /note %}}
+Create your content in [HTML] preceded by front matter. The content is typically what you would place within an HTML document's `body` or `main` element.
 @z
 
 @x
-Some Asciidoctor parameters can be customized in Hugo. See&nbsp;[details].
+### Emacs Org Mode
 @y
-Some Asciidoctor parameters can be customized in Hugo. See&nbsp;[details].
+### Emacs Org Mode
 @z
 
 @x
-[details]: /getting-started/configuration-markup/#asciidoc
+Create your content in the [Emacs Org Mode] format preceded by front matter. You can use Org Mode keywords for front matter. See [details](http://localhost:1313/content-management/front-matter/#emacs-org-mode).
 @y
-[details]: /getting-started/configuration-markup/#asciidoc
+Create your content in the [Emacs Org Mode] format preceded by front matter. You can use Org Mode keywords for front matter. See [details](http://localhost:1313/content-management/front-matter/#emacs-org-mode).
 @z
 
 @x
-## Learn Markdown
+### AsciiDoc
 @y
-## マークダウンについて学ぶ {#learn-markdown}
+### AsciiDoc
 @z
 
 @x
-Markdown syntax is simple enough to learn in a single sitting. The following are excellent resources to get you up and running:
+Create your content in the [AsciiDoc] format preceded by front matter. Hugo renders AsciiDoc content to HTML using the Asciidoctor executable. You must install Asciidoctor and its dependencies (Ruby) to use the AsciiDoc content format.
 @y
-マークダウンの文法はとても単純なので、一気に学ぶことができます。
-以下のような優れたリソースを見れば、さらにやる気が出てくると思います。
+Create your content in the [AsciiDoc] format preceded by front matter. Hugo renders AsciiDoc content to HTML using the Asciidoctor executable. You must install Asciidoctor and its dependencies (Ruby) to use the AsciiDoc content format.
 @z
 
 @x
-* [Daring Fireball: Markdown, John Gruber (Creator of Markdown)][fireball]
-* [Markdown Cheatsheet, Adam Pritchard][mdcheatsheet]
-* [Markdown Tutorial (Interactive), Garen Torikian][mdtutorial]
-* [The Markdown Guide, Matt Cone][mdguide]
+You can [configure the AsciiDoc renderer] in your site configuration.
 @y
-* [Daring Fireball: Markdown, John Gruber (Creator of Markdown)][fireball]
-* [Markdown Cheatsheet, Adam Pritchard][mdcheatsheet]
-* [Markdown Tutorial (Interactive), Garen Torikian][mdtutorial]
-* [The Markdown Guide, Matt Cone][mdguide]
+You can [configure the AsciiDoc renderer] in your site configuration.
 @z
 
-% snip URLs...
+@x
+In its default configuration, Hugo passes these CLI flags when calling the Asciidoctor executable:
+@y
+In its default configuration, Hugo passes these CLI flags when calling the Asciidoctor executable:
+@z
+
+% snip text...
+
+@x
+The CLI flags passed to the Asciidoctor executable depend on configuration. You may inspect the flags when building your site:
+@y
+The CLI flags passed to the Asciidoctor executable depend on configuration. You may inspect the flags when building your site:
+@z
+
+% snip text...
+
+@x
+### Pandoc
+@y
+### Pandoc
+@z
+
+@x
+Create your content in the [Pandoc] format preceded by front matter. Hugo renders Pandoc content to HTML using the Pandoc executable. You must install Pandoc to use the Pandoc content format.
+@y
+Create your content in the [Pandoc] format preceded by front matter. Hugo renders Pandoc content to HTML using the Pandoc executable. You must install Pandoc to use the Pandoc content format.
+@z
+
+@x
+Hugo passes these CLI flags when calling the Pandoc executable:
+@y
+Hugo passes these CLI flags when calling the Pandoc executable:
+@z
+
+% snip text...
+
+@x
+### reStructuredText
+@y
+### reStructuredText
+@z
+
+@x
+Create your content in the [reStructuredText] format preceded by front matter. Hugo renders reStructuredText content to HTML using [Docutils], specifically rst2html. You must install Docutils and its dependencies (Python) to use the reStructuredText content format.
+@y
+Create your content in the [reStructuredText] format preceded by front matter. Hugo renders reStructuredText content to HTML using [Docutils], specifically rst2html. You must install Docutils and its dependencies (Python) to use the reStructuredText content format.
+@z
+
+@x
+Hugo passes these CLI flags when calling the rst2html executable:
+@y
+Hugo passes these CLI flags when calling the rst2html executable:
+@z
+
+% snip text...
+
+@x
+## Comparison
+@y
+## Comparison
+@z
+
+@x
+Content format|Identifier|Identifier aliases|File extensions
+:--|:--|:--|:--
+Markdown|`goldmark`|`md`, `mdown`, `markdown`|`md`, `mdown`, `markdown`
+HTML|`html`|`htm`|`html`, `htm`
+Emacs Org Mode|`org`||`org`
+AsciiDoc|`asciidocext`|`adoc`, `ad`|`adoc`, `ad`
+Pandoc|`pandoc`|`pdc`|`pandoc`, `pdc`
+reStructuredText|`rst`||`rst`
+@y
+コンテントフォーマット|識別子|エイリアス|ファイル拡張子
+:--|:--|:--|:--
+Markdown|`goldmark`|`md`, `mdown`, `markdown`|`md`, `mdown`, `markdown`
+HTML|`html`|`htm`|`html`, `htm`
+Emacs Org Mode|`org`||`org`
+AsciiDoc|`asciidocext`|`adoc`, `ad`|`adoc`, `ad`
+Pandoc|`pandoc`|`pdc`|`pandoc`, `pdc`
+reStructuredText|`rst`||`rst`
+@z
+
+@x
+When converting content to HTML, Hugo uses:
+@y
+When converting content to HTML, Hugo uses:
+@z
+
+@x
+- Native renderers for Markdown, HTML, and Emacs Org mode
+- External renderers for AsciiDoc, Pandoc, and reStructuredText
+@y
+- Native renderers for Markdown, HTML, and Emacs Org mode
+- External renderers for AsciiDoc, Pandoc, and reStructuredText
+@z
+
+@x
+Native renderers are faster than external renderers.
+@y
+Native renderers are faster than external renderers.
+@z
+
+% snip links...

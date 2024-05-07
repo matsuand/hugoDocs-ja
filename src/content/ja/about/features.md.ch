@@ -91,10 +91,10 @@ keywords: []
 
 @x
 [Content formats]
-: Create your content using Markdown, HTML, AsciiDoc, Pandoc, reStructuredText, or Emacs Org Mode. Markdown is the default content format, conforming to the [CommonMark] and [GitHub Flavored Markdown] specifications.
+: Create your content using Markdown, HTML, AsciiDoc, Emacs Org Mode, Pandoc, or reStructuredText. Markdown is the default content format, conforming to the [CommonMark] and [GitHub Flavored Markdown] specifications.
 @y
 [Content formats]
-: Create your content using Markdown, HTML, AsciiDoc, Pandoc, reStructuredText, or Emacs Org Mode. Markdown is the default content format, conforming to the [CommonMark] and [GitHub Flavored Markdown] specifications.
+: Create your content using Markdown, HTML, AsciiDoc, Emacs Org Mode, Pandoc, or reStructuredText. Markdown is the default content format, conforming to the [CommonMark] and [GitHub Flavored Markdown] specifications.
 @z
 
 @x

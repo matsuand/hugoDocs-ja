@@ -9,6 +9,7 @@ include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/content.mk
 
 copyfiles = \
-	hia.jpg
+	build-websites-with-hugo.png \
+	hugo-in-action.png
 
 include $(top_srcdir)/build-aux/copy.mk

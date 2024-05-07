@@ -574,113 +574,113 @@ public/
 @z
 
 @x
-Use these tokens when defining the URL pattern. The `date` field in front matter determines the value of time-related tokens.
+Use these tokens when defining the URL pattern.
 @y
-Use these tokens when defining the URL pattern. The `date` field in front matter determines the value of time-related tokens.
+Use these tokens when defining the URL pattern.
 @z
 
 @x
 `:year`
-: the 4-digit year
+: The 4-digit year as defined in the front matter `date` field.
 @y
 `:year`
-: the 4-digit year
+: The 4-digit year as defined in the front matter `date` field.
 @z
 
 @x
 `:month`
-: the 2-digit month
+: The 2-digit month as defined in the front matter `date` field.
 @y
 `:month`
-: the 2-digit month
+: The 2-digit month as defined in the front matter `date` field.
 @z
 
 @x
 `:monthname`
-: the name of the month
+: The name of the month as defined in the front matter `date` field.
 @y
 `:monthname`
-: the name of the month
+: The name of the month as defined in the front matter `date` field.
 @z
 
 @x
 `:day`
-: the 2-digit day
+: The 2-digit day as defined in the front matter `date` field.
 @y
 `:day`
-: the 2-digit day
+: The 2-digit day as defined in the front matter `date` field.
 @z
 
 @x
 `:weekday`
-: the 1-digit day of the week (Sunday = 0)
+: The 1-digit day of the week as defined in the front matter `date` field  (Sunday = 0).
 @y
 `:weekday`
-: the 1-digit day of the week (Sunday = 0)
+: The 1-digit day of the week as defined in the front matter `date` field  (Sunday = 0).
 @z
 
 @x
 `:weekdayname`
-: the name of the day of the week
+: The name of the day of the week as defined in the front matter `date` field.
 @y
 `:weekdayname`
-: the name of the day of the week
+: The name of the day of the week as defined in the front matter `date` field.
 @z
 
 @x
 `:yearday`
-: the 1- to 3-digit day of the year
+: The 1- to 3-digit day of the year as defined in the front matter `date` field.
 @y
 `:yearday`
-: the 1- to 3-digit day of the year
+: The 1- to 3-digit day of the year as defined in the front matter `date` field.
 @z
 
 @x
 `:section`
-: the content's section
+: The content's section.
 @y
 `:section`
-: the content's section
+: The content's section.
 @z
 
 @x
 `:sections`
-: the content's sections hierarchy. You can use a selection of the sections using _slice syntax_: `:sections[1:]` includes all but the first, `:sections[:last]` includes all but the last, `:sections[last]` includes only the last, `:sections[1:2]` includes section 2 and 3. Note that this slice access will not throw any out-of-bounds errors, so you don't have to be exact.
+: The content's sections hierarchy. You can use a selection of the sections using _slice syntax_: `:sections[1:]` includes all but the first, `:sections[:last]` includes all but the last, `:sections[last]` includes only the last, `:sections[1:2]` includes section 2 and 3. Note that this slice access will not throw any out-of-bounds errors, so you don't have to be exact.
 @y
 `:sections`
-: the content's sections hierarchy. You can use a selection of the sections using _slice syntax_: `:sections[1:]` includes all but the first, `:sections[:last]` includes all but the last, `:sections[last]` includes only the last, `:sections[1:2]` includes section 2 and 3. Note that this slice access will not throw any out-of-bounds errors, so you don't have to be exact.
+: The content's sections hierarchy. You can use a selection of the sections using _slice syntax_: `:sections[1:]` includes all but the first, `:sections[:last]` includes all but the last, `:sections[last]` includes only the last, `:sections[1:2]` includes section 2 and 3. Note that this slice access will not throw any out-of-bounds errors, so you don't have to be exact.
 @z
 
 @x
 `:title`
-: the content's title
+: The title as defined in front matter, else the automatic title. Hugo generates titles automatically for section, taxonomy, and term pages that are not backed by a file.
 @y
 `:title`
-: the content's title
+: The title as defined in front matter, else the automatic title. Hugo generates titles automatically for section, taxonomy, and term pages that are not backed by a file.
 @z
 
 @x
 `:slug`
-: the content's slug (or title if no slug is provided in the front matter)
+: The slug as defined in front matter, else the title as defined in front matter, else the automatic title. Hugo generates titles automatically for section, taxonomy, and term pages that are not backed by a file.
 @y
 `:slug`
-: the content's slug (or title if no slug is provided in the front matter)
-@z
-
-@x
-`:slugorfilename`
-: the content's slug (or file name if no slug is provided in the front matter)
-@y
-`:slugorfilename`
-: the content's slug (or file name if no slug is provided in the front matter)
+: The slug as defined in front matter, else the title as defined in front matter, else the automatic title. Hugo generates titles automatically for section, taxonomy, and term pages that are not backed by a file.
 @z
 
 @x
 `:filename`
-: the content's file name (without extension)
+: The content's file name without extension, applicable to the `page` page kind.
 @y
 `:filename`
-: the content's file name (without extension)
+: The content's file name without extension, applicable to the `page` page kind.
+@z
+
+@x
+`:slugorfilename`
+: The slug as defined in front matter, else the content's file name without extension, applicable to the `page` page kind.
+@y
+`:slugorfilename`
+: The slug as defined in front matter, else the content's file name without extension, applicable to the `page` page kind.
 @z
 
 @x
@@ -1077,16 +1077,16 @@ To override Hugo's embedded `alias` template, copy the [source code] to a file w
 
 @x
 Permalink
-: the link to the page being aliased
+: The link to the page being aliased.
 @y
 Permalink
-: the link to the page being aliased
+: The link to the page being aliased.
 @z
 
 @x
 Page
-: the Page data for the page being aliased
+: The Page data for the page being aliased.
 @y
 Page
-: the Page data for the page being aliased
+: The Page data for the page being aliased.
 @z

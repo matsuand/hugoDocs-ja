@@ -236,7 +236,8 @@ changes = $(bases:=.ch) # change files
 transes = $(bases)      # translated files
 EXTRA_DIST = $(changes)
 copyfiles = \
-	hia.jpg
+	build-websites-with-hugo.png \
+	hugo-in-action.png
 
 all: all-am
 

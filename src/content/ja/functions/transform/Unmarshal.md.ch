@@ -120,7 +120,7 @@ assets/
 {{ $data := dict }}
 {{ $path := "data/books.json" }}
 {{ with resources.Get $path }}
-  {{ with .Content | transform.Unmarshal }}
+  {{ with . | transform.Unmarshal }}
     {{ $data = . }}
   {{ end }}
 {{ else }}
@@ -131,7 +131,7 @@ assets/
 {{ $data := dict }}
 {{ $path := "data/books.json" }}
 {{ with resources.Get $path }}
-  {{ with .Content | transform.Unmarshal }}
+  {{ with . | transform.Unmarshal }}
     {{ $data = . }}
   {{ end }}
 {{ else }}
@@ -188,7 +188,7 @@ content/
 {{ $data := dict }}
 {{ $path := "books.json" }}
 {{ with .Resources.Get $path }}
-  {{ with .Content | transform.Unmarshal }}
+  {{ with . | transform.Unmarshal }}
     {{ $data = . }}
   {{ end }}
 {{ else }}
@@ -199,7 +199,7 @@ content/
 {{ $data := dict }}
 {{ $path := "books.json" }}
 {{ with .Resources.Get $path }}
-  {{ with .Content | transform.Unmarshal }}
+  {{ with . | transform.Unmarshal }}
     {{ $data = . }}
   {{ end }}
 {{ else }}
@@ -239,7 +239,7 @@ A remote resource is a file on a remote server, accessible via HTTP or HTTPS.
   {{ with .Err }}
     {{ errorf "%s" . }}
   {{ else }}
-    {{ $data = .Content | transform.Unmarshal }}
+    {{ $data = . | transform.Unmarshal }}
   {{ end }}
 {{ else }}
   {{ errorf "Unable to get remote resource %q" $url }}
@@ -252,7 +252,7 @@ A remote resource is a file on a remote server, accessible via HTTP or HTTPS.
   {{ with .Err }}
     {{ errorf "%s" . }}
   {{ else }}
-    {{ $data = .Content | transform.Unmarshal }}
+    {{ $data = . | transform.Unmarshal }}
   {{ end }}
 {{ else }}
   {{ errorf "Unable to get remote resource %q" $url }}
@@ -272,11 +272,31 @@ A remote resource is a file on a remote server, accessible via HTTP or HTTPS.
 @z
 
 @x
-[resource]: /getting-started/glossary/#resource
-[page bundle]: /content-management/page-bundles/
+{{% note %}}
+When retrieving remote data, a misconfigured server may send a response header with an incorrect [Content-Type]. For example, the server may set the Content-Type header to `application/octet-stream` instead of `application/json`.
 @y
-[resource]: /getting-started/glossary/#resource
-[page bundle]: /content-management/page-bundles/
+{{% note %}}
+When retrieving remote data, a misconfigured server may send a response header with an incorrect [Content-Type]. For example, the server may set the Content-Type header to `application/octet-stream` instead of `application/json`.
+@z
+
+@x
+In these cases, pass the resource `Content` through the `transform.Unmarshal` function instead of passing the resource itself. For example, in the above, do this instead:
+@y
+In these cases, pass the resource `Content` through the `transform.Unmarshal` function instead of passing the resource itself. For example, in the above, do this instead:
+@z
+
+@x
+`{{ $data = .Content | transform.Unmarshal }}`
+@y
+`{{ $data = .Content | transform.Unmarshal }}`
+@z
+
+@x
+[Content-Type]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type
+{{% /note %}}
+@y
+[Content-Type]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type
+{{% /note %}}
 @z
 
 @x
@@ -407,7 +427,7 @@ Get the remote data:
   {{ with .Err }}
     {{ errorf "%s" . }}
   {{ else }}
-    {{ $data = .Content | transform.Unmarshal }}
+    {{ $data = . | transform.Unmarshal }}
   {{ end }}
 {{ else }}
   {{ errorf "Unable to get remote resource %q" $url }}
@@ -421,7 +441,7 @@ Get the remote data:
   {{ with .Err }}
     {{ errorf "%s" . }}
   {{ else }}
-    {{ $data = .Content | transform.Unmarshal }}
+    {{ $data = . | transform.Unmarshal }}
   {{ end }}
 {{ else }}
   {{ errorf "Unable to get remote resource %q" $url }}
@@ -684,7 +704,11 @@ Hugo renders this to:
 @x
 [`index`]: /functions/collections/indexfunction/
 [identifiers]: https://go.dev/ref/spec#Identifiers
+[resource]: /getting-started/glossary/#resource
+[page bundle]: /content-management/page-bundles/
 @y
 [`index`]: /functions/collections/indexfunction/
 [identifiers]: https://go.dev/ref/spec#Identifiers
+[resource]: /getting-started/glossary/#resource
+[page bundle]: /content-management/page-bundles/
 @z
