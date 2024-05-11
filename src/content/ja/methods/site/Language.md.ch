@@ -2,15 +2,31 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
+---
 title: Language
 description: Returns the language object for the given site. 
 categories: []
 keywords: []
+action:
+  related:
+    - methods/page/language
+  returnType: langs.Language
+  signatures: [SITE.Language]
+toc: true
+---
 @y
+---
 title: Language
 description: Returns the language object for the given site. 
 categories: []
 keywords: []
+action:
+  related:
+    - methods/page/language
+  returnType: langs.Language
+  signatures: [SITE.Language]
+toc: true
+---
 @z
 
 @x
@@ -28,7 +44,7 @@ You can also use the `Language` method on a `Page` object. See&nbsp;[details].
 @x
 ## Methods
 @y
-## メソッド {#methods}
+## Methods
 @z
 
 @x
@@ -37,7 +53,23 @@ The examples below assume the following in your site configuration:
 The examples below assume the following in your site configuration:
 @z
 
-% snip code...
+@x
+{{< code-toggle file=hugo >}}
+[languages.de]
+languageCode = 'de-DE'
+languageDirection = 'ltr'
+languageName = 'Deutsch'
+weight = 1
+{{< /code-toggle >}}
+@y
+{{< code-toggle file=hugo >}}
+[languages.de]
+languageCode = 'de-DE'
+languageDirection = 'ltr'
+languageName = 'Deutsch'
+weight = 1
+{{< /code-toggle >}}
+@z
 
 @x
 Lang
@@ -47,7 +79,15 @@ Lang
 : (`string`) The language tag as defined by [RFC 5646].
 @z
 
-% snip code...
+@x
+```go-html-template
+{{ .Site.Language.Lang }} → de
+```
+@y
+```go-html-template
+{{ .Site.Language.Lang }} → de
+```
+@z
 
 @x
 LanguageCode
@@ -57,7 +97,15 @@ LanguageCode
 : (`string`) The language code from the site configuration.
 @z
 
-% snip code...
+@x
+```go-html-template
+{{ .Site.Language.LanguageCode }} → de-DE
+```
+@y
+```go-html-template
+{{ .Site.Language.LanguageCode }} → de-DE
+```
+@z
 
 @x
 LanguageDirection
@@ -67,7 +115,15 @@ LanguageDirection
 : (`string`) The language direction from the site configuration, either `ltr` or `rtl`.
 @z
 
-% snip code...
+@x
+```go-html-template
+{{ .Site.Language.LanguageDirection }} → ltr
+```
+@y
+```go-html-template
+{{ .Site.Language.LanguageDirection }} → ltr
+```
+@z
 
 @x
 LanguageName
@@ -77,7 +133,15 @@ LanguageName
 : (`string`) The language name from the site configuration.
 @z
 
-% snip code...
+@x
+```go-html-template
+{{ .Site.Language.LanguageName }} → Deutsch
+```
+@y
+```go-html-template
+{{ .Site.Language.LanguageName }} → Deutsch
+```
+@z
 
 @x
 Weight
@@ -87,12 +151,20 @@ Weight
 : (`int`) The language weight from the site configuration which determines its order in the slice of languages returned by the `Languages` method on a `Site` object.
 @z
 
-% snip code...
+@x
+```go-html-template
+{{ .Site.Language.Weight }} → 1
+```
+@y
+```go-html-template
+{{ .Site.Language.Weight }} → 1
+```
+@z
 
 @x
 ## Example
 @y
-## 例 {#example}
+## Example
 @z
 
 @x
@@ -104,39 +176,23 @@ Some of the methods above are commonly used in a base template as attributes for
 @x
 ```go-html-template
 <html
-  lang="{{ or site.Language.LanguageCode site.Language.Lang }}" 
-  dir="{{ or site.Language.LanguageDirection `ltr` }}
+  lang="{{ .Site.Language.LanguageCode }}" 
+  dir="{{ or .Site.Language.LanguageDirection `ltr` }}
 >
 ```
 @y
 ```go-html-template
 <html
-  lang="{{ or site.Language.LanguageCode site.Language.Lang }}" 
-  dir="{{ or site.Language.LanguageDirection `ltr` }}
+  lang="{{ .Site.Language.LanguageCode }}" 
+  dir="{{ or .Site.Language.LanguageDirection `ltr` }}
 >
 ```
 @z
 
 @x
-The example above uses the global [`site`] function instead of accessing the `Site` object via the `.Site` notation.
-@y
-The example above uses the global [`site`] function instead of accessing the `Site` object via the `.Site` notation.
-@z
-
-@x
-Also note that each attribute has a fallback value assigned via the [`or`] operator.
-@y
-Also note that each attribute has a fallback value assigned via the [`or`] operator.
-@z
-
-@x
 [details]: /methods/page/language/
 [RFC 5646]: https://datatracker.ietf.org/doc/html/rfc5646
-[`or`]: /functions/go-template/or/
-[`site`]: /functions/global/site/
 @y
 [details]: /methods/page/language/
 [RFC 5646]: https://datatracker.ietf.org/doc/html/rfc5646
-[`or`]: /functions/go-template/or/
-[`site`]: /functions/global/site/
 @z

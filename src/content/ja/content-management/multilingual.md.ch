@@ -186,10 +186,10 @@ languageName
 
 @x
 title
-: (`string`) The language title. When set, this overrides the site title for this language.
+: (`string`) The site title for this langauge (optional).
 @y
 title
-: (`string`) The language title. When set, this overrides the site title for this language.
+: (`string`) The site title for this langauge (optional).
 @z
 
 @x

@@ -57,11 +57,11 @@ Use `hugo mod init` to initialize a new Hugo Module. If it fails to guess the mo
 
 @x
 ```sh
-hugo mod init github.com/gohugoio/myShortcodes
+hugo mod init github.com/<your_user>/<your_project>
 ```
 @y
 ```sh
-hugo mod init github.com/gohugoio/myShortcodes
+hugo mod init github.com/<your_user>/<your_project>
 ```
 @z
 

@@ -426,9 +426,9 @@ To remain consistent and prevent unexpected behavior, do not mix these strategie
 @z
 
 @x
-(`bool`) Enable to turn relative URLs into absolute.  Default is `false`. See&nbsp;[details](/content-management/urls/#canonical-urls).
+(`bool`) See [details](/content-management/urls/#canonical-urls) before enabling this feature. Default is `false`.
 @y
-(`bool`) Enable to turn relative URLs into absolute.  Default is `false`. See&nbsp;[details](/content-management/urls/#canonical-urls).
+(`bool`) See [details](/content-management/urls/#canonical-urls) before enabling this feature. Default is `false`.
 @z
 
 @x
@@ -866,30 +866,6 @@ See [Content Management](/content-management/urls/#permalinks).
 @z
 
 @x
-###### related
-@y
-###### related
-@z
-
-@x
-See [Related Content](/content-management/related/#configure-related-content).
-@y
-See [Related Content](/content-management/related/#configure-related-content).
-@z
-
-@x
-###### relativeURLs
-@y
-###### relativeURLs
-@z
-
-@x
-(`bool`) Enable this to make all relative URLs relative to content root. Note that this does not affect absolute URLs.  Default is `false`. See&nbsp;[details](/content-management/urls/#relative-urls).
-@y
-(`bool`) Enable this to make all relative URLs relative to content root. Note that this does not affect absolute URLs.  Default is `false`. See&nbsp;[details](/content-management/urls/#relative-urls).
-@z
-
-@x
 ###### refLinksErrorLevel
 @y
 ###### refLinksErrorLevel
@@ -911,6 +887,30 @@ See [Related Content](/content-management/related/#configure-related-content).
 (`string`) URL to be used as a placeholder when a page reference cannot be found in `ref` or `relref`. Is used as-is.
 @y
 (`string`) URL to be used as a placeholder when a page reference cannot be found in `ref` or `relref`. Is used as-is.
+@z
+
+@x
+###### related
+@y
+###### related
+@z
+
+@x
+See [Related Content](/content-management/related/#configure-related-content).
+@y
+See [Related Content](/content-management/related/#configure-related-content).
+@z
+
+@x
+###### relativeURLs
+@y
+###### relativeURLs
+@z
+
+@x
+(`bool`) See [details](/content-management/urls/#relative-urls) before enabling this feature. Default is `false`.
+@y
+(`bool`) See [details](/content-management/urls/#relative-urls) before enabling this feature. Default is `false`.
 @z
 
 @x
