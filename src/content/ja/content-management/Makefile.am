@@ -9,6 +9,7 @@ bases = \
 	archetypes.md          \
 	build-options.md       \
 	comments.md            \
+	content-adapters.md    \
 	cross-references.md    \
 	diagrams.md            \
 	formats.md             \

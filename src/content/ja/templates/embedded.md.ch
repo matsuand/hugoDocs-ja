@@ -288,13 +288,11 @@ Provide your tracking ID in your configuration file:
 @z
 
 @x
-**Google Analytics 4 (gtag.js)**
 {{< code-toggle file=hugo >}}
 [services.googleAnalytics]
 ID = "G-MEASUREMENT_ID"
 {{</ code-toggle >}}
 @y
-**Google Analytics 4 (gtag.js)**
 {{< code-toggle file=hugo >}}
 [services.googleAnalytics]
 ID = "G-MEASUREMENT_ID"

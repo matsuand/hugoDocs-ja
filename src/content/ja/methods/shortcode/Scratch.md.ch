@@ -4,7 +4,7 @@
 @x
 ---
 title: Scratch
-description: Creates a "scratch pad" scoped to the shortcode to store and manipulate data. 
+description: Returns a "scratch pad" scoped to the shortcode to store and manipulate data. 
 categories: []
 keywords: []
 action:
@@ -16,7 +16,7 @@ action:
 @y
 ---
 title: Scratch
-description: Creates a "scratch pad" scoped to the shortcode to store and manipulate data. 
+description: Returns a "scratch pad" scoped to the shortcode to store and manipulate data. 
 categories: []
 keywords: []
 action:

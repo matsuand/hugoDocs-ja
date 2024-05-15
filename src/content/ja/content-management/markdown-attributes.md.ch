@@ -1,32 +1,18 @@
 %This is the change file for the original Hugo Documentation file.
 %This is part of Japanese translation version for Hugo Documantation.
 
+% snip 対応
+
 @x
----
 title: Markdown attributes
 description: Use Markdown attributes to add HTML attributes when rendering Markdown to HTML.
 categories: [content management]
 keywords: [goldmark,markdown]
-menu:
-  docs:
-    parent: content-management
-    weight: 240
-weight: 240
-toc: true
----
 @y
----
 title: Markdown attributes
 description: Use Markdown attributes to add HTML attributes when rendering Markdown to HTML.
 categories: [content management]
 keywords: [goldmark,markdown]
-menu:
-  docs:
-    parent: content-management
-    weight: 240
-weight: 240
-toc: true
----
 @z
 
 @x
@@ -47,17 +33,7 @@ For example:
 For example:
 @z
 
-@x
-```text
-This is a paragraph.
-{class="foo bar" id="baz"}
-```
-@y
-```text
-This is a paragraph.
-{class="foo bar" id="baz"}
-```
-@z
+% snip text...
 
 @x
 With `class` and `id` you can use shorthand notation:
@@ -182,9 +158,9 @@ You may add [global HTML attributes], or HTML attributes specific to the current
 @z
 
 @x
-The attribute list consists of one or more key/value pairs, separated by spaces or commas, wrapped by braces. You must quote string values that contain spaces. Unlike HTML, boolean attributes must have both key and value.
+The attribute list consists of one or more key-value pairs, separated by spaces or commas, wrapped by braces. You must quote string values that contain spaces. Unlike HTML, boolean attributes must have both key and value.
 @y
-The attribute list consists of one or more key/value pairs, separated by spaces or commas, wrapped by braces. You must quote string values that contain spaces. Unlike HTML, boolean attributes must have both key and value.
+The attribute list consists of one or more key-value pairs, separated by spaces or commas, wrapped by braces. You must quote string values that contain spaces. Unlike HTML, boolean attributes must have both key and value.
 @z
 
 @x

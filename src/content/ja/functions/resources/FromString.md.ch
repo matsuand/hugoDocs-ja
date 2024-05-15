@@ -61,7 +61,7 @@ Let's say you need to publish a file named "site.json" in the root of your publi
 ```json
 {
   "build_date": "2024-02-19T12:27:05-08:00",
-  "hugo_version": "0.125.4",
+  "hugo_version": "0.126.0",
   "last_modified": "2024-02-19T12:01:42-08:00"
 }
 ```
@@ -69,7 +69,7 @@ Let's say you need to publish a file named "site.json" in the root of your publi
 ```json
 {
   "build_date": "2024-02-19T12:27:05-08:00",
-  "hugo_version": "0.125.4",
+  "hugo_version": "0.126.0",
   "last_modified": "2024-02-19T12:01:42-08:00"
 }
 ```
@@ -118,12 +118,12 @@ The example above:
 @z
 
 @x
-1. Creates a map with the relevant key/value pairs using the [`dict`] function
+1. Creates a map with the relevant key-value pairs using the [`dict`] function
 2. Encodes the map as a JSON string using the [`jsonify`] function
 3. Creates a resource from the JSON string using the `resources.FromString` function
 4. Publishes the file to the root of the public directory using the resource's `.Publish` method
 @y
-1. Creates a map with the relevant key/value pairs using the [`dict`] function
+1. Creates a map with the relevant key-value pairs using the [`dict`] function
 2. Encodes the map as a JSON string using the [`jsonify`] function
 3. Creates a resource from the JSON string using the `resources.FromString` function
 4. Publishes the file to the root of the public directory using the resource's `.Publish` method

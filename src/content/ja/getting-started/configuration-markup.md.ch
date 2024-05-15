@@ -1,14 +1,16 @@
 %This is the change file for the original Hugo Documentation file.
 %This is part of Japanese translation version for Hugo Documantation.
 
+% snip 対応
+
 @x
 title: Configure markup
 description: Configure rendering of markup to HTML.
 categories: [getting started,fundamentals]
 keywords: [markup,markdown,goldmark,asciidoc,asciidoctor,highlighting]
 @y
-title: マークアップの設定
-description: HTML にレンダリングするマークアップの設定
+title: Configure markup
+description: Configure rendering of markup to HTML.
 categories: [getting started,fundamentals]
 keywords: [markup,markdown,goldmark,asciidoc,asciidoctor,highlighting]
 @z
@@ -74,15 +76,41 @@ To use AsciiDoc, Pandoc, or reStructuredText you must install the relevant rende
 AsciiDoc, Pandoc, reStructuredText を利用する場合は、対応するレンダラーをインストールした上で、[セキュリティポリシー][security policy] を更新する必要があります。
 @z
 
-@x note
+@x
+{{% note %}}
 Unless you need a unique capability provided by one of the alternate Markdown handlers, we strongly recommend that you use the default setting. Goldmark is fast, well maintained, conforms to the [CommonMark] specification, and is compatible with [GitHub Flavored Markdown] (GFM).
 @y
+{{% note %}}
 Unless you need a unique capability provided by one of the alternate Markdown handlers, we strongly recommend that you use the default setting. Goldmark is fast, well maintained, conforms to the [CommonMark] specification, and is compatible with [GitHub Flavored Markdown] (GFM).
 @z
 
-% snip links...
+@x
+[commonmark]: https://spec.commonmark.org/0.30/
+[github flavored markdown]: https://github.github.com/gfm/
+{{% /note %}}
+@y
+[commonmark]: https://spec.commonmark.org/0.30/
+[github flavored markdown]: https://github.github.com/gfm/
+{{% /note %}}
+@z
 
-% snip links...
+@x
+[asciidoc]: https://asciidoc.org/
+[content format]: /content-management/formats/#formats
+[emacs org mode]: https://orgmode.org/
+[goldmark]: https://github.com/yuin/goldmark/
+[pandoc]: https://pandoc.org/
+[restructuredtext]: https://docutils.sourceforge.io/rst.html
+[security policy]: /about/security/#security-policy
+@y
+[asciidoc]: https://asciidoc.org/
+[content format]: /content-management/formats/#formats
+[emacs org mode]: https://orgmode.org/
+[goldmark]: https://github.com/yuin/goldmark/
+[pandoc]: https://pandoc.org/
+[restructuredtext]: https://docutils.sourceforge.io/rst.html
+[security policy]: /about/security/#security-policy
+@z
 
 @x
 ## Goldmark
@@ -109,47 +137,37 @@ This is the default configuration for the Goldmark Markdown renderer:
 @z
 
 @x
-The extensions below, excluding passthrough, are enabled by default.
+The extensions below, excluding Extras and Passthrough, are enabled by default.
 @y
-The extensions below, excluding passthrough, are enabled by default.
+The extensions below, excluding Extras and Passthrough, are enabled by default.
 @z
 
 @x
-Enable the passthrough extension if you include mathematical equations and expressions in your Markdown using LaTeX or TeX typesetting syntax. See [mathematics in Markdown] for details.
+Extension|Documentation|Enabled
+:--|:--|:-:
+cjk|[Goldmark Extensions: CJK]|:heavy_check_mark:
+definitionList|[PHP Markdown Extra: Definition lists]|:heavy_check_mark:
+extras|[Hugo Goldmark Extensions: Extras]|
+footnote|[PHP Markdown Extra: Footnotes]|:heavy_check_mark:
+linkify|[GitHub Flavored Markdown: Autolinks]|:heavy_check_mark:
+passthrough|[Hugo Goldmark Extensions: Passthrough]|
+strikethrough|[GitHub Flavored Markdown: Strikethrough]|:heavy_check_mark:
+table|[GitHub Flavored Markdown: Tables]|:heavy_check_mark:
+taskList|[GitHub Flavored Markdown: Task list items]|:heavy_check_mark:
+typographer|[Goldmark Extensions: Typographer]|:heavy_check_mark:
 @y
-Enable the passthrough extension if you include mathematical equations and expressions in your Markdown using LaTeX or TeX typesetting syntax. See [mathematics in Markdown] for details.
-@z
-
-@x
-[mathematics in Markdown]: content-management/mathematics/
-@y
-[mathematics in Markdown]: content-management/mathematics/
-@z
-
-@x
-Extension|Documentation
-:--|:--
-cjk|[Goldmark Extensions: CJK]
-definitionList|[PHP Markdown Extra: Definition lists]
-footnote|[PHP Markdown Extra: Footnotes]
-linkify|[GitHub Flavored Markdown: Autolinks]
-passthrough|[Hugo Goldmark Extensions: Passthrough]
-strikethrough|[GitHub Flavored Markdown: Strikethrough]
-table|[GitHub Flavored Markdown: Tables]
-taskList|[GitHub Flavored Markdown: Task list items]
-typographer|[Goldmark Extensions: Typographer]
-@y
-Extension|Documentation
-:--|:--
-cjk|[Goldmark Extensions: CJK]
-definitionList|[PHP Markdown Extra: Definition lists]
-footnote|[PHP Markdown Extra: Footnotes]
-linkify|[GitHub Flavored Markdown: Autolinks]
-passthrough|[Hugo Goldmark Extensions: Passthrough]
-strikethrough|[GitHub Flavored Markdown: Strikethrough]
-table|[GitHub Flavored Markdown: Tables]
-taskList|[GitHub Flavored Markdown: Task list items]
-typographer|[Goldmark Extensions: Typographer]
+Extension|Documentation|Enabled
+:--|:--|:-:
+cjk|[Goldmark Extensions: CJK]|:heavy_check_mark:
+definitionList|[PHP Markdown Extra: Definition lists]|:heavy_check_mark:
+extras|[Hugo Goldmark Extensions: Extras]|
+footnote|[PHP Markdown Extra: Footnotes]|:heavy_check_mark:
+linkify|[GitHub Flavored Markdown: Autolinks]|:heavy_check_mark:
+passthrough|[Hugo Goldmark Extensions: Passthrough]|
+strikethrough|[GitHub Flavored Markdown: Strikethrough]|:heavy_check_mark:
+table|[GitHub Flavored Markdown: Tables]|:heavy_check_mark:
+taskList|[GitHub Flavored Markdown: Task list items]|:heavy_check_mark:
+typographer|[Goldmark Extensions: Typographer]|:heavy_check_mark:
 @z
 
 @x
@@ -159,6 +177,7 @@ typographer|[Goldmark Extensions: Typographer]
 [GitHub Flavored Markdown: Task list items]: https://github.github.com/gfm/#task-list-items-extension-
 [Goldmark Extensions: CJK]: https://github.com/yuin/goldmark?tab=readme-ov-file#cjk-extension
 [Goldmark Extensions: Typographer]: https://github.com/yuin/goldmark?tab=readme-ov-file#typographer-extension
+[Hugo Goldmark Extensions: Extras]: https://github.com/gohugoio/hugo-goldmark-extensions?tab=readme-ov-file#extras-extension
 [Hugo Goldmark Extensions: Passthrough]: https://github.com/gohugoio/hugo-goldmark-extensions?tab=readme-ov-file#passthrough-extension
 [PHP Markdown Extra: Definition lists]: https://michelf.ca/projects/php-markdown/extra/#def-list
 [PHP Markdown Extra: Footnotes]: https://michelf.ca/projects/php-markdown/extra/#footnotes
@@ -169,15 +188,92 @@ typographer|[Goldmark Extensions: Typographer]
 [GitHub Flavored Markdown: Task list items]: https://github.github.com/gfm/#task-list-items-extension-
 [Goldmark Extensions: CJK]: https://github.com/yuin/goldmark?tab=readme-ov-file#cjk-extension
 [Goldmark Extensions: Typographer]: https://github.com/yuin/goldmark?tab=readme-ov-file#typographer-extension
+[Hugo Goldmark Extensions: Extras]: https://github.com/gohugoio/hugo-goldmark-extensions?tab=readme-ov-file#extras-extension
 [Hugo Goldmark Extensions: Passthrough]: https://github.com/gohugoio/hugo-goldmark-extensions?tab=readme-ov-file#passthrough-extension
 [PHP Markdown Extra: Definition lists]: https://michelf.ca/projects/php-markdown/extra/#def-list
 [PHP Markdown Extra: Footnotes]: https://michelf.ca/projects/php-markdown/extra/#footnotes
 @z
 
 @x
-The typographer extension replaces certain character combinations with HTML entities as specified below:
+#### Extras extension
 @y
-The typographer extension replaces certain character combinations with HTML entities as specified below:
+#### Extras extension
+@z
+
+@x
+{{< new-in 0.126.0 >}}
+@y
+{{< new-in 0.126.0 >}}
+@z
+
+@x
+Configure the extras extension to enable [inserted text], [mark text], [subscript], and [superscript] elements in Markdown.
+@y
+Configure the extras extension to enable [inserted text], [mark text], [subscript], and [superscript] elements in Markdown.
+@z
+
+@x
+Element|Markdown|Rendered
+:--|:--|:--
+Inserted text|`++foo++`|`<ins>foo</ins>`
+Mark text|`==bar==`|`<mark>bar</mark>`
+Subscript|`H~2~O`|`H<sub>2</sub>O`
+Superscript|`1^st^`|`1<sup>st</sup>`
+@y
+Element|Markdown|Rendered
+:--|:--|:--
+Inserted text|`++foo++`|`<ins>foo</ins>`
+Mark text|`==bar==`|`<mark>bar</mark>`
+Subscript|`H~2~O`|`H<sub>2</sub>O`
+Superscript|`1^st^`|`1<sup>st</sup>`
+@z
+
+@x
+[inserted text]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ins
+[mark text]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/mark
+[subscript]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sub
+[superscript]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sup
+@y
+[inserted text]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ins
+[mark text]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/mark
+[subscript]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sub
+[superscript]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sup
+@z
+
+@x
+#### Passthrough extension
+@y
+#### Passthrough extension
+@z
+
+@x
+{{< new-in 0.122.0 >}}
+@y
+{{< new-in 0.122.0 >}}
+@z
+
+@x
+Enable the passthrough extension to include mathematical equations and expressions in Markdown using LaTeX or TeX typesetting syntax. See [mathematics in Markdown] for details.
+@y
+Enable the passthrough extension to include mathematical equations and expressions in Markdown using LaTeX or TeX typesetting syntax. See [mathematics in Markdown] for details.
+@z
+
+@x
+[mathematics in Markdown]: content-management/mathematics/
+@y
+[mathematics in Markdown]: content-management/mathematics/
+@z
+
+@x
+#### Typographer extension
+@y
+#### Typographer extension
+@z
+
+@x
+The Typographer extension replaces certain character combinations with HTML entities as specified below:
+@y
+The Typographer extension replaces certain character combinations with HTML entities as specified below:
 @z
 
 @x
@@ -473,9 +569,9 @@ This is the default configuration for the AsciiDoc renderer:
 @z
 
 @x
-(`map`) A map of key/value pairs, each a document attributes,See Asciidoctor’s [attributes].
+(`map`) A map of key-value pairs, each a document attributes,See Asciidoctor’s [attributes].
 @y
-(`map`) A map of key/value pairs, each a document attributes,See Asciidoctor’s [attributes].
+(`map`) A map of key-value pairs, each a document attributes,See Asciidoctor’s [attributes].
 @z
 
 @x

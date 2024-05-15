@@ -380,3 +380,79 @@ Step 10
 Step 10
 : A project maintainer will review your PR and may request changes. You may delete your branch after the maintainer merges your PR.
 @z
+
+@x
+## Building from source
+@y
+## Building from source
+@z
+
+@x
+You can build, install, and test Hugo at any point in its development history. The examples below build and install the extended version of Hugo.
+@y
+You can build, install, and test Hugo at any point in its development history. The examples below build and install the extended version of Hugo.
+@z
+
+@x
+To build and install the latest release:
+@y
+To build and install the latest release:
+@z
+
+@x
+```sh
+CGO_ENABLED=1 go install -tags extended github.com/gohugoio/hugo@latest
+```
+@y
+```sh
+CGO_ENABLED=1 go install -tags extended github.com/gohugoio/hugo@latest
+```
+@z
+
+@x
+To build and install a specific release:
+@y
+To build and install a specific release:
+@z
+
+@x
+```sh
+CGO_ENABLED=1 go install -tags extended github.com/gohugoio/hugo@v0.126.0
+```
+@y
+```sh
+CGO_ENABLED=1 go install -tags extended github.com/gohugoio/hugo@v0.126.0
+```
+@z
+
+@x
+To build and install at the latest commit on the master branch:
+@y
+To build and install at the latest commit on the master branch:
+@z
+
+@x
+```sh
+CGO_ENABLED=1 go install -tags extended github.com/gohugoio/hugo@master
+```
+@y
+```sh
+CGO_ENABLED=1 go install -tags extended github.com/gohugoio/hugo@master
+```
+@z
+
+@x
+To build and install at a specific commit:
+@y
+To build and install at a specific commit:
+@z
+
+@x
+```sh
+CGO_ENABLED=1 go install -tags extended github.com/gohugoio/hugo@0851c17
+```
+@y
+```sh
+CGO_ENABLED=1 go install -tags extended github.com/gohugoio/hugo@0851c17
+```
+@z

@@ -4,7 +4,7 @@
 @x
 ---
 title: collections.Querify
-description: Takes a set or slice of key-value pairs and returns a query string to be appended to URLs.
+description: Returns a URL query string composed of the given key-value pairs.
 categories: []
 keywords: []
 action:
@@ -13,14 +13,13 @@ action:
     - functions/go-template/urlquery.md
   returnType: string
   signatures:
-    - collections.Querify VALUE [VALUE...]
-    - collections.Querify COLLECTION
+    - collections.Querify [VALUE...]
 aliases: [/functions/querify]
 ---
 @y
 ---
 title: collections.Querify
-description: Takes a set or slice of key-value pairs and returns a query string to be appended to URLs.
+description: Returns a URL query string composed of the given key-value pairs.
 categories: []
 keywords: []
 action:
@@ -29,54 +28,65 @@ action:
     - functions/go-template/urlquery.md
   returnType: string
   signatures:
-    - collections.Querify VALUE [VALUE...]
-    - collections.Querify COLLECTION
+    - collections.Querify [VALUE...]
 aliases: [/functions/querify]
 ---
 @z
 
 @x
-`querify` takes a set or slice of key-value pairs and returns a [query string](https://en.wikipedia.org/wiki/Query_string) that can be appended to a URL.
+Specify the key-value pairs as individual arguments, or as a slice. The following are equivalent:
 @y
-`querify` takes a set or slice of key-value pairs and returns a [query string](https://en.wikipedia.org/wiki/Query_string) that can be appended to a URL.
-@z
-
-@x
-The following examples create a link to a search results page on Google.
-@y
-The following examples create a link to a search results page on Google.
+Specify the key-value pairs as individual arguments, or as a slice. The following are equivalent:
 @z
 
 @x
 ```go-html-template
-<a href="https://www.google.com?{{ (querify "q" "test" "page" 3) | safeURL }}">Search</a>
+{{ collections.Querify "a" 1 "b" 2 }}
+{{ collections.Querify (slice "a" 1 "b" 2) }}
+```
 @y
 ```go-html-template
-<a href="https://www.google.com?{{ (querify "q" "test" "page" 3) | safeURL }}">Search</a>
-@z
-
-@x
-{{ $qs := slice "q" "test" "page" 3 }}
-<a href="https://www.google.com?{{ (querify $qs) | safeURL }}">Search</a>
-```
-@y
-{{ $qs := slice "q" "test" "page" 3 }}
-<a href="https://www.google.com?{{ (querify $qs) | safeURL }}">Search</a>
+{{ collections.Querify "a" 1 "b" 2 }}
+{{ collections.Querify (slice "a" 1 "b" 2) }}
 ```
 @z
 
 @x
-Both of these examples render the following HTML:
+To append a query string to a URL:
 @y
-Both of these examples render the following HTML:
+To append a query string to a URL:
+@z
+
+@x
+```go-html-template
+{{ $qs := collections.Querify "a" 1 "b" 2 }}
+{{ $href := printf "https://example.org?%s" $qs }}
+@y
+```go-html-template
+{{ $qs := collections.Querify "a" 1 "b" 2 }}
+{{ $href := printf "https://example.org?%s" $qs }}
+@z
+
+@x
+<a href="{{ $href }}">Link</a>
+```
+@y
+<a href="{{ $href }}">Link</a>
+```
+@z
+
+@x
+Hugo renders this to:
+@y
+Hugo renders this to:
 @z
 
 @x
 ```html
-<a href="https://www.google.com?page=3&q=test">Search</a>
+<a href="https://example.org?a=1&amp;b=2">Link</a>
 ```
 @y
 ```html
-<a href="https://www.google.com?page=3&q=test">Search</a>
+<a href="https://example.org?a=1&amp;b=2">Link</a>
 ```
 @z

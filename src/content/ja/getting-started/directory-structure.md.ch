@@ -203,10 +203,10 @@ When you overlay one directory on top of another, you must mount both directorie
 @z
 
 @x
-If you think you need a symbolic link in your project directory, use Hugo's union file system instead.
+Hugo does not follow symbolic links. If you need the functionality provided by symbolic links, use Hugo's union file system instead.
 {{% /note %}}
 @y
-If you think you need a symbolic link in your project directory, use Hugo's union file system instead.
+Hugo does not follow symbolic links. If you need the functionality provided by symbolic links, use Hugo's union file system instead.
 {{% /note %}}
 @z
 

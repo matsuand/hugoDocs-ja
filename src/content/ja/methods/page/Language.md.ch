@@ -89,10 +89,10 @@ Lang
 
 @x
 LanguageCode
-: (`string`) The language code from the site configuration.
+: (`string`) The language code from the site configuration. Falls back to `Lang` if not defined.
 @y
 LanguageCode
-: (`string`) The language code from the site configuration.
+: (`string`) The language code from the site configuration. Falls back to `Lang` if not defined.
 @z
 
 @x

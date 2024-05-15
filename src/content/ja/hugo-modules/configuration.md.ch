@@ -367,10 +367,10 @@ When you add a mount, the default mount for the concerned target root is ignored
 
 @x
 source
-: The source directory of the mount. For the main project, this can be either project-relative or absolute and even a symbolic link. For other modules it must be project-relative.
+: The source directory of the mount. For the main project, this can be either project-relative or absolute. For other modules it must be project-relative.
 @y
 source
-: The source directory of the mount. For the main project, this can be either project-relative or absolute and even a symbolic link. For other modules it must be project-relative.
+: The source directory of the mount. For the main project, this can be either project-relative or absolute. For other modules it must be project-relative.
 @z
 
 @x

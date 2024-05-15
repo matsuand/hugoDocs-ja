@@ -4,7 +4,7 @@
 @x
 ---
 title: safe.HTMLAttr
-description: Declares the given key/value pair as a safe HTML attribute.
+description: Declares the given key-value pair as a safe HTML attribute.
 categories: []
 keywords: []
 action:
@@ -22,7 +22,7 @@ aliases: [/functions/safehtmlattr]
 @y
 ---
 title: safe.HTMLAttr
-description: Declares the given key/value pair as a safe HTML attribute.
+description: Declares the given key-value pair as a safe HTML attribute.
 categories: []
 keywords: []
 action:

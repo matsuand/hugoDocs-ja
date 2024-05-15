@@ -124,9 +124,9 @@ Render with [Pandoc]:
 @z
 
 @x
-[markup identifier]: /content-management/formats/#formats
+[markup identifier]: /content-management/formats/#classification
 [pandoc]: https://www.pandoc.org/
 @y
-[markup identifier]: /content-management/formats/#formats
+[markup identifier]: /content-management/formats/#classification
 [pandoc]: https://www.pandoc.org/
 @z

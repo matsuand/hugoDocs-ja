@@ -376,9 +376,9 @@ $$contrast\ ratio = { L_1 + 0.05 \over L_2 + 0.05 }$$
 @z
 
 @x
-where $L_1$ is the relative luminance of the lighest color and $L_2$ is the relative luminance of the darkest color.
+where $L_1$ is the relative luminance of the lightest color and $L_2$ is the relative luminance of the darkest color.
 @y
-where $L_1$ is the relative luminance of the lighest color and $L_2$ is the relative luminance of the darkest color.
+where $L_1$ is the relative luminance of the lightest color and $L_2$ is the relative luminance of the darkest color.
 @z
 
 @x

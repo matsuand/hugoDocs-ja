@@ -32,46 +32,15 @@ In this example, `first-post` is a page bundle with access to 10 page resources 
 このバンドルから `first-post` に関連づけられたページリソースに直接アクセスすることはできません。
 @z
 
-@x
-```text
-content
-└── post
-    ├── first-post
-    │   ├── images
-    │   │   ├── a.jpg
-    │   │   ├── b.jpg
-    │   │   └── c.jpg
+@x within text
     │   ├── index.md (root of page bundle)
-    │   ├── latest.html
-    │   ├── manual.json
-    │   ├── notice.md
-    │   ├── office.mp3
-    │   ├── pocket.mp4
-    │   ├── rating.pdf
-    │   └── safety.txt
-    └── second-post
-        └── index.md (root of page bundle)
-```
 @y
-```text
-content
-└── post
-    ├── first-post
-    │   ├── images
-    │   │   ├── a.jpg
-    │   │   ├── b.jpg
-    │   │   └── c.jpg
     │   ├── index.md (ページバンドルのルート)
-    │   ├── latest.html
-    │   ├── manual.json
-    │   ├── notice.md
-    │   ├── office.mp3
-    │   ├── pocket.mp4
-    │   ├── rating.pdf
-    │   └── safety.txt
-    └── second-post
+@z
+@x
+        └── index.md (root of page bundle)
+@y
         └── index.md (ページバンドルのルート)
-```
 @z
 
 @x
@@ -210,15 +179,7 @@ ByType
 : 指定されたタイプのページリソースを返します。
 @z
 
-@x
-```go-html-template
-{{ .Resources.ByType "image" }}
-```
-@y
-```go-html-template
-{{ .Resources.ByType "image" }}
-```
-@z
+% snip code...
 
 @x
 Match
@@ -228,15 +189,7 @@ Match
 : Returns all the page resources (as a slice) whose `Name` matches the given Glob pattern ([examples](https://github.com/gobwas/glob/blob/master/readme.md)). The matching is case-insensitive.
 @z
 
-@x
-```go-html-template
-{{ .Resources.Match "images/*" }}
-```
-@y
-```go-html-template
-{{ .Resources.Match "images/*" }}
-```
-@z
+% snip code...
 
 @x
 GetMatch
@@ -326,10 +279,10 @@ title
 
 @x
 params
-: A map of custom key/values.
+: A map of custom key-value pairs.
 @y
 params
-: A map of custom key/values.
+: A map of custom key-value pairs.
 @z
 
 @x

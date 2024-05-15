@@ -1,6 +1,8 @@
 %This is the change file for the original Hugo Documentation file.
 %This is part of Japanese translation version for Hugo Documantation.
 
+% snip 対応
+
 @x
 title: File
 description: For pages backed by a file, returns file information for the given page.
@@ -249,6 +251,7 @@ ContentBaseName|a|b|news
 Dir|news/|news/b/|news/
 Ext|md|md|md
 Filename|/home/user/...|/home/user/...|/home/user/...
+IsContentAdapter|false|false|false
 LogicalName|a.en.md|index.en.md|_index.en.md
 Path|news/a.en.md|news/b/index.en.md|news/_index.en.md
 Section|news|news|news
@@ -262,6 +265,7 @@ ContentBaseName|a|b|news
 Dir|news/|news/b/|news/
 Ext|md|md|md
 Filename|/home/user/...|/home/user/...|/home/user/...
+IsContentAdapter|false|false|false
 LogicalName|a.en.md|index.en.md|_index.en.md
 Path|news/a.en.md|news/b/index.en.md|news/_index.en.md
 Section|news|news|news
