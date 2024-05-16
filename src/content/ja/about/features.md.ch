@@ -107,10 +107,10 @@ keywords: []
 
 @x
 [Markdown extensions]
-: Leverage the embedded Markdown extensions to create tables, definition lists, footnotes, task lists, inserted text, mark test, subscripts, superscripts, and more.
+: Leverage the embedded Markdown extensions to create tables, definition lists, footnotes, task lists, inserted text, mark text, subscripts, superscripts, and more.
 @y
 [Markdown extensions]
-: Leverage the embedded Markdown extensions to create tables, definition lists, footnotes, task lists, inserted text, mark test, subscripts, superscripts, and more.
+: Leverage the embedded Markdown extensions to create tables, definition lists, footnotes, task lists, inserted text, mark text, subscripts, superscripts, and more.
 @z
 
 @x

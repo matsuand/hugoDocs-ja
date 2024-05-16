@@ -79,10 +79,10 @@ Hugo provides custom Markdown features including:
 
 @x
 [Extensions]
-: Leverage the embedded Markdown extensions to create tables, definition lists, footnotes, task lists, and more.
+: Leverage the embedded Markdown extensions to create tables, definition lists, footnotes, task lists, inserted text, mark text, subscripts, superscripts, and more.
 @y
 [Extensions]
-: Leverage the embedded Markdown extensions to create tables, definition lists, footnotes, task lists, and more.
+: Leverage the embedded Markdown extensions to create tables, definition lists, footnotes, task lists, inserted text, mark text, subscripts, superscripts, and more.
 @z
 
 @x
