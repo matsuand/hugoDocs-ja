@@ -324,7 +324,7 @@ Key|Descripion|Required
 `dates.publishDate`|The page publication date as a `time.Time` value.|&nbsp;
 `kind`|The [page kind]. Default is `page`.|&nbsp;
 `params`|A map of page parameters.|&nbsp;
-`path`|The page's [logical path] relative to the content adapter. Do not include a leading slash.|:heavy_check_mark:
+`path`|The page's [logical path] relative to the content adapter. Do not include a leading slash or file extension.|:heavy_check_mark:
 `title`|The page title.|&nbsp;
 @y
 Key|Descripion|Required
@@ -337,7 +337,7 @@ Key|Descripion|Required
 `dates.publishDate`|The page publication date as a `time.Time` value.|&nbsp;
 `kind`|The [page kind]. Default is `page`.|&nbsp;
 `params`|A map of page parameters.|&nbsp;
-`path`|The page's [logical path] relative to the content adapter. Do not include a leading slash.|:heavy_check_mark:
+`path`|The page's [logical path] relative to the content adapter. Do not include a leading slash or file extension.|:heavy_check_mark:
 `title`|The page title.|&nbsp;
 @z
 
@@ -805,6 +805,42 @@ content/
         ├── _content.gotmpl
         └── _index.md
 ```
+@z
+
+@x
+## Page collisions
+@y
+## Page collisions
+@z
+
+@x
+Two or more pages collide when they have the same publication path. Due to concurrency, the content of the published page is indeterminate. Consider this example:
+@y
+Two or more pages collide when they have the same publication path. Due to concurrency, the content of the published page is indeterminate. Consider this example:
+@z
+
+@x
+```text
+content/
+└── books/
+    ├── _content.gotmpl  <-- content adapter
+    ├── _index.md
+    └── the-hunchback-of-notre-dame.md
+```
+@y
+```text
+content/
+└── books/
+    ├── _content.gotmpl  <-- content adapter
+    ├── _index.md
+    └── the-hunchback-of-notre-dame.md
+```
+@z
+
+@x
+If the content adapter also creates books/the-hunchback-of-notre-dame, the content of the published page is indeterminate. You can not define the rendering order. Avoid this content structure.
+@y
+If the content adapter also creates books/the-hunchback-of-notre-dame, the content of the published page is indeterminate. You can not define the rendering order. Avoid this content structure.
 @z
 
 @x

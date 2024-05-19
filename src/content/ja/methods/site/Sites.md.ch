@@ -1,28 +1,18 @@
 %This is the change file for the original Hugo Documentation file.
 %This is part of Japanese translation version for Hugo Documantation.
 
+% snip 対応
+
 @x
----
 title: Sites
 description: Returns a collection of all Site objects, one for each language, ordered by default content language then by language weight.
 categories: []
 keywords: []
-action:
-  related: []
-  returnType: page.Sites
-  signatures: [SITE.Sites]
----
 @y
----
 title: Sites
 description: Returns a collection of all Site objects, one for each language, ordered by default content language then by language weight.
 categories: []
 keywords: []
-action:
-  related: []
-  returnType: page.Sites
-  signatures: [SITE.Sites]
----
 @z
 
 @x
@@ -31,49 +21,7 @@ With this site configuration:
 With this site configuration:
 @z
 
-@x
-{{< code-toggle file=hugo >}}
-defaultContentLanguage = 'de'
-defaultContentLanguageInSubdir = false
-@y
-{{< code-toggle file=hugo >}}
-defaultContentLanguage = 'de'
-defaultContentLanguageInSubdir = false
-@z
-
-@x
-[languages.de]
-languageCode = 'de-DE'
-languageDirection = 'ltr'
-languageName = 'Deutsch'
-title = 'Projekt Dokumentation'
-weight = 1
-@y
-[languages.de]
-languageCode = 'de-DE'
-languageDirection = 'ltr'
-languageName = 'Deutsch'
-title = 'Projekt Dokumentation'
-weight = 1
-@z
-
-@x
-[languages.en]
-languageCode = 'en-US'
-languageDirection = 'ltr'
-languageName = 'English'
-title = 'Project Documentation'
-weight = 2
-{{< /code-toggle >}}
-@y
-[languages.en]
-languageCode = 'en-US'
-languageDirection = 'ltr'
-languageName = 'English'
-title = 'Project Documentation'
-weight = 2
-{{< /code-toggle >}}
-@z
+% snip code...
 
 @x
 This template:
@@ -81,23 +29,7 @@ This template:
 This template:
 @z
 
-@x
-```go-html-template
-<ul>
-  {{ range .Site.Sites }}
-    <li><a href="{{ .Home.Permalink }}">{{ .Title }}</a></li>
-  {{ end }}
-</ul>
-```
-@y
-```go-html-template
-<ul>
-  {{ range .Site.Sites }}
-    <li><a href="{{ .Home.Permalink }}">{{ .Title }}</a></li>
-  {{ end }}
-</ul>
-```
-@z
+% snip code...
 
 @x
 Produces a list of links to each home page:
@@ -105,41 +37,15 @@ Produces a list of links to each home page:
 Produces a list of links to each home page:
 @z
 
-@x
-```html
-<ul>
-  <li><a href="https://example.org/de/">Projekt Dokumentation</a></li>
-  <li><a href="https://example.org/en/">Project Documentation</a></li>
-</ul>
-```
-@y
-```html
-<ul>
-  <li><a href="https://example.org/de/">Projekt Dokumentation</a></li>
-  <li><a href="https://example.org/en/">Project Documentation</a></li>
-</ul>
-```
-@z
+% snip code...
 
 @x
-To render a link to home page of the primary (first) language:
+To render a link to the home page of the site corresponding to the default content language:
 @y
-To render a link to home page of the primary (first) language:
+To render a link to the home page of the site corresponding to the default content language:
 @z
 
-@x
-```go-html-template
-{{ with .Site.Sites.First }}
-  <a href="{{ .Home.Permalink }}">{{ .Title }}</a>
-{{ end }}
-```
-@y
-```go-html-template
-{{ with .Site.Sites.First }}
-  <a href="{{ .Home.Permalink }}">{{ .Title }}</a>
-{{ end }}
-```
-@z
+% snip code...
 
 @x
 This is equivalent to:
@@ -147,16 +53,4 @@ This is equivalent to:
 This is equivalent to:
 @z
 
-@x
-```go-html-template
-{{ with index .Site.Sites 0 }}
-  <a href="{{ .Home.Permalink }}">{{ .Title }}</a>
-{{ end }}
-```
-@y
-```go-html-template
-{{ with index .Site.Sites 0 }}
-  <a href="{{ .Home.Permalink }}">{{ .Title }}</a>
-{{ end }}
-```
-@z
+% snip code...

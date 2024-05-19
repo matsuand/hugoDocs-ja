@@ -2,29 +2,15 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: debug.Timer
 description: Creates a named timer that reports elapsed time to the console.
 categories: []
 keywords: []
-action:
-  aliases: []
-  related: []
-  returnType: debug.Timer
-  signatures: [debug.Timer NAME] 
----
 @y
----
 title: debug.Timer
-description: Creates a named timer that reports elapsed time to the console.
+description: 名前づけしたタイマーを起動して経過時間をコンソールに出力します。
 categories: []
 keywords: []
-action:
-  aliases: []
-  related: []
-  returnType: debug.Timer
-  signatures: [debug.Timer NAME] 
----
 @z
 
 @x
@@ -36,61 +22,32 @@ action:
 @x
 Use the `debug.Timer` function to determine execution time for a block of code, useful for finding performance bottle necks in templates.
 @y
-Use the `debug.Timer` function to determine execution time for a block of code, useful for finding performance bottle necks in templates.
+`debug.Timer` 関数を利用すると、コードブロックの実行時間を確認することができます。
+テンプレート内のボトルネックを検出する際に有用です。
 @z
 
 @x
 The timer starts when you instantiate it, and stops when you call its `Stop` method.
 @y
-The timer starts when you instantiate it, and stops when you call its `Stop` method.
+タイマーは初期化した時から起動し、`Stop` メソッドの呼び出しによって停止します。
 @z
 
-@x
-```go-html-template
-{{ $t := debug.Timer "TestSqrt" }}
-{{ range seq 2000 }}
-  {{ $f := math.Sqrt . }}
-{{ end }}
-{{ $t.Stop }}
-```
-@y
-```go-html-template
-{{ $t := debug.Timer "TestSqrt" }}
-{{ range seq 2000 }}
-  {{ $f := math.Sqrt . }}
-{{ end }}
-{{ $t.Stop }}
-```
-@z
+% snip code...
 
 @x
 Use the `--logLevel info` command line flag when you build the site.
 @y
-Use the `--logLevel info` command line flag when you build the site.
+サイトのビルド時には `--logLevel info` コマンドを使うことができます。
 @z
 
-@x
-```sh
-hugo --logLevel info
-```
-@y
-```sh
-hugo --logLevel info
-```
-@z
+% snip command...
 
 @x
 The results are displayed in the console at the end of the build. You can have as many timers as you want and if you don't stop them, they will be stopped at the end of build.
 @y
-The results are displayed in the console at the end of the build. You can have as many timers as you want and if you don't stop them, they will be stopped at the end of build.
+ビルドが終了すると、コンソール上に結果が出力されます。
+必要ならいくつでもタイマーを起動させることができます。
+タイマーを停止しなかった場合でも、ビルドが終了すれば停止します。
 @z
 
-@x
-```text
-INFO  timer:  name TestSqrt total 12.429355ms
-```
-@y
-```text
-INFO  timer:  name TestSqrt total 12.429355ms
-```
-@z
+% snip text...

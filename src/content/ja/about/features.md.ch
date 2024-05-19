@@ -1,6 +1,8 @@
 %This is the change file for the original Hugo Documentation file.
 %This is part of Japanese translation version for Hugo Documantation.
 
+% snip 対応
+
 @x
 title: Features
 description: Hugo's rich and powerful feature set provides the framework and tools to create static sites that build in seconds, often less.
@@ -251,66 +253,4 @@ keywords: []
 : Minify HTML, CSS, and JavaScript to reduce file size, bandwidth consumption, and loading times.
 @z
 
-@x
-[Caching]: /functions/partials/includecached/
-[CCPA]: https://en.wikipedia.org/wiki/California_Consumer_Privacy_Act
-[CommonMark]: https://spec.commonmark.org/current/
-[Content formats]: /content-management/formats/
-[CSS bundling]: /functions/resources/tocss/
-[Data]: /templates/data-templates/
-[Diagrams]: /content-management/diagrams/
-[GDPR]: https://en.wikipedia.org/wiki/General_Data_Protection_Regulation
-[GitHub Flavored Markdown]: https://github.github.com/gfm/
-[Image processing]: /content-management/image-processing/
-[JavaScript bundling]: /functions/js/build/
-[Markdown attributes]: /content-management/markdown-attributes/
-[Markdown extensions]: /getting-started/configuration-markup/#goldmark-extensions
-[Markdown render hooks]: /render-hooks/introduction/
-[Mathematics]: /content-management/mathematics/
-[Menus]: /content-management/menus/
-[Minification]: /getting-started/configuration/#configure-minify
-[Modules]: https://gohugo.io/hugo-modules/
-[Multilingual]: /content-management/multilingual/
-[Multiplatform]: /installation/
-[Output formats]: /templates/output-formats/
-[Privacy]: /about/privacy/
-[Security]: /about/security/
-[Segmentation]: /getting-started/configuration/#configure-segments
-[Shortcodes]: /content-management/shortcodes/
-[Syntax highlighting]: /content-management/syntax-highlighting/
-[Taxonomies]: /content-management/taxonomies/
-[Templates]: templates/introduction/
-[Themes]: https://themes.gohugo.io/
-[URL management]: /content-management/urls/
-@y
-[Caching]: /functions/partials/includecached/
-[CCPA]: https://en.wikipedia.org/wiki/California_Consumer_Privacy_Act
-[CommonMark]: https://spec.commonmark.org/current/
-[Content formats]: /content-management/formats/
-[CSS bundling]: /functions/resources/tocss/
-[Data]: /templates/data-templates/
-[Diagrams]: /content-management/diagrams/
-[GDPR]: https://en.wikipedia.org/wiki/General_Data_Protection_Regulation
-[GitHub Flavored Markdown]: https://github.github.com/gfm/
-[Image processing]: /content-management/image-processing/
-[JavaScript bundling]: /functions/js/build/
-[Markdown attributes]: /content-management/markdown-attributes/
-[Markdown extensions]: /getting-started/configuration-markup/#goldmark-extensions
-[Markdown render hooks]: /render-hooks/introduction/
-[Mathematics]: /content-management/mathematics/
-[Menus]: /content-management/menus/
-[Minification]: /getting-started/configuration/#configure-minify
-[Modules]: https://gohugo.io/hugo-modules/
-[Multilingual]: /content-management/multilingual/
-[Multiplatform]: /installation/
-[Output formats]: /templates/output-formats/
-[Privacy]: /about/privacy/
-[Security]: /about/security/
-[Segmentation]: /getting-started/configuration/#configure-segments
-[Shortcodes]: /content-management/shortcodes/
-[Syntax highlighting]: /content-management/syntax-highlighting/
-[Taxonomies]: /content-management/taxonomies/
-[Templates]: templates/introduction/
-[Themes]: https://themes.gohugo.io/
-[URL management]: /content-management/urls/
-@z
+% snip links...
