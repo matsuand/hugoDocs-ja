@@ -421,10 +421,10 @@ Each menu entry defined in site configuration requires two or more properties:
 
 @x
 pageRef
-: (`string`) The file path of the target page, relative to the `content` directory. Omit language code and file extension. Required for *internal* links.
+: (`string`) The logical path of the target page, relative to the `content` directory. Omit language code and file extension. Required for *internal* links.
 @y
 pageRef
-: (`string`) The file path of the target page, relative to the `content` directory. Omit language code and file extension. Required for *internal* links.
+: (`string`) The logical path of the target page, relative to the `content` directory. Omit language code and file extension. Required for *internal* links.
 @z
 
 @x

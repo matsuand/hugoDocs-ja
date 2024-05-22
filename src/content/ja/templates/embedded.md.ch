@@ -1,18 +1,34 @@
 %This is the change file for the original Hugo Documentation file.
 %This is part of Japanese translation version for Hugo Documantation.
 
-% snip 対応
-
 @x
+---
 title: Embedded templates
 description: Hugo provides embedded templates for common use cases.
 categories: [templates]
 keywords: [internal, analytics,]
+menu:
+  docs:
+    parent: templates
+    weight: 190
+weight: 190
+toc: true
+aliases: [/templates/internal]
+---
 @y
-title: 埋め込みテンプレート
+---
+title: Embedded templates
 description: Hugo provides embedded templates for common use cases.
 categories: [templates]
 keywords: [internal, analytics,]
+menu:
+  docs:
+    parent: templates
+    weight: 190
+weight: 190
+toc: true
+aliases: [/templates/internal]
+---
 @z
 
 @x
@@ -371,7 +387,53 @@ Hugo's Open Graph template is configured using a mix of configuration variables 
 Hugo's Open Graph template is configured using a mix of configuration variables and [front-matter](/content-management/front-matter/) on individual pages.
 @z
 
-% snip code...
+@x
+{{< code-toggle file=hugo >}}
+[params]
+  description = 'Text about my cool site'
+  images = ['site-feature-image.jpg']
+  title = 'My cool site'
+  [params.social]
+  facebook_admin = 'jsmith'
+[taxonomies]
+  series = 'series'
+{{</ code-toggle >}}
+@y
+{{< code-toggle file=hugo >}}
+[params]
+  description = 'Text about my cool site'
+  images = ['site-feature-image.jpg']
+  title = 'My cool site'
+  [params.social]
+  facebook_admin = 'jsmith'
+[taxonomies]
+  series = 'series'
+{{</ code-toggle >}}
+@z
+
+@x
+{{< code-toggle file=content/blog/my-post.md fm=true >}}
+title = "Post title"
+description = "Text about this post"
+date = 2024-03-08T08:18:11-08:00
+images = ["post-cover.png"]
+audio = []
+videos = []
+series = []
+tags = []
+{{</ code-toggle >}}
+@y
+{{< code-toggle file=content/blog/my-post.md fm=true >}}
+title = "Post title"
+description = "Text about this post"
+date = 2024-03-08T08:18:11-08:00
+images = ["post-cover.png"]
+audio = []
+videos = []
+series = []
+tags = []
+{{</ code-toggle >}}
+@z
 
 @x
 Hugo uses the page title and description for the title and description metadata.
@@ -466,9 +528,9 @@ To include the embedded template:
 @z
 
 @x
-## Twitter Cards
+## X (Twitter) Cards
 @y
-## Twitter Cards
+## X (Twitter) Cards
 @z
 
 @x
@@ -496,10 +558,10 @@ To override Hugo's embedded Twitter Cards template, copy the [source code] to a 
 @z
 
 @x
-Hugo includes an embedded template for [Twitter Cards](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards),
+Hugo includes an embedded template for [X (Twitter) Cards](https://developer.x.com/en/docs/twitter-for-websites/cards/overview/abouts-cards),
 metadata used to attach rich media to Tweets linking to your site.
 @y
-Hugo includes an embedded template for [Twitter Cards](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards),
+Hugo includes an embedded template for [X (Twitter) Cards](https://developer.x.com/en/docs/twitter-for-websites/cards/overview/abouts-cards),
 metadata used to attach rich media to Tweets linking to your site.
 @z
 
@@ -520,15 +582,15 @@ To include the embedded template:
 @z
 
 @x
-### Configure Twitter Cards
+### Configure X (Twitter) Cards
 @y
-### Configure Twitter Cards
+### Configure X (Twitter) Cards
 @z
 
 @x
-Hugo's Twitter Card template is configured using a mix of configuration variables and [front-matter](/content-management/front-matter/) on individual pages.
+Hugo's X (Twitter) Card template is configured using a mix of configuration variables and [front-matter](/content-management/front-matter/) on individual pages.
 @y
-Hugo's Twitter Card template is configured using a mix of configuration variables and [front-matter](/content-management/front-matter/) on individual pages.
+Hugo's X (Twitter) Card template is configured using a mix of configuration variables and [front-matter](/content-management/front-matter/) on individual pages.
 @z
 
 @x

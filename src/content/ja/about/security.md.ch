@@ -74,9 +74,33 @@ The default configuration is listed below. Any build using features not in the a
 @z
 
 @x
-Note that these and other configuration settings in Hugo can be overridden by the OS environment. If you want to block all remote HTTP fetching of data:
+By default, Hugo permits the [`resources.GetRemote`] function to download files with media types corresponding to an internal allow list. To add media types to the allow list:
 @y
-Note that these and other configuration settings in Hugo can be overridden by the OS environment. If you want to block all remote HTTP fetching of data:
+By default, Hugo permits the [`resources.GetRemote`] function to download files with media types corresponding to an internal allow list. To add media types to the allow list:
+@z
+
+@x
+[`resources.GetRemote`]: /functions/resources/getremote
+@y
+[`resources.GetRemote`]: /functions/resources/getremote
+@z
+
+@x
+{{< code-toggle file=hugo >}}
+[security.http]
+mediaTypes = ['^image/avif$']
+{{< /code-toggle >}}
+@y
+{{< code-toggle file=hugo >}}
+[security.http]
+mediaTypes = ['^image/avif$']
+{{< /code-toggle >}}
+@z
+
+@x
+Note that these and other configuration settings in Hugo can be overridden by the OS environment. For example, if you want to block all remote HTTP fetching of data:
+@y
+Note that these and other configuration settings in Hugo can be overridden by the OS environment. For example, if you want to block all remote HTTP fetching of data:
 @z
 
 @x

@@ -1,46 +1,18 @@
 %This is the change file for the original Hugo Documentation file.
 %This is part of Japanese translation version for Hugo Documantation.
 
+% snip 対応
+
 @x
----
 title: resources.GetRemote
 description: Returns a remote resource from the given URL, or nil if none found.
 categories: []
 keywords: []
-action:
-  aliases: []
-  related:
-    - functions/data/GetCSV
-    - functions/data/GetJSON
-    - functions/resources/ByType
-    - functions/resources/Get
-    - functions/resources/GetMatch
-    - functions/resources/Match
-    - methods/page/Resources
-  returnType: resource.Resource
-  signatures: ['resources.GetRemote URL [OPTIONS]']
-toc: true
----
 @y
----
 title: resources.GetRemote
 description: Returns a remote resource from the given URL, or nil if none found.
 categories: []
 keywords: []
-action:
-  aliases: []
-  related:
-    - functions/data/GetCSV
-    - functions/data/GetJSON
-    - functions/resources/ByType
-    - functions/resources/Get
-    - functions/resources/GetMatch
-    - functions/resources/Match
-    - methods/page/Resources
-  returnType: resource.Resource
-  signatures: ['resources.GetRemote URL [OPTIONS]']
-toc: true
----
 @z
 
 % snip code...
@@ -264,13 +236,5 @@ Note that the entry above is:
 - An _addition_ to the allowlist; it does not _replace_ the allowlist
 - An array of regular expressions
 @z
-
-@x
-For example, to add two entries to the allowlist:
-@y
-For example, to add two entries to the allowlist:
-@z
-
-% snip code...
 
 % snip link...

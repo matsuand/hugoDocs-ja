@@ -1,6 +1,8 @@
 %This is the change file for the original Hugo Documentation file.
 %This is part of Japanese translation version for Hugo Documantation.
 
+% snip 対応
+
 @x
 title: Shortcodes
 description: Shortcodes are simple snippets inside your content files calling built-in or custom templates.
@@ -327,15 +329,7 @@ Example usage:
 Example usage:
 @z
 
-@x
-```text
-{{</* figure src="elephant.jpg" title="An elephant at sunset" */>}}
-```
-@y
-```text
-{{</* figure src="elephant.jpg" title="An elephant at sunset" */>}}
-```
-@z
+% snip text...
 
 @x
 Rendered:
@@ -393,15 +387,7 @@ To display a GitHub [gist] with this URL:
 [gist]: https://docs.github.com/en/get-started/writing-on-github/editing-and-sharing-content-with-gists
 @z
 
-@x
-```text
-https://gist.github.com/user/50a7482715eac222e230d1e64dd9a89b
-```
-@y
-```text
-https://gist.github.com/user/50a7482715eac222e230d1e64dd9a89b
-```
-@z
+% snip text...
 
 @x
 Include this in your Markdown:
@@ -409,15 +395,7 @@ Include this in your Markdown:
 Include this in your Markdown:
 @z
 
-@x
-```text
-{{</* gist user 50a7482715eac222e230d1e64dd9a89b */>}}
-```
-@y
-```text
-{{</* gist user 50a7482715eac222e230d1e64dd9a89b */>}}
-```
-@z
+% snip text...
 
 @x
 This will display all files in the gist alphabetically by file name.
@@ -437,15 +415,7 @@ To display a specific file within the gist:
 To display a specific file within the gist:
 @z
 
-@x
-```text
-{{</* gist user 23932424365401ffa5e9d9810102a477 list.html */>}}
-```
-@y
-```text
-{{</* gist user 23932424365401ffa5e9d9810102a477 list.html */>}}
-```
-@z
+% snip text...
 
 @x
 Rendered:
@@ -511,19 +481,7 @@ Rendered:
 Rendered:
 @z
 
-@x
-{{< highlight go-html-template >}}
-{{ range .Pages }}
-  <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-{{ end }}
-{{< /highlight >}}
-@y
-{{< highlight go-html-template >}}
-{{ range .Pages }}
-  <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-{{ end }}
-{{< /highlight >}}
-@z
+% snip code...
 
 @x
 To specify one or more [highlighting options], include a quotation-encapsulated, comma-separated list:
@@ -899,15 +857,7 @@ To display a Twitter post with this URL:
 To display a Twitter post with this URL:
 @z
 
-@x
-```txt
-https://twitter.com/SanDiegoZoo/status/1453110110599868418
-```
-@y
-```txt
-https://twitter.com/SanDiegoZoo/status/1453110110599868418
-```
-@z
+% snip text...
 
 @x
 Include this in your Markdown:
@@ -915,15 +865,7 @@ Include this in your Markdown:
 Include this in your Markdown:
 @z
 
-@x
-```text
-{{</* twitter user="SanDiegoZoo" id="1453110110599868418" */>}}
-```
-@y
-```text
-{{</* twitter user="SanDiegoZoo" id="1453110110599868418" */>}}
-```
-@z
+% snip text...
 
 @x
 Rendered:
