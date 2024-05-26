@@ -2,33 +2,15 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: Taxonomies
 description: Hugo includes support for user-defined taxonomies.
 categories: [content management]
 keywords: [taxonomies,metadata,front matter,terms]
-menu:
-  docs:
-    parent: content-management
-    weight: 150
-weight: 150
-toc: true
-aliases: [/taxonomies/overview/,/taxonomies/usage/,/indexes/overview/,/doc/indexes/,/extras/indexes]
----
 @y
----
 title: 分類
 description: Hugo ではユーザー定義の分類生成をサポートします。
 categories: [content management]
 keywords: [taxonomies,metadata,front matter,terms]
-menu:
-  docs:
-    parent: content-management
-    weight: 150
-weight: 150
-toc: true
-aliases: [/taxonomies/overview/,/taxonomies/usage/,/indexes/overview/,/doc/indexes/,/extras/indexes]
----
 @z
 
 @x
@@ -329,68 +311,36 @@ If you want to disable all taxonomies altogether, see the use of `disableKinds` 
 If you want to disable all taxonomies altogether, see the use of `disableKinds` in [Hugo Taxonomy Defaults](#default-taxonomies).
 @z
 
-@x
-{{% note %}}
+@x note
 You can add content and front matter to your taxonomy list and taxonomy terms pages. See [Content Organization](/content-management/organization/) for more information on how to add an `_index.md` for this purpose.
-{{% /note %}}
 @y
-{{% note %}}
 You can add content and front matter to your taxonomy list and taxonomy terms pages. See [Content Organization](/content-management/organization/) for more information on how to add an `_index.md` for this purpose.
-{{% /note %}}
 @z
 
 @x
-## Add taxonomies to content
+## Assign terms to content
 @y
-## Add taxonomies to content {#add-taxonomies-to-content}
+## Assign terms to content
 @z
 
 @x
-Once a taxonomy is defined at the site level, any piece of content can be assigned to it, regardless of [content type] or [content section].
+To assign one or more terms to a page, create a front matter field using the plural name of the taxonomy, then add terms to the corresponding array. For example:
 @y
-Once a taxonomy is defined at the site level, any piece of content can be assigned to it, regardless of [content type] or [content section].
-@z
-
-@x
-Assigning content to a taxonomy is done in the [front matter]. Simply create a variable with the *plural* name of the taxonomy and assign all terms you want to apply to the instance of the content type.
-@y
-Assigning content to a taxonomy is done in the [front matter]. Simply create a variable with the *plural* name of the taxonomy and assign all terms you want to apply to the instance of the content type.
-@z
-
-@x
-{{% note %}}
-If you would like the ability to quickly generate content files with preconfigured taxonomies or terms, read the docs on [Hugo archetypes](/content-management/archetypes/).
-{{% /note %}}
-@y
-{{% note %}}
-If you would like the ability to quickly generate content files with preconfigured taxonomies or terms, read the docs on [Hugo archetypes](/content-management/archetypes/).
-{{% /note %}}
-@z
-
-@x
-### Example: front matter with taxonomies
-@y
-### Example: front matter with taxonomies {#example-front-matter-with-taxonomies}
+To assign one or more terms to a page, create a front matter field using the plural name of the taxonomy, then add terms to the corresponding array. For example:
 @z
 
 @x
 {{< code-toggle file=content/example.md fm=true >}}
-title = "Hugo: A fast and flexible static site generator"
-tags = [ "Development", "Go", "fast", "Blogging" ]
-categories = [ "Development" ]
-series = [ "Go Web Dev" ]
-slug = "hugo"
-project_url = "https://github.com/gohugoio/hugo"
-{{</ code-toggle >}}
+title = 'Example'
+tags = ['Tag A','Tag B']
+categories = ['Category A','Category B']
+{{< /code-toggle >}}
 @y
 {{< code-toggle file=content/example.md fm=true >}}
-title = "Hugo: A fast and flexible static site generator"
-tags = [ "Development", "Go", "fast", "Blogging" ]
-categories = [ "Development" ]
-series = [ "Go Web Dev" ]
-slug = "hugo"
-project_url = "https://github.com/gohugoio/hugo"
-{{</ code-toggle >}}
+title = 'Example'
+tags = ['Tag A','Tag B']
+categories = ['Category A','Category B']
+{{< /code-toggle >}}
 @z
 
 @x

@@ -2,33 +2,15 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: Partial templates
 description: Partials are smaller, context-aware components in your list and page templates that can be used economically to keep your templating DRY.
 categories: [templates]
 keywords: [lists,sections,partials]
-menu:
-  docs:
-    parent: templates
-    weight: 120
-weight: 120
-toc: true
-aliases: [/templates/partial/,/layout/chrome/,/extras/analytics/]
----
 @y
----
 title: 部分テンプレート
 description: Partials are smaller, context-aware components in your list and page templates that can be used economically to keep your templating DRY.
 categories: [templates]
 keywords: [lists,sections,partials]
-menu:
-  docs:
-    parent: templates
-    weight: 120
-weight: 120
-toc: true
-aliases: [/templates/partial/,/layout/chrome/,/extras/analytics/]
----
 @z
 
 @x
@@ -176,9 +158,9 @@ The second argument in a partial call is the variable being passed down. The abo
 @z
 
 @x
-This means the partial will *only* be able to access those variables. The partial is isolated and *has no access to the outer scope*. From within the partial, `$.Var` is equivalent to `.Var`.
+This means the partial will *only* be able to access those variables. The partial is isolated and cannot access the outer scope. From within the partial, `$.Var` is equivalent to `.Var`.
 @y
-This means the partial will *only* be able to access those variables. The partial is isolated and *has no access to the outer scope*. From within the partial, `$.Var` is equivalent to `.Var`.
+This means the partial will *only* be able to access those variables. The partial is isolated and cannot access the outer scope. From within the partial, `$.Var` is equivalent to `.Var`.
 @z
 
 @x

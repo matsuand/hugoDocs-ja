@@ -1,36 +1,20 @@
 %This is the change file for the original Hugo Documentation file.
 %This is part of Japanese translation version for Hugo Documantation.
 
+% snip 対応
+
 @x
----
 title: Content summaries
 linkTitle: Summaries
 description: Hugo generates summaries of your content.
 categories: [content management]
 keywords: [summaries,abstracts,read more]
-menu:
-  docs:
-    parent: content-management
-    weight: 160
-weight: 160
-toc: true
-aliases: [/content/summaries/,/content-management/content-summaries/]
----
 @y
----
 title: Content summaries
 linkTitle: Summaries
 description: Hugo generates summaries of your content.
 categories: [content management]
 keywords: [summaries,abstracts,read more]
-menu:
-  docs:
-    parent: content-management
-    weight: 160
-weight: 160
-toc: true
-aliases: [/content/summaries/,/content-management/content-summaries/]
----
 @z
 
 @x
@@ -68,30 +52,24 @@ It is natural to accompany the summary with links to the original content, and a
 @z
 
 @x
-By default, Hugo automatically takes the first 70 words of your content as its summary and stores it into the `.Summary` page variable for use in your templates. You may customize the summary length by setting `summaryLength` in your [site configuration](/getting-started/configuration/).
+By default, Hugo automatically takes the first 70 words of your content as its summary. Access this value from a template using the [`Summary`] method on a `Page` object. You may customize the summary length by setting [`summaryLength`] in your site configuration.
 @y
-By default, Hugo automatically takes the first 70 words of your content as its summary and stores it into the `.Summary` page variable for use in your templates. You may customize the summary length by setting `summaryLength` in your [site configuration](/getting-started/configuration/).
+By default, Hugo automatically takes the first 70 words of your content as its summary. Access this value from a template using the [`Summary`] method on a `Page` object. You may customize the summary length by setting [`summaryLength`] in your site configuration.
 @z
 
-@x
-{{% note %}}
+@x note
 You can customize how HTML tags in the summary are loaded using functions such as `plainify` and `safeHTML`.
-{{% /note %}}
 @y
-{{% note %}}
 You can customize how HTML tags in the summary are loaded using functions such as `plainify` and `safeHTML`.
-{{% /note %}}
 @z
 
-@x
-{{% note %}}
-The Hugo-defined summaries are set to use word count calculated by splitting the text by one or more consecutive whitespace characters. If you are creating content in a `CJK` language and want to use Hugo's automatic summary splitting, set `hasCJKLanguage` to `true` in your [site configuration](/getting-started/configuration/).
-{{% /note %}}
+@x note
+The Hugo-defined summaries are set to use word count calculated by splitting the text by one or more consecutive whitespace characters. If you are creating content in a [`CJK`] language and want to use Hugo's automatic summary splitting, set [`hasCJKLanguage`] to `true` in your site configuration.
 @y
-{{% note %}}
-The Hugo-defined summaries are set to use word count calculated by splitting the text by one or more consecutive whitespace characters. If you are creating content in a `CJK` language and want to use Hugo's automatic summary splitting, set `hasCJKLanguage` to `true` in your [site configuration](/getting-started/configuration/).
-{{% /note %}}
+The Hugo-defined summaries are set to use word count calculated by splitting the text by one or more consecutive whitespace characters. If you are creating content in a [`CJK`] language and want to use Hugo's automatic summary splitting, set [`hasCJKLanguage`] to `true` in your site configuration.
 @z
+
+% snip links...
 
 @x
 ### Manual summary splitting
@@ -117,14 +95,10 @@ Content that comes before the summary divider will be used as that content's sum
 Content that comes before the summary divider will be used as that content's summary and stored in the `.Summary` page variable with all HTML formatting intact.
 @z
 
-@x
-{{% note %}}
+@x note
 The concept of a *summary divider* is not unique to Hugo. It is also called the "more tag" or "excerpt separator" in other literature.
-{{% /note %}}
 @y
-{{% note %}}
 The concept of a *summary divider* is not unique to Hugo. It is also called the "more tag" or "excerpt separator" in other literature.
-{{% /note %}}
 @z
 
 @x
@@ -143,14 +117,10 @@ Cons
 : Extra work for content authors, since they need to remember to type `<!--more-->` (or `# more` for [org content][org]) in each content file. This can be automated by adding the summary divider below the front matter of an [archetype](/content-management/archetypes/).
 @z
 
-@x
-{{% note %}}
+@x note
 Be careful to enter `<!--more-->` exactly; i.e., all lowercase and with no whitespace.
-{{% /note %}}
 @y
-{{% note %}}
 Be careful to enter `<!--more-->` exactly; i.e., all lowercase and with no whitespace.
-{{% /note %}}
 @z
 
 @x
@@ -160,9 +130,9 @@ Be careful to enter `<!--more-->` exactly; i.e., all lowercase and with no white
 @z
 
 @x
-You might want your summary to be something other than the text that starts the article. In this case you can provide a separate summary in the `summary` variable of the article front matter.
+You might want your summary to be something other than the text that starts the article. In this case you can provide a separate summary in the `summary` field in front matter.
 @y
-You might want your summary to be something other than the text that starts the article. In this case you can provide a separate summary in the `summary` variable of the article front matter.
+You might want your summary to be something other than the text that starts the article. In this case you can provide a separate summary in the `summary` field in front matter.
 @z
 
 @x
@@ -195,22 +165,18 @@ Because there are multiple ways in which a summary can be specified it is useful
 
 @x
 1. If there is a `<!--more-->` summary divider present in the article, the text up to the divider will be provided as per the manual summary split method
-2. If there is a `summary` variable in the article front matter the value of the variable will be provided as per the front matter summary method
+2. If there is a `summary` field in the article front matter the value of the variable will be provided as per the front matter summary method
 3. The text at the start of the article will be provided as per the automatic summary split method
 @y
 1. If there is a `<!--more-->` summary divider present in the article, the text up to the divider will be provided as per the manual summary split method
-2. If there is a `summary` variable in the article front matter the value of the variable will be provided as per the front matter summary method
+2. If there is a `summary` field in the article front matter the value of the variable will be provided as per the front matter summary method
 3. The text at the start of the article will be provided as per the automatic summary split method
 @z
 
-@x
-{{% note %}}
-Hugo uses the _first_ of the above steps that returns text. So if, for example, your article has both `summary` variable in its front matter and a `<!--more-->` summary divider Hugo will use the manual summary split method.
-{{% /note %}}
+@x note
+Hugo uses the _first_ of the above steps that returns text. So if, for example, your article has both `summary` field in its front matter and a `<!--more-->` summary divider Hugo will use the manual summary split method.
 @y
-{{% note %}}
-Hugo uses the _first_ of the above steps that returns text. So if, for example, your article has both `summary` variable in its front matter and a `<!--more-->` summary divider Hugo will use the manual summary split method.
-{{% /note %}}
+Hugo uses the _first_ of the above steps that returns text. So if, for example, your article has both `summary` field in its front matter and a `<!--more-->` summary divider Hugo will use the manual summary split method.
 @z
 
 @x
@@ -264,23 +230,9 @@ You can show content summaries with the following code. You could use the follow
 @z
 
 @x
-Note how the `.Truncated` boolean variable value may be used to hide the "Read More..." link when the content is not truncated; i.e., when the summary contains the entire article.
+Note how the `Truncated` method may be used to hide the "Read More..." link when the content is not truncated; i.e., when the summary contains the entire article.
 @y
-Note how the `.Truncated` boolean variable value may be used to hide the "Read More..." link when the content is not truncated; i.e., when the summary contains the entire article.
+Note how the `Truncated` method may be used to hide the "Read More..." link when the content is not truncated; i.e., when the summary contains the entire article.
 @z
 
-@x
-[`Permalink`]: /methods/page/permalink/
-[`RelPermalink`]: /methods/page/relpermalink/
-[`Summary`]: /methods/page/summary/
-[`Truncated`]: /methods/page/truncated/
-[org]: /content-management/formats/
-[section template]: /templates/section-templates/
-@y
-[`Permalink`]: /methods/page/permalink/
-[`RelPermalink`]: /methods/page/relpermalink/
-[`Summary`]: /methods/page/summary/
-[`Truncated`]: /methods/page/truncated/
-[org]: /content-management/formats/
-[section template]: /templates/section-templates/
-@z
+% snip links...

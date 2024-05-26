@@ -27,7 +27,6 @@ bases = \
 	summaries.md           \
 	syntax-highlighting.md \
 	taxonomies.md          \
-	toc.md                 \
 	types.md               \
 	urls.md
 

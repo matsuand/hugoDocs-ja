@@ -1,36 +1,18 @@
 %This is the change file for the original Hugo Documentation file.
 %This is part of Japanese translation version for Hugo Documantation.
 
+% snip 対応
+
 @x
----
 title: page
 description: Provides global access to a Page object.
 categories: []
 keywords: []
-action:
-  aliases: []
-  related:
-    - functions/global/site
-  returnType: 
-  signatures: [page]
-toc: true
-aliases: [/functions/page]
----
 @y
----
 title: page
 description: Provides global access to a Page object.
 categories: []
 keywords: []
-action:
-  aliases: []
-  related:
-    - functions/global/site
-  returnType: 
-  signatures: [page]
-toc: true
-aliases: [/functions/page]
----
 @z
 
 @x
@@ -45,19 +27,7 @@ At the top level of a template that receives a `Page` object in context, these a
 At the top level of a template that receives a `Page` object in context, these are equivalent:
 @z
 
-@x
-```go-html-template
-{{ .Params.foo }}
-{{ .Page.Params.foo }}
-{{ page.Params.foo }}
-```
-@y
-```go-html-template
-{{ .Params.foo }}
-{{ .Page.Params.foo }}
-{{ page.Params.foo }}
-```
-@z
+% snip code...
 
 @x
 When a `Page` object is not in context, you can use the global `page` function:
@@ -65,24 +35,12 @@ When a `Page` object is not in context, you can use the global `page` function:
 When a `Page` object is not in context, you can use the global `page` function:
 @z
 
-@x
-```go-html-template
-{{ page.Params.foo }}
-```
-@y
-```go-html-template
-{{ page.Params.foo }}
-```
-@z
+% snip code...
 
-@x
-{{% note %}}
+@x note
 Do not use the global `page` function in shortcodes, partials called by shortcodes, or cached partials. See [warnings](#warnings) below.
-{{% /note %}}
 @y
-{{% note %}}
 Do not use the global `page` function in shortcodes, partials called by shortcodes, or cached partials. See [warnings](#warnings) below.
-{{% /note %}}
 @z
 
 @x
@@ -92,9 +50,9 @@ Do not use the global `page` function in shortcodes, partials called by shortcod
 @z
 
 @x
-Hugo almost always passes a `Page` as the data context into the top level template (e.g., `single.html`). The one exception is the multihost sitemap template. This means that you can access the current page with the `.` variable in the template.
+Hugo almost always passes a `Page` as the data context into the top level template (e.g., `single.html`). The one exception is the multihost sitemap template. This means that you can access the current page with the `.` in the template.
 @y
-Hugo almost always passes a `Page` as the data context into the top level template (e.g., `single.html`). The one exception is the multihost sitemap template. This means that you can access the current page with the `.` variable in the template.
+Hugo almost always passes a `Page` as the data context into the top level template (e.g., `single.html`). The one exception is the multihost sitemap template. This means that you can access the current page with the `.` in the template.
 @z
 
 @x
@@ -159,23 +117,7 @@ And this code in the home page template:
 And this code in the home page template:
 @z
 
-@x
-```go-html-template
-{{ range site.Sections }}
-  {{ range .Pages }}
-    {{ page.Title }}
-  {{ end }}
-{{ end }}
-```
-@y
-```go-html-template
-{{ range site.Sections }}
-  {{ range .Pages }}
-    {{ page.Title }}
-  {{ end }}
-{{ end }}
-```
-@z
+% snip code...
 
 @x
 The rendered output will be:
@@ -237,21 +179,7 @@ Consider this section template:
 Consider this section template:
 @z
 
-@x
-```go-html-template
-{{ range .Pages }}
-  <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-  {{ .Summary }}
-{{ end }}
-```
-@y
-```go-html-template
-{{ range .Pages }}
-  <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-  {{ .Summary }}
-{{ end }}
-```
-@z
+% snip code...
 
 @x
 When you call the [`Summary`] method, Hugo renders the page content including shortcodes. In this case, within a shortcode, the global `page` function accesses the `Page` object of the section page, not the content page.
@@ -265,18 +193,4 @@ If Hugo renders the section page before a content page, the cached rendered shor
 If Hugo renders the section page before a content page, the cached rendered shortcode will be incorrect. You cannot control the rendering sequence due to concurrency.
 @z
 
-@x
-[`Summary`]: /methods/page/summary/
-[`partialCached`]: /functions/partials/includecached/
-[content view]: /getting-started/glossary/#content-view
-[partial]: /getting-started/glossary/#partial
-[render hook]: /getting-started/glossary/#render-hook
-[shortcode]: getting-started/glossary/#shortcode
-@y
-[`Summary`]: /methods/page/summary/
-[`partialCached`]: /functions/partials/includecached/
-[content view]: /getting-started/glossary/#content-view
-[partial]: /getting-started/glossary/#partial
-[render hook]: /getting-started/glossary/#render-hook
-[shortcode]: getting-started/glossary/#shortcode
-@z
+% snip links...
