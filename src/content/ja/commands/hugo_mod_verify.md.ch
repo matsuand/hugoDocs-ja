@@ -2,18 +2,18 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: "hugo mod verify"
 slug: hugo_mod_verify
 url: /commands/hugo_mod_verify/
----
+@y
+title: "hugo mod verify"
+slug: hugo_mod_verify
+url: /commands/hugo_mod_verify/
+@z
+
+@x
 ## hugo mod verify
 @y
----
-title: "hugo mod verify"
-slug: hugo_mod_verify
-url: /commands/hugo_mod_verify/
----
 ## hugo mod verify
 @z
 
@@ -121,9 +121,9 @@ hugo mod verify [flags] [args]
       --quiet                      出力抑制モード (quite mode) によりビルドを行います。
 @z
 @x
-      --renderToMemory             render to memory (mostly useful when running the server)
+  -M, --renderToMemory             render to memory (mostly useful when running the server)
 @y
-      --renderToMemory             メモリーにレンダーします。 (サーバー起動時に有用)
+  -M, --renderToMemory             メモリーにレンダーします。 (サーバー起動時に有用)
 @z
 @x
   -s, --source string              filesystem path to read files relative from

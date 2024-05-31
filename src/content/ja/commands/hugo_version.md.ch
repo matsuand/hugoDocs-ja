@@ -2,18 +2,18 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: "hugo version"
 slug: hugo_version
 url: /commands/hugo_version/
----
+@y
+title: "hugo version"
+slug: hugo_version
+url: /commands/hugo_version/
+@z
+
+@x
 ## hugo version
 @y
----
-title: "hugo version"
-slug: hugo_version
-url: /commands/hugo_version/
----
 ## hugo version
 @z
 
@@ -114,9 +114,9 @@ hugo version [flags] [args]
       --quiet                      出力抑制モード (quite mode) によりビルドを行います。
 @z
 @x
-      --renderToMemory             render to memory (mostly useful when running the server)
+  -M, --renderToMemory             render to memory (mostly useful when running the server)
 @y
-      --renderToMemory             メモリーにレンダーします。 (サーバー起動時に有用)
+  -M, --renderToMemory             メモリーにレンダーします。 (サーバー起動時に有用)
 @z
 @x
   -s, --source string              filesystem path to read files relative from

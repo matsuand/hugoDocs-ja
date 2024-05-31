@@ -250,6 +250,7 @@ bases = \
 	hugo_list_drafts.md           \
 	hugo_list_expired.md          \
 	hugo_list_future.md           \
+	hugo_list_published.md        \
 	hugo_mod.md                   \
 	hugo_mod_clean.md             \
 	hugo_mod_get.md               \

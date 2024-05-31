@@ -18,9 +18,9 @@ url: /commands/hugo_list_expired/
 @z
 
 @x
-List all posts already expired
+List expired content
 @y
-List all posts already expired
+List expired content
 @z
 
 @x
@@ -30,9 +30,9 @@ List all posts already expired
 @z
 
 @x
-List all of the posts in your content directory which has already expired.
+List content with a past expiration date.
 @y
-List all of the posts in your content directory which has already expired.
+List content with a past expiration date.
 @z
 
 @x
@@ -113,9 +113,9 @@ hugo list expired [flags] [args]
       --quiet                      出力抑制モード (quite mode) によりビルドを行います。
 @z
 @x
-      --renderToMemory             render to memory (mostly useful when running the server)
+  -M, --renderToMemory             render to memory (mostly useful when running the server)
 @y
-      --renderToMemory             メモリーにレンダーします。 (サーバー起動時に有用)
+  -M, --renderToMemory             メモリーにレンダーします。 (サーバー起動時に有用)
 @z
 @x
   -s, --source string              filesystem path to read files relative from

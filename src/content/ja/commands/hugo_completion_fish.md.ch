@@ -2,18 +2,18 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: "hugo completion fish"
 slug: hugo_completion_fish
 url: /commands/hugo_completion_fish/
----
+@y
+title: "hugo completion fish"
+slug: hugo_completion_fish
+url: /commands/hugo_completion_fish/
+@z
+
+@x
 ## hugo completion fish
 @y
----
-title: "hugo completion fish"
-slug: hugo_completion_fish
-url: /commands/hugo_completion_fish/
----
 ## hugo completion fish
 @z
 
@@ -145,9 +145,9 @@ hugo completion fish [flags]
       --quiet                      出力抑制モード (quite mode) によりビルドを行います。
 @z
 @x
-      --renderToMemory             render to memory (mostly useful when running the server)
+  -M, --renderToMemory             render to memory (mostly useful when running the server)
 @y
-      --renderToMemory             メモリーにレンダーします。 (サーバー起動時に有用)
+  -M, --renderToMemory             メモリーにレンダーします。 (サーバー起動時に有用)
 @z
 @x
   -s, --source string              filesystem path to read files relative from

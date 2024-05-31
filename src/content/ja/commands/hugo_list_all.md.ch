@@ -18,9 +18,9 @@ url: /commands/hugo_list_all/
 @z
 
 @x
-List all posts
+List all content
 @y
-List all posts
+List all content
 @z
 
 @x
@@ -30,9 +30,9 @@ List all posts
 @z
 
 @x
-List all of the posts in your content directory, include drafts, future and expired pages.
+List all content including draft, future, and expired.
 @y
-List all of the posts in your content directory, include drafts, future and expired pages.
+List all content including draft, future, and expired.
 @z
 
 @x
@@ -113,9 +113,9 @@ hugo list all [flags] [args]
       --quiet                      出力抑制モード (quite mode) によりビルドを行います。
 @z
 @x
-      --renderToMemory             render to memory (mostly useful when running the server)
+  -M, --renderToMemory             render to memory (mostly useful when running the server)
 @y
-      --renderToMemory             メモリーにレンダーします。 (サーバー起動時に有用)
+  -M, --renderToMemory             メモリーにレンダーします。 (サーバー起動時に有用)
 @z
 @x
   -s, --source string              filesystem path to read files relative from

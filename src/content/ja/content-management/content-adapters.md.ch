@@ -838,9 +838,15 @@ content/
 @z
 
 @x
-If the content adapter also creates books/the-hunchback-of-notre-dame, the content of the published page is indeterminate. You can not define the rendering order. Avoid this content structure.
+If the content adapter also creates books/the-hunchback-of-notre-dame, the content of the published page is indeterminate. You can not define the processing order.
 @y
-If the content adapter also creates books/the-hunchback-of-notre-dame, the content of the published page is indeterminate. You can not define the rendering order. Avoid this content structure.
+If the content adapter also creates books/the-hunchback-of-notre-dame, the content of the published page is indeterminate. You can not define the processing order.
+@z
+
+@x
+To detect page collisions, use the `--printPathWarnings` flag when building your site.
+@y
+To detect page collisions, use the `--printPathWarnings` flag when building your site.
 @z
 
 @x

@@ -132,7 +132,6 @@ hugo [flags]
       --printUnusedTemplates       print warnings on unused templates.
       --quiet                      build in quiet mode
       --renderSegments strings     named segments to render (configured in the segments config)
-      --renderToMemory             render to memory (mostly useful when running the server)
 @y
   -l, --layoutDir string           filesystem path to layout directory
       --logLevel string            log level (debug|info|warn|error)
@@ -148,7 +147,6 @@ hugo [flags]
       --printUnusedTemplates       print warnings on unused templates.
       --quiet                      build in quiet mode
       --renderSegments strings     named segments to render (configured in the segments config)
-      --renderToMemory             render to memory (mostly useful when running the server)
 @z
 
 @x

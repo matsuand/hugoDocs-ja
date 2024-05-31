@@ -326,7 +326,7 @@ public/
 ├── categories/
 │   ├── index.html
 │   └── index.xml  <-- RSS feed for this section
-├── post/
+├── posts/
 │   ├── my-first-post/
 │   │   └── index.html
 │   ├── index.html
@@ -344,7 +344,7 @@ public/
 ├── categories/
 │   ├── index.html
 │   └── index.xml  <-- RSS feed for this section
-├── post/
+├── posts/
 │   ├── my-first-post/
 │   │   └── index.html
 │   ├── index.html

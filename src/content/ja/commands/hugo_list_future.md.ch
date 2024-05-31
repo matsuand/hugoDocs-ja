@@ -18,9 +18,9 @@ url: /commands/hugo_list_future/
 @z
 
 @x
-List all posts dated in the future
+List future content
 @y
-List all posts dated in the future
+List future content
 @z
 
 @x
@@ -30,9 +30,9 @@ List all posts dated in the future
 @z
 
 @x
-List all of the posts in your content directory which will be posted in the future.
+List content with a future publication date.
 @y
-List all of the posts in your content directory which will be posted in the future.
+List content with a future publication date.
 @z
 
 @x
@@ -113,9 +113,9 @@ hugo list future [flags] [args]
       --quiet                      出力抑制モード (quite mode) によりビルドを行います。
 @z
 @x
-      --renderToMemory             render to memory (mostly useful when running the server)
+  -M, --renderToMemory             render to memory (mostly useful when running the server)
 @y
-      --renderToMemory             メモリーにレンダーします。 (サーバー起動時に有用)
+  -M, --renderToMemory             メモリーにレンダーします。 (サーバー起動時に有用)
 @z
 @x
   -s, --source string              filesystem path to read files relative from

@@ -2,18 +2,18 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: "hugo mod vendor"
 slug: hugo_mod_vendor
 url: /commands/hugo_mod_vendor/
----
+@y
+title: "hugo mod vendor"
+slug: hugo_mod_vendor
+url: /commands/hugo_mod_vendor/
+@z
+
+@x
 ## hugo mod vendor
 @y
----
-title: "hugo mod vendor"
-slug: hugo_mod_vendor
-url: /commands/hugo_mod_vendor/
----
 ## hugo mod vendor
 @z
 
@@ -117,9 +117,9 @@ hugo mod vendor [flags] [args]
       --quiet                      出力抑制モード (quite mode) によりビルドを行います。
 @z
 @x
-      --renderToMemory             render to memory (mostly useful when running the server)
+  -M, --renderToMemory             render to memory (mostly useful when running the server)
 @y
-      --renderToMemory             メモリーにレンダーします。 (サーバー起動時に有用)
+  -M, --renderToMemory             メモリーにレンダーします。 (サーバー起動時に有用)
 @z
 @x
   -s, --source string              filesystem path to read files relative from

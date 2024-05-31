@@ -109,9 +109,9 @@ List requires a subcommand, e.g. hugo list drafts
       --quiet                      出力抑制モード (quite mode) によりビルドを行います。
 @z
 @x
-      --renderToMemory             render to memory (mostly useful when running the server)
+  -M, --renderToMemory             render to memory (mostly useful when running the server)
 @y
-      --renderToMemory             メモリーにレンダーします。 (サーバー起動時に有用)
+  -M, --renderToMemory             メモリーにレンダーします。 (サーバー起動時に有用)
 @z
 @x
   -s, --source string              filesystem path to read files relative from
@@ -137,14 +137,16 @@ List requires a subcommand, e.g. hugo list drafts
 
 @x
 * [hugo](/commands/hugo/)	 - hugo builds your site
-* [hugo list all](/commands/hugo_list_all/)	 - List all posts
-* [hugo list drafts](/commands/hugo_list_drafts/)	 - List all drafts
-* [hugo list expired](/commands/hugo_list_expired/)	 - List all posts already expired
-* [hugo list future](/commands/hugo_list_future/)	 - List all posts dated in the future
+* [hugo list all](/commands/hugo_list_all/)	 - List all content
+* [hugo list drafts](/commands/hugo_list_drafts/)	 - List draft content
+* [hugo list expired](/commands/hugo_list_expired/)	 - List expired content
+* [hugo list future](/commands/hugo_list_future/)	 - List future content
+* [hugo list published](/commands/hugo_list_published/)	 - List published content
 @y
 * [hugo](/commands/hugo/)	 - hugo builds your site
-* [hugo list all](/commands/hugo_list_all/)	 - List all posts
-* [hugo list drafts](/commands/hugo_list_drafts/)	 - List all drafts
-* [hugo list expired](/commands/hugo_list_expired/)	 - List all posts already expired
-* [hugo list future](/commands/hugo_list_future/)	 - List all posts dated in the future
+* [hugo list all](/commands/hugo_list_all/)	 - List all content
+* [hugo list drafts](/commands/hugo_list_drafts/)	 - List draft content
+* [hugo list expired](/commands/hugo_list_expired/)	 - List expired content
+* [hugo list future](/commands/hugo_list_future/)	 - List future content
+* [hugo list published](/commands/hugo_list_published/)	 - List published content
 @z

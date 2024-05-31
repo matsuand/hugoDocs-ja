@@ -4,7 +4,7 @@
 @x
 ---
 title: safe.CSS
-description: Declares the given string as safe CSS string.
+description: Declares the given string as a safe CSS string.
 categories: []
 keywords: []
 action:
@@ -17,12 +17,13 @@ action:
     - functions/safe/URL
   returnType: template.CSS
   signatures: [safe.CSS INPUT]
+toc: true
 aliases: [/functions/safecss]
 ---
 @y
 ---
 title: safe.CSS
-description: Declares the given string as safe CSS string.
+description: Declares the given string as a safe CSS string.
 categories: []
 keywords: []
 action:
@@ -35,14 +36,33 @@ action:
     - functions/safe/URL
   returnType: template.CSS
   signatures: [safe.CSS INPUT]
+toc: true
 aliases: [/functions/safecss]
 ---
 @z
 
 @x
-In this context, *safe* means CSS content that matches any of the following:
+## Introduction
 @y
-In this context, *safe* means CSS content that matches any of the following:
+## Introduction
+@z
+
+@x
+{{% include "functions/_common/go-html-template-package.md" %}}
+@y
+{{% include "functions/_common/go-html-template-package.md" %}}
+@z
+
+@x
+## Usage
+@y
+## Usage
+@z
+
+@x
+Use the `safe.CSS` function to encapsulate known safe content that matches any of:
+@y
+Use the `safe.CSS` function to encapsulate known safe content that matches any of:
 @z
 
 @x
@@ -58,25 +78,103 @@ In this context, *safe* means CSS content that matches any of the following:
 @z
 
 @x
-Example: Given `style = "color: red;"` defined in the front matter of your `.md` file:
+Use of this type presents a security risk: the encapsulated content should come from a trusted source, as it will be included verbatim in the template output.
 @y
-Example: Given `style = "color: red;"` defined in the front matter of your `.md` file:
+Use of this type presents a security risk: the encapsulated content should come from a trusted source, as it will be included verbatim in the template output.
 @z
 
 @x
-* `<p style="{{ .Params.style | safeCSS }}">…</p>` &rarr; `<p style="color: red;">…</p>`
-* `<p style="{{ .Params.style }}">…</p>` &rarr; `<p style="ZgotmplZ">…</p>`
+See the [Go documentation] for details.
 @y
-* `<p style="{{ .Params.style | safeCSS }}">…</p>` &rarr; `<p style="color: red;">…</p>`
-* `<p style="{{ .Params.style }}">…</p>` &rarr; `<p style="ZgotmplZ">…</p>`
+See the [Go documentation] for details.
+@z
+
+@x
+[Go documentation]: https://pkg.go.dev/html/template#CSS
+@y
+[Go documentation]: https://pkg.go.dev/html/template#CSS
+@z
+
+@x
+## Example
+@y
+## Example
+@z
+
+@x
+Without a safe declaration:
+@y
+Without a safe declaration:
+@z
+
+@x
+```go-html-template
+{{ $style := "color: red;" }}
+<p style="{{ $style }}">foo</p>
+```
+@y
+```go-html-template
+{{ $style := "color: red;" }}
+<p style="{{ $style }}">foo</p>
+```
+@z
+
+@x
+Hugo renders the above to:
+@y
+Hugo renders the above to:
+@z
+
+@x
+```html
+<p style="ZgotmplZ">foo</p>
+```
+@y
+```html
+<p style="ZgotmplZ">foo</p>
+```
 @z
 
 @x
 {{% note %}}
-`ZgotmplZ` is a special value that indicates that unsafe content reached a CSS or URL context.
+`ZgotmplZ` is a special value that indicates that unsafe content reached a CSS or URL context at runtime.
 {{% /note %}}
 @y
 {{% note %}}
-`ZgotmplZ` is a special value that indicates that unsafe content reached a CSS or URL context.
+`ZgotmplZ` is a special value that indicates that unsafe content reached a CSS or URL context at runtime.
 {{% /note %}}
+@z
+
+@x
+To declare the string as safe:
+@y
+To declare the string as safe:
+@z
+
+@x
+```go-html-template
+{{ $style := "color: red;" }}
+<p style="{{ $style | safeCSS }}">foo</p>
+```
+@y
+```go-html-template
+{{ $style := "color: red;" }}
+<p style="{{ $style | safeCSS }}">foo</p>
+```
+@z
+
+@x
+Hugo renders the above to:
+@y
+Hugo renders the above to:
+@z
+
+@x
+```html
+<p style="color: red;">foo</p>
+```
+@y
+```html
+<p style="color: red;">foo</p>
+```
 @z

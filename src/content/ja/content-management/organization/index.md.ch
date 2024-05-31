@@ -33,25 +33,12 @@ These terms are connected, and you also need to read about [Page Resources](/con
 このあたりの用語は相互に関連づいているので、全体像を把握するためには [ページリソース](/content-management/page-resources) (Page Resource) や [イメージ処理](/content-management/image-processing) (Image Processing) といった用語について確認する必要があります。
 @z
 
-@x
-{{< imgproc "1-featured-content-bundles.png" "resize 300x" >}}
-The illustration shows three bundles. Note that the home page bundle cannot contain other content pages, although other files (images etc.) are allowed.
-{{< /imgproc >}}
-@y
-{{< imgproc "1-featured-content-bundles.png" "resize 300x" >}}
-この図では 3 つのバンドルを示しています。なおホームページバンドルには他のコンテントページは含まれていません。その他のファイル (イメージなど) については含めることができます。
-{{< /imgproc >}}
-@z
+% snip text...
 
 @x
-{{% note %}}
-The bundle documentation is a **work in progress**. We will publish more comprehensive docs about this soon.
-{{% /note %}}
+The file tree above shows three bundles. Note that the home page bundle cannot contain other content pages, although other files (images etc.) are allowed.
 @y
-{{% note %}}
-バンドルに関するドキュメントは **制作途中** です。
-分かりやすいドキュメントをすぐに提供する予定です。
-{{% /note %}}
+The file tree above shows three bundles. Note that the home page bundle cannot contain other content pages, although other files (images etc.) are allowed.
 @z
 
 @x

@@ -3,10 +3,11 @@
 ##
 
 bases = \
-	_index.md              \
-	glob-patterns.md       \
-	locales.md             \
-	regular-expressions.md \
+	_index.md                   \
+	glob-patterns.md            \
+	go-html-template-package.md \
+	locales.md                  \
+	regular-expressions.md      \
 	time-layout-string.md
 
 include $(top_srcdir)/build-aux/common.mk

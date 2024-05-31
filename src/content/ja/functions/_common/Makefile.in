@@ -225,10 +225,11 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 bases = \
-	_index.md              \
-	glob-patterns.md       \
-	locales.md             \
-	regular-expressions.md \
+	_index.md                   \
+	glob-patterns.md            \
+	go-html-template-package.md \
+	locales.md                  \
+	regular-expressions.md      \
 	time-layout-string.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

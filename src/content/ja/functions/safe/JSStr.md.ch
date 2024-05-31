@@ -17,6 +17,7 @@ action:
     - functions/safe/URL
   returnType: template.JSStr
   signatures: [safe.JSStr INPUT]
+toc: true
 aliases: [/functions/safejsstr]
 ---
 @y
@@ -35,20 +36,63 @@ action:
     - functions/safe/URL
   returnType: template.JSStr
   signatures: [safe.JSStr INPUT]
+toc: true
 aliases: [/functions/safejsstr]
 ---
 @z
 
 @x
-Encapsulates a sequence of characters meant to be embedded between quotes in a JavaScript expression. Use of this type presents a security risk: the encapsulated content should come from a trusted source, as it will be included verbatim in the template output.
+## Introduction
 @y
-Encapsulates a sequence of characters meant to be embedded between quotes in a JavaScript expression. Use of this type presents a security risk: the encapsulated content should come from a trusted source, as it will be included verbatim in the template output.
+## Introduction
 @z
 
 @x
-Without declaring a variable to be a safe JavaScript string:
+{{% include "functions/_common/go-html-template-package.md" %}}
 @y
-Without declaring a variable to be a safe JavaScript string:
+{{% include "functions/_common/go-html-template-package.md" %}}
+@z
+
+@x
+## Usage
+@y
+## Usage
+@z
+
+@x
+Use the `safe.JSStr` function to encapsulate a sequence of characters meant to be embedded between quotes in a JavaScript expression.
+@y
+Use the `safe.JSStr` function to encapsulate a sequence of characters meant to be embedded between quotes in a JavaScript expression.
+@z
+
+@x
+Use of this type presents a security risk: the encapsulated content should come from a trusted source, as it will be included verbatim in the template output.
+@y
+Use of this type presents a security risk: the encapsulated content should come from a trusted source, as it will be included verbatim in the template output.
+@z
+
+@x
+See the [Go documentation] for details.
+@y
+See the [Go documentation] for details.
+@z
+
+@x
+[Go documentation]: https://pkg.go.dev/html/template#JSStr
+@y
+[Go documentation]: https://pkg.go.dev/html/template#JSStr
+@z
+
+@x
+## Example
+@y
+## Example
+@z
+
+@x
+Without a safe declaration:
+@y
+Without a safe declaration:
 @z
 
 @x
@@ -68,9 +112,9 @@ Without declaring a variable to be a safe JavaScript string:
 @z
 
 @x
-Rendered:
+Hugo renders the above to:
 @y
-Rendered:
+Hugo renders the above to:
 @z
 
 @x
@@ -88,9 +132,9 @@ Rendered:
 @z
 
 @x
-To avoid escaping by Go's [html/template] package:
+To declare the string as safe:
 @y
-To avoid escaping by Go's [html/template] package:
+To declare the string as safe:
 @z
 
 @x
@@ -110,9 +154,9 @@ To avoid escaping by Go's [html/template] package:
 @z
 
 @x
-Rendered:
+Hugo renders the above to:
 @y
-Rendered:
+Hugo renders the above to:
 @z
 
 @x
@@ -127,10 +171,4 @@ Rendered:
   const a = "Title: " + "Lilo & Stitch";
 </script>
 ```
-@z
-
-@x
-[html/template]: https://pkg.go.dev/html/template
-@y
-[html/template]: https://pkg.go.dev/html/template
 @z

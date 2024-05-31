@@ -2,18 +2,18 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: "hugo server trust"
 slug: hugo_server_trust
 url: /commands/hugo_server_trust/
----
+@y
+title: "hugo server trust"
+slug: hugo_server_trust
+url: /commands/hugo_server_trust/
+@z
+
+@x
 ## hugo server trust
 @y
----
-title: "hugo server trust"
-slug: hugo_server_trust
-url: /commands/hugo_server_trust/
----
 ## hugo server trust
 @z
 
@@ -103,9 +103,9 @@ hugo server trust [flags] [args]
       --quiet                      出力抑制モード (quite mode) によりビルドを行います。
 @z
 @x
-      --renderToMemory             render to memory (mostly useful when running the server)
+  -M, --renderToMemory             render to memory (mostly useful when running the server)
 @y
-      --renderToMemory             メモリーにレンダーします。 (サーバー起動時に有用)
+  -M, --renderToMemory             メモリーにレンダーします。 (サーバー起動時に有用)
 @z
 @x
   -s, --source string              filesystem path to read files relative from

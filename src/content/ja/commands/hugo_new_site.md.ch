@@ -2,18 +2,18 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: "hugo new site"
 slug: hugo_new_site
 url: /commands/hugo_new_site/
----
+@y
+title: "hugo new site"
+slug: hugo_new_site
+url: /commands/hugo_new_site/
+@z
+
+@x
 ## hugo new site
 @y
----
-title: "hugo new site"
-slug: hugo_new_site
-url: /commands/hugo_new_site/
----
 ## hugo new site
 @z
 
@@ -121,9 +121,9 @@ hugo new site [path] [flags]
       --quiet                      出力抑制モード (quite mode) によりビルドを行います。
 @z
 @x
-      --renderToMemory             render to memory (mostly useful when running the server)
+  -M, --renderToMemory             render to memory (mostly useful when running the server)
 @y
-      --renderToMemory             メモリーにレンダーします。 (サーバー起動時に有用)
+  -M, --renderToMemory             メモリーにレンダーします。 (サーバー起動時に有用)
 @z
 @x
   -s, --source string              filesystem path to read files relative from

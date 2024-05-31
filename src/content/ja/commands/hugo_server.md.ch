@@ -131,24 +131,10 @@ hugo server [command] [flags]
   -l, --layoutDir string         filesystem path to layout directory
       --liveReloadPort int       port for live reloading (i.e. 443 in HTTPS proxy situations) (default -1)
       --minify                   minify any supported output format (HTML, XML etc.)
-      --navigateToChanged        navigate to changed content file on live browser reload
-      --noBuildLock              don't create .hugo_build.lock file
-      --noChmod                  don't sync permission mode of files
-      --noHTTPCache              prevent HTTP caching
-      --noTimes                  don't sync modification time of files
-      --panicOnWarning           panic on first WARNING log
-      --poll string              set this to a poll interval, e.g --poll 700ms, to use a poll based approach to watch for file system changes
 @y
   -l, --layoutDir string         filesystem path to layout directory
       --liveReloadPort int       port for live reloading (i.e. 443 in HTTPS proxy situations) (default -1)
       --minify                   minify any supported output format (HTML, XML etc.)
-      --navigateToChanged        navigate to changed content file on live browser reload
-      --noBuildLock              don't create .hugo_build.lock file
-      --noChmod                  don't sync permission mode of files
-      --noHTTPCache              prevent HTTP caching
-      --noTimes                  don't sync modification time of files
-      --panicOnWarning           panic on first WARNING log
-      --poll string              set this to a poll interval, e.g --poll 700ms, to use a poll based approach to watch for file system changes
 @z
 
 @x
@@ -243,9 +229,9 @@ hugo server [command] [flags]
       --quiet                      出力抑制モード (quite mode) によりビルドを行います。
 @z
 @x
-      --renderToMemory             render to memory (mostly useful when running the server)
+  -M, --renderToMemory             render to memory (mostly useful when running the server)
 @y
-      --renderToMemory             メモリーにレンダーします。 (サーバー起動時に有用)
+  -M, --renderToMemory             メモリーにレンダーします。 (サーバー起動時に有用)
 @z
 @x
   -s, --source string              filesystem path to read files relative from

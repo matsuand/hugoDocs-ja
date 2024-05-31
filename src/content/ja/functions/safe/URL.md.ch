@@ -17,6 +17,7 @@ action:
     - functions/safe/JSStr
   returnType: template.URL
   signatures: [safe.URL INPUT]
+toc: true
 aliases: [/functions/safeurl]
 ---
 @y
@@ -35,138 +36,143 @@ action:
     - functions/safe/JSStr
   returnType: template.URL
   signatures: [safe.URL INPUT]
+toc: true
 aliases: [/functions/safeurl]
 ---
 @z
 
 @x
-`safeURL` declares the provided string as a "safe" URL or URL substring (see [RFC 3986]). A URL like `javascript:checkThatFormNotEditedBeforeLeavingPage()` from a trusted source should go in the page, but by default dynamic `javascript:` URLs are filtered out since they are a frequently exploited injection vector.
+## Introduction
 @y
-`safeURL` declares the provided string as a "safe" URL or URL substring (see [RFC 3986]). A URL like `javascript:checkThatFormNotEditedBeforeLeavingPage()` from a trusted source should go in the page, but by default dynamic `javascript:` URLs are filtered out since they are a frequently exploited injection vector.
+## Introduction
 @z
 
 @x
-Without `safeURL`, only the URI schemes `http:`, `https:` and `mailto:` are considered safe by Go templates. If any other URI schemes (e.g., `irc:` and `javascript:`) are detected, the whole URL will be replaced with `#ZgotmplZ`. This is to "defang" any potential attack in the URL by rendering it useless.
+{{% include "functions/_common/go-html-template-package.md" %}}
 @y
-Without `safeURL`, only the URI schemes `http:`, `https:` and `mailto:` are considered safe by Go templates. If any other URI schemes (e.g., `irc:` and `javascript:`) are detected, the whole URL will be replaced with `#ZgotmplZ`. This is to "defang" any potential attack in the URL by rendering it useless.
+{{% include "functions/_common/go-html-template-package.md" %}}
 @z
 
 @x
-The following examples use a [site `hugo.toml`][configuration] with the following [menu entry][menus]:
+## Usage
 @y
-The following examples use a [site `hugo.toml`][configuration] with the following [menu entry][menus]:
+## Usage
 @z
 
 @x
-{{< code-toggle file=hugo >}}
-[[menus.main]]
-name = "IRC: #golang at freenode"
-url = "irc://irc.freenode.net/#golang"
-{{< /code-toggle >}}
+Use the `safe.URL` function to encapsulate a known safe URL or URL substring. Schemes other than the following are considered unsafe:
 @y
-{{< code-toggle file=hugo >}}
-[[menus.main]]
-name = "IRC: #golang at freenode"
-url = "irc://irc.freenode.net/#golang"
-{{< /code-toggle >}}
+Use the `safe.URL` function to encapsulate a known safe URL or URL substring. Schemes other than the following are considered unsafe:
 @z
 
 @x
-The following is an example of a sidebar partial that may be used in conjunction with the preceding front matter example:
+- `http:`
+- `https:`
+- `mailto:`
 @y
-The following is an example of a sidebar partial that may be used in conjunction with the preceding front matter example:
+- `http:`
+- `https:`
+- `mailto:`
 @z
 
 @x
-{{< code file=layouts/partials/bad-url-sidebar-menu.html >}}
-<!-- This unordered list may be part of a sidebar menu -->
-<ul>
-  {{ range .Site.Menus.main }}
-    <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-  {{ end }}
-</ul>
-{{< /code >}}
+Use of this type presents a security risk: the encapsulated content should come from a trusted source, as it will be included verbatim in the template output.
 @y
-{{< code file=layouts/partials/bad-url-sidebar-menu.html >}}
-<!-- This unordered list may be part of a sidebar menu -->
-<ul>
-  {{ range .Site.Menus.main }}
-    <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-  {{ end }}
-</ul>
-{{< /code >}}
+Use of this type presents a security risk: the encapsulated content should come from a trusted source, as it will be included verbatim in the template output.
 @z
 
 @x
-This partial would produce the following HTML output:
+See the [Go documentation] for details.
 @y
-This partial would produce the following HTML output:
+See the [Go documentation] for details.
 @z
 
 @x
-```html
-<!-- This unordered list may be part of a sidebar menu -->
-<ul>
-  <li><a href="#ZgotmplZ">IRC: #golang at freenode</a></li>
-</ul>
+[Go documentation]: https://pkg.go.dev/html/template#URL
+@y
+[Go documentation]: https://pkg.go.dev/html/template#URL
+@z
+
+@x
+## Example
+@y
+## Example
+@z
+
+@x
+Without a safe declaration:
+@y
+Without a safe declaration:
+@z
+
+@x
+```go-html-template
+{{ $href := "irc://irc.freenode.net/#golang" }}
+<a href="{{ $href }}">IRC</a>
 ```
 @y
-```html
-<!-- This unordered list may be part of a sidebar menu -->
-<ul>
-  <li><a href="#ZgotmplZ">IRC: #golang at freenode</a></li>
-</ul>
+```go-html-template
+{{ $href := "irc://irc.freenode.net/#golang" }}
+<a href="{{ $href }}">IRC</a>
 ```
 @z
 
 @x
-The odd output can be remedied by adding ` | safeURL` to our `.URL` page variable:
+Hugo renders the above to:
 @y
-The odd output can be remedied by adding ` | safeURL` to our `.URL` page variable:
-@z
-
-@x
-{{< code file=layouts/partials/correct-url-sidebar-menu.html >}}
-<!-- This unordered list may be part of a sidebar menu -->
-<ul>
-    <li><a href="{{ .URL | safeURL }}">{{ .Name }}</a></li>
-</ul>
-{{< /code >}}
-@y
-{{< code file=layouts/partials/correct-url-sidebar-menu.html >}}
-<!-- This unordered list may be part of a sidebar menu -->
-<ul>
-    <li><a href="{{ .URL | safeURL }}">{{ .Name }}</a></li>
-</ul>
-{{< /code >}}
-@z
-
-@x
-With the `.URL` page variable piped through `safeURL`, we get the desired output:
-@y
-With the `.URL` page variable piped through `safeURL`, we get the desired output:
+Hugo renders the above to:
 @z
 
 @x
 ```html
-<ul class="sidebar-menu">
-  <li><a href="irc://irc.freenode.net/#golang">IRC: #golang at freenode</a></li>
-</ul>
+<a href="#ZgotmplZ">IRC</a>
 ```
 @y
 ```html
-<ul class="sidebar-menu">
-  <li><a href="irc://irc.freenode.net/#golang">IRC: #golang at freenode</a></li>
-</ul>
+<a href="#ZgotmplZ">IRC</a>
 ```
 @z
 
 @x
-[configuration]: /getting-started/configuration/
-[menus]: /content-management/menus/
-[RFC 3986]: https://tools.ietf.org/html/rfc3986
+{{% note %}}
+`ZgotmplZ` is a special value that indicates that unsafe content reached a CSS or URL context at runtime.
+{{% /note %}}
 @y
-[configuration]: /getting-started/configuration/
-[menus]: /content-management/menus/
-[RFC 3986]: https://tools.ietf.org/html/rfc3986
+{{% note %}}
+`ZgotmplZ` is a special value that indicates that unsafe content reached a CSS or URL context at runtime.
+{{% /note %}}
+@z
+
+@x
+To declare the string as safe:
+@y
+To declare the string as safe:
+@z
+
+@x
+```go-html-template
+{{ $href := "irc://irc.freenode.net/#golang" }}
+<a href="{{ $href | safeURL }}">IRC</a>
+```
+@y
+```go-html-template
+{{ $href := "irc://irc.freenode.net/#golang" }}
+<a href="{{ $href | safeURL }}">IRC</a>
+```
+@z
+
+@x
+Hugo renders the above to:
+@y
+Hugo renders the above to:
+@z
+
+@x
+```html
+<a href="irc://irc.freenode.net/#golang">IRC</a>
+```
+@y
+```html
+<a href="irc://irc.freenode.net/#golang">IRC</a>
+```
 @z
