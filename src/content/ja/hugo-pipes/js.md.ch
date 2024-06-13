@@ -66,10 +66,10 @@ Note that the target path's extension may change if the target MIME type is diff
 @z
 
 @x
-params {{< new-in "0.96.0" >}}
+params
 : (`map` or `slice`) Params that can be imported as JSON in your JS files, e.g.:
 @y
-params {{< new-in "0.96.0" >}}
+params
 : (`map` or `slice`) Params that can be imported as JSON in your JS files, e.g.:
 @z
 

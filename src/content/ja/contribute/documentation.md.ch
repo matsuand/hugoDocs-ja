@@ -1,6 +1,8 @@
 %This is the change file for the original Hugo Documentation file.
 %This is part of Japanese translation version for Hugo Documantation.
 
+% snip 対応
+
 @x
 title: Documentation
 description: Help us to improve the documentation by identifying issues and suggesting changes.
@@ -536,10 +538,10 @@ Rendered:
 @z
 
 @x
-{{% deprecated-in 0.120.0 %}}
+{{% deprecated-in 0.127.0 %}}
 Use [`hugo.IsServer`] instead.
 @y
-{{% deprecated-in 0.120.0 %}}
+{{% deprecated-in 0.127.0 %}}
 Use [`hugo.IsServer`] instead.
 @z
 
@@ -609,15 +611,7 @@ Use the "new-in" shortcode to indicate a new feature:
 Use the "new-in" shortcode to indicate a new feature:
 @z
 
-@x
-```text
-{{</* new-in 0.120.0 */>}}
-```
-@y
-```text
-{{</* new-in 0.120.0 */>}}
-```
-@z
+% snip text ...
 
 @x
 Rendered:
@@ -626,9 +620,9 @@ Rendered:
 @z
 
 @x
-{{< new-in 0.120.0 >}}
+{{< new-in 0.127.0 >}}
 @y
-{{< new-in 0.120.0 >}}
+{{< new-in 0.127.0 >}}
 @z
 
 @x
@@ -708,9 +702,9 @@ Use the "new-in" shortcode to indicate a new feature:
 @z
 
 @x
-The "new in" label will be hidden if the specified version is older than a predefined threshold, based on differences in major and minor versions. See&nbsp;[details](https://github.com/gohugoio/hugoDocs/blob/master/layouts/shortcodes/new-in.html).
+The "new in" label will be hidden if the specified version is older than a predefined threshold, based on differences in major and minor versions. See&nbsp;[details](https://github.com/gohugoio/hugoDocs/blob/master/_vendor/github.com/gohugoio/gohugoioTheme/layouts/shortcodes/new-in.html).
 @y
-The "new in" label will be hidden if the specified version is older than a predefined threshold, based on differences in major and minor versions. See&nbsp;[details](https://github.com/gohugoio/hugoDocs/blob/master/layouts/shortcodes/new-in.html).
+The "new in" label will be hidden if the specified version is older than a predefined threshold, based on differences in major and minor versions. See&nbsp;[details](https://github.com/gohugoio/hugoDocs/blob/master/_vendor/github.com/gohugoio/gohugoioTheme/layouts/shortcodes/new-in.html).
 @z
 
 @x

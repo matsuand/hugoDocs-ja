@@ -112,6 +112,7 @@ AC_CONFIG_FILES([
 	src/content/ja/methods/menu-entry/_common/Makefile
 	src/content/ja/methods/page/Makefile
 	src/content/ja/methods/page/_common/Makefile
+	src/content/ja/methods/pager/Makefile
 	src/content/ja/methods/pages/Makefile
 	src/content/ja/methods/pages/_common/Makefile
 	src/content/ja/methods/resource/Makefile

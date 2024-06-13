@@ -64,9 +64,9 @@ Cosette get somewhat rested.
 @z
 
 @x
-<--more-->
+<!--more-->
 @y
-<--more-->
+<!--more-->
 @z
 
 @x
@@ -242,9 +242,9 @@ Render the summary in a template by calling the [`Summary`] method on a `Page` o
 @z
 
 @x
-[`Summary]: /methods/page/summary
+[`Summary`]: /methods/page/summary
 @y
-[`Summary]: /methods/page/summary
+[`Summary`]: /methods/page/summary
 @z
 
 @x

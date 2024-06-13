@@ -244,9 +244,25 @@ To find a fiction book by ISBN:
 @z
 
 @x
-In the template examples above, each of the keys is a valid identifier. For example, none of the keys contains a hyphen. To access a key that is not a valid identifier, use the [`index`] function:
+In the template examples above, each of the keys is a valid [identifier]. For example, none of the keys contains a hyphen. To access a key that is not a valid identifier, use the [`index`] function. For example:
 @y
-In the template examples above, each of the keys is a valid identifier. For example, none of the keys contains a hyphen. To access a key that is not a valid identifier, use the [`index`] function:
+In the template examples above, each of the keys is a valid [identifier]. For example, none of the keys contains a hyphen. To access a key that is not a valid identifier, use the [`index`] function. For example:
+@z
+
+@x
+[identifier]: /getting-started/glossary/#identifier
+@y
+[identifier]: /getting-started/glossary/#identifier
+@z
+
+@x
+```go-html-template
+{{ index .Site.Data.books "historical-fiction" }}
+```
+@y
+```go-html-template
+{{ index .Site.Data.books "historical-fiction" }}
+```
 @z
 
 @x

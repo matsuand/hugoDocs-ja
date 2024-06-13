@@ -8,7 +8,6 @@ bases = \
 	404.md                   \
 	_index.md                \
 	base.md                  \
-	data-templates.md        \
 	embedded.md              \
 	homepage.md              \
 	introduction.md          \

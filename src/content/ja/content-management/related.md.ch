@@ -261,10 +261,10 @@ weight
 
 @x
 cardinalityThreshold {{< new-in 0.111.0 >}}
-: (`int`) A percentage (0-100) used to remove common keywords from the index. As an example, setting this to `50` will remove all keywords that are used in more than 50% of the documents in the index. Default is `0`.
+: (`int`) If between 1 and 100, this is a percentage. All keywords that are used in more than this percentage of documents are removed. For example, setting this to `60` will remove all keywords that are used in more than 60% of the documents in the index. If `0`, no keyword is removed from the index. Default is `0`.
 @y
 cardinalityThreshold {{< new-in 0.111.0 >}}
-: (`int`) A percentage (0-100) used to remove common keywords from the index. As an example, setting this to `50` will remove all keywords that are used in more than 50% of the documents in the index. Default is `0`.
+: (`int`) If between 1 and 100, this is a percentage. All keywords that are used in more than this percentage of documents are removed. For example, setting this to `60` will remove all keywords that are used in more than 60% of the documents in the index. If `0`, no keyword is removed from the index. Default is `0`.
 @z
 
 @x

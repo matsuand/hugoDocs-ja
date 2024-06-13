@@ -18,8 +18,8 @@ aliases: [/templates/sections/]
 ---
 @y
 ---
-title: セクションページテンプレート
-linkTitle: セクションテンプレート
+title: Section page templates
+linkTitle: Section templates
 description: Templates used for section pages are **lists** and therefore have all the variables and methods available to list pages.
 categories: [templates]
 keywords: [lists,sections,templates]
@@ -58,64 +58,6 @@ See [Template Lookup](/templates/lookup-order/).
 @z
 
 @x
-## Page kinds
-@y
-## Page kinds
-@z
-
-@x
-Every `Page` in Hugo has a `.Kind` attribute.
-@y
-Every `Page` in Hugo has a `.Kind` attribute.
-@z
-
-@x
-{{% include "content-management/_common/page-kinds.md" %}}
-@y
-{{% include "content-management/_common/page-kinds.md" %}}
-@z
-
-@x
-## `.Site.GetPage` with sections
-@y
-## `.Site.GetPage` with sections
-@z
-
-@x
-`Kind` can easily be combined with the [`where`] function in your templates to create kind-specific lists of content. This method is ideal for creating lists, but there are times where you may want to fetch just the index page of a single section via the section's path.
-@y
-`Kind` can easily be combined with the [`where`] function in your templates to create kind-specific lists of content. This method is ideal for creating lists, but there are times where you may want to fetch just the index page of a single section via the section's path.
-@z
-
-@x
-The [`.GetPage` function][getpage] looks up an index page of a given `Kind` and `path`.
-@y
-The [`.GetPage` function][getpage] looks up an index page of a given `Kind` and `path`.
-@z
-
-@x
-You can call `.Site.GetPage` with two arguments: `kind` (one of the valid values
-of `Kind` from above) and `kind value`.
-@y
-You can call `.Site.GetPage` with two arguments: `kind` (one of the valid values
-of `Kind` from above) and `kind value`.
-@z
-
-@x
-Examples:
-@y
-Examples:
-@z
-
-@x
-- `{{ .Site.GetPage "section" "posts" }}`
-- `{{ .Site.GetPage "page" "search" }}`
-@y
-- `{{ .Site.GetPage "section" "posts" }}`
-- `{{ .Site.GetPage "page" "search" }}`
-@z
-
-@x
 ## Example: creating a default section template
 @y
 ## Example: creating a default section template
@@ -176,11 +118,11 @@ The `.Site.GetPage` example that follows assumes the following project directory
 .
 └── content
     ├── blog
-    │   ├── _index.md # "title: My Hugo Blog" in the front matter
+    │   ├── _index.md   <-- title: My Hugo Blog
     │   ├── post-1.md
     │   ├── post-2.md
     │   └── post-3.md
-    └── events #Note there is no _index.md file in "events"
+    └── events
         ├── event-1.md
         └── event-2.md
 ```
@@ -189,11 +131,11 @@ The `.Site.GetPage` example that follows assumes the following project directory
 .
 └── content
     ├── blog
-    │   ├── _index.md # "title: My Hugo Blog" in the front matter
+    │   ├── _index.md   <-- title: My Hugo Blog
     │   ├── post-1.md
     │   ├── post-2.md
     │   └── post-3.md
-    └── events #Note there is no _index.md file in "events"
+    └── events
         ├── event-1.md
         └── event-2.md
 ```
@@ -207,11 +149,11 @@ The `.Site.GetPage` example that follows assumes the following project directory
 
 @x
 ```go-html-template
-<h1>{{ with .Site.GetPage "section" "blog" }}{{ .Title }}{{ end }}</h1>
+<h1>{{ with .Site.GetPage "/blog" }}{{ .Title }}{{ end }}</h1>
 ```
 @y
 ```go-html-template
-<h1>{{ with .Site.GetPage "section" "blog" }}{{ .Title }}{{ end }}</h1>
+<h1>{{ with .Site.GetPage "/blog" }}{{ .Title }}{{ end }}</h1>
 ```
 @z
 
@@ -239,11 +181,11 @@ If we try the same code with the `events` section, however, Hugo will default to
 
 @x
 ```go-html-template
-<h1>{{ with .Site.GetPage "section" "events" }}{{ .Title }}{{ end }}</h1>
+<h1>{{ with .Site.GetPage "/events" }}{{ .Title }}{{ end }}</h1>
 ```
 @y
 ```go-html-template
-<h1>{{ with .Site.GetPage "section" "events" }}{{ .Title }}{{ end }}</h1>
+<h1>{{ with .Site.GetPage "/events" }}{{ .Title }}{{ end }}</h1>
 ```
 @z
 

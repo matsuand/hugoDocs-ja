@@ -11,6 +11,7 @@ bases = \
 	comments.md            \
 	content-adapters.md    \
 	cross-references.md    \
+	data-sources.md        \
 	diagrams.md            \
 	formats.md             \
 	front-matter.md        \
