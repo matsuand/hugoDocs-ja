@@ -2,29 +2,15 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: Section
 description: Returns the name of the top level section in which the given page resides.
 categories: []
 keywords: []
-action:
-  related:
-    - methods/page/Type
-  returnType: string
-  signatures: [PAGE.Section]
----
 @y
----
 title: Section
 description: Returns the name of the top level section in which the given page resides.
 categories: []
 keywords: []
-action:
-  related:
-    - methods/page/Type
-  returnType: string
-  signatures: [PAGE.Section]
----
 @z
 
 @x
@@ -33,29 +19,7 @@ With this content structure:
 With this content structure:
 @z
 
-@x
-```text
-content/
-├── lessons/
-│   ├── math/
-│   │   ├── _index.md
-│   │   ├── lesson-1.md
-│   │   └── lesson-2.md
-│   └── _index.md
-└── _index.md
-```
-@y
-```text
-content/
-├── lessons/
-│   ├── math/
-│   │   ├── _index.md
-│   │   ├── lesson-1.md
-│   │   └── lesson-2.md
-│   └── _index.md
-└── _index.md
-```
-@z
+% snip text...
 
 @x
 When rendering lesson-1.md:
@@ -63,15 +27,7 @@ When rendering lesson-1.md:
 When rendering lesson-1.md:
 @z
 
-@x
-```go-html-template
-{{ .Section }} → lessons
-```
-@y
-```go-html-template
-{{ .Section }} → lessons
-```
-@z
+% snip code...
 
 @x
 In the example above "lessons" is the top level section.
@@ -85,19 +41,7 @@ The `Section` method is often used with the [`where`] function to build a page c
 The `Section` method is often used with the [`where`] function to build a page collection.
 @z
 
-@x
-```go-html-template
-{{ range where .Site.RegularPages "Section" "lessons" }}
-  <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-{{ end }}
-```
-@y
-```go-html-template
-{{ range where .Site.RegularPages "Section" "lessons" }}
-  <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-{{ end }}
-```
-@z
+% snip code...
 
 @x
 This is similar to using the [`Type`] method with the `where` function
@@ -105,19 +49,7 @@ This is similar to using the [`Type`] method with the `where` function
 This is similar to using the [`Type`] method with the `where` function
 @z
 
-@x
-```go-html-template
-{{ range where .Site.RegularPages "Type" "lessons" }}
-  <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-{{ end }}
-```
-@y
-```go-html-template
-{{ range where .Site.RegularPages "Type" "lessons" }}
-  <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-{{ end }}
-```
-@z
+% snip code...
 
 @x
 However, if the `type` field in front matter has been defined on one or more pages, the page collection based on `Type` will be different than the page collection based on `Section`.
@@ -125,10 +57,4 @@ However, if the `type` field in front matter has been defined on one or more pag
 However, if the `type` field in front matter has been defined on one or more pages, the page collection based on `Type` will be different than the page collection based on `Section`.
 @z
 
-@x
-[`where`]: /functions/collections/where/
-[`Type`]: /methods/page/type/
-@y
-[`where`]: /functions/collections/where/
-[`Type`]: /methods/page/type/
-@z
+% snip links...
