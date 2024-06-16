@@ -36,17 +36,17 @@ aliases: [/functions/relurl]
 @z
 
 @x
-With multilingual configurations, use the [`relLangURL`] function instead. The URL returned by this function depends on:
+With multilingual configurations, use the [`urls.RelLangURL`] function instead. The URL returned by this function depends on:
 @y
-With multilingual configurations, use the [`relLangURL`] function instead. The URL returned by this function depends on:
+With multilingual configurations, use the [`urls.RelLangURL`] function instead. The URL returned by this function depends on:
 @z
 
 @x
 - Whether the input begins with a slash
-- The `baseURL` in site configuration
+- The `baseURL` in your site configuration
 @y
 - Whether the input begins with a slash
-- The `baseURL` in site configuration
+- The `baseURL` in your site configuration
 @z
 
 @x
@@ -56,9 +56,9 @@ With multilingual configurations, use the [`relLangURL`] function instead. The U
 @z
 
 @x
-If the input does not begin with a slash, the resulting URL will be correct regardless of the `baseURL`.
+If the input does not begin with a slash, the resulting URL will be relative to the `baseURL` in your site configuration.
 @y
-If the input does not begin with a slash, the resulting URL will be correct regardless of the `baseURL`.
+If the input does not begin with a slash, the resulting URL will be relative to the `baseURL` in your site configuration.
 @z
 
 @x
@@ -69,15 +69,17 @@ With `baseURL = https://example.org/`
 
 @x
 ```go-html-template
-{{ relURL "" }}           →   /
-{{ relURL "articles" }}   →   /articles
-{{ relURL "style.css" }}  →   /style.css
+{{ relURL "" }}                        → /
+{{ relURL "articles" }}                → /articles
+{{ relURL "style.css" }}               → /style.css
+{{ relURL "https://example.org/foo" }} → /foo
 ```
 @y
 ```go-html-template
-{{ relURL "" }}           →   /
-{{ relURL "articles" }}   →   /articles
-{{ relURL "style.css" }}  →   /style.css
+{{ relURL "" }}                        → /
+{{ relURL "articles" }}                → /articles
+{{ relURL "style.css" }}               → /style.css
+{{ relURL "https://example.org/foo" }} → /foo
 ```
 @z
 
@@ -89,15 +91,17 @@ With `baseURL = https://example.org/docs/`
 
 @x
 ```go-html-template
-{{ relURL "" }}           →   /docs/
-{{ relURL "articles" }}   →   /docs/articles
-{{ relURL "style.css" }}  →   /docs/style.css
+{{ relURL "" }}                             → /docs/
+{{ relURL "articles" }}                     → /docs/articles
+{{ relURL "style.css" }}                    → /docs/style.css
+{{ relURL "https://example.org/docs/foo" }} → /docs/foo
 ```
 @y
 ```go-html-template
-{{ relURL "" }}           →   /docs/
-{{ relURL "articles" }}   →   /docs/articles
-{{ relURL "style.css" }}  →   /docs/style.css
+{{ relURL "" }}                             → /docs/
+{{ relURL "articles" }}                     → /docs/articles
+{{ relURL "style.css" }}                    → /docs/style.css
+{{ relURL "https://example.org/docs/foo" }} → /docs/foo
 ```
 @z
 
@@ -108,9 +112,9 @@ With `baseURL = https://example.org/docs/`
 @z
 
 @x
-If the input begins with a slash, the resulting URL will be incorrect when the `baseURL` includes a subdirectory. With a leading slash, the function returns a URL relative to the protocol+host section of the `baseURL`.
+If the input begins with a slash, the resulting URL will be relative to the protocol+host of the `baseURL` in your site configuration.
 @y
-If the input begins with a slash, the resulting URL will be incorrect when the `baseURL` includes a subdirectory. With a leading slash, the function returns a URL relative to the protocol+host section of the `baseURL`.
+If the input begins with a slash, the resulting URL will be relative to the protocol+host of the `baseURL` in your site configuration.
 @z
 
 @x
@@ -121,15 +125,15 @@ With `baseURL = https://example.org/`
 
 @x
 ```go-html-template
-{{ relURL "/" }}          →   /
-{{ relURL "/articles" }}  →   /articles
-{{ relURL "style.css" }}  →   /style.css
+{{ relURL "/" }}          → /
+{{ relURL "/articles" }}  → /articles
+{{ relURL "/style.css" }} → /style.css
 ```
 @y
 ```go-html-template
-{{ relURL "/" }}          →   /
-{{ relURL "/articles" }}  →   /articles
-{{ relURL "style.css" }}  →   /style.css
+{{ relURL "/" }}          → /
+{{ relURL "/articles" }}  → /articles
+{{ relURL "/style.css" }} → /style.css
 ```
 @z
 
@@ -141,30 +145,20 @@ With `baseURL = https://example.org/docs/`
 
 @x
 ```go-html-template
-{{ relURL "/" }}          →   /
-{{ relURL "/articles" }}  →   /articles
-{{ relURL "/style.css" }} →   /style.css
+{{ relURL "/" }}          → /
+{{ relURL "/articles" }}  → /articles
+{{ relURL "/style.css" }} → /style.css
 ```
 @y
 ```go-html-template
-{{ relURL "/" }}          →   /
-{{ relURL "/articles" }}  →   /articles
-{{ relURL "/style.css" }} →   /style.css
+{{ relURL "/" }}          → /
+{{ relURL "/articles" }}  → /articles
+{{ relURL "/style.css" }} → /style.css
 ```
 @z
 
 @x
-{{% note %}}
-The last three examples are not desirable in most situations. As a best practice, never include a leading slash when using this function.
-{{% /note %}}
+[`urls.RelLangURL`]: /functions/urls/rellangurl/
 @y
-{{% note %}}
-The last three examples are not desirable in most situations. As a best practice, never include a leading slash when using this function.
-{{% /note %}}
-@z
-
-@x
-[`relLangURL`]: /functions/urls/rellangurl/
-@y
-[`relLangURL`]: /functions/urls/rellangurl/
+[`urls.RelLangURL`]: /functions/urls/rellangurl/
 @z

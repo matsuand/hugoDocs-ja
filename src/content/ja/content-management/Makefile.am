@@ -24,7 +24,6 @@ bases = \
 	related.md             \
 	sections.md            \
 	shortcodes.md          \
-	static-files.md        \
 	summaries.md           \
 	syntax-highlighting.md \
 	taxonomies.md          \

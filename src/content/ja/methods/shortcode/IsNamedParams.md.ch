@@ -4,7 +4,7 @@
 @x
 ---
 title: IsNamedParams
-description: Reports whether the shortcode call uses named parameters.
+description: Reports whether the shortcode call uses named arguments.
 categories: []
 keywords: []
 action:
@@ -16,7 +16,7 @@ action:
 @y
 ---
 title: IsNamedParams
-description: Reports whether the shortcode call uses named parameters.
+description: Reports whether the shortcode call uses named arguments.
 categories: []
 keywords: []
 action:
@@ -28,9 +28,9 @@ action:
 @z
 
 @x
-To support both positional and named parameters when calling a shortcode, use the `IsNamedParams` method to determine how the shortcode was called.
+To support both positional and named arguments when calling a shortcode, use the `IsNamedParams` method to determine how the shortcode was called.
 @y
-To support both positional and named parameters when calling a shortcode, use the `IsNamedParams` method to determine how the shortcode was called.
+To support both positional and named arguments when calling a shortcode, use the `IsNamedParams` method to determine how the shortcode was called.
 @z
 
 @x

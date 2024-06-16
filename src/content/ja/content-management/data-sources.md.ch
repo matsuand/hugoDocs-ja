@@ -239,7 +239,7 @@ Use data sources to augment existing content. For example, create a shortcode to
     {{ errorf "The %q shortcode was unable to find %s. See %s" $.Name $file $.Position }}
   {{ end }}
 {{ else }}
-  {{ errorf "The %q shortcode requires one positional parameter, the path to the CSV file relative to the assets directory. See %s" .Name .Position }}
+  {{ errorf "The %q shortcode requires one positional argument, the path to the CSV file relative to the assets directory. See %s" .Name .Position }}
 {{ end }}
 {{< /code >}}
 @y
@@ -270,7 +270,7 @@ Use data sources to augment existing content. For example, create a shortcode to
     {{ errorf "The %q shortcode was unable to find %s. See %s" $.Name $file $.Position }}
   {{ end }}
 {{ else }}
-  {{ errorf "The %q shortcode requires one positional parameter, the path to the CSV file relative to the assets directory. See %s" .Name .Position }}
+  {{ errorf "The %q shortcode requires one positional argument, the path to the CSV file relative to the assets directory. See %s" .Name .Position }}
 {{ end }}
 {{< /code >}}
 @z

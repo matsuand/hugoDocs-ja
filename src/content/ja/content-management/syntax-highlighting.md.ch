@@ -75,10 +75,10 @@ https://xyproto.github.io/splash/docs/ では、入手可能なスタイルが�
 @z
 
 @x
-Highlighting is carried out via the built-in [`highlight` shortcode](/content-management/shortcodes/#highlight). It takes exactly one required parameter for the programming language to be highlighted and requires a closing shortcode.
+Highlighting is carried out via the built-in [`highlight` shortcode](/content-management/shortcodes/#highlight). It takes exactly one required argument for the programming language to be highlighted and requires a closing tag.
 @y
 ハイライト処理は組み込みの[`highlight` ショートコード](/content-management/shortcodes/#highlight) によって実現されます。
-It takes exactly one required parameter for the programming language to be highlighted and requires a closing shortcode.
+It takes exactly one required argument for the programming language to be highlighted and requires a closing tag.
 @z
 
 @x

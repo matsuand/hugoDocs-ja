@@ -14,9 +14,9 @@ keywords: []
 @z
 
 @x
-The primary application for this function is the definition of the `namedSlices` parameter in the options map passed to the [`Related`] method on the `Pages` object.
+The primary application for this function is the definition of the `namedSlices` value in the options map passed to the [`Related`] method on the `Pages` object.
 @y
-本関数の主な用途は、`Page` オブジェクトの [`Related`] メソッドに受け渡されるオプションマップ内の `namedSlices` パラメーターを定義することです。
+本関数の主な用途は、`Page` オブジェクトの [`Related`] メソッドに受け渡されるオプションマップ内の `namedSlices` 値を定義することです。
 @z
 
 % snip link...

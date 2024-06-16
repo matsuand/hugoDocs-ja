@@ -74,61 +74,15 @@ The idea of a list page comes from the [hierarchical mental model of the web][me
 @z
 
 @x
-## List defaults
-@y
-## List defaults {#list-defaults}
-@z
-
-@x
-### Default templates
-@y
-### Default templates
-@z
-
-@x
-Since section lists and taxonomy lists (N.B., *not* [taxonomy terms lists][taxterms]) are both *lists* with regards to their templates, both have the same terminating default of `_default/list.html` or `themes/<THEME>/layouts/_default/list.html` in their lookup order. In addition, both [section lists][sectiontemps] and [taxonomy lists][taxlists] have their own default list templates in `_default`.
-@y
-Since section lists and taxonomy lists (N.B., *not* [taxonomy terms lists][taxterms]) are both *lists* with regards to their templates, both have the same terminating default of `_default/list.html` or `themes/<THEME>/layouts/_default/list.html` in their lookup order. In addition, both [section lists][sectiontemps] and [taxonomy lists][taxlists] have their own default list templates in `_default`.
-@z
-
-@x
-See [Template Lookup Order](/templates/lookup-order/) for the complete reference.
-@y
-See [Template Lookup Order](/templates/lookup-order/) for the complete reference.
-@z
-
-@x
 ## Add content and front matter to list pages
 @y
 ## Add content and front matter to list pages
 @z
 
 @x
-Since v0.18, [everything in Hugo is a `Page`][bepsays]. This means list pages and the homepage can have associated content files (i.e. `_index.md`) that contain page metadata (i.e., front matter) and content.
+Add content and front matter to list pages by creating an _index.md file for `home`, `section`, `taxonomy`, and `term` pages.
 @y
-Since v0.18, [everything in Hugo is a `Page`][bepsays]. This means list pages and the homepage can have associated content files (i.e. `_index.md`) that contain page metadata (i.e., front matter) and content.
-@z
-
-@x
-This new model allows you to include list-specific front matter via `.Params` and also means that list templates (e.g., `layouts/_default/list.html`) have access to all [page variables][pagevars].
-@y
-This new model allows you to include list-specific front matter via `.Params` and also means that list templates (e.g., `layouts/_default/list.html`) have access to all [page variables][pagevars].
-@z
-
-@x
-{{% note %}}
-It is important to note that all `_index.md` content files will render according to a *list* template and not according to a [single page template](/templates/single-page-templates/).
-{{% /note %}}
-@y
-{{% note %}}
-It is important to note that all `_index.md` content files will render according to a *list* template and not according to a [single page template](/templates/single-page-templates/).
-{{% /note %}}
-@z
-
-@x
-### Example project directory
-@y
-### Example project directory
+Add content and front matter to list pages by creating an _index.md file for `home`, `section`, `taxonomy`, and `term` pages.
 @z
 
 @x
@@ -209,7 +163,51 @@ You can now access this `_index.md`'s' content in your list template:
 You can now access this `_index.md`'s' content in your list template:
 @z
 
-% snip code...
+@x
+{{< code file=layouts/_default/list.html >}}
+{{ define "main" }}
+  <main>
+    <article>
+      <header>
+        <h1>{{ .Title }}</h1>
+      </header>
+      <!-- "{{ .Content }}" pulls from the Markdown content of the corresponding _index.md -->
+      {{ .Content }}
+    </article>
+    <ul>
+      <!-- Ranges through content/posts/*.md -->
+      {{ range .Pages }}
+        <li>
+          <a href="{{ .RelPermalink }}">{{ .Date.Format "2006-01-02" }} | {{ .LinkTitle }}</a>
+        </li>
+      {{ end }}
+    </ul>
+  </main>
+{{ end }}
+{{< /code >}}
+@y
+{{< code file=layouts/_default/list.html >}}
+{{ define "main" }}
+  <main>
+    <article>
+      <header>
+        <h1>{{ .Title }}</h1>
+      </header>
+      <!-- "{{ .Content }}" pulls from the Markdown content of the corresponding _index.md -->
+      {{ .Content }}
+    </article>
+    <ul>
+      <!-- Ranges through content/posts/*.md -->
+      {{ range .Pages }}
+        <li>
+          <a href="{{ .RelPermalink }}">{{ .Date.Format "2006-01-02" }} | {{ .LinkTitle }}</a>
+        </li>
+      {{ end }}
+    </ul>
+  </main>
+{{ end }}
+{{< /code >}}
+@z
 
 @x
 This above will output the following HTML:
@@ -312,19 +310,23 @@ Using this same `layouts/_default/list.html` template and applying it to the `qu
 @x
 {{% note %}}
 By default, Hugo capitalizes and pluralizes automatic list titles including section, taxonomy, and term pages. You can disable these transformations by setting [`capitalizeListTitles`] and [`pluralizeListTitles`] in your site configuration.
+@y
+{{% note %}}
+By default, Hugo capitalizes and pluralizes automatic list titles including section, taxonomy, and term pages. You can disable these transformations by setting [`capitalizeListTitles`] and [`pluralizeListTitles`] in your site configuration.
+@z
 
+@x
 You can change the capitalization style in your site configuration to one of `ap`, `chicago`, `go`, `firstupper`, or `none`. See [details].
+@y
+You can change the capitalization style in your site configuration to one of `ap`, `chicago`, `go`, `firstupper`, or `none`. See [details].
+@z
 
+@x
 [`capitalizeListTitles`]: /getting-started/configuration/#capitalizelisttitles
 [`pluralizeListTitles`]: /getting-started/configuration/#pluralizelisttitles
 [details]: /getting-started/configuration/#configure-title-case
 {{% /note %}}
 @y
-{{% note %}}
-By default, Hugo capitalizes and pluralizes automatic list titles including section, taxonomy, and term pages. You can disable these transformations by setting [`capitalizeListTitles`] and [`pluralizeListTitles`] in your site configuration.
-
-You can change the capitalization style in your site configuration to one of `ap`, `chicago`, `go`, `firstupper`, or `none`. See [details].
-
 [`capitalizeListTitles`]: /getting-started/configuration/#capitalizelisttitles
 [`pluralizeListTitles`]: /getting-started/configuration/#pluralizelisttitles
 [details]: /getting-started/configuration/#configure-title-case
@@ -445,7 +447,17 @@ By default, Hugo sorts page collections by:
 4. Page file path if the page is backed by a file
 @z
 
-% snip links...
+@x
+[date]: /methods/page/date/
+[weight]: /methods/page/weight/
+[linkTitle]: /methods/page/linktitle/
+[title]: /methods/page/title/
+@y
+[date]: /methods/page/date/
+[weight]: /methods/page/weight/
+[linkTitle]: /methods/page/linktitle/
+[title]: /methods/page/title/
+@z
 
 @x
 Change the sort order using any of the methods below.
@@ -501,4 +513,48 @@ See the documentation on [`where`] and
 [`first`] for further details.
 @z
 
-% snip links...
+@x
+[base]: /templates/base/
+[bepsays]: https://bepsays.com/en/2016/12/19/hugo-018/
+[directorystructure]: /getting-started/directory-structure/
+[`Format` function]: /methods/time/format/
+[front matter]: /content-management/front-matter/
+[getpage]: /methods/page/getpage/
+[homepage]: /templates/homepage/
+[mentalmodel]: https://webstyleguide.com/wsg3/3-information-architecture/3-site-structure.html
+[partials]: /templates/partials/
+[RSS 2.0]: https://cyber.harvard.edu/rss/rss.html
+[rss]: /templates/rss/
+[sections]: /content-management/sections/
+[sectiontemps]: /templates/section-templates/
+[taxlists]: /templates/taxonomy-templates/#taxonomy-templates
+[taxterms]: /templates/taxonomy-templates/#term-templates
+[taxvars]: /methods/taxonomy/
+[views]: /templates/views/
+[`where`]: /functions/collections/where/
+[`first`]: /functions/collections/first/
+[main sections]: /methods/site/mainsections/
+[`time.Format`]: /functions/time/format/
+@y
+[base]: /templates/base/
+[bepsays]: https://bepsays.com/en/2016/12/19/hugo-018/
+[directorystructure]: /getting-started/directory-structure/
+[`Format` function]: /methods/time/format/
+[front matter]: /content-management/front-matter/
+[getpage]: /methods/page/getpage/
+[homepage]: /templates/homepage/
+[mentalmodel]: https://webstyleguide.com/wsg3/3-information-architecture/3-site-structure.html
+[partials]: /templates/partials/
+[RSS 2.0]: https://cyber.harvard.edu/rss/rss.html
+[rss]: /templates/rss/
+[sections]: /content-management/sections/
+[sectiontemps]: /templates/section-templates/
+[taxlists]: /templates/taxonomy-templates/#taxonomy-templates
+[taxterms]: /templates/taxonomy-templates/#term-templates
+[taxvars]: /methods/taxonomy/
+[views]: /templates/views/
+[`where`]: /functions/collections/where/
+[`first`]: /functions/collections/first/
+[main sections]: /methods/site/mainsections/
+[`time.Format`]: /functions/time/format/
+@z

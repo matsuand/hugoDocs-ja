@@ -4,7 +4,7 @@
 @x
 ---
 title: Params
-description: Returns a collection of the shortcode parameters.
+description: Returns a collection of the shortcode arguments.
 categories: []
 keywords: []
 action:
@@ -16,7 +16,7 @@ action:
 @y
 ---
 title: Params
-description: Returns a collection of the shortcode parameters.
+description: Returns a collection of the shortcode arguments.
 categories: []
 keywords: []
 action:
@@ -28,9 +28,9 @@ action:
 @z
 
 @x
-When you call a shortcode using positional parameters, the `Params` method returns a slice.
+When you call a shortcode using positional arguments, the `Params` method returns a slice.
 @y
-When you call a shortcode using positional parameters, the `Params` method returns a slice.
+When you call a shortcode using positional arguments, the `Params` method returns a slice.
 @z
 
 @x
@@ -56,9 +56,9 @@ When you call a shortcode using positional parameters, the `Params` method retur
 @z
 
 @x
-When you call a shortcode using named parameters, the `Params` method returns a map.
+When you call a shortcode using named arguments, the `Params` method returns a map.
 @y
-When you call a shortcode using named parameters, the `Params` method returns a map.
+When you call a shortcode using named arguments, the `Params` method returns a map.
 @z
 
 @x

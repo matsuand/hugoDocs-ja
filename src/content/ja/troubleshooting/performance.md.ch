@@ -269,11 +269,11 @@ Some partial templates such as sidebars or menus are executed many times during 
 
 @x
 {{% note %}}
-Note that you can create cached variants of each partial by passing additional parameters to `partialCached` beyond the initial context. See the `partialCached` documentation for more details.
+Note that you can create cached variants of each partial by passing additional arguments to `partialCached` beyond the initial context. See the `partialCached` documentation for more details.
 {{% /note %}}
 @y
 {{% note %}}
-Note that you can create cached variants of each partial by passing additional parameters to `partialCached` beyond the initial context. See the `partialCached` documentation for more details.
+Note that you can create cached variants of each partial by passing additional arguments to `partialCached` beyond the initial context. See the `partialCached` documentation for more details.
 {{% /note %}}
 @z
 

@@ -44,9 +44,9 @@ The `ref` and `relref` shortcodes display the absolute and relative permalinks t
 @z
 
 @x
-The `ref` and `relref` shortcodes require a single parameter: the path to a content document, with or without a file extension, with or without an anchor. Paths without a leading `/` are first resolved relative to the current page, then to the remainder of the site.
+The `ref` and `relref` shortcodes require a single argument: the path to a content document, with or without a file extension, with or without an anchor. Paths without a leading `/` are first resolved relative to the current page, then to the remainder of the site.
 @y
-The `ref` and `relref` shortcodes require a single parameter: the path to a content document, with or without a file extension, with or without an anchor. Paths without a leading `/` are first resolved relative to the current page, then to the remainder of the site.
+The `ref` and `relref` shortcodes require a single argument: the path to a content document, with or without a file extension, with or without an anchor. Paths without a leading `/` are first resolved relative to the current page, then to the remainder of the site.
 @z
 
 @x
@@ -171,6 +171,12 @@ Hugo emits an error or warning if a document cannot be uniquely resolved. The er
 ### Link to another language version
 @y
 ### Link to another language version
+@z
+
+@x
+Using `ref` or `relref` without specifying a language, will make the reference resolve to the language of the current content page.
+@y
+Using `ref` or `relref` without specifying a language, will make the reference resolve to the language of the current content page.
 @z
 
 @x

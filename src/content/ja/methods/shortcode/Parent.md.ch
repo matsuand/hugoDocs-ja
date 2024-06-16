@@ -26,9 +26,9 @@ action:
 @z
 
 @x
-This is useful for inheritance of common shortcode parameters from the root.
+This is useful for inheritance of common shortcode arguments from the root.
 @y
-This is useful for inheritance of common shortcode parameters from the root.
+This is useful for inheritance of common shortcode arguments from the root.
 @z
 
 @x
@@ -114,11 +114,11 @@ The "now" shortcode formats the current time using:
 @z
 
 @x
-1. The `dateFormat` parameter passed to the "now" shortcode, if present
-2. The `dateFormat` parameter passed to the "greeting" shortcode, if present
+1. The `dateFormat` argument passed to the "now" shortcode, if present
+2. The `dateFormat` argument passed to the "greeting" shortcode, if present
 3. The default layout string defined at the top of the shortcode
 @y
-1. The `dateFormat` parameter passed to the "now" shortcode, if present
-2. The `dateFormat` parameter passed to the "greeting" shortcode, if present
+1. The `dateFormat` argument passed to the "now" shortcode, if present
+2. The `dateFormat` argument passed to the "greeting" shortcode, if present
 3. The default layout string defined at the top of the shortcode
 @z

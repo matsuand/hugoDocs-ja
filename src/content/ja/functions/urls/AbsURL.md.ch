@@ -36,9 +36,9 @@ aliases: [/functions/absurl]
 @z
 
 @x
-With multilingual configurations, use the [`absLangURL`] function instead. The URL returned by this function depends on:
+With multilingual configurations, use the [`urls.AbsLangURL`] function instead. The URL returned by this function depends on:
 @y
-With multilingual configurations, use the [`absLangURL`] function instead. The URL returned by this function depends on:
+With multilingual configurations, use the [`urls.AbsLangURL`] function instead. The URL returned by this function depends on:
 @z
 
 @x
@@ -56,9 +56,9 @@ With multilingual configurations, use the [`absLangURL`] function instead. The U
 @z
 
 @x
-If the input does not begin with a slash, the resulting URL will be correct regardless of the `baseURL`.
+If the input does not begin with a slash, the path in the resulting URL will be relative to the `baseURL` in your site configuration.
 @y
-If the input does not begin with a slash, the resulting URL will be correct regardless of the `baseURL`.
+If the input does not begin with a slash, the path in the resulting URL will be relative to the `baseURL` in your site configuration.
 @z
 
 @x
@@ -69,15 +69,15 @@ With `baseURL = https://example.org/`
 
 @x
 ```go-html-template
-{{ absURL "" }}           →   https://example.org/
-{{ absURL "articles" }}   →   https://example.org/articles
-{{ absURL "style.css" }}  →   https://example.org/style.css
+{{ absURL "" }}          → https://example.org/
+{{ absURL "articles" }}  → https://example.org/articles
+{{ absURL "style.css" }} → https://example.org/style.css
 ```
 @y
 ```go-html-template
-{{ absURL "" }}           →   https://example.org/
-{{ absURL "articles" }}   →   https://example.org/articles
-{{ absURL "style.css" }}  →   https://example.org/style.css
+{{ absURL "" }}          → https://example.org/
+{{ absURL "articles" }}  → https://example.org/articles
+{{ absURL "style.css" }} → https://example.org/style.css
 ```
 @z
 
@@ -89,15 +89,15 @@ With `baseURL = https://example.org/docs/`
 
 @x
 ```go-html-template
-{{ absURL "" }}           →   https://example.org/docs/
-{{ absURL "articles" }}   →   https://example.org/docs/articles
-{{ absURL "style.css" }}  →   https://example.org/docs/style.css
+{{ absURL "" }}          → https://example.org/docs/
+{{ absURL "articles" }}  → https://example.org/docs/articles
+{{ absURL "style.css" }} → https://example.org/docs/style.css
 ```
 @y
 ```go-html-template
-{{ absURL "" }}           →   https://example.org/docs/
-{{ absURL "articles" }}   →   https://example.org/docs/articles
-{{ absURL "style.css" }}  →   https://example.org/docs/style.css
+{{ absURL "" }}          → https://example.org/docs/
+{{ absURL "articles" }}  → https://example.org/docs/articles
+{{ absURL "style.css" }} → https://example.org/docs/style.css
 ```
 @z
 
@@ -108,9 +108,9 @@ With `baseURL = https://example.org/docs/`
 @z
 
 @x
-If the input begins with a slash, the resulting URL will be incorrect when the `baseURL` includes a subdirectory. With a leading slash, the function returns a URL relative to the protocol+host section of the `baseURL`.
+If the input begins with a slash, the path in the resulting URL will be relative to the protocol+host of the `baseURL` in your site configuration.
 @y
-If the input begins with a slash, the resulting URL will be incorrect when the `baseURL` includes a subdirectory. With a leading slash, the function returns a URL relative to the protocol+host section of the `baseURL`.
+If the input begins with a slash, the path in the resulting URL will be relative to the protocol+host of the `baseURL` in your site configuration.
 @z
 
 @x
@@ -121,15 +121,15 @@ With `baseURL = https://example.org/`
 
 @x
 ```go-html-template
-{{ absURL "/" }}          →   https://example.org/
-{{ absURL "/articles" }}  →   https://example.org/articles
-{{ absURL "/style.css" }} →   https://example.org/style.css
+{{ absURL "/" }}          → https://example.org/
+{{ absURL "/articles" }}  → https://example.org/articles
+{{ absURL "/style.css" }} → https://example.org/style.css
 ```
 @y
 ```go-html-template
-{{ absURL "/" }}          →   https://example.org/
-{{ absURL "/articles" }}  →   https://example.org/articles
-{{ absURL "/style.css" }} →   https://example.org/style.css
+{{ absURL "/" }}          → https://example.org/
+{{ absURL "/articles" }}  → https://example.org/articles
+{{ absURL "/style.css" }} → https://example.org/style.css
 ```
 @z
 
@@ -141,30 +141,20 @@ With `baseURL = https://example.org/docs/`
 
 @x
 ```go-html-template
-{{ absURL "/" }}          →   https://example.org/
-{{ absURL "/articles" }}  →   https://example.org/articles
-{{ absURL "/style.css" }} →   https://example.org/style.css
+{{ absURL "/" }}          → https://example.org/
+{{ absURL "/articles" }}  → https://example.org/articles
+{{ absURL "/style.css" }} → https://example.org/style.css
 ```
 @y
 ```go-html-template
-{{ absURL "/" }}          →   https://example.org/
-{{ absURL "/articles" }}  →   https://example.org/articles
-{{ absURL "/style.css" }} →   https://example.org/style.css
+{{ absURL "/" }}          → https://example.org/
+{{ absURL "/articles" }}  → https://example.org/articles
+{{ absURL "/style.css" }} → https://example.org/style.css
 ```
 @z
 
 @x
-{{% note %}}
-The last three examples are not desirable in most situations. As a best practice, never include a leading slash when using this function.
-{{% /note %}}
+[`urls.AbsLangURL`]: /functions/urls/abslangurl/
 @y
-{{% note %}}
-The last three examples are not desirable in most situations. As a best practice, never include a leading slash when using this function.
-{{% /note %}}
-@z
-
-@x
-[`absLangURL`]: /functions/urls/abslangurl/
-@y
-[`absLangURL`]: /functions/urls/abslangurl/
+[`urls.AbsLangURL`]: /functions/urls/abslangurl/
 @z

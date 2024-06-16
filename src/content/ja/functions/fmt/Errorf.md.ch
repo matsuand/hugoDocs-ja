@@ -49,11 +49,11 @@ The `errorf` function evaluates the format string, then prints the result to the
 
 @x
 ```go-html-template
-{{ errorf "The %q shortcode requires a src parameter. See %s" .Name .Position }}
+{{ errorf "The %q shortcode requires a src argument. See %s" .Name .Position }}
 ```
 @y
 ```go-html-template
-{{ errorf "The %q shortcode requires a src parameter. See %s" .Name .Position }}
+{{ errorf "The %q shortcode requires a src argument. See %s" .Name .Position }}
 ```
 @z
 

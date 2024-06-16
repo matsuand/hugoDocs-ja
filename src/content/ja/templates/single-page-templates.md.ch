@@ -2,33 +2,15 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: Single page templates
 description: The primary view of content in Hugo is the single view. Hugo will render every Markdown file provided with a corresponding single template.
 categories: [templates]
 keywords: [page, templates]
-menu:
-  docs:
-    parent: templates
-    weight: 50
-weight: 50
-toc: true
-aliases: [/layout/content/]
----
 @y
----
 title: シングルページテンプレート
 description: The primary view of content in Hugo is the single view. Hugo will render every Markdown file provided with a corresponding single template.
 categories: [templates]
 keywords: [page, templates]
-menu:
-  docs:
-    parent: templates
-    weight: 50
-weight: 50
-toc: true
-aliases: [/layout/content/]
----
 @z
 
 @x
@@ -47,24 +29,6 @@ See [Template Lookup](/templates/lookup-order/).
 ## Example single page templates
 @y
 ## Example single page templates
-@z
-
-@x
-Content pages are of the type `page` and will therefore have all the [page variables][pagevars] and [site variables] available to use in their templates.
-@y
-Content pages are of the type `page` and will therefore have all the [page variables][pagevars] and [site variables] available to use in their templates.
-@z
-
-@x
-### `posts/single.html`
-@y
-### `posts/single.html`
-@z
-
-@x
-This single page template makes use of Hugo [base templates], the [`.Format` function] for dates, the [`.WordCount` page variable][pagevars], and ranges through the single content's specific [taxonomies][pagetaxonomy]. [`with`] is also used to check whether the taxonomies are set in the front matter.
-@y
-This single page template makes use of Hugo [base templates], the [`.Format` function] for dates, the [`.WordCount` page variable][pagevars], and ranges through the single content's specific [taxonomies][pagetaxonomy]. [`with`] is also used to check whether the taxonomies are set in the front matter.
 @z
 
 @x
@@ -161,4 +125,30 @@ To easily generate new instances of a content type (e.g., new `.md` files in a s
 To easily generate new instances of a content type (e.g., new `.md` files in a section like `project/`) with preconfigured front matter, use [content archetypes][archetypes].
 @z
 
-% snip links...
+@x
+[archetypes]: /content-management/archetypes/
+[base templates]: /templates/base/
+[content type]: /content-management/types/
+[directory structure]: /getting-started/directory-structure/
+[dry]: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
+[`.format` function]: /methods/time/format/
+[front matter]: /content-management/front-matter/
+[pagetaxonomy]: /templates/taxonomy-templates/#list-terms-assigned-to-a-page
+[partials]: /templates/partials/
+[section]: /content-management/sections/
+[spf13]: https://spf13.com/
+[`with`]: /functions/go-template/with/
+@y
+[archetypes]: /content-management/archetypes/
+[base templates]: /templates/base/
+[content type]: /content-management/types/
+[directory structure]: /getting-started/directory-structure/
+[dry]: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
+[`.format` function]: /methods/time/format/
+[front matter]: /content-management/front-matter/
+[pagetaxonomy]: /templates/taxonomy-templates/#list-terms-assigned-to-a-page
+[partials]: /templates/partials/
+[section]: /content-management/sections/
+[spf13]: https://spf13.com/
+[`with`]: /functions/go-template/with/
+@z

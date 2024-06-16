@@ -1,6 +1,8 @@
 %This is the change file for the original Hugo Documentation file.
 %This is part of Japanese translation version for Hugo Documantation.
 
+% snip 対応
+
 @x
 title: Taxonomies
 description: Hugo includes support for user-defined taxonomies.
@@ -415,22 +417,4 @@ wikipedia: "https://en.wikipedia.org/wiki/Bruce_Willis"
 {{< /code-toggle >}}
 @z
 
-@x
-[content section]: /content-management/sections/
-[content type]: /content-management/types/
-[documentation on archetypes]: /content-management/archetypes/
-[front matter]: /content-management/front-matter/
-[taxonomy list templates]: /templates/taxonomy-templates/#taxonomy-list-templates
-[taxonomy templates]: /templates/taxonomy-templates/
-[terms within the taxonomy]: /templates/taxonomy-templates/#taxonomy-terms-templates
-[site configuration]: /getting-started/configuration/
-@y
-[content section]: /content-management/sections/
-[content type]: /content-management/types/
-[documentation on archetypes]: /content-management/archetypes/
-[front matter]: /content-management/front-matter/
-[taxonomy list templates]: /templates/taxonomy-templates/#taxonomy-list-templates
-[taxonomy templates]: /templates/taxonomy-templates/
-[terms within the taxonomy]: /templates/taxonomy-templates/#taxonomy-terms-templates
-[site configuration]: /getting-started/configuration/
-@z
+% snip links...

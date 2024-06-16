@@ -60,15 +60,15 @@ In addition to cleaner Markdown, shortcodes can be updated any time to reflect n
 @z
 
 @x
-In your content files, a shortcode can be called by calling `{{%/* shortcodename parameters */%}}`. Shortcode parameters are space delimited, and parameters with internal spaces can be quoted.
+In your content files, a shortcode can be called by calling `{{%/* shortcodename arguments */%}}`. Shortcode arguments are space delimited, and arguments with internal spaces must be quoted.
 @y
-In your content files, a shortcode can be called by calling `{{%/* shortcodename parameters */%}}`. Shortcode parameters are space delimited, and parameters with internal spaces can be quoted.
+In your content files, a shortcode can be called by calling `{{%/* shortcodename arguments */%}}`. Shortcode arguments are space delimited, and arguments with internal spaces must be quoted.
 @z
 
 @x
-The first word in the shortcode declaration is always the name of the shortcode. Parameters follow the name. Depending upon how the shortcode is defined, the parameters may be named, positional, or both, although you can't mix parameter types in a single call. The format for named parameters models that of HTML with the format `name="value"`.
+The first word in the shortcode declaration is always the name of the shortcode. Arguments follow the name. Depending upon how the shortcode is defined, the arguments may be named, positional, or both, although you can't mix argument types in a single call. The format for named arguments models that of HTML with the format `name="value"`.
 @y
-The first word in the shortcode declaration is always the name of the shortcode. Parameters follow the name. Depending upon how the shortcode is defined, the parameters may be named, positional, or both, although you can't mix parameter types in a single call. The format for named parameters models that of HTML with the format `name="value"`.
+The first word in the shortcode declaration is always the name of the shortcode. Arguments follow the name. Depending upon how the shortcode is defined, the arguments may be named, positional, or both, although you can't mix argument types in a single call. The format for named arguments models that of HTML with the format `name="value"`.
 @z
 
 @x
@@ -110,15 +110,15 @@ The examples above use two different delimiters, the difference being the `%` ch
 @z
 
 @x
-### Shortcodes with raw string parameters
+### Shortcodes with raw string arguments
 @y
-### Shortcodes with raw string parameters
+### Shortcodes with raw string arguments
 @z
 
 @x
-You can pass multiple lines as parameters to a shortcode by using raw string literals:
+You can pass multiple lines as arguments to a shortcode by using raw string literals:
 @y
-You can pass multiple lines as parameters to a shortcode by using raw string literals:
+You can pass multiple lines as arguments to a shortcode by using raw string literals:
 @z
 
 @x
@@ -214,9 +214,9 @@ To override Hugo's embedded `figure` shortcode, copy the [source code] to a file
 @z
 
 @x
-The `figure` shortcode can use the following named parameters:
+The `figure` shortcode can use the following named arguments:
 @y
-The `figure` shortcode can use the following named parameters:
+The `figure` shortcode can use the following named arguments:
 @z
 
 @x
@@ -237,18 +237,18 @@ link
 
 @x
 target
-: Optional `target` attribute for the URL if `link` parameter is set.
+: Optional `target` attribute for the URL if `link` argument is set.
 @y
 target
-: Optional `target` attribute for the URL if `link` parameter is set.
+: Optional `target` attribute for the URL if `link` argument is set.
 @z
 
 @x
 rel
-: Optional `rel` attribute for the URL if `link` parameter is set.
+: Optional `rel` attribute for the URL if `link` argument is set.
 @y
 rel
-: Optional `rel` attribute for the URL if `link` parameter is set.
+: Optional `rel` attribute for the URL if `link` argument is set.
 @z
 
 @x
@@ -947,10 +947,10 @@ Rendered:
 
 @x
 {{% note %}}
-If you want to further customize the visual styling, add a `class` parameter when calling the shortcode. The new `class` will be added to the `<div>` that wraps the `<iframe>` *and* will remove the inline styles. Note that you will need to call the `id` as a named parameter as well. You can also give the vimeo video a descriptive title with `title`.
+If you want to further customize the visual styling, add a `class` argument when calling the shortcode. The new `class` will be added to the `<div>` that wraps the `<iframe>` *and* will remove the inline styles. Note that you will need to call the `id` as a named argument as well. You can also give the vimeo video a descriptive title with `title`.
 @y
 {{% note %}}
-If you want to further customize the visual styling, add a `class` parameter when calling the shortcode. The new `class` will be added to the `<div>` that wraps the `<iframe>` *and* will remove the inline styles. Note that you will need to call the `id` as a named parameter as well. You can also give the vimeo video a descriptive title with `title`.
+If you want to further customize the visual styling, add a `class` argument when calling the shortcode. The new `class` will be added to the `<div>` that wraps the `<iframe>` *and* will remove the inline styles. Note that you will need to call the `id` as a named argument as well. You can also give the vimeo video a descriptive title with `title`.
 @z
 
 @x
@@ -1032,9 +1032,9 @@ Rendered:
 @z
 
 @x
-The youtube shortcode accepts these named parameters:
+The youtube shortcode accepts these named arguments:
 @y
-The youtube shortcode accepts these named parameters:
+The youtube shortcode accepts these named arguments:
 @z
 
 @x

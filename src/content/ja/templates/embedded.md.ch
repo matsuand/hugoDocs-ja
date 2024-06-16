@@ -588,9 +588,9 @@ To include the embedded template:
 @z
 
 @x
-Hugo's X (Twitter) Card template is configured using a mix of configuration variables and [front-matter](/content-management/front-matter/) on individual pages.
+Hugo's X (Twitter) Card template is configured using a mix of configuration settings and [front-matter](/content-management/front-matter/) values on individual pages.
 @y
-Hugo's X (Twitter) Card template is configured using a mix of configuration variables and [front-matter](/content-management/front-matter/) on individual pages.
+Hugo's X (Twitter) Card template is configured using a mix of configuration settings and [front-matter](/content-management/front-matter/) values on individual pages.
 @z
 
 @x

@@ -2,35 +2,17 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: Create your own shortcodes
 linkTitle: Shortcode templates
 description: You can extend Hugo's embedded shortcodes by creating your own using the same templating syntax as that for single and list pages.
 categories: [templates]
 keywords: [shortcodes,templates]
-menu:
-  docs:
-    parent: templates
-    weight: 130
-weight: 130
-aliases: [/functions/get]
-toc: true
----
 @y
----
 title: 独自のショートコードテンプレート生成
 linkTitle: ショートコードテンプレート
 description: You can extend Hugo's embedded shortcodes by creating your own using the same templating syntax as that for single and list pages.
 categories: [templates]
 keywords: [shortcodes,templates]
-menu:
-  docs:
-    parent: templates
-    weight: 130
-weight: 130
-aliases: [/functions/get]
-toc: true
----
 @z
 
 @x
@@ -74,9 +56,9 @@ Hugo's embedded shortcodes cover many common, but not all, use cases. Luckily, H
 @z
 
 @x
-To create a shortcode, place an HTML template in the `layouts/shortcodes` directory of your [source organization]. Consider the file name carefully since the shortcode name will mirror that of the file but without the `.html` extension. For example, `layouts/shortcodes/myshortcode.html` will be called with either `{{</* myshortcode /*/>}}` or `{{%/* myshortcode /*/%}}`.
+To create a shortcode, place an HTML template in the `layouts/shortcodes` directory. Consider the file name carefully since the shortcode name will mirror that of the file but without the `.html` extension. For example, `layouts/shortcodes/myshortcode.html` will be called with either `{{</* myshortcode /*/>}}` or `{{%/* myshortcode /*/%}}`.
 @y
-To create a shortcode, place an HTML template in the `layouts/shortcodes` directory of your [source organization]. Consider the file name carefully since the shortcode name will mirror that of the file but without the `.html` extension. For example, `layouts/shortcodes/myshortcode.html` will be called with either `{{</* myshortcode /*/>}}` or `{{%/* myshortcode /*/%}}`.
+To create a shortcode, place an HTML template in the `layouts/shortcodes` directory. Consider the file name carefully since the shortcode name will mirror that of the file but without the `.html` extension. For example, `layouts/shortcodes/myshortcode.html` will be called with either `{{</* myshortcode /*/>}}` or `{{%/* myshortcode /*/%}}`.
 @z
 
 @x
@@ -122,61 +104,61 @@ Shortcode templates have a simple [lookup order]:
 @z
 
 @x
-### Positional vs. named parameters
+### Positional vs. named arguments
 @y
-### Positional vs. named parameters
+### Positional vs. named arguments
 @z
 
 @x
-You can create shortcodes using the following types of parameters:
+You can create shortcodes using the following types of arguments:
 @y
-You can create shortcodes using the following types of parameters:
+You can create shortcodes using the following types of arguments:
 @z
 
 @x
-* Positional parameters
-* Named parameters
-* Positional *or* named parameters (i.e, "flexible")
+* Positional arguments
+* Named arguments
+* Positional *or* named arguments
 @y
-* Positional parameters
-* Named parameters
-* Positional *or* named parameters (i.e, "flexible")
+* Positional arguments
+* Named arguments
+* Positional *or* named arguments
 @z
 
 @x
-In shortcodes with positional parameters, the order of the parameters is important. If a shortcode has a single required value (e.g., the `youtube` shortcode below), positional parameters work very well and require less typing from content authors.
+In shortcodes with positional arguments, the order of the arguments is important. If a shortcode has a single required value, positional arguments require less typing from content authors.
 @y
-In shortcodes with positional parameters, the order of the parameters is important. If a shortcode has a single required value (e.g., the `youtube` shortcode below), positional parameters work very well and require less typing from content authors.
+In shortcodes with positional arguments, the order of the arguments is important. If a shortcode has a single required value, positional arguments require less typing from content authors.
 @z
 
 @x
-For more complex layouts with multiple or optional parameters, named parameters work best. While less terse, named parameters require less memorization from a content author and can be added in a shortcode declaration in any order.
+For more complex layouts with multiple or optional arguments, named arguments work best. While less terse, named arguments require less memorization from a content author and can be added in a shortcode declaration in any order.
 @y
-For more complex layouts with multiple or optional parameters, named parameters work best. While less terse, named parameters require less memorization from a content author and can be added in a shortcode declaration in any order.
+For more complex layouts with multiple or optional arguments, named arguments work best. While less terse, named arguments require less memorization from a content author and can be added in a shortcode declaration in any order.
 @z
 
 @x
-Allowing both types of parameters (i.e., a "flexible" shortcode) is useful for complex layouts where you want to set default values that can be easily overridden by users.
+Allowing both types of arguments is useful for complex layouts where you want to set default values that can be easily overridden by users.
 @y
-Allowing both types of parameters (i.e., a "flexible" shortcode) is useful for complex layouts where you want to set default values that can be easily overridden by users.
+Allowing both types of arguments is useful for complex layouts where you want to set default values that can be easily overridden by users.
 @z
 
 @x
-### Access parameters
+### Access arguments
 @y
-### Access parameters
+### Access arguments
 @z
 
 @x
-All shortcode parameters can be accessed via the `.Get` method. Whether you pass a key (i.e., string) or a number to the `.Get` method depends on whether you are accessing a named or positional parameter, respectively.
+All shortcode arguments can be accessed via the `.Get` method. Whether you pass a string or a number to the `.Get` method depends on whether you are accessing a named or positional argument, respectively.
 @y
-All shortcode parameters can be accessed via the `.Get` method. Whether you pass a key (i.e., string) or a number to the `.Get` method depends on whether you are accessing a named or positional parameter, respectively.
+All shortcode arguments can be accessed via the `.Get` method. Whether you pass a string or a number to the `.Get` method depends on whether you are accessing a named or positional argument, respectively.
 @z
 
 @x
-To access a parameter by name, use the `.Get` method followed by the named parameter as a quoted string:
+To access an argument by name, use the `.Get` method followed by the named argument as a quoted string:
 @y
-To access a parameter by name, use the `.Get` method followed by the named parameter as a quoted string:
+To access an argument by name, use the `.Get` method followed by the named argument as a quoted string:
 @z
 
 @x
@@ -190,9 +172,9 @@ To access a parameter by name, use the `.Get` method followed by the named param
 @z
 
 @x
-To access a parameter by position, use the `.Get` followed by a numeric position, keeping in mind that positional parameters are zero-indexed:
+To access an argument by position, use the `.Get` followed by a numeric position, keeping in mind that positional arguments are zero-indexed:
 @y
-To access a parameter by position, use the `.Get` followed by a numeric position, keeping in mind that positional parameters are zero-indexed:
+To access an argument by position, use the `.Get` followed by a numeric position, keeping in mind that positional arguments are zero-indexed:
 @z
 
 @x
@@ -222,9 +204,9 @@ For the second position, you would just use:
 @z
 
 @x
-`with` is great when the output depends on a parameter being set:
+`with` is great when the output depends on a argument being set:
 @y
-`with` is great when the output depends on a parameter being set:
+`with` is great when the output depends on a argument being set:
 @z
 
 @x
@@ -238,10 +220,10 @@ For the second position, you would just use:
 @z
 
 @x
-`.Get` can also be used to check if a parameter has been provided. This is
+`.Get` can also be used to check if a argument has been provided. This is
 most helpful when the condition depends on either of the values, or both:
 @y
-`.Get` can also be used to check if a parameter has been provided. This is
+`.Get` can also be used to check if a argument has been provided. This is
 most helpful when the condition depends on either of the values, or both:
 @z
 
@@ -262,9 +244,9 @@ most helpful when the condition depends on either of the values, or both:
 @z
 
 @x
-If a closing shortcode is used, the `.Inner` variable will be populated with the content between the opening and closing shortcodes. To check if `.Inner` contains anything other than whitespace:
+The `.Inner` method returns the content between the opening and closing shortcode tags. To check if `.Inner` returns anything other than whitespace:
 @y
-If a closing shortcode is used, the `.Inner` variable will be populated with the content between the opening and closing shortcodes. To check if `.Inner` contains anything other than whitespace:
+The `.Inner` method returns the content between the opening and closing shortcode tags. To check if `.Inner` returns anything other than whitespace:
 @z
 
 @x
@@ -282,9 +264,11 @@ If a closing shortcode is used, the `.Inner` variable will be populated with the
 @z
 
 @x
-A shortcode with content declared via the `.Inner` variable can also be declared without the content and without the closing tag by using the self-closing syntax:
+{{% note %}}
+Any shortcode that calls the `.Inner` method must be closed or self-closed. To call a shortcode using the self-closing sytax
 @y
-A shortcode with content declared via the `.Inner` variable can also be declared without the content and without the closing tag by using the self-closing syntax:
+{{% note %}}
+Any shortcode that calls the `.Inner` method must be closed or self-closed. To call a shortcode using the self-closing sytax
 @z
 
 @x
@@ -295,14 +279,6 @@ A shortcode with content declared via the `.Inner` variable can also be declared
 ```go-html-template
 {{</* innershortcode /*/>}}
 ```
-@z
-
-@x
-{{% note %}}
-Any shortcode that refers to `.Inner` must be closed or self-closed.
-@y
-{{% note %}}
-Any shortcode that refers to `.Inner` must be closed or self-closed.
 @z
 
 @x
@@ -318,17 +294,17 @@ Any shortcode that refers to `.Inner` must be closed or self-closed.
 @z
 
 @x
-The `.Params` variable in shortcodes contains the list parameters passed to shortcode for more complicated use cases. You can also access higher-scoped parameters with the following logic:
+The `.Params` method in shortcodes returns the arguments passed to the shortcode for more complicated use cases. You can also access higher-scoped arguments with the following logic:
 @y
-The `.Params` variable in shortcodes contains the list parameters passed to shortcode for more complicated use cases. You can also access higher-scoped parameters with the following logic:
+The `.Params` method in shortcodes returns the arguments passed to the shortcode for more complicated use cases. You can also access higher-scoped arguments with the following logic:
 @z
 
 @x
 $.Params
-: these are the parameters passed directly into the shortcode declaration (e.g., a YouTube video ID)
+: these are the arguments passed directly into the shortcode declaration (e.g., a YouTube video ID)
 @y
 $.Params
-: these are the parameters passed directly into the shortcode declaration (e.g., a YouTube video ID)
+: these are the arguments passed directly into the shortcode declaration (e.g., a YouTube video ID)
 @z
 
 @x
@@ -340,10 +316,10 @@ $.Page.Params
 @z
 
 @x
-$.Page.Site.Params
+$.Site.Params
 : refers to parameters defined in your site configuration.
 @y
-$.Page.Site.Params
+$.Site.Params
 : refers to parameters defined in your site configuration.
 @z
 
@@ -354,15 +330,15 @@ $.Page.Site.Params
 @z
 
 @x
-The `.IsNamedParams` method checks whether the shortcode declaration uses named parameters and returns a boolean value.
+The `.IsNamedParams` method checks whether the shortcode declaration uses named arguments and returns a boolean value.
 @y
-The `.IsNamedParams` method checks whether the shortcode declaration uses named parameters and returns a boolean value.
+The `.IsNamedParams` method checks whether the shortcode declaration uses named arguments and returns a boolean value.
 @z
 
 @x
-For example, you could create an `image` shortcode that can take either a `src` named parameter or the first positional parameter, depending on the preference of the content's author. Let's assume the `image` shortcode is called as follows:
+For example, you could create an `image` shortcode that can take either a `src` named argument or the first positional argument, depending on the preference of the content's author. Let's assume the `image` shortcode is called as follows:
 @y
-For example, you could create an `image` shortcode that can take either a `src` named parameter or the first positional parameter, depending on the preference of the content's author. Let's assume the `image` shortcode is called as follows:
+For example, you could create an `image` shortcode that can take either a `src` named argument or the first positional argument, depending on the preference of the content's author. Let's assume the `image` shortcode is called as follows:
 @z
 
 @x
@@ -384,17 +360,17 @@ You could then include the following as part of your shortcode templating:
 @x
 ```go-html-template
 {{ if .IsNamedParams }}
-<img src="{{ .Get "src" }}" alt="">
+  <img src="{{ .Get "src" }}" alt="">
 {{ else }}
-<img src="{{ .Get 0 }}" alt="">
+  <img src="{{ .Get 0 }}" alt="">
 {{ end }}
 ```
 @y
 ```go-html-template
 {{ if .IsNamedParams }}
-<img src="{{ .Get "src" }}" alt="">
+  <img src="{{ .Get "src" }}" alt="">
 {{ else }}
-<img src="{{ .Get 0 }}" alt="">
+  <img src="{{ .Get 0 }}" alt="">
 {{ end }}
 ```
 @z
@@ -407,24 +383,18 @@ See the [example Vimeo shortcode][vimeoexample] below for `.IsNamedParams` in ac
 
 @x
 {{% note %}}
-While you can create shortcode templates that accept both positional and named parameters, you *cannot* declare shortcodes in content with a mix of parameter types. Therefore, a shortcode declared like `{{</* image src="images/my-image.jpg" "This is my alt text" */>}}` will return an error.
+While you can create shortcode templates that accept both positional and named arguments, you *cannot* declare shortcodes in content with a mix of argument types. Therefore, a shortcode declared like `{{</* image src="images/my-image.jpg" "This is my alt text" */>}}` will return an error.
 {{% /note %}}
 @y
 {{% note %}}
-While you can create shortcode templates that accept both positional and named parameters, you *cannot* declare shortcodes in content with a mix of parameter types. Therefore, a shortcode declared like `{{</* image src="images/my-image.jpg" "This is my alt text" */>}}` will return an error.
+While you can create shortcode templates that accept both positional and named arguments, you *cannot* declare shortcodes in content with a mix of argument types. Therefore, a shortcode declared like `{{</* image src="images/my-image.jpg" "This is my alt text" */>}}` will return an error.
 {{% /note %}}
 @z
 
 @x
-You can also use the variable `.Page` to access all the normal [page variables][pagevars].
+Shortcodes can also be nested. In a nested shortcode, you can access the parent shortcode context with the [`.Parent`] shortcode method. This can be very useful for inheritance from the root.
 @y
-You can also use the variable `.Page` to access all the normal [page variables][pagevars].
-@z
-
-@x
-Shortcodes can also be nested. In a nested shortcode, you can access the parent shortcode context with the [`.Parent`] shortcode method. This can be very useful for inheritance of common shortcode parameters from the root.
-@y
-Shortcodes can also be nested. In a nested shortcode, you can access the parent shortcode context with the [`.Parent`] shortcode method. This can be very useful for inheritance of common shortcode parameters from the root.
+Shortcodes can also be nested. In a nested shortcode, you can access the parent shortcode context with the [`.Parent`] shortcode method. This can be very useful for inheritance from the root.
 @z
 
 @x
@@ -434,9 +404,9 @@ Shortcodes can also be nested. In a nested shortcode, you can access the parent 
 @z
 
 @x
-You can check if a specific shortcode is used on a page by calling `.HasShortcode` in that page template, providing the name of the shortcode. This is sometimes useful when you want to include specific scripts or styles in the header that are only used by that shortcode.
+You can check if a specific shortcode is used on a page by calling `.HasShortcode` in that page template, providing the name of the shortcode. This is useful when you want to include specific scripts or styles in the header that are only used by that shortcode.
 @y
-You can check if a specific shortcode is used on a page by calling `.HasShortcode` in that page template, providing the name of the shortcode. This is sometimes useful when you want to include specific scripts or styles in the header that are only used by that shortcode.
+You can check if a specific shortcode is used on a page by calling `.HasShortcode` in that page template, providing the name of the shortcode. This is useful when you want to include specific scripts or styles in the header that are only used by that shortcode.
 @z
 
 @x
@@ -490,9 +460,9 @@ Let's assume you would like to keep mentions of your copyright year current in y
 @z
 
 @x
-Embedded videos are a common addition to Markdown content that can quickly become unsightly. The following is the code used by [Hugo's built-in YouTube shortcode][youtubeshortcode]:
+Embedded videos are a common addition to Markdown content. The following is the code used by [Hugo's built-in YouTube shortcode][youtubeshortcode]:
 @y
-Embedded videos are a common addition to Markdown content that can quickly become unsightly. The following is the code used by [Hugo's built-in YouTube shortcode][youtubeshortcode]:
+Embedded videos are a common addition to Markdown content. The following is the code used by [Hugo's built-in YouTube shortcode][youtubeshortcode]:
 @z
 
 @x
@@ -798,15 +768,15 @@ The rendered output of the HTML example code block will be as follows:
 @z
 
 @x
-Hugo's [`.Parent`] shortcode method provides access to the parent shortcode context when the shortcode in question is called within the context of a *parent* shortcode. This provides an inheritance model for common shortcode parameters.
+Hugo's [`.Parent`] shortcode method provides access to the parent shortcode context when the shortcode in question is called within the context of a parent shortcode. This provides an inheritance model.
 @y
-Hugo's [`.Parent`] shortcode method provides access to the parent shortcode context when the shortcode in question is called within the context of a *parent* shortcode. This provides an inheritance model for common shortcode parameters.
+Hugo's [`.Parent`] shortcode method provides access to the parent shortcode context when the shortcode in question is called within the context of a parent shortcode. This provides an inheritance model.
 @z
 
 @x
-The following example is contrived but demonstrates the concept. Assume you have a `gallery` shortcode that expects one named `class` parameter:
+The following example is contrived but demonstrates the concept. Assume you have a `gallery` shortcode that expects one named `class` argument:
 @y
-The following example is contrived but demonstrates the concept. Assume you have a `gallery` shortcode that expects one named `class` parameter:
+The following example is contrived but demonstrates the concept. Assume you have a `gallery` shortcode that expects one named `class` argument:
 @z
 
 @x
@@ -824,9 +794,9 @@ The following example is contrived but demonstrates the concept. Assume you have
 @z
 
 @x
-You also have an `img` shortcode with a single named `src` parameter that you want to call inside of `gallery` and other shortcodes, so that the parent defines the context of each `img`:
+You also have an `img` shortcode with a single named `src` argument that you want to call inside of `gallery` and other shortcodes, so that the parent defines the context of each `img`:
 @y
-You also have an `img` shortcode with a single named `src` parameter that you want to call inside of `gallery` and other shortcodes, so that the parent defines the context of each `img`:
+You also have an `img` shortcode with a single named `src` argument that you want to call inside of `gallery` and other shortcodes, so that the parent defines the context of each `img`:
 @z
 
 @x
@@ -914,7 +884,7 @@ Use the [`errorf`] template function with the [`Name`] and [`Position`] shortcod
 {{ with .Get "name" }}
   <p>Hello, my name is {{ . }}.</p>
 {{ else }}
-  {{ errorf "The %q shortcode requires a 'name' parameter. See %s" .Name .Position }}
+  {{ errorf "The %q shortcode requires a 'name' argument. See %s" .Name .Position }}
 {{ end }}
 {{< /code >}}
 @y
@@ -922,7 +892,7 @@ Use the [`errorf`] template function with the [`Name`] and [`Position`] shortcod
 {{ with .Get "name" }}
   <p>Hello, my name is {{ . }}.</p>
 {{ else }}
-  {{ errorf "The %q shortcode requires a 'name' parameter. See %s" .Name .Position }}
+  {{ errorf "The %q shortcode requires a 'name' argument. See %s" .Name .Position }}
 {{ end }}
 {{< /code >}}
 @z
@@ -935,11 +905,11 @@ When the above fails, you will see an `ERROR` message such as:
 
 @x
 ```sh
-ERROR The "greeting" shortcode requires a 'name' parameter. See "/home/user/project/content/_index.md:12:1"
+ERROR The "greeting" shortcode requires a 'name' argument. See "/home/user/project/content/_index.md:12:1"
 ```
 @y
 ```sh
-ERROR The "greeting" shortcode requires a 'name' parameter. See "/home/user/project/content/_index.md:12:1"
+ERROR The "greeting" shortcode requires a 'name' argument. See "/home/user/project/content/_index.md:12:1"
 ```
 @z
 
@@ -1002,9 +972,9 @@ The above will print the current date and time.
 @z
 
 @x
- Note that an inline shortcode's inner content is parsed and executed as a Go text template with the same context as a regular shortcode template.
+Note that an inline shortcode's inner content is parsed and executed as a Go text template with the same context as a regular shortcode template.
 @y
- Note that an inline shortcode's inner content is parsed and executed as a Go text template with the same context as a regular shortcode template.
+Note that an inline shortcode's inner content is parsed and executed as a Go text template with the same context as a regular shortcode template.
 @z
 
 @x
@@ -1014,9 +984,9 @@ This means that the current page can be accessed via `.Page.Title` etc. This als
 @z
 
 @x
-The same inline shortcode can be reused later in the same content file, with different parameters if needed, using the self-closing syntax:
+The same inline shortcode can be reused later in the same content file, with different arguments if needed, using the self-closing syntax:
 @y
-The same inline shortcode can be reused later in the same content file, with different parameters if needed, using the self-closing syntax:
+The same inline shortcode can be reused later in the same content file, with different arguments if needed, using the self-closing syntax:
 @z
 
 @x
@@ -1037,7 +1007,6 @@ The same inline shortcode can be reused later in the same content file, with dif
 [built-in shortcode]: /content-management/shortcodes/
 [figure]: /content-management/shortcodes/#figure
 [lookup order]: /templates/lookup-order/
-[pagevars]: /methods/page/
 [source organization]: /getting-started/directory-structure/
 [vimeoexample]: #single-flexible-example-vimeo
 [youtubeshortcode]: /content-management/shortcodes/#youtube
@@ -1049,7 +1018,6 @@ The same inline shortcode can be reused later in the same content file, with dif
 [built-in shortcode]: /content-management/shortcodes/
 [figure]: /content-management/shortcodes/#figure
 [lookup order]: /templates/lookup-order/
-[pagevars]: /methods/page/
 [source organization]: /getting-started/directory-structure/
 [vimeoexample]: #single-flexible-example-vimeo
 [youtubeshortcode]: /content-management/shortcodes/#youtube

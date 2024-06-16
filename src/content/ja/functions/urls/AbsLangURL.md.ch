@@ -52,9 +52,9 @@ Use this function with both monolingual and multilingual configurations. The URL
 @z
 
 @x
-In examples that follow, the project is multilingual with content in both Español (`es`) and English (`en`). The default language is Español. The returned values are from the English site.
+In examples that follow, the project is multilingual with content in both English (`en`) and Spanish (`es`). The returned values are from the English site.
 @y
-In examples that follow, the project is multilingual with content in both Español (`es`) and English (`en`). The default language is Español. The returned values are from the English site.
+In examples that follow, the project is multilingual with content in both English (`en`) and Spanish (`es`). The returned values are from the English site.
 @z
 
 @x
@@ -64,9 +64,9 @@ In examples that follow, the project is multilingual with content in both Españ
 @z
 
 @x
-If the input does not begin with a slash, the resulting URL will be correct regardless of the `baseURL`.
+If the input does not begin with a slash, the path in the resulting URL will be relative to the `baseURL` in your site configuration.
 @y
-If the input does not begin with a slash, the resulting URL will be correct regardless of the `baseURL`.
+If the input does not begin with a slash, the path in the resulting URL will be relative to the `baseURL` in your site configuration.
 @z
 
 @x
@@ -77,15 +77,15 @@ With `baseURL = https://example.org/`
 
 @x
 ```go-html-template
-{{ absLangURL "" }}           →   https://example.org/en/
-{{ absLangURL "articles" }}   →   https://example.org/en/articles
-{{ absLangURL "style.css" }}  →   https://example.org/en/style.css
+{{ absLangURL "" }}          → https://example.org/en/
+{{ absLangURL "articles" }}  → https://example.org/en/articles
+{{ absLangURL "style.css" }} → https://example.org/en/style.css
 ```
 @y
 ```go-html-template
-{{ absLangURL "" }}           →   https://example.org/en/
-{{ absLangURL "articles" }}   →   https://example.org/en/articles
-{{ absLangURL "style.css" }}  →   https://example.org/en/style.css
+{{ absLangURL "" }}          → https://example.org/en/
+{{ absLangURL "articles" }}  → https://example.org/en/articles
+{{ absLangURL "style.css" }} → https://example.org/en/style.css
 ```
 @z
 
@@ -97,15 +97,15 @@ With `baseURL = https://example.org/docs/`
 
 @x
 ```go-html-template
-{{ absLangURL "" }}           →   https://example.org/docs/en/
-{{ absLangURL "articles" }}   →   https://example.org/docs/en/articles
-{{ absLangURL "style.css" }}  →   https://example.org/docs/en/style.css
+{{ absLangURL "" }}          → https://example.org/docs/en/
+{{ absLangURL "articles" }}  → https://example.org/docs/en/articles
+{{ absLangURL "style.css" }} → https://example.org/docs/en/style.css
 ```
 @y
 ```go-html-template
-{{ absLangURL "" }}           →   https://example.org/docs/en/
-{{ absLangURL "articles" }}   →   https://example.org/docs/en/articles
-{{ absLangURL "style.css" }}  →   https://example.org/docs/en/style.css
+{{ absLangURL "" }}          → https://example.org/docs/en/
+{{ absLangURL "articles" }}  → https://example.org/docs/en/articles
+{{ absLangURL "style.css" }} → https://example.org/docs/en/style.css
 ```
 @z
 
@@ -116,9 +116,9 @@ With `baseURL = https://example.org/docs/`
 @z
 
 @x
-If the input begins with a slash, the resulting URL will be incorrect when the `baseURL` includes a subdirectory. With a leading slash, the function returns a URL relative to the protocol+host section of the `baseURL`.
+If the input begins with a slash, the path in the resulting URL will be relative to the protocol+host of the `baseURL` in your site configuration.
 @y
-If the input begins with a slash, the resulting URL will be incorrect when the `baseURL` includes a subdirectory. With a leading slash, the function returns a URL relative to the protocol+host section of the `baseURL`.
+If the input begins with a slash, the path in the resulting URL will be relative to the protocol+host of the `baseURL` in your site configuration.
 @z
 
 @x
@@ -129,15 +129,15 @@ With `baseURL = https://example.org/`
 
 @x
 ```go-html-template
-{{ absLangURL "/" }}          →   https://example.org/en/
-{{ absLangURL "/articles" }}  →   https://example.org/en/articles
-{{ absLangURL "/style.css" }} →   https://example.org/en/style.css
+{{ absLangURL "/" }}          → https://example.org/en/
+{{ absLangURL "/articles" }}  → https://example.org/en/articles
+{{ absLangURL "/style.css" }} → https://example.org/en/style.css
 ```
 @y
 ```go-html-template
-{{ absLangURL "/" }}          →   https://example.org/en/
-{{ absLangURL "/articles" }}  →   https://example.org/en/articles
-{{ absLangURL "/style.css" }} →   https://example.org/en/style.css
+{{ absLangURL "/" }}          → https://example.org/en/
+{{ absLangURL "/articles" }}  → https://example.org/en/articles
+{{ absLangURL "/style.css" }} → https://example.org/en/style.css
 ```
 @z
 
@@ -149,24 +149,14 @@ With `baseURL = https://example.org/docs/`
 
 @x
 ```go-html-template
-{{ absLangURL "/" }}          →   https://example.org/en/
-{{ absLangURL "/articles" }}  →   https://example.org/en/articles
-{{ absLangURL "/style.css" }} →   https://example.org/en/style.css
+{{ absLangURL "/" }}          → https://example.org/en/
+{{ absLangURL "/articles" }}  → https://example.org/en/articles
+{{ absLangURL "/style.css" }} → https://example.org/en/style.css
 ```
 @y
 ```go-html-template
-{{ absLangURL "/" }}          →   https://example.org/en/
-{{ absLangURL "/articles" }}  →   https://example.org/en/articles
-{{ absLangURL "/style.css" }} →   https://example.org/en/style.css
+{{ absLangURL "/" }}          → https://example.org/en/
+{{ absLangURL "/articles" }}  → https://example.org/en/articles
+{{ absLangURL "/style.css" }} → https://example.org/en/style.css
 ```
-@z
-
-@x
-{{% note %}}
-The last three examples are not desirable in most situations. As a best practice, never include a leading slash when using this function.
-{{% /note %}}
-@y
-{{% note %}}
-The last three examples are not desirable in most situations. As a best practice, never include a leading slash when using this function.
-{{% /note %}}
 @z

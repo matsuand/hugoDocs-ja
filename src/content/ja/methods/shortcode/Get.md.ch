@@ -4,7 +4,7 @@
 @x
 ---
 title: Get
-description: Returns the value of the given parameter.
+description: Returns the value of the given argument.
 categories: []
 keywords: []
 action:
@@ -12,13 +12,13 @@ action:
     - methods/shortcode/IsNamedParams
     - methods/shortcode/Params
   returnType: any
-  signatures: [SHORTCODE.Get PARAM]
+  signatures: [SHORTCODE.Get ARG]
 toc: true
 ---
 @y
 ---
 title: Get
-description: Returns the value of the given parameter.
+description: Returns the value of the given argument.
 categories: []
 keywords: []
 action:
@@ -26,37 +26,37 @@ action:
     - methods/shortcode/IsNamedParams
     - methods/shortcode/Params
   returnType: any
-  signatures: [SHORTCODE.Get PARAM]
+  signatures: [SHORTCODE.Get ARG]
 toc: true
 ---
 @z
 
 @x
-Specify the parameter by position or by name. When calling a shortcode within Markdown, use either positional or named parameters, but not both.
+Specify the argument by position or by name. When calling a shortcode within Markdown, use either positional or named argument, but not both.
 @y
-Specify the parameter by position or by name. When calling a shortcode within Markdown, use either positional or named parameters, but not both.
+Specify the argument by position or by name. When calling a shortcode within Markdown, use either positional or named argument, but not both.
 @z
 
 @x
 {{% note %}}
-Some shortcodes support positional parameters, some support named parameters, and others support both. Refer to the shortcode's documentation for usage details.
+Some shortcodes support positional arguments, some support named arguments, and others support both. Refer to the shortcode's documentation for usage details.
 {{% /note %}}
 @y
 {{% note %}}
-Some shortcodes support positional parameters, some support named parameters, and others support both. Refer to the shortcode's documentation for usage details.
+Some shortcodes support positional arguments, some support named arguments, and others support both. Refer to the shortcode's documentation for usage details.
 {{% /note %}}
 @z
 
 @x
-## Positional parameters
+## Positional arguments
 @y
-## Positional parameters
+## Positional arguments
 @z
 
 @x
-This shortcode call uses positional parameters:
+This shortcode call uses positional arguments:
 @y
-This shortcode call uses positional parameters:
+This shortcode call uses positional arguments:
 @z
 
 @x
@@ -70,9 +70,9 @@ This shortcode call uses positional parameters:
 @z
 
 @x
-To retrieve parameters by position:
+To retrieve arguments by position:
 @y
-To retrieve parameters by position:
+To retrieve arguments by position:
 @z
 
 @x
@@ -86,15 +86,15 @@ To retrieve parameters by position:
 @z
 
 @x
-## Named parameters
+## Named arguments
 @y
-## Named parameters
+## Named arguments
 @z
 
 @x
-This shortcode call uses named parameters:
+This shortcode call uses named arguments:
 @y
-This shortcode call uses named parameters:
+This shortcode call uses named arguments:
 @z
 
 @x
@@ -108,9 +108,9 @@ This shortcode call uses named parameters:
 @z
 
 @x
-To retrieve parameters by name:
+To retrieve arguments by name:
 @y
-To retrieve parameters by name:
+To retrieve arguments by name:
 @z
 
 @x
@@ -125,10 +125,10 @@ To retrieve parameters by name:
 
 @x
 {{% note %}}
-Parameter names are case-sensitive.
+Argument names are case-sensitive.
 {{% /note %}}
 @y
 {{% note %}}
-Parameter names are case-sensitive.
+Argument names are case-sensitive.
 {{% /note %}}
 @z
