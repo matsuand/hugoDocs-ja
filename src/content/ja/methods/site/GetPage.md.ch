@@ -92,9 +92,9 @@ content/
 @z
 
 @x
-This home page template:
+This home template:
 @y
-This home page template:
+This home template:
 @z
 
 @x
@@ -238,9 +238,9 @@ content/
 @z
 
 @x
-In the home page template, use the `GetPage` method on a `Site` object to render all the images in the headless [page bundle]:
+In the home template, use the `GetPage` method on a `Site` object to render all the images in the headless [page bundle]:
 @y
-In the home page template, use the `GetPage` method on a `Site` object to render all the images in the headless [page bundle]:
+In the home template, use the `GetPage` method on a `Site` object to render all the images in the headless [page bundle]:
 @z
 
 @x

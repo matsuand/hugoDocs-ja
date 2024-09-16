@@ -2,18 +2,13 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
-# Do not remove front matter.
----
+The falsy values are `false`, `0`, any `nil` pointer or interface value, any array, slice, map, or string of length zero, and zero `time.Time` values.
 @y
----
-# Do not remove front matter.
----
+偽値 (falsy value) とは `false`、`0`、`nil` ポインター、インターフェース値、配列、スライス、マップ、長さゼロの文字列、ゼロの `time.Time` 値、です。
 @z
 
 @x
-In Go templates, the falsy values are `false`, `0`, any nil pointer or interface value, and any array, slice, map, or string of length zero. Everything else is truthy.
+Everything else is truthy.
 @y
-Go テンプレートにおいて偽値 (falsy value) とは `false`、`0`、nil ポインター、インターフェース値、配列、スライス、マップ、長さゼロの文字列、です。
 これ以外はすべて真値 (truthy) です。
 @z

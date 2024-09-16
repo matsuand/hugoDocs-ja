@@ -34,15 +34,15 @@ aliases: [/developer-tools/migrations/, /developer-tools/migrated/]
 @z
 
 @x
-This section highlights some projects around Hugo that are independently developed. These tools try to extend the functionality of our static site generator or help you to get started.
+This section highlights some independently developed projects related to Hugo. These tools extend functionality or help you to get started.
 @y
-This section highlights some projects around Hugo that are independently developed. These tools try to extend the functionality of our static site generator or help you to get started.
+This section highlights some independently developed projects related to Hugo. These tools extend functionality or help you to get started.
 @z
 
 @x
-Take a look at this list of migration tools if you currently use other blogging tools like Jekyll or WordPress but intend to switch to Hugo instead. They'll take care to export your content into Hugo-friendly formats.
+Take a look at this list of migration tools if you currently use other blogging tools like Jekyll or WordPress but intend to switch to Hugo instead. They'll help you export your content into Hugo-friendly formats.
 @y
-Take a look at this list of migration tools if you currently use other blogging tools like Jekyll or WordPress but intend to switch to Hugo instead. They'll take care to export your content into Hugo-friendly formats.
+Take a look at this list of migration tools if you currently use other blogging tools like Jekyll or WordPress but intend to switch to Hugo instead. They'll help you export your content into Hugo-friendly formats.
 @z
 
 @x
@@ -95,10 +95,10 @@ Alternatively, you can use the [Jekyll import command](/commands/hugo_import_jek
 
 @x
 [dokuwiki-to-hugo](https://github.com/wgroeneveld/dokuwiki-to-hugo)
-: Migrates your DokuWiki source pages from [DokuWiki syntax](https://www.dokuwiki.org/wiki:syntax) to Hugo Markdown syntax. Includes extra's like the TODO plugin. Written with extensibility in mind using python 3. Also generates a TOML header for each page. Designed to copypaste the wiki directory into your /content directory.
+: Migrates your DokuWiki source pages from [DokuWiki syntax](https://www.dokuwiki.org/wiki:syntax) to Hugo Markdown syntax. Includes extras like the TODO plugin. Written with extensibility in mind using Python 3. Also generates a TOML header for each page. Designed to copy-paste the wiki directory into your /content directory.
 @y
 [dokuwiki-to-hugo](https://github.com/wgroeneveld/dokuwiki-to-hugo)
-: Migrates your DokuWiki source pages from [DokuWiki syntax](https://www.dokuwiki.org/wiki:syntax) to Hugo Markdown syntax. Includes extra's like the TODO plugin. Written with extensibility in mind using python 3. Also generates a TOML header for each page. Designed to copypaste the wiki directory into your /content directory.
+: Migrates your DokuWiki source pages from [DokuWiki syntax](https://www.dokuwiki.org/wiki:syntax) to Hugo Markdown syntax. Includes extras like the TODO plugin. Written with extensibility in mind using Python 3. Also generates a TOML header for each page. Designed to copy-paste the wiki directory into your /content directory.
 @z
 
 @x
@@ -109,10 +109,10 @@ Alternatively, you can use the [Jekyll import command](/commands/hugo_import_jek
 
 @x
 [wordpress-to-hugo-exporter](https://github.com/SchumacherFM/wordpress-to-hugo-exporter)
-: A one-click WordPress plugin that converts all posts, pages, taxonomies, metadata, and settings to Markdown and YAML which can be dropped into Hugo. (Note: If you have trouble using this plugin, you can [export your site for Jekyll](https://wordpress.org/plugins/jekyll-exporter/) and use Hugo's built in Jekyll converter listed above.)
+: A one-click WordPress plugin that converts all posts, pages, taxonomies, metadata, and settings to Markdown and YAML which can be dropped into Hugo. (Note: If you have trouble using this plugin, you can [export your site for Jekyll](https://wordpress.org/plugins/jekyll-exporter/) and use Hugo's built-in Jekyll converter listed above.)
 @y
 [wordpress-to-hugo-exporter](https://github.com/SchumacherFM/wordpress-to-hugo-exporter)
-: A one-click WordPress plugin that converts all posts, pages, taxonomies, metadata, and settings to Markdown and YAML which can be dropped into Hugo. (Note: If you have trouble using this plugin, you can [export your site for Jekyll](https://wordpress.org/plugins/jekyll-exporter/) and use Hugo's built in Jekyll converter listed above.)
+: A one-click WordPress plugin that converts all posts, pages, taxonomies, metadata, and settings to Markdown and YAML which can be dropped into Hugo. (Note: If you have trouble using this plugin, you can [export your site for Jekyll](https://wordpress.org/plugins/jekyll-exporter/) and use Hugo's built-in Jekyll converter listed above.)
 @z
 
 @x
@@ -125,10 +125,18 @@ Alternatively, you can use the [Jekyll import command](/commands/hugo_import_jek
 
 @x
 [wordhugopress](https://github.com/nantipov/wordhugopress)
-: A small utility written in Java, exports the entire WordPress site from the database and resource (e.g. images) files stored locally or remotely. Therefore, migration from the backup files is possible. Supports merging of the multiple WordPress sites into a single Hugo one.
+: A small utility written in Java that exports the entire WordPress site from the database and resource (e.g., images) files stored locally or remotely. Therefore, migration from the backup files is possible. Supports merging multiple WordPress sites into a single Hugo site.
 @y
 [wordhugopress](https://github.com/nantipov/wordhugopress)
-: A small utility written in Java, exports the entire WordPress site from the database and resource (e.g. images) files stored locally or remotely. Therefore, migration from the backup files is possible. Supports merging of the multiple WordPress sites into a single Hugo one.
+: A small utility written in Java that exports the entire WordPress site from the database and resource (e.g., images) files stored locally or remotely. Therefore, migration from the backup files is possible. Supports merging multiple WordPress sites into a single Hugo site.
+@z
+
+@x
+[wp2hugo](https://github.com/ashishb/wp2hugo)
+: A Go-based CLI tool to migrate WordPress website to Hugo while preserving original URLs, GUIDs (for feeds), image URLs, code highlights, table of contents, YouTube embeds, Google Maps embeds, and original WordPress navigation categories. 
+@y
+[wp2hugo](https://github.com/ashishb/wp2hugo)
+: A Go-based CLI tool to migrate WordPress website to Hugo while preserving original URLs, GUIDs (for feeds), image URLs, code highlights, table of contents, YouTube embeds, Google Maps embeds, and original WordPress navigation categories. 
 @z
 
 @x
@@ -147,10 +155,10 @@ Alternatively, you can use the [Jekyll import command](/commands/hugo_import_jek
 
 @x
 [medium-to-hugo](https://github.com/bgadrian/medium-to-hugo)
-: CLI tool written in Go to export medium posts into a Hugo compatible Markdown format. Tags and images are included. All images will be downloaded locally and linked appropriately.
+: A CLI tool written in Go to export medium posts into a Hugo-compatible Markdown format. Tags and images are included. All images will be downloaded locally and linked appropriately.
 @y
 [medium-to-hugo](https://github.com/bgadrian/medium-to-hugo)
-: CLI tool written in Go to export medium posts into a Hugo compatible Markdown format. Tags and images are included. All images will be downloaded locally and linked appropriately.
+: A CLI tool written in Go to export medium posts into a Hugo-compatible Markdown format. Tags and images are included. All images will be downloaded locally and linked appropriately.
 @z
 
 @x
@@ -177,10 +185,10 @@ Alternatively, you can use the [Jekyll import command](/commands/hugo_import_jek
 
 @x
 [Tumblr to Hugo](https://github.com/jipiboily/tumblr-to-hugo)
-: A migration tool that converts each of your Tumblr posts to a content file with a proper title and path. Furthermore, "Tumblr to Hugo" creates a CSV file with the original URL and the new path on Hugo, to help you setup the redirections.
+: A migration tool that converts each of your Tumblr posts to a content file with a proper title and path. It also generates a  CSV file to help you set up URL redirects.
 @y
 [Tumblr to Hugo](https://github.com/jipiboily/tumblr-to-hugo)
-: A migration tool that converts each of your Tumblr posts to a content file with a proper title and path. Furthermore, "Tumblr to Hugo" creates a CSV file with the original URL and the new path on Hugo, to help you setup the redirections.
+: A migration tool that converts each of your Tumblr posts to a content file with a proper title and path. It also generates a  CSV file to help you set up URL redirects.
 @z
 
 @x

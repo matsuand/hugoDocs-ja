@@ -78,6 +78,16 @@ Hugo also merges data directories from themes and modules into this single data 
 @z
 
 @x
+{{% note %}}
+Hugo reads the combined data structure into memory and keeps it there for the entire build. For data that is infrequently accessed, use global or page resources instead.
+{{% /note %}}
+@y
+{{% note %}}
+Hugo reads the combined data structure into memory and keeps it there for the entire build. For data that is infrequently accessed, use global or page resources instead.
+{{% /note %}}
+@z
+
+@x
 Theme and module authors may wish to namespace their data files to prevent collisions. For example:
 @y
 Theme and module authors may wish to namespace their data files to prevent collisions. For example:
@@ -110,9 +120,9 @@ Do not place CSV files in the data directory. Access CSV files as page, global, 
 @z
 
 @x
-See the documentation for the [`Data`] method on `Page` object for details and examples.
+See the documentation for the [`Data`] method on a `Site` object for details and examples.
 @y
-See the documentation for the [`Data`] method on `Page` object for details and examples.
+See the documentation for the [`Data`] method on a `Site` object for details and examples.
 @z
 
 @x

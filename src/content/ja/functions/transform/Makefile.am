@@ -12,6 +12,7 @@ bases = \
 	Markdownify.md        \
 	Plainify.md           \
 	Remarshal.md          \
+	ToMath.md             \
 	Unmarshal.md          \
 	XMLEscape.md          \
 	_index.md

@@ -92,18 +92,18 @@ content/
 @z
 
 @x
-The examples below depict the result of rendering works/paintings/the-mona-lisa.md with a single page template:
+The examples below depict the result of rendering works/paintings/the-mona-lisa.md:
 @y
-The examples below depict the result of rendering works/paintings/the-mona-lisa.md with a single page template:
+The examples below depict the result of rendering works/paintings/the-mona-lisa.md:
 @z
 
 @x
-```go-html-template
+{{< code file=layouts/works/single.html >}}
 {{ with .GetPage "starry-night" }}
   {{ .Title }} → Starry Night
 {{ end }}
 @y
-```go-html-template
+{{< code file=layouts/works/single.html >}}
 {{ with .GetPage "starry-night" }}
   {{ .Title }} → Starry Night
 {{ end }}
@@ -153,10 +153,10 @@ The examples below depict the result of rendering works/paintings/the-mona-lisa.
 {{ with .GetPage "/works/sculptures/david" }}
   {{ .Title }} → David
 {{ end }}
-```
+{{< /code >}}
 @y
 {{ with .GetPage "/works/sculptures/david" }}
   {{ .Title }} → David
 {{ end }}
-```
+{{< /code >}}
 @z

@@ -2,33 +2,15 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: Sitemap templates
 description: Hugo provides built-in sitemap templates.
 categories: [templates]
-keywords: [sitemap,xml,templates]
-menu:
-  docs:
-    parent: templates
-    weight: 170
-weight: 170
-toc: true
-aliases: [/layout/sitemap/,/templates/sitemap/]
----
+keywords: []
 @y
----
 title: サイトマップテンプレート
 description: Hugo provides built-in sitemap templates.
 categories: [templates]
-keywords: [sitemap,xml,templates]
-menu:
-  docs:
-    parent: templates
-    weight: 170
-weight: 170
-toc: true
-aliases: [/layout/sitemap/,/templates/sitemap/]
----
+keywords: []
 @z
 
 @x

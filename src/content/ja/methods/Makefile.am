@@ -2,7 +2,7 @@
 ## This is part of Japanese translation version for Hugo Documantation.
 ##
 
-SUBDIRS = _common duration menu menu-entry page pages pager \
+SUBDIRS = duration menu menu-entry page pages pager \
 	resource shortcode site taxonomy time
 
 bases = \

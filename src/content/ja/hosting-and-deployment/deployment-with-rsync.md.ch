@@ -232,13 +232,13 @@ Add the following content. Replace the `USER`, `HOST`, and `DIR` values with you
 #!/bin/sh
 USER=my-user
 HOST=my-server.com
-DIR=my/directory/to/topologix.fr/   # the directory where your web site files should go
+DIR=my/directory/to/topologix.fr/   # the directory where your website files should go
 @y
 ```sh
 #!/bin/sh
 USER=my-user
 HOST=my-server.com
-DIR=my/directory/to/topologix.fr/   # the directory where your web site files should go
+DIR=my/directory/to/topologix.fr/   # the directory where your website files should go
 @z
 
 @x

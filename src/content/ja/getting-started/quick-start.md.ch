@@ -1,6 +1,8 @@
 %This is the change file for the original Hugo Documentation file.
 %This is part of Japanese translation version for Hugo Documantation.
 
+% snip 対応...
+
 @x
 title: Quick start
 description: Learn to create a Hugo site in minutes.
@@ -109,15 +111,7 @@ Verify that you have installed Hugo {{% param "minVersion" %}} or later.
 以下を実行して Hugo のバージョンが {{% param "minVersion" %}} またはそれ以降であることを確認してください。
 @z
 
-@x
-```text
-hugo version
-```
-@y
-```text
-hugo version
-```
-@z
+% snip text...
 
 @x
 Run these commands to create a Hugo site with the [Ananke] theme. The next section provides an explanation of each command.
@@ -126,25 +120,7 @@ Run these commands to create a Hugo site with the [Ananke] theme. The next secti
 各コマンドの説明は次の節で示します。
 @z
 
-@x
-```text
-hugo new site quickstart
-cd quickstart
-git init
-git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
-echo "theme = 'ananke'" >> hugo.toml
-hugo server
-```
-@y
-```text
-hugo new site quickstart
-cd quickstart
-git init
-git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
-echo "theme = 'ananke'" >> hugo.toml
-hugo server
-```
-@z
+% snip text...
 
 @x
 View your site at the URL displayed in your terminal. Press `Ctrl + C` to stop Hugo's development server.
@@ -165,15 +141,7 @@ Create the [directory structure] for your project in the `quickstart` directory.
 `quickstart` ディレクトリ配下に、プロジェクト用の [ディレクトリ構造][directory structure] を作り出します。
 @z
 
-@x
-```text
-hugo new site quickstart
-```
-@y
-```text
-hugo new site quickstart
-```
-@z
+% snip text...
 
 @x
 Change the current directory to the root of your project.
@@ -181,15 +149,7 @@ Change the current directory to the root of your project.
 カレントディレクトリをプロジェクトのルートとします。
 @z
 
-@x
-```text
-cd quickstart
-```
-@y
-```text
-cd quickstart
-```
-@z
+% snip text...
 
 @x
 Initialize an empty Git repository in the current directory.
@@ -197,15 +157,7 @@ Initialize an empty Git repository in the current directory.
 カレントディレクトリにおいて、空の Git リポジトリを初期化します。
 @z
 
-@x
-```text
-git init
-```
-@y
-```text
-git init
-```
-@z
+% snip text...
 
 @x
 Clone the [Ananke] theme into the `themes` directory, adding it to your project as a [Git submodule].
@@ -214,15 +166,7 @@ Clone the [Ananke] theme into the `themes` directory, adding it to your project 
 追加にあたっては、プロジェクトに対して [Git サブモジュール][Git submodule] として追加します。
 @z
 
-@x
-```text
-git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
-```
-@y
-```text
-git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
-```
-@z
+% snip text...
 
 @x
 Append a line to the site configuration file, indicating the current theme.
@@ -231,15 +175,7 @@ Append a line to the site configuration file, indicating the current theme.
 カレントなテーマを設定するものです。
 @z
 
-@x
-```text
-echo "theme = 'ananke'" >> hugo.toml
-```
-@y
-```text
-echo "theme = 'ananke'" >> hugo.toml
-```
-@z
+% snip text...
 
 @x
 Start Hugo's development server to view the site.
@@ -247,15 +183,7 @@ Start Hugo's development server to view the site.
 Hugo の開発用サーバーを起動して、サイトの確認を行います。
 @z
 
-@x
-```text
-hugo server
-```
-@y
-```text
-hugo server
-```
-@z
+% snip text...
 
 @x
 Press `Ctrl + C` to stop Hugo's development server.
@@ -275,15 +203,7 @@ Add a new page to your site.
 サイトに対して新規のページを追加します。
 @z
 
-@x
-```text
-hugo new content posts/my-first-post.md
-```
-@y
-```text
-hugo new content posts/my-first-post.md
-```
-@z
+% snip text...
 
 @x
 Hugo created the file in the `content/posts` directory. Open the file with your editor.
@@ -292,23 +212,7 @@ Hugo は `content/posts` ディレクトリに新たなファイルを生成し�
 テキストエディターを使って、そのファイルを開いてみます。
 @z
 
-@x
-```text
-+++
-title = 'My First Post'
-date = 2024-01-14T07:07:07+01:00
-draft = true
-+++
-```
-@y
-```text
-+++
-title = 'My First Post'
-date = 2024-01-14T07:07:07+01:00
-draft = true
-+++
-```
-@z
+% snip text...
 
 @x
 Notice the `draft` value in the [front matter] is `true`. By default, Hugo does not publish draft content when you build the site. Learn more about [draft, future, and expired content].
@@ -366,17 +270,7 @@ Save the file, then start Hugo’s development server to view the site. You can 
 以下のいずれかのコマンドを実行すれば、ドラフトコンテントであっても表示されることになります。
 @z
 
-@x
-```text
-hugo server --buildDrafts
-hugo server -D
-```
-@y
-```text
-hugo server --buildDrafts
-hugo server -D
-```
-@z
+% snip text...
 
 @x
 View your site at the URL displayed in your terminal. Keep the development server running as you continue to add and change content.
@@ -422,21 +316,7 @@ With your editor, open the [site configuration] file (`hugo.toml`) in the root o
 テキストエディターを使って、プロジェクトルートにある [サイト設定ファイル][site configuration] (`hugo.toml`) を開きます。
 @z
 
-@x
-```text
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
-theme = 'ananke'
-```
-@y
-```text
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
-theme = 'ananke'
-```
-@z
+% snip text...
 
 @x
 Make the following changes:
@@ -470,15 +350,7 @@ Hugo の開発用サーバーを起動して変更箇所を確認します。
 ドラフトコンテントも表示する起動とすることを忘れないでください。
 @z
 
-@x
-```text
-hugo server -D
-```
-@y
-```text
-hugo server -D
-```
-@z
+% snip text...
 
 @x
 {{% note %}}
@@ -531,15 +403,7 @@ When you publish your site, you typically do _not_ want to include [draft, futur
 When you publish your site, you typically do _not_ want to include [draft, future, or expired content]. The command is simple.
 @z
 
-@x
-```text
-hugo
-```
-@y
-```text
-hugo
-```
-@z
+% snip text...
 
 @x
 To learn how to _deploy_ your site, see the [hosting and deployment] section.

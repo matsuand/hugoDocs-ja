@@ -456,6 +456,26 @@ URL = "<FILL ME IN>"
 @z
 
 @x
+# Map any file named "<dir>/index.html" to the remote file "<dir>/". This does
+# not affect the root "index.html" file, and it does not affect matchers below.
+# This works when deploying to key-value cloud storage systems, such as Amazon
+# S3 (general purpose buckets, not directory buckets), Google Cloud Storage, and
+# Azure Blob Storage. This makes it so the canonical URL will match the object
+# key in cloud storage, except for the root index.html file.
+#
+#stripIndexHTML = true
+@y
+# Map any file named "<dir>/index.html" to the remote file "<dir>/". This does
+# not affect the root "index.html" file, and it does not affect matchers below.
+# This works when deploying to key-value cloud storage systems, such as Amazon
+# S3 (general purpose buckets, not directory buckets), Google Cloud Storage, and
+# Azure Blob Storage. This makes it so the canonical URL will match the object
+# key in cloud storage, except for the root index.html file.
+#
+#stripIndexHTML = true
+@z
+
+@x
 #######################
 [[deployment.matchers]] 
 # Matchers enable special caching, content type and compression behavior for
@@ -472,10 +492,12 @@ URL = "<FILL ME IN>"
 @x
 # See https://golang.org/pkg/regexp/syntax/ for pattern syntax.
 # Pattern searching is stopped on first match.
+# This is not affected by stripIndexHTML, above.
 pattern = "<FILL ME IN>"
 @y
 # See https://golang.org/pkg/regexp/syntax/ for pattern syntax.
 # Pattern searching is stopped on first match.
+# This is not affected by stripIndexHTML, above.
 pattern = "<FILL ME IN>"
 @z
 

@@ -167,10 +167,10 @@ Plural
 
 @x
 Terms
-: (`page.Taxonomy`) Returns the taxonomy object, consisting of a map of terms and the [weighted pages] associated with each term.
+: (`page.Taxonomy`) Returns the `Taxonomy` object, consisting of a map of terms and the [weighted pages] associated with each term.
 @y
 Terms
-: (`page.Taxonomy`) Returns the taxonomy object, consisting of a map of terms and the [weighted pages] associated with each term.
+: (`page.Taxonomy`) Returns the `Taxonomy` object, consisting of a map of terms and the [weighted pages] associated with each term.
 @z
 
 @x
@@ -185,10 +185,10 @@ Terms
 
 @x
 {{% note %}}
-Once you have captured the taxonomy object, use any of the [taxonomy methods] to sort, count, or capture a subset of its weighted pages.
+Once you have captured the `Taxonomy` object, use any of the [taxonomy methods] to sort, count, or capture a subset of its weighted pages.
 @y
 {{% note %}}
-Once you have captured the taxonomy object, use any of the [taxonomy methods] to sort, count, or capture a subset of its weighted pages.
+Once you have captured the `Taxonomy` object, use any of the [taxonomy methods] to sort, count, or capture a subset of its weighted pages.
 @z
 
 @x
@@ -278,11 +278,11 @@ Learn more about [term templates].
 @z
 
 @x
-[taxonomy templates]: /templates/taxonomy-templates/
-[term templates]: /templates/taxonomy-templates/
+[taxonomy templates]: /templates/types/#taxonomy
+[term templates]: /templates/types/#term
 [weighted pages]: /getting-started/glossary/#weighted-page
 @y
-[taxonomy templates]: /templates/taxonomy-templates/
-[term templates]: /templates/taxonomy-templates/
+[taxonomy templates]: /templates/types/#taxonomy
+[term templates]: /templates/types/#term
 [weighted pages]: /getting-started/glossary/#weighted-page
 @z

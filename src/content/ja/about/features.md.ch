@@ -47,10 +47,10 @@ keywords: []
 
 @x
 [Templates]
-: Create templates usings variables, functions, and methods to transform your content, resources, and data into a published page. While HTML templates are the most common, you can create templates for any output format.
+: Create templates using variables, functions, and methods to transform your content, resources, and data into a published page. While HTML templates are the most common, you can create templates for any output format.
 @y
 [Templates]
-: Create templates usings variables, functions, and methods to transform your content, resources, and data into a published page. While HTML templates are the most common, you can create templates for any output format.
+: Create templates using variables, functions, and methods to transform your content, resources, and data into a published page. While HTML templates are the most common, you can create templates for any output format.
 @z
 
 @x
@@ -117,10 +117,10 @@ keywords: []
 
 @x
 [Markdown render hooks]
-: Override the conversion of Markdown to HTML when rendering fenced code blocks, headings, images, and links. For example, render every standalone image as an HTML `figure` element.
+: Override the conversion of Markdown to HTML when rendering blockquotes, fenced code blocks, headings, images, links, and tables. For example, render every standalone image as an HTML `figure` element.
 @y
 [Markdown render hooks]
-: Override the conversion of Markdown to HTML when rendering fenced code blocks, headings, images, and links. For example, render every standalone image as an HTML `figure` element.
+: Override the conversion of Markdown to HTML when rendering blockquotes, fenced code blocks, headings, images, links, and tables. For example, render every standalone image as an HTML `figure` element.
 @z
 
 @x
@@ -200,11 +200,11 @@ keywords: []
 @z
 
 @x
-[CSS bundling]
-: Transpile Sass to CSS, bundle, tree shake, minify, create source maps, perform SRI hashing, and integrate with PostCSS.
+[Image processing]
+: Convert, resize, crop, rotate,  adjust colors, apply filters, overlay text and images, and extract EXIF data.
 @y
-[CSS bundling]
-: Transpile Sass to CSS, bundle, tree shake, minify, create source maps, perform SRI hashing, and integrate with PostCSS.
+[Image processing]
+: Convert, resize, crop, rotate,  adjust colors, apply filters, overlay text and images, and extract EXIF data.
 @z
 
 @x
@@ -216,11 +216,19 @@ keywords: []
 @z
 
 @x
-[Image processing]
-: Convert, resize, crop, rotate,  adjust colors, apply filters, overlay text and images, and extract EXIF data.
+[Sass processing]
+: Transpile Sass to CSS, bundle, tree shake, minify, create source maps, perform SRI hashing, and integrate with PostCSS.
 @y
-[Image processing]
-: Convert, resize, crop, rotate,  adjust colors, apply filters, overlay text and images, and extract EXIF data.
+[Sass processing]
+: Transpile Sass to CSS, bundle, tree shake, minify, create source maps, perform SRI hashing, and integrate with PostCSS.
+@z
+
+@x
+[Tailwind CSS processing]
+: Compile Tailwind CSS utility classes into standard CSS, bundle, tree shake, optimize, minify, perform SRI hashing, and integrate with PostCSS.
+@y
+[Tailwind CSS processing]
+: Compile Tailwind CSS utility classes into standard CSS, bundle, tree shake, optimize, minify, perform SRI hashing, and integrate with PostCSS.
 @z
 
 @x

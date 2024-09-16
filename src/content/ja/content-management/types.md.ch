@@ -44,9 +44,9 @@ A content type is used to
 @z
 
 @x
-- Determine how the content is rendered. See [Template Lookup Order](/templates/lookup-order/) and [Content Views](/templates/views) for more.
+- Determine how the content is rendered. See [Template Lookup Order](/templates/lookup-order/) and [Content Views](/templates/content-view) for more.
 - Determine which [archetype](/content-management/archetypes/) template to use for new content.
 @y
-- Determine how the content is rendered. See [Template Lookup Order](/templates/lookup-order/) and [Content Views](/templates/views) for more.
+- Determine how the content is rendered. See [Template Lookup Order](/templates/lookup-order/) and [Content Views](/templates/content-view) for more.
 - Determine which [archetype](/content-management/archetypes/) template to use for new content.
 @z

@@ -70,13 +70,13 @@ There are currently two limitations to this:
 @x
     ```go-html-template
     {{ $css := resources.Get "css/main.css" }}
-    {{ $css = $css | resources.PostCSS | minify | fingerprint | resources.PostProcess }}
+    {{ $css = $css | css.PostCSS | minify | fingerprint | resources.PostProcess }}
     {{ $css.RelPermalink | upper }}
     ```
 @y
     ```go-html-template
     {{ $css := resources.Get "css/main.css" }}
-    {{ $css = $css | resources.PostCSS | minify | fingerprint | resources.PostProcess }}
+    {{ $css = $css | css.PostCSS | minify | fingerprint | resources.PostProcess }}
     {{ $css.RelPermalink | upper }}
     ```
 @z
@@ -178,7 +178,7 @@ Note that in the example above, the "CSS purge step" will only be applied to the
 @x
 ```go-html-template
 {{ $css := resources.Get "css/main.css" }}
-{{ $css = $css | resources.PostCSS }}
+{{ $css = $css | css.PostCSS }}
 {{ if hugo.IsProduction }}
 {{ $css = $css | minify | fingerprint | resources.PostProcess }}
 {{ end }}
@@ -187,7 +187,7 @@ Note that in the example above, the "CSS purge step" will only be applied to the
 @y
 ```go-html-template
 {{ $css := resources.Get "css/main.css" }}
-{{ $css = $css | resources.PostCSS }}
+{{ $css = $css | css.PostCSS }}
 {{ if hugo.IsProduction }}
 {{ $css = $css | minify | fingerprint | resources.PostProcess }}
 {{ end }}

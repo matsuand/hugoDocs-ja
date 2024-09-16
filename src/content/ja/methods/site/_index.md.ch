@@ -2,27 +2,17 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: Site methods
 linkTitle: Site
 description: Use these methods with Site objects.
 categories: []
 keywords: []
-menu:
-  docs:
-    parent: methods
----
 @y
----
 title: Site メソッド
 linkTitle: Site
 description: これらのメソッドは Site オブジェクトに対して利用します。
 categories: []
 keywords: []
-menu:
-  docs:
-    parent: methods
----
 @z
 
 @x

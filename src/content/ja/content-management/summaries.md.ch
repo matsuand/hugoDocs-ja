@@ -18,9 +18,9 @@ keywords: [summaries,abstracts,read more]
 @z
 
 @x
-You can define a content summary manually, in front matter, or automatically. A manual content summary takes precedence over a front matter summary, and a front matter summary takes precedence over an automatic summary.
+You can define a summary manually, in front matter, or automatically. A manual summary takes precedence over a front matter summary, and a front matter summary takes precedence over an automatic summary.
 @y
-You can define a content summary manually, in front matter, or automatically. A manual content summary takes precedence over a front matter summary, and a front matter summary takes precedence over an automatic summary.
+You can define a summary manually, in front matter, or automatically. A manual summary takes precedence over a front matter summary, and a front matter summary takes precedence over an automatic summary.
 @z
 
 @x
@@ -36,53 +36,17 @@ Review the [comparison table](#comparison) below to understand the characteristi
 @z
 
 @x
-Use a `<!--more-->` divider to indicate the end of the content summary. Hugo will not render the summary divider itself.
+Use a `<!--more-->` divider to indicate the end of the summary. Hugo will not render the summary divider itself.
 @y
-Use a `<!--more-->` divider to indicate the end of the content summary. Hugo will not render the summary divider itself.
+Use a `<!--more-->` divider to indicate the end of the summary. Hugo will not render the summary divider itself.
 @z
 
-@x
-{{< code file=content/sample.md >}}
-+++
-title: 'Example'
-date: 2024-05-26T09:10:33-07:00
-+++
-@y
-{{< code file=content/sample.md >}}
-+++
-title: 'Example'
-date: 2024-05-26T09:10:33-07:00
-+++
-@z
+% snip code...
 
 @x
-Thénardier was not mistaken. The man was sitting there, and letting
-Cosette get somewhat rested.
+When using the Emacs Org Mode [content format], use a `# more` divider to indicate the end of the summary.
 @y
-Thénardier was not mistaken. The man was sitting there, and letting
-Cosette get somewhat rested.
-@z
-
-@x
-<!--more-->
-@y
-<!--more-->
-@z
-
-@x
-The inn-keeper walked round the brushwood and presented himself
-abruptly to the eyes of those whom he was in search of.
-{{< /code >}}
-@y
-The inn-keeper walked round the brushwood and presented himself
-abruptly to the eyes of those whom he was in search of.
-{{< /code >}}
-@z
-
-@x
-When using the Emacs Org Mode [content format], use a `# more` divider to indicate the end of the content summary.
-@y
-When using the Emacs Org Mode [content format], use a `# more` divider to indicate the end of the content summary.
+When using the Emacs Org Mode [content format], use a `# more` divider to indicate the end of the summary.
 @z
 
 @x
@@ -103,35 +67,7 @@ Use front matter to define a summary independent of content.
 Use front matter to define a summary independent of content.
 @z
 
-@x
-{{< code file=content/sample.md >}}
-+++
-title: 'Example'
-date: 2024-05-26T09:10:33-07:00
-summary: 'Learn more about _Les Misérables_ by Victor Hugo.'
-+++
-@y
-{{< code file=content/sample.md >}}
-+++
-title: 'Example'
-date: 2024-05-26T09:10:33-07:00
-summary: 'Learn more about _Les Misérables_ by Victor Hugo.'
-+++
-@z
-
-@x
-Thénardier was not mistaken. The man was sitting there, and letting
-Cosette get somewhat rested. The inn-keeper walked round the
-brushwood and presented himself abruptly to the eyes of those whom
-he was in search of.
-{{< /code >}}
-@y
-Thénardier was not mistaken. The man was sitting there, and letting
-Cosette get somewhat rested. The inn-keeper walked round the
-brushwood and presented himself abruptly to the eyes of those whom
-he was in search of.
-{{< /code >}}
-@z
+% snip code...
 
 @x
 ## Automatic summary
@@ -140,9 +76,9 @@ he was in search of.
 @z
 
 @x
-If you have not defined the summary manually or in front matter, Hugo automatically defines the summary based on the [`summaryLength`] in your site configuration.
+If you do not define the summary manually or in front matter, Hugo automatically defines the summary based on the [`summaryLength`] in your site configuration.
 @y
-If you have not defined the summary manually or in front matter, Hugo automatically defines the summary based on the [`summaryLength`] in your site configuration.
+If you do not define the summary manually or in front matter, Hugo automatically defines the summary based on the [`summaryLength`] in your site configuration.
 @z
 
 @x
@@ -151,57 +87,15 @@ If you have not defined the summary manually or in front matter, Hugo automatica
 [`summaryLength`]: /getting-started/configuration/#summarylength
 @z
 
-@x
-{{< code file=content/sample.md >}}
-+++
-title: 'Example'
-date: 2024-05-26T09:10:33-07:00
-+++
-@y
-{{< code file=content/sample.md >}}
-+++
-title: 'Example'
-date: 2024-05-26T09:10:33-07:00
-+++
-@z
+% snip code...
 
 @x
-Thénardier was not mistaken. The man was sitting there, and letting
-Cosette get somewhat rested. The inn-keeper walked round the
-brushwood and presented himself abruptly to the eyes of those whom
-he was in search of.
-{{< /code >}}
+For example, with a `summaryLength` of 7, the automatic summary will be:
 @y
-Thénardier was not mistaken. The man was sitting there, and letting
-Cosette get somewhat rested. The inn-keeper walked round the
-brushwood and presented himself abruptly to the eyes of those whom
-he was in search of.
-{{< /code >}}
+For example, with a `summaryLength` of 7, the automatic summary will be:
 @z
 
-@x
-For example, with a `summaryLength` of 10, the automatic summary will be:
-@y
-For example, with a `summaryLength` of 10, the automatic summary will be:
-@z
-
-@x
-```text
-Thénardier was not mistaken. The man was sitting there, and letting
-Cosette get somewhat rested.
-```
-@y
-```text
-Thénardier was not mistaken. The man was sitting there, and letting
-Cosette get somewhat rested.
-```
-@z
-
-@x
-Note that the `summaryLength` is an approximate number of words.
-@y
-Note that the `summaryLength` is an approximate number of words.
-@z
+% snip text...
 
 @x
 ## Comparison
@@ -216,17 +110,17 @@ Each summary type has different characteristics:
 @z
 
 @x
-Type|Precedence|Renders markdown|Renders shortcodes|Strips HTML tags|Wraps single lines with `<p>`
-:--|:-:|:-:|:-:|:-:|:-:
-Manual|1|:heavy_check_mark:|:heavy_check_mark:|:x:|:heavy_check_mark:
-Front&nbsp;matter|2|:heavy_check_mark:|:x:|:x:|:x:
-Automatic|3|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:x:
+Type|Precedence|Renders markdown|Renders shortcodes|Wraps single lines with `<p>`
+:--|:-:|:-:|:-:|:-:
+Manual|1|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:
+Front&nbsp;matter|2|:heavy_check_mark:|:x:|:x:
+Automatic|3|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:
 @y
-Type|Precedence|Renders markdown|Renders shortcodes|Strips HTML tags|Wraps single lines with `<p>`
-:--|:-:|:-:|:-:|:-:|:-:
-Manual|1|:heavy_check_mark:|:heavy_check_mark:|:x:|:heavy_check_mark:
-Front&nbsp;matter|2|:heavy_check_mark:|:x:|:x:|:x:
-Automatic|3|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:x:
+Type|Precedence|Renders markdown|Renders shortcodes|Wraps single lines with `<p>`
+:--|:-:|:-:|:-:|:-:
+Manual|1|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:
+Front&nbsp;matter|2|:heavy_check_mark:|:x:|:x:
+Automatic|3|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:
 @z
 
 @x

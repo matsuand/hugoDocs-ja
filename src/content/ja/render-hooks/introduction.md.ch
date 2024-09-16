@@ -36,15 +36,21 @@ When rendering Markdown to HTML, render hooks override the conversion. Each rend
 @z
 
 @x
+- [Blockquotes](/render-hooks/blockquotes)
 - [Code blocks](/render-hooks/code-blocks)
 - [Headings](/render-hooks/headings)
 - [Images](/render-hooks/images)
 - [Links](/render-hooks/links)
+- [Passthrough elements](/render-hooks/passthrough)
+- [Tables](/render-hooks/tables)
 @y
+- [Blockquotes](/render-hooks/blockquotes)
 - [Code blocks](/render-hooks/code-blocks)
 - [Headings](/render-hooks/headings)
 - [Images](/render-hooks/images)
 - [Links](/render-hooks/links)
+- [Passthrough elements](/render-hooks/passthrough)
+- [Tables](/render-hooks/tables)
 @z
 
 @x
@@ -138,20 +144,26 @@ Each render hook is a template, with one template for each supported element typ
 layouts/
 └── _default/
     └── _markup/
+        ├── render-blockquote.html
         ├── render-codeblock.html
         ├── render-heading.html
         ├── render-image.html
-        └── render-link.html    
+        ├── render-link.html
+        ├── render-passthrough.html
+        └── render-table.html
 ```
 @y
 ```text
 layouts/
 └── _default/
     └── _markup/
+        ├── render-blockquote.html
         ├── render-codeblock.html
         ├── render-heading.html
         ├── render-image.html
-        └── render-link.html    
+        ├── render-link.html
+        ├── render-passthrough.html
+        └── render-table.html
 ```
 @z
 
@@ -167,15 +179,15 @@ layouts/
 ├── _default/
 │   └── _markup/
 │       ├── render-link.html
-│       └── render-link.text.txt
+│       └── render-link.rss.xml
 ├── books/
 │   └── _markup/
 │       ├── render-link.html
-│       └── render-link.text.txt
+│       └── render-link.rss.xml
 └── films/
     └── _markup/
         ├── render-link.html
-        └── render-link.text.txt
+        └── render-link.rss.xml
 ```
 @y
 ```text
@@ -183,15 +195,15 @@ layouts/
 ├── _default/
 │   └── _markup/
 │       ├── render-link.html
-│       └── render-link.text.txt
+│       └── render-link.rss.xml
 ├── books/
 │   └── _markup/
 │       ├── render-link.html
-│       └── render-link.text.txt
+│       └── render-link.rss.xml
 └── films/
     └── _markup/
         ├── render-link.html
-        └── render-link.text.txt
+        └── render-link.rss.xml
 ```
 @z
 

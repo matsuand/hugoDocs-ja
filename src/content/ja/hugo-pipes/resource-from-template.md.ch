@@ -82,11 +82,11 @@ body{
 @x
 ```go-html-template
 {{ $sassTemplate := resources.Get "sass/template.scss" }}
-{{ $style := $sassTemplate | resources.ExecuteAsTemplate "main.scss" . | resources.ToCSS }}
+{{ $style := $sassTemplate | resources.ExecuteAsTemplate "main.scss" . | css.Sass }}
 ```
 @y
 ```go-html-template
 {{ $sassTemplate := resources.Get "sass/template.scss" }}
-{{ $style := $sassTemplate | resources.ExecuteAsTemplate "main.scss" . | resources.ToCSS }}
+{{ $style := $sassTemplate | resources.ExecuteAsTemplate "main.scss" . | css.Sass }}
 ```
 @z

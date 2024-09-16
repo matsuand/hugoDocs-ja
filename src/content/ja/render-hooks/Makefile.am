@@ -6,11 +6,14 @@ SUBDIRS = _common
 
 bases = \
 	_index.md       \
+	blockquotes.md  \
 	code-blocks.md  \
 	headings.md     \
 	images.md       \
 	introduction.md \
-	links.md
+	links.md        \
+	passthrough.md  \
+	tables.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/content.mk

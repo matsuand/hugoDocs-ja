@@ -34,9 +34,15 @@ action:
 @z
 
 @x
-By default, the number of elements on each pager is determined by the value of the `paginate` setting in your site configuration. The default value is `10`. Override the value in your site configuration by providing a second argument, an integer, when calling the `Paginate` method.
+By default, the number of elements on each pager is determined by your [site configuration]. The default is `10`. Override that value by providing a second argument, an integer, when calling the `Paginate` method.
 @y
-By default, the number of elements on each pager is determined by the value of the `paginate` setting in your site configuration. The default value is `10`. Override the value in your site configuration by providing a second argument, an integer, when calling the `Paginate` method.
+By default, the number of elements on each pager is determined by your [site configuration]. The default is `10`. Override that value by providing a second argument, an integer, when calling the `Paginate` method.
+@z
+
+@x
+[site configuration]: /getting-started/configuration/#pagination
+@y
+[site configuration]: /getting-started/configuration/#pagination
 @z
 
 @x
@@ -56,9 +62,21 @@ The `Paginate` method is more flexible.
 @z
 
 @x
-You can invoke pagination on the home page template, [`section`] templates, [`taxonomy`] templates, and [`term`] templates.
+You can invoke pagination on the [home template], [section templates], [taxonomy templates], and [term templates].
 @y
-You can invoke pagination on the home page template, [`section`] templates, [`taxonomy`] templates, and [`term`] templates.
+You can invoke pagination on the [home template], [section templates], [taxonomy templates], and [term templates].
+@z
+
+@x
+[home template]: /templates/types/#home
+[section templates]: /templates/types/#section
+[taxonomy templates]: /templates/types/#taxonomy
+[term templates]: /templates/types/#term
+@y
+[home template]: /templates/types/#home
+[section templates]: /templates/types/#section
+[taxonomy templates]: /templates/types/#taxonomy
+[term templates]: /templates/types/#term
 @z
 
 @x
@@ -92,13 +110,13 @@ In the example above, we:
 2. Sort the collection by title
 3. Paginate the collection, with 7 elements per pager
 4. Range over the paginated page collection, rendering a link to each page
-5. Call the internal "pagination" template to create the navigation links between pagers.
+5. Call the embedded pagination template to create navigation links between pagers
 @y
 1. Build a page collection
 2. Sort the collection by title
 3. Paginate the collection, with 7 elements per pager
 4. Range over the paginated page collection, rendering a link to each page
-5. Call the internal "pagination" template to create the navigation links between pagers.
+5. Call the embedded pagination template to create navigation links between pagers
 @z
 
 @x
@@ -109,18 +127,4 @@ Please note that the results of pagination are cached. Once you have invoked eit
 {{% note %}}
 Please note that the results of pagination are cached. Once you have invoked either the `Paginator` or `Paginate` method, the paginated collection is immutable. Additional invocations of these methods will have no effect.
 {{% /note %}}
-@z
-
-@x
-[context]: /getting-started/glossary/#context
-[pagination]: /templates/pagination/
-[`section`]: /getting-started/glossary/#section
-[`taxonomy`]: /getting-started/glossary/#taxonomy
-[`term`]: /getting-started/glossary/#term
-@y
-[context]: /getting-started/glossary/#context
-[pagination]: /templates/pagination/
-[`section`]: /getting-started/glossary/#section
-[`taxonomy`]: /getting-started/glossary/#taxonomy
-[`term`]: /getting-started/glossary/#term
 @z

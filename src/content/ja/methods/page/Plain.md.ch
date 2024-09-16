@@ -10,6 +10,8 @@ keywords: []
 action:
   related:
     - methods/page/Content
+    - methods/page/Summary
+    - methods/page/ContentWithoutSummary
     - methods/page/RawContent
     - methods/page/PlainWords
     - methods/page/RenderShortcodes
@@ -25,6 +27,8 @@ keywords: []
 action:
   related:
     - methods/page/Content
+    - methods/page/Summary
+    - methods/page/ContentWithoutSummary
     - methods/page/RawContent
     - methods/page/PlainWords
     - methods/page/RenderShortcodes
@@ -34,9 +38,9 @@ action:
 @z
 
 @x
-The `Plain` method on a `Page` object renders Markdown and [shortcodes] to HTML, then strips the HTML [tags]. It does not strip HTML [entities]. The plain content does not include front matter.
+The `Plain` method on a `Page` object renders Markdown and [shortcodes] to HTML, then strips the HTML [tags]. It does not strip HTML [entities].
 @y
-The `Plain` method on a `Page` object renders Markdown and [shortcodes] to HTML, then strips the HTML [tags]. It does not strip HTML [entities]. The plain content does not include front matter.
+The `Plain` method on a `Page` object renders Markdown and [shortcodes] to HTML, then strips the HTML [tags]. It does not strip HTML [entities].
 @z
 
 @x

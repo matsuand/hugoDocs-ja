@@ -11,6 +11,7 @@ action:
   related: []
   returnType: time.Time
   signatures: [SITE.LastChange]
+expiryDate: 2025-02-19 # deprecated 2024-02-19
 ---
 @y
 ---
@@ -22,6 +23,7 @@ action:
   related: []
   returnType: time.Time
   signatures: [SITE.LastChange]
+expiryDate: 2025-02-19 # deprecated 2024-02-19
 ---
 @z
 

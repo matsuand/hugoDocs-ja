@@ -8,3 +8,9 @@ SUBDIRS = 1password-support alora-labs ampio-help      \
 	keycdn letsencrypt linode overmindstudios      \
 	pharmaseal quiply-employee-communications-app  \
 	template tomango
+
+bases = \
+	_index.md
+
+include $(top_srcdir)/build-aux/common.mk
+include $(top_srcdir)/build-aux/content.mk

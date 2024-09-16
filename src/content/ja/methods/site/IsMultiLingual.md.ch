@@ -11,6 +11,7 @@ action:
   related: []
   returnType: bool
   signatures: [SITE.IsMultiLingual]
+expiryDate: 2025-03-16 # deprecated 2024-03-16
 ---
 @y
 ---
@@ -22,6 +23,7 @@ action:
   related: []
   returnType: bool
   signatures: [SITE.IsMultiLingual]
+expiryDate: 2025-03-16 # deprecated 2024-03-16
 ---
 @z
 

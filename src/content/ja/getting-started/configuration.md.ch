@@ -420,18 +420,6 @@ To remain consistent and prevent unexpected behavior, do not mix these strategie
 @z
 
 @x
-###### canonifyURLs
-@y
-###### canonifyURLs
-@z
-
-@x
-(`bool`) See [details](/content-management/urls/#canonical-urls) before enabling this feature. Default is `false`.
-@y
-(`bool`) See [details](/content-management/urls/#canonical-urls) before enabling this feature. Default is `false`.
-@z
-
-@x
 ###### cleanDestinationDir
 @y
 ###### cleanDestinationDir
@@ -694,15 +682,15 @@ See [Configure Languages](/content-management/multilingual/#configure-languages)
 @z
 
 @x
-###### disableLanguages
+###### layoutDir
 @y
-###### disableLanguages
+###### layoutDir
 @z
 
 @x
-See [Disable a Language](/content-management/multilingual/#disable-a-language)
+(`string`) The directory that contains templates. Default is `layouts`.
 @y
-See [Disable a Language](/content-management/multilingual/#disable-a-language)
+(`string`) The directory that contains templates. Default is `layouts`.
 @z
 
 @x
@@ -814,27 +802,39 @@ See [custom output formats].
 @z
 
 @x
-###### paginate
+###### page
 @y
-###### paginate
+###### page
 @z
 
 @x
-(`int`) Default number of elements per page in [pagination](/templates/pagination/). Default is `10`.
+See [configure page](#configure-page).
 @y
-(`int`) Default number of elements per page in [pagination](/templates/pagination/). Default is `10`.
+See [configure page](#configure-page).
 @z
 
 @x
-###### paginatePath
+###### pagination
 @y
-###### paginatePath
+###### pagination
 @z
 
 @x
-(`string`) The path element used during pagination (`https://example.org/page/2`). Default is `page`.
+See [configure pagination](/templates/pagination/#configuration).
 @y
-(`string`) The path element used during pagination (`https://example.org/page/2`). Default is `page`.
+See [configure pagination](/templates/pagination/#configuration).
+@z
+
+@x
+###### panicOnWarning
+@y
+###### panicOnWarning
+@z
+
+@x
+(`bool`) Whether to panic on first WARNING. Default is `false`.
+@y
+(`bool`) Whether to panic on first WARNING. Default is `false`.
 @z
 
 @x
@@ -974,9 +974,9 @@ See [Security Policy](/about/security/#security-policy).
 @z
 
 @x
-Default [sitemap configuration](/templates/sitemap-template/#configuration).
+Default [sitemap configuration](/templates/sitemap/#configuration).
 @y
-Default [sitemap configuration](/templates/sitemap-template/#configuration).
+Default [sitemap configuration](/templates/sitemap/#configuration).
 @z
 
 @x
@@ -986,9 +986,9 @@ Default [sitemap configuration](/templates/sitemap-template/#configuration).
 @z
 
 @x
-(`int`) Applicable to automatic summaries, the approximate number of words to render when calling the [`Summary`] method on a `Page` object. Default is `70`.
+(`int`) Applicable to [automatic summaries], the minimum number of words to render when calling the [`Summary`] method on a `Page` object. In this case the `Summary` method returns the content, truncated to the paragraph closest to the `summaryLength`.
 @y
-(`int`) Applicable to automatic summaries, the approximate number of words to render when calling the [`Summary`] method on a `Page` object. Default is `70`.
+(`int`) Applicable to [automatic summaries], the minimum number of words to render when calling the [`Summary`] method on a `Page` object. In this case the `Summary` method returns the content, truncated to the paragraph closest to the `summaryLength`.
 @z
 
 @x
@@ -1299,12 +1299,6 @@ Setting `force=true` will make a redirect even if there is existing content in t
 ## 404 server error page {#_404-server-error-page}
 @y
 ## 404 server error page {#_404-server-error-page}
-@z
-
-@x
-{{< new-in 0.103.0 >}}
-@y
-{{< new-in 0.103.0 >}}
 @z
 
 @x

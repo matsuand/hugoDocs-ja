@@ -192,9 +192,9 @@ See additional examples in the [partial templates] section.
 @z
 
 @x
-[partial templates]: /templates/partials/#returning-a-value-from-a-partial
+[partial templates]: /templates/partial/#returning-a-value-from-a-partial
 @y
-[partial templates]: /templates/partials/#returning-a-value-from-a-partial
+[partial templates]: /templates/partial/#returning-a-value-from-a-partial
 @z
 
 @x

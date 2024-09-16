@@ -2,15 +2,15 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
-title: Menu templates
+title: Menus
 description: Create templates to render one or more menus.
 categories: [templates]
-keywords: [lists,sections,menus]
+keywords: []
 @y
-title: メニューテンプレート
+title: メニュー
 description: Create templates to render one or more menus.
 categories: [templates]
-keywords: [lists,sections,menus]
+keywords: []
 @z
 
 @x

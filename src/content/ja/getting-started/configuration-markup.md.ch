@@ -195,9 +195,9 @@ typographer|[Goldmark Extensions: Typographer]|:heavy_check_mark:
 @z
 
 @x
-#### Extras extension
+#### Extras
 @y
-#### Extras extension
+#### Extras
 @z
 
 @x
@@ -207,43 +207,57 @@ typographer|[Goldmark Extensions: Typographer]|:heavy_check_mark:
 @z
 
 @x
-Configure the extras extension to enable [inserted text], [mark text], [subscript], and [superscript] elements in Markdown.
+Enable [deleted text], [inserted text], [mark text], [subscript], and [superscript] elements in Markdown.
 @y
-Configure the extras extension to enable [inserted text], [mark text], [subscript], and [superscript] elements in Markdown.
+Enable [deleted text], [inserted text], [mark text], [subscript], and [superscript] elements in Markdown.
 @z
 
 @x
 Element|Markdown|Rendered
 :--|:--|:--
-Inserted text|`++foo++`|`<ins>foo</ins>`
-Mark text|`==bar==`|`<mark>bar</mark>`
+Deleted text|`~~foo~~`|`<del>foo</del>`
+Inserted text|`++bar++`|`<ins>bar</ins>`
+Mark text|`==baz==`|`<mark>baz</mark>`
 Subscript|`H~2~O`|`H<sub>2</sub>O`
 Superscript|`1^st^`|`1<sup>st</sup>`
 @y
 Element|Markdown|Rendered
 :--|:--|:--
-Inserted text|`++foo++`|`<ins>foo</ins>`
-Mark text|`==bar==`|`<mark>bar</mark>`
+Deleted text|`~~foo~~`|`<del>foo</del>`
+Inserted text|`++bar++`|`<ins>bar</ins>`
+Mark text|`==baz==`|`<mark>baz</mark>`
 Subscript|`H~2~O`|`H<sub>2</sub>O`
 Superscript|`1^st^`|`1<sup>st</sup>`
 @z
 
+% snip links...
+
 @x
-[inserted text]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ins
-[mark text]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/mark
-[subscript]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sub
-[superscript]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sup
+To avoid a conflict when enabling the Hugo Goldmark Extras subscript extension, if you want to render subscript and strikethrough text concurrently you must:
 @y
-[inserted text]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ins
-[mark text]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/mark
-[subscript]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sub
-[superscript]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sup
+To avoid a conflict when enabling the Hugo Goldmark Extras subscript extension, if you want to render subscript and strikethrough text concurrently you must:
 @z
 
 @x
-#### Passthrough extension
+1. Disable the Goldmark strikethrough extension
+2. Enable the Hugo Goldmark Extras delete extension
 @y
-#### Passthrough extension
+1. Disable the Goldmark strikethrough extension
+2. Enable the Hugo Goldmark Extras delete extension
+@z
+
+@x
+For example:
+@y
+For example:
+@z
+
+snip code...
+
+@x
+#### Passthrough
+@y
+#### Passthrough
 @z
 
 @x
@@ -265,9 +279,9 @@ Enable the passthrough extension to include mathematical equations and expressio
 @z
 
 @x
-#### Typographer extension
+#### Typographer
 @y
-#### Typographer extension
+#### Typographer
 @z
 
 @x
@@ -569,9 +583,9 @@ This is the default configuration for the AsciiDoc renderer:
 @z
 
 @x
-(`map`) A map of key-value pairs, each a document attributes,See Asciidoctor’s [attributes].
+(`map`) A map of key-value pairs, each a document attributes. See Asciidoctor’s [attributes].
 @y
-(`map`) A map of key-value pairs, each a document attributes,See Asciidoctor’s [attributes].
+(`map`) A map of key-value pairs, each a document attributes. See Asciidoctor’s [attributes].
 @z
 
 @x

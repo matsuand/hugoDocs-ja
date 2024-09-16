@@ -60,9 +60,9 @@ This function operates on global resources. A global resource is a file within t
 @z
 
 @x
-For page resources, use the [`Resources.Match`] method on the Page object.
+For page resources, use the [`Resources.Match`] method on a `Page` object.
 @y
-For page resources, use the [`Resources.Match`] method on the Page object.
+For page resources, use the [`Resources.Match`] method on a `Page` object.
 @z
 
 @x

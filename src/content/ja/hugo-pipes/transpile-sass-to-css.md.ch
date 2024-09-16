@@ -301,9 +301,9 @@ To install Dart Sass for your builds on Netlify, the `netlify.toml` file should 
 @z
 
 @x
-To transpile with Dart Sass, set `transpiler` to `dartsass` in the options map passed to `resources.ToCSS`. For example:
+To transpile with Dart Sass, set `transpiler` to `dartsass` in the options map passed to `css.Sass`. For example:
 @y
-To transpile with Dart Sass, set `transpiler` to `dartsass` in the options map passed to `resources.ToCSS`. For example:
+To transpile with Dart Sass, set `transpiler` to `dartsass` in the options map passed to `css.Sass`. For example:
 @z
 
 % snip code...

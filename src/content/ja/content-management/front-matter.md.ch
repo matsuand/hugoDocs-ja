@@ -470,10 +470,10 @@ path
 @z
 
 @x
-[sitemap templates]: /templates/sitemap-template/
+[sitemap templates]: /templates/sitemap/
 [`sitemap`]: /methods/page/sitemap/
 @y
-[sitemap templates]: /templates/sitemap-template/
+[sitemap templates]: /templates/sitemap/
 [`sitemap`]: /methods/page/sitemap/
 @z
 

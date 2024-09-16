@@ -232,10 +232,10 @@ When taxonomies are used---and [taxonomy templates] are provided---Hugo will aut
 @z
 
 @x
-* A single page at `example.com/categories/` that lists all the [terms within the taxonomy]
+* A single page at `example.com/categories/` that lists all the terms within the taxonomy
 * [Individual taxonomy list pages][taxonomy templates] (e.g., `/categories/development/`) for each of the terms that shows a listing of all pages marked as part of that taxonomy within any content file's [front matter]
 @y
-* A single page at `example.com/categories/` that lists all the [terms within the taxonomy]
+* A single page at `example.com/categories/` that lists all the terms within the taxonomy
 * [Individual taxonomy list pages][taxonomy templates] (e.g., `/categories/development/`) for each of the terms that shows a listing of all pages marked as part of that taxonomy within any content file's [front matter]
 @z
 
@@ -352,9 +352,9 @@ categories = ['Category A','Category B']
 @z
 
 @x
-A content file can assign weight for each of its associate taxonomies. Taxonomic weight can be used for sorting or ordering content in [taxonomy list templates] and is declared in a content file's [front matter]. The convention for declaring taxonomic weight is `taxonomyname_weight`.
+A content file can assign weight for each of its associate taxonomies. Taxonomic weight can be used for sorting or ordering content in [taxonomy templates] and is declared in a content file's [front matter]. The convention for declaring taxonomic weight is `taxonomyname_weight`.
 @y
-A content file can assign weight for each of its associate taxonomies. Taxonomic weight can be used for sorting or ordering content in [taxonomy list templates] and is declared in a content file's [front matter]. The convention for declaring taxonomic weight is `taxonomyname_weight`.
+A content file can assign weight for each of its associate taxonomies. Taxonomic weight can be used for sorting or ordering content in [taxonomy templates] and is declared in a content file's [front matter]. The convention for declaring taxonomic weight is `taxonomyname_weight`.
 @z
 
 @x

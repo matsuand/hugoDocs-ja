@@ -66,11 +66,11 @@ I :heart: Hugo!
 @x
 [configuration]: /getting-started/configuration/
 [emoji shortcodes]: /quick-reference/emojis/
-[sc]: /templates/shortcode-templates/
+[sc]: /templates/shortcode/
 [scsource]: https://github.com/gohugoio/hugo/tree/master/docs/layouts/shortcodes
 @y
 [configuration]: /getting-started/configuration/
 [emoji shortcodes]: /quick-reference/emojis/
-[sc]: /templates/shortcode-templates/
+[sc]: /templates/shortcode/
 [scsource]: https://github.com/gohugoio/hugo/tree/master/docs/layouts/shortcodes
 @z

@@ -4,7 +4,7 @@
 @x
 ---
 title: PageSize
-description: Returns the maximum number of pages per pager.
+description: Returns the number of pages per pager.
 categories: []
 keywords: []
 action:
@@ -12,11 +12,12 @@ action:
     - methods/page/Paginate
   returnType: int
   signatures: [PAGER.PageSize]
+expiryDate: 2025-06-09 # deprecated 2024-06-09
 ---
 @y
 ---
 title: PageSize
-description: Returns the maximum number of pages per pager.
+description: Returns the number of pages per pager.
 categories: []
 keywords: []
 action:
@@ -24,7 +25,38 @@ action:
     - methods/page/Paginate
   returnType: int
   signatures: [PAGER.PageSize]
+expiryDate: 2025-06-09 # deprecated 2024-06-09
 ---
+@z
+
+@x
+{{% deprecated-in 0.128.0 %}}
+Use [`PAGER.PagerSize`] instead.
+@y
+{{% deprecated-in 0.128.0 %}}
+Use [`PAGER.PagerSize`] instead.
+@z
+
+@x
+[`PAGER.PagerSize`]: /methods/pager/pagersize/
+{{% /deprecated-in %}}
+@y
+[`PAGER.PagerSize`]: /methods/pager/pagersize/
+{{% /deprecated-in %}}
+@z
+
+@x
+The number of pages per pager is determined by the optional second argument passed to the [`Paginate`] method, falling back to the `pagerSize` as defined in your [site configuration].
+@y
+The number of pages per pager is determined by the optional second argument passed to the [`Paginate`] method, falling back to the `pagerSize` as defined in your [site configuration].
+@z
+
+@x
+[`Paginate`]: /methods/page/paginate/
+[site configuration]: /templates/pagination/#configuration
+@y
+[`Paginate`]: /methods/page/paginate/
+[site configuration]: /templates/pagination/#configuration
 @z
 
 @x

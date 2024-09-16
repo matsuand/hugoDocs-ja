@@ -42,12 +42,6 @@ aliases: [/functions/path.basename]
 @z
 
 @x
-{{< new-in 0.101.0 >}}
-@y
-{{< new-in 0.101.0 >}}
-@z
-
-@x
 ```go-html-template
 {{ path.BaseName "a/news.html" }} → news
 {{ path.BaseName "news.html" }} → news

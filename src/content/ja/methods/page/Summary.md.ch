@@ -4,12 +4,14 @@
 @x
 ---
 title: Summary
-description: Returns the content summary of the given page.
+description: Returns the summary of the given page.
 categories: []
 keywords: []
 action:
   related:
     - methods/page/Truncated
+    - methods/page/Content
+    - methods/page/ContentWithoutSummary
     - methods/page/Description
   returnType: template.HTML
   signatures: [PAGE.Summary]
@@ -17,12 +19,14 @@ action:
 @y
 ---
 title: Summary
-description: Returns the content summary of the given page.
+description: Returns the summary of the given page.
 categories: []
 keywords: []
 action:
   related:
     - methods/page/Truncated
+    - methods/page/Content
+    - methods/page/ContentWithoutSummary
     - methods/page/Description
   returnType: template.HTML
   signatures: [PAGE.Summary]
@@ -40,19 +44,15 @@ action:
 @z
 
 @x
-There are three ways to define the [content summary]:
+You can define a [summary] manually, in front matter, or automatically. A manual summary takes precedence over a front matter summary, and a front matter summary takes precedence over an automatic summary.
 @y
-There are three ways to define the [content summary]:
+You can define a [summary] manually, in front matter, or automatically. A manual summary takes precedence over a front matter summary, and a front matter summary takes precedence over an automatic summary.
 @z
 
 @x
-1. Let Hugo create the summary based on the first 70 words. You can change the number of words by setting the `summaryLength` in your site configuration.
-2. Manually split the content with a `<!--more-->` tag in Markdown. Everything before the tag is included in the summary.
-3. Create a `summary` field in front matter.
+[summary]: /content-management/summaries/
 @y
-1. Let Hugo create the summary based on the first 70 words. You can change the number of words by setting the `summaryLength` in your site configuration.
-2. Manually split the content with a `<!--more-->` tag in Markdown. Everything before the tag is included in the summary.
-3. Create a `summary` field in front matter.
+[summary]: /content-management/summaries/
 @z
 
 @x
@@ -78,7 +78,45 @@ To list the pages in a section with a summary beneath each link:
 @z
 
 @x
-[content summary]: /content-management/summaries/
+Depending on content length and how you define the summary, the summary may be equivalent to the content itself. To determine whether the content length exceeds the summary length, use the [`Truncated`] method on a `Page` object. This is useful for conditionally rendering a “read more” link:
 @y
-[content summary]: /content-management/summaries/
+Depending on content length and how you define the summary, the summary may be equivalent to the content itself. To determine whether the content length exceeds the summary length, use the [`Truncated`] method on a `Page` object. This is useful for conditionally rendering a “read more” link:
+@z
+
+@x
+[`Truncated`]: /methods/page/truncated
+@y
+[`Truncated`]: /methods/page/truncated
+@z
+
+@x
+```go-html-template
+{{ range .Pages }}
+  <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+  {{ .Summary }}
+  {{ if .Truncated }}
+    <a href="{{ .RelPermalink }}">Read more...</a>
+  {{ end }}
+{{ end }}
+```
+@y
+```go-html-template
+{{ range .Pages }}
+  <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+  {{ .Summary }}
+  {{ if .Truncated }}
+    <a href="{{ .RelPermalink }}">Read more...</a>
+  {{ end }}
+{{ end }}
+```
+@z
+
+@x
+{{% note %}}
+The `Truncated` method returns `false` if you define the summary in front matter.
+{{% /note %}}
+@y
+{{% note %}}
+The `Truncated` method returns `false` if you define the summary in front matter.
+{{% /note %}}
 @z

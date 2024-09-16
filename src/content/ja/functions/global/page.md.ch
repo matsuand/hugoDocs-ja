@@ -112,9 +112,9 @@ content/
 @z
 
 @x
-And this code in the home page template:
+And this code in the home template:
 @y
-And this code in the home page template:
+And this code in the home template:
 @z
 
 % snip code...
@@ -140,9 +140,9 @@ My Home Page
 @z
 
 @x
-In the example above, the global `page` function accesses the `Page` object passed into the home page template; it does not access the `Page` object of the iterated pages.
+In the example above, the global `page` function accesses the `Page` object passed into the home template; it does not access the `Page` object of the iterated pages.
 @y
-In the example above, the global `page` function accesses the `Page` object passed into the home page template; it does not access the `Page` object of the iterated pages.
+In the example above, the global `page` function accesses the `Page` object passed into the home template; it does not access the `Page` object of the iterated pages.
 @z
 
 @x

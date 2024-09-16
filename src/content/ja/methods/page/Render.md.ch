@@ -176,11 +176,11 @@ See [content views] for more examples.
 @z
 
 @x
-[content views]: /templates/views/
+[content views]: /templates/content-view/
 [`partial`]: /functions/partials/include/
 [content type]: /getting-started/glossary/#content-type
 @y
-[content views]: /templates/views/
+[content views]: /templates/content-view/
 [`partial`]: /functions/partials/include/
 [content type]: /getting-started/glossary/#content-type
 @z

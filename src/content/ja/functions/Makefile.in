@@ -282,9 +282,9 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = _common cast collections compare crypto data debug   \
-	diagrams encoding fmt global go-template hugo images   \
-	inflect js lang math openapi3 os partials path reflect \
+SUBDIRS = _common cast collections compare crypto css data debug  \
+	diagrams encoding fmt global go-template hash hugo images \
+	inflect js lang math openapi3 os partials path reflect    \
 	resources safe strings templates time transform urls
 
 bases = \

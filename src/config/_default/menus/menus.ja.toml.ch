@@ -264,20 +264,6 @@ post = 'external'
 url = 'https://themes.gohugo.io/'
 @z
 
-@x
-[[global]]
-name = 'Showcase'
-weight = 20
-identifier = 'showcase'
-pageRef = '/showcase/'
-@y
-[[global]]
-name = 'ショーケース'
-weight = 20
-identifier = 'showcase'
-pageRef = '/showcase/'
-@z
-
 % # Anything with a weight > 100 gets an external icon
 
 @x

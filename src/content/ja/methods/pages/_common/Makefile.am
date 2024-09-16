@@ -4,6 +4,7 @@
 
 bases = \
 	_index.md           \
+	next-and-prev.md    \
 	group-sort-order.md
 
 include $(top_srcdir)/build-aux/common.mk

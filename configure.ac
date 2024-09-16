@@ -59,6 +59,7 @@ AC_CONFIG_FILES([
 	src/content/ja/functions/Makefile
 	src/content/ja/functions/_common/Makefile
 	src/content/ja/functions/cast/Makefile
+	src/content/ja/functions/css/Makefile
 	src/content/ja/functions/collections/Makefile
 	src/content/ja/functions/compare/Makefile
 	src/content/ja/functions/crypto/Makefile
@@ -71,6 +72,7 @@ AC_CONFIG_FILES([
 	src/content/ja/functions/global/Makefile
 	src/content/ja/functions/go-template/Makefile
 	src/content/ja/functions/go-template/_common/Makefile
+	src/content/ja/functions/hash/Makefile
 	src/content/ja/functions/hugo/Makefile
 	src/content/ja/functions/images/Makefile
 	src/content/ja/functions/images/_common/Makefile
@@ -105,7 +107,6 @@ AC_CONFIG_FILES([
 	src/content/ja/installation/_common/Makefile
 	src/content/ja/maintenance/Makefile
 	src/content/ja/methods/Makefile
-	src/content/ja/methods/_common/Makefile
 	src/content/ja/methods/duration/Makefile
 	src/content/ja/methods/menu/Makefile
 	src/content/ja/methods/menu-entry/Makefile
@@ -147,7 +148,8 @@ AC_CONFIG_FILES([
 	src/content/ja/showcase/template/Makefile
 	src/content/ja/showcase/tomango/Makefile
 	src/content/ja/templates/Makefile
-	src/content/ja/templates/lists/Makefile
+	src/content/ja/templates/_common/Makefile
+	src/content/ja/templates/types/Makefile
 	src/content/ja/tools/Makefile
 	src/content/ja/troubleshooting/Makefile
 	src/i18n/Makefile

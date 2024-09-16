@@ -26,12 +26,6 @@ action:
 @z
 
 @x
-{{< new-in 0.100.0 >}}
-@y
-{{< new-in 0.100.0 >}}
-@z
-
-@x
 ```go-html-template
 {{ with resources.Get "images/a.jpg" }}
   {{ with resources.Copy "img/new-image-name.jpg" . }}

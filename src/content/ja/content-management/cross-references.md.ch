@@ -89,12 +89,12 @@ The pages can be referenced as follows:
 
 @x
 ```text
-{{</* ref "document2" */>}}             // <- From pages/document1.md, relative path
+{{</* ref "document2" */>}}             <-- From pages/document1.md, relative path
 {{</* ref "document2#anchor" */>}}      
 {{</* ref "document2.md" */>}}          
 {{</* ref "document2.md#anchor" */>}}   
-{{</* ref "#anchor" */>}}               // <- From pages/document2.md
-{{</* ref "/blog/my-post" */>}}         // <- From anywhere, absolute path
+{{</* ref "#anchor" */>}}               <-- From pages/document2.md
+{{</* ref "/blog/my-post" */>}}         <-- From anywhere, absolute path
 {{</* ref "/blog/my-post.md" */>}}
 {{</* relref "document" */>}}
 {{</* relref "document.md" */>}}
@@ -103,12 +103,12 @@ The pages can be referenced as follows:
 ```
 @y
 ```text
-{{</* ref "document2" */>}}             // <- From pages/document1.md, relative path
+{{</* ref "document2" */>}}             <-- From pages/document1.md, relative path
 {{</* ref "document2#anchor" */>}}      
 {{</* ref "document2.md" */>}}          
 {{</* ref "document2.md#anchor" */>}}   
-{{</* ref "#anchor" */>}}               // <- From pages/document2.md
-{{</* ref "/blog/my-post" */>}}         // <- From anywhere, absolute path
+{{</* ref "#anchor" */>}}               <-- From pages/document2.md
+{{</* ref "/blog/my-post" */>}}         <-- From anywhere, absolute path
 {{</* ref "/blog/my-post.md" */>}}
 {{</* relref "document" */>}}
 {{</* relref "document.md" */>}}
@@ -125,23 +125,23 @@ index.md can be reference either by its path or by its containing folder without
 
 @x
 ```text
-{{</* ref "/about" */>}}             // <- References /about/_index.md
-{{</* ref "/about/_index" */>}}      //    Raises REF_NOT_FOUND error
-{{</* ref "/about/credits.md" */>}}  // <- References /about/credits.md
+{{</* ref "/about" */>}}             <-- References /about/_index.md
+{{</* ref "/about/_index" */>}}      <-- Raises REF_NOT_FOUND error
+{{</* ref "/about/credits.md" */>}}  <-- References /about/credits.md
 @y
 ```text
-{{</* ref "/about" */>}}             // <- References /about/_index.md
-{{</* ref "/about/_index" */>}}      //    Raises REF_NOT_FOUND error
-{{</* ref "/about/credits.md" */>}}  // <- References /about/credits.md
+{{</* ref "/about" */>}}             <-- References /about/_index.md
+{{</* ref "/about/_index" */>}}      <-- Raises REF_NOT_FOUND error
+{{</* ref "/about/credits.md" */>}}  <-- References /about/credits.md
 @z
 
 @x
-{{</* ref "/products" */>}}          // <- References /products/index.md
-{{</* ref "/products/index" */>}}    // <- References /products/index.md
+{{</* ref "/products" */>}}          <-- References /products/index.md
+{{</* ref "/products/index" */>}}    <-- References /products/index.md
 ```
 @y
-{{</* ref "/products" */>}}          // <- References /products/index.md
-{{</* ref "/products/index" */>}}    // <- References /products/index.md
+{{</* ref "/products" */>}}          <-- References /products/index.md
+{{</* ref "/products/index" */>}}    <-- References /products/index.md
 ```
 @z
 
@@ -375,14 +375,4 @@ refLinksNotFoundURL
 @y
 refLinksNotFoundURL
 : URL to be used as a placeholder when a page reference cannot be found in `ref` or `relref`. Is used as-is.
-@z
-
-@x
-[lists]: /templates/lists/
-[output formats]: /templates/output-formats/
-[shortcode]: /content-management/shortcodes/
-@y
-[lists]: /templates/lists/
-[output formats]: /templates/output-formats/
-[shortcode]: /content-management/shortcodes/
 @z

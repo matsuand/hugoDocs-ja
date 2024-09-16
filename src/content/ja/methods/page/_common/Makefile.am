@@ -5,6 +5,8 @@
 bases = \
 	_index.md                   \
 	definition-of-section.md    \
+	next-and-prev.md            \
+	nextinsection-and-previnsection.md \
 	output-format-definition.md \
 	output-format-methods.md    \
 	scratch-methods.md

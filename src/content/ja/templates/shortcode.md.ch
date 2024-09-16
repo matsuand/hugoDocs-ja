@@ -6,13 +6,13 @@ title: Create your own shortcodes
 linkTitle: Shortcode templates
 description: You can extend Hugo's embedded shortcodes by creating your own using the same templating syntax as that for single and list pages.
 categories: [templates]
-keywords: [shortcodes,templates]
+keywords: []
 @y
 title: 独自のショートコードテンプレート生成
 linkTitle: ショートコードテンプレート
 description: You can extend Hugo's embedded shortcodes by creating your own using the same templating syntax as that for single and list pages.
 categories: [templates]
-keywords: [shortcodes,templates]
+keywords: []
 @z
 
 @x
@@ -84,23 +84,61 @@ Note the forward slash.
 @z
 
 @x
-### Shortcode template lookup order
+### Template lookup order
 @y
-### Shortcode template lookup order
+### Template lookup order
 @z
 
 @x
-Shortcode templates have a simple [lookup order]:
+Hugo selects shortcode templates based on the shortcode name, the current output format, and the current language. The examples below are sorted by specificity in descending order. The least specific path is at the bottom of the list.
 @y
-Shortcode templates have a simple [lookup order]:
+Hugo selects shortcode templates based on the shortcode name, the current output format, and the current language. The examples below are sorted by specificity in descending order. The least specific path is at the bottom of the list.
 @z
 
 @x
-1. `/layouts/shortcodes/<SHORTCODE>.html`
-2. `/themes/<THEME>/layouts/shortcodes/<SHORTCODE>.html`
+Shortcode name|Output format|Language|Template path
+:--|:--|:--|:--
+foo|html|en|layouts/shortcodes/foo.en.html
+foo|html|en|layouts/shortcodes/foo.html.html
+foo|html|en|layouts/shortcodes/foo.html
+foo|html|en|layouts/shortcodes/foo.html.en.html
 @y
-1. `/layouts/shortcodes/<SHORTCODE>.html`
-2. `/themes/<THEME>/layouts/shortcodes/<SHORTCODE>.html`
+Shortcode name|Output format|Language|Template path
+:--|:--|:--|:--
+foo|html|en|layouts/shortcodes/foo.en.html
+foo|html|en|layouts/shortcodes/foo.html.html
+foo|html|en|layouts/shortcodes/foo.html
+foo|html|en|layouts/shortcodes/foo.html.en.html
+@z
+
+@x
+Shortcode name|Output format|Language|Template path
+:--|:--|:--|:--
+foo|rss|en|layouts/shortcodes/foo.en.xml
+foo|rss|en|layouts/shortcodes/foo.rss.xml
+foo|rss|en|layouts/shortcodes/foo.en.html
+foo|rss|en|layouts/shortcodes/foo.rss.en.xml
+foo|rss|en|layouts/shortcodes/foo.xml
+foo|rss|en|layouts/shortcodes/foo.html.en.html
+foo|rss|en|layouts/shortcodes/foo.html.html
+foo|rss|en|layouts/shortcodes/foo.html
+@y
+Shortcode name|Output format|Language|Template path
+:--|:--|:--|:--
+foo|rss|en|layouts/shortcodes/foo.en.xml
+foo|rss|en|layouts/shortcodes/foo.rss.xml
+foo|rss|en|layouts/shortcodes/foo.en.html
+foo|rss|en|layouts/shortcodes/foo.rss.en.xml
+foo|rss|en|layouts/shortcodes/foo.xml
+foo|rss|en|layouts/shortcodes/foo.html.en.html
+foo|rss|en|layouts/shortcodes/foo.html.html
+foo|rss|en|layouts/shortcodes/foo.html
+@z
+
+@x
+Note that templates provided by a theme or module always take precedence.
+@y
+Note that templates provided by a theme or module always take precedence.
 @z
 
 @x
@@ -265,10 +303,10 @@ The `.Inner` method returns the content between the opening and closing shortcod
 
 @x
 {{% note %}}
-Any shortcode that calls the `.Inner` method must be closed or self-closed. To call a shortcode using the self-closing sytax
+Any shortcode that calls the `.Inner` method must be closed or self-closed. To call a shortcode using the self-closing syntax.
 @y
 {{% note %}}
-Any shortcode that calls the `.Inner` method must be closed or self-closed. To call a shortcode using the self-closing sytax
+Any shortcode that calls the `.Inner` method must be closed or self-closed. To call a shortcode using the self-closing syntax.
 @z
 
 @x

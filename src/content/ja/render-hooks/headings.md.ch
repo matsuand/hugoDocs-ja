@@ -11,8 +11,8 @@ keywords: []
 menu:
   docs:
     parent: render-hooks
-    weight: 40
-weight: 40
+    weight: 50
+weight: 50
 toc: true
 ---
 @y
@@ -25,8 +25,8 @@ keywords: []
 menu:
   docs:
     parent: render-hooks
-    weight: 40
-weight: 40
+    weight: 50
+weight: 50
 toc: true
 ---
 @z
@@ -68,9 +68,15 @@ Heading render hook templates receive the following [context]:
 @z
 
 @x
-(`map`) The Markdown attributes, available if you configure your site as follows:
+(`map`) The [Markdown attributes], available if you configure your site as follows:
 @y
-(`map`) The Markdown attributes, available if you configure your site as follows:
+(`map`) The [Markdown attributes], available if you configure your site as follows:
+@z
+
+@x
+[Markdown attributes]: /content-management/markdown-attributes/
+@y
+[Markdown attributes]: /content-management/markdown-attributes/
 @z
 
 @x
@@ -152,9 +158,9 @@ title = true
 @z
 
 @x
-(`string`) The heading text.
+(`template.HTML`) The heading text.
 @y
-(`string`) The heading text.
+(`template.HTML`) The heading text.
 @z
 
 @x
@@ -178,13 +184,13 @@ In its default configuration, Hugo renders Markdown headings according to the [C
 @x
 {{< code file=layouts/_default/_markup/render-heading.html copy=true >}}
 <h{{ .Level }} id="{{ .Anchor }}">
-  {{- .Text | safeHTML -}}
+  {{- .Text -}}
 </h{{ .Level }}>
 {{< /code >}}
 @y
 {{< code file=layouts/_default/_markup/render-heading.html copy=true >}}
 <h{{ .Level }} id="{{ .Anchor }}">
-  {{- .Text | safeHTML -}}
+  {{- .Text -}}
 </h{{ .Level }}>
 {{< /code >}}
 @z
@@ -198,14 +204,14 @@ To add an anchor link to the right of each heading:
 @x
 {{< code file=layouts/_default/_markup/render-heading.html copy=true >}}
 <h{{ .Level }} id="{{ .Anchor }}">
-  {{ .Text | safeHTML }}
+  {{ .Text }}
   <a href="#{{ .Anchor }}">#</a>
 </h{{ .Level }}>
 {{< /code >}}
 @y
 {{< code file=layouts/_default/_markup/render-heading.html copy=true >}}
 <h{{ .Level }} id="{{ .Anchor }}">
-  {{ .Text | safeHTML }}
+  {{ .Text }}
   <a href="#{{ .Anchor }}">#</a>
 </h{{ .Level }}>
 {{< /code >}}

@@ -188,7 +188,7 @@ The change frequency will be `hourly` for the news page, and `monthly` for other
 @z
 
 @x
-[sitemap templates]: /templates/sitemap-template/
+[sitemap templates]: /templates/sitemap/
 @y
-[sitemap templates]: /templates/sitemap-template/
+[sitemap templates]: /templates/sitemap/
 @z

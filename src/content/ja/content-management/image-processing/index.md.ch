@@ -105,9 +105,9 @@ A remote resource is a file on a remote server, accessible via HTTP or HTTPS. To
 @z
 
 @x
-Once you have accessed an image as either a page resource or a global resource, render it in your templates using the `Permalink`, `RelPermalink`, `Width`, and `Height` properties.
+Once you have accessed an image as a resource, render it in your templates using the `Permalink`, `RelPermalink`, `Width`, and `Height` properties.
 @y
-ページリソースかグローバルリソースとしてイメージへのアクセスを行なっておき、テンプレート内において `Permalink`, `RelPermalink`, `Width`, `Height` の各プロパティを用いてイメージをレンダリングします。
+リソースとしてイメージへのアクセスを行なっておき、テンプレート内において `Permalink`, `RelPermalink`, `Width`, `Height` の各プロパティを用いてイメージをレンダリングします。
 @z
 
 @x
@@ -156,12 +156,12 @@ The `image` resource implements the  [`Process`],  [`Resize`], [`Fit`], [`Fill`]
 
 @x
 {{% note %}}
-Metadata (EXIF, IPTC, XMP, etc.) is not preserved during image transformation. Use the `Exif` method with the _original_ image to extract EXIF metadata from JPEG or TIFF images.
+Metadata (EXIF, IPTC, XMP, etc.) is not preserved during image transformation. Use the `Exif` method with the _original_ image to extract EXIF metadata from JPEG, PNG, TIFF, and WebP images.
 {{% /note %}}
 @y
 {{% note %}}
 イメージの変形処理を行った際にはメタデータ (EXIF, IPTC, XMP, など) は保持されません。
-その場合は、*オリジナル* のイメージに対して `Exif` メソッドを使い、JPEG や TIFF の各イメージから EXIF メタデータを抽出してください。
+その場合は、*オリジナル* のイメージに対して `Exif` メソッドを使い、JPEG、TIFF、WebP の各イメージから EXIF メタデータを抽出してください。
 {{% /note %}}
 @z
 
@@ -364,9 +364,9 @@ Provides an [EXIF] object containing image metadata.
 @z
 
 @x
-You may access EXIF data in JPEG and TIFF images. To prevent errors when processing images without EXIF data, wrap the access in a [`with`] statement.
+You may access EXIF data in JPEG, PNG, TIFF, and WebP images. To prevent errors when processing images without EXIF data, wrap the access in a [`with`] statement.
 @y
-You may access EXIF data in JPEG and TIFF images. To prevent errors when processing images without EXIF data, wrap the access in a [`with`] statement.
+You may access EXIF data in JPEG, PNG, TIFF, and WebP images. To prevent errors when processing images without EXIF data, wrap the access in a [`with`] statement.
 @z
 
 % snip code...

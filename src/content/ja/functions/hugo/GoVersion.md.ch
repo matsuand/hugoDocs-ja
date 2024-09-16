@@ -28,12 +28,6 @@ action:
 @z
 
 @x
-{{< new-in 0.101.0 >}}
-@y
-{{< new-in 0.101.0 >}}
-@z
-
-@x
 ```go-html-template
 {{ hugo.GoVersion }} → go1.21.1
 ```

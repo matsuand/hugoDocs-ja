@@ -218,9 +218,9 @@ The example above is simplistic. Please see the [menu templates] section for mor
 @z
 
 @x
-[menu templates]: /templates/menu-templates/
+[menu templates]: /templates/menu/
 @y
-[menu templates]: /templates/menu-templates/
+[menu templates]: /templates/menu/
 @z
 
 @x

@@ -11,8 +11,8 @@ keywords: []
 menu:
   docs:
     parent: render-hooks
-    weight: 30
-weight: 30
+    weight: 40
+weight: 40
 toc: true
 ---
 @y
@@ -25,8 +25,8 @@ keywords: []
 menu:
   docs:
     parent: render-hooks
-    weight: 30
-weight: 30
+    weight: 40
+weight: 40
 toc: true
 ---
 @z

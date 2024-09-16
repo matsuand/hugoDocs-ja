@@ -4,7 +4,7 @@
 @x
 ---
 title: HasMenuCurrent
-description: Reports whether the given page object matches the page object associated with one of the child menu entries under the given menu entry in the given menu.
+description: Reports whether the given Page object matches the Page object associated with one of the child menu entries under the given menu entry in the given menu.
 categories: []
 keywords: []
 action:
@@ -17,7 +17,7 @@ aliases: [/functions/hasmenucurrent]
 @y
 ---
 title: HasMenuCurrent
-description: Reports whether the given page object matches the page object associated with one of the child menu entries under the given menu entry in the given menu.
+description: Reports whether the given Page object matches the Page object associated with one of the child menu entries under the given menu entry in the given menu.
 categories: []
 keywords: []
 action:
@@ -30,9 +30,9 @@ aliases: [/functions/hasmenucurrent]
 @z
 
 @x
-If the page object associated with the menu entry is a section, this method also returns `true` for any descendant of that section.
+If the `Page` object associated with the menu entry is a section, this method also returns `true` for any descendant of that section.
 @y
-If the page object associated with the menu entry is a section, this method also returns `true` for any descendant of that section.
+If the `Page` object associated with the menu entry is a section, this method also returns `true` for any descendant of that section.
 @z
 
 @x
@@ -70,7 +70,7 @@ See [menu templates] for a complete example.
 @z
 
 @x
-[menu templates]: /templates/menu-templates/#example
+[menu templates]: /templates/menu/#example
 @y
-[menu templates]: /templates/menu-templates/#example
+[menu templates]: /templates/menu/#example
 @z

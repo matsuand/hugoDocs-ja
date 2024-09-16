@@ -103,6 +103,8 @@ Please link to the [glossary of terms] when necessary, and use the terms consist
 
 @x
 - The term "front matter" is two words unless you are referring to the configuration key
+- The term "home page" is two words
+- The term "website" is one word
 - The term "standalone" is one word, not hyphenated
 - Use the word "map" instead of "dictionary"
 - Use the word "flag" instead of "option" when referring to a command line flag
@@ -110,6 +112,8 @@ Please link to the [glossary of terms] when necessary, and use the terms consist
 - Hyphenate the term "open-source" when used an adjective.
 @y
 - The term "front matter" is two words unless you are referring to the configuration key
+- The term "home page" is two words
+- The term "website" is one word
 - The term "standalone" is one word, not hyphenated
 - Use the word "map" instead of "dictionary"
 - Use the word "flag" instead of "option" when referring to a command line flag

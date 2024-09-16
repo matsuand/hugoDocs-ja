@@ -3,6 +3,7 @@
 ##
 
 bases = \
+	Defer.md  \
 	Exists.md \
 	_index.md
 

@@ -42,9 +42,9 @@ toc: true
 @z
 
 @x
-The `InSection` method on a page object reports whether the given page is in the given section. Note that the method returns `true` when comparing a page to a sibling.
+The `InSection` method on a `Page` object reports whether the given page is in the given section. Note that the method returns `true` when comparing a page to a sibling.
 @y
-The `InSection` method on a page object reports whether the given page is in the given section. Note that the method returns `true` when comparing a page to a sibling.
+The `InSection` method on a `Page` object reports whether the given page is in the given section. Note that the method returns `true` when comparing a page to a sibling.
 @z
 
 @x

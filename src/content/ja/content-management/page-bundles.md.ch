@@ -95,7 +95,7 @@ Page bundle characteristics vary by bundle type.
 | Index file          | index.md                                                | _index.md                                               |
 | Example             | content/about/index.md                                  | content/posts/_index.md                                 |
 | [Page kinds]        | `page`                                                  | `home`, `section`, `taxonomy`, or `term`                |
-| Layout type         | [single]                                                | [list]                                                  |
+| Template types       | [single]                                                | [home], [section], [taxonomy], or [term]           |
 | Descendant pages    | None                                                    | Zero or more                                            |
 | Resource location   | Adjacent to the index file or in a nested subdirectory  | Same as a leaf bundles, but excludes descendant bundles |
 | [Resource types]    | `page`, `image`, `video`, etc.                          | all but `page`                                          |
@@ -105,7 +105,7 @@ Page bundle characteristics vary by bundle type.
 | Index file          | index.md                                                | _index.md                                               |
 | Example             | content/about/index.md                                  | content/posts/_index.md                                 |
 | [Page kinds]        | `page`                                                  | `home`, `section`, `taxonomy`, or `term`                |
-| Layout type         | [single]                                                | [list]                                                  |
+| Template types       | [single]                                                | [home], [section], [taxonomy], or [term]           |
 | Descendant pages    | None                                                    | Zero or more                                            |
 | Resource location   | Adjacent to the index file or in a nested subdirectory  | Same as a leaf bundles, but excludes descendant bundles |
 | [Resource types]    | `page`, `image`, `video`, etc.                          | all but `page`                                          |

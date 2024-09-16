@@ -2,31 +2,17 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: Template lookup order
+linkTitle: Lookup order
 description: Hugo uses the rules below to select a template for a given page, starting from the most specific.
 categories: [templates,fundamentals]
-keywords: [templates]
-menu:
-  docs:
-    parent: templates
-    weight: 30
-weight: 30
-toc: true
----
+keywords: []
 @y
----
 title: テンプレートの適用順
+linkTitle: Lookup order
 description: Hugo uses the rules below to select a template for a given page, starting from the most specific.
 categories: [templates,fundamentals]
-keywords: [templates]
-menu:
-  docs:
-    parent: templates
-    weight: 30
-weight: 30
-toc: true
----
+keywords: []
 @z
 
 @x
@@ -258,9 +244,9 @@ layouts/
 @z
 
 @x
-## Home page
+## Home templates
 @y
-## Home page
+## Home templates
 @z
 
 @x
@@ -270,9 +256,9 @@ layouts/
 @z
 
 @x
-## Single pages
+## Single templates
 @y
-## Single pages
+## Single templates
 @z
 
 @x
@@ -282,15 +268,15 @@ layouts/
 @z
 
 @x
-## Section pages
+## Section templates
 @y
-## Section pages
+## Section templates
 @z
 
 @x
-A section page is a list of pages within a given section.
+These template paths are sorted by specificity in descending order. The least specific path is at the bottom of each list.
 @y
-A section page is a list of pages within a given section.
+These template paths are sorted by specificity in descending order. The least specific path is at the bottom of each list.
 @z
 
 @x
@@ -300,15 +286,21 @@ A section page is a list of pages within a given section.
 @z
 
 @x
-## Taxonomy pages
+## Taxonomy templates
 @y
-## Taxonomy pages
+## Taxonomy templates
 @z
 
 @x
-A taxonomy page is a list of terms within a given taxonomy. The examples below assume the following site configuration:
+These template paths are sorted by specificity in descending order. The least specific path is at the bottom of each list.
 @y
-A taxonomy page is a list of terms within a given taxonomy. The examples below assume the following site configuration:
+These template paths are sorted by specificity in descending order. The least specific path is at the bottom of each list.
+@z
+
+@x
+The examples below assume the following site configuration:
+@y
+The examples below assume the following site configuration:
 @z
 
 @x
@@ -330,15 +322,21 @@ category = 'categories'
 @z
 
 @x
-## Term pages
+## Term templates
 @y
-## Term pages
+## Term templates
 @z
 
 @x
-A term page is a list of pages associated with a given term. The examples below assume the following site configuration:
+These template paths are sorted by specificity in descending order. The least specific path is at the bottom of each list.
 @y
-A term page is a list of pages associated with a given term. The examples below assume the following site configuration:
+These template paths are sorted by specificity in descending order. The least specific path is at the bottom of each list.
+@z
+
+@x
+The examples below assume the following site configuration:
+@y
+The examples below assume the following site configuration:
 @z
 
 @x

@@ -121,12 +121,12 @@ See the [menu templates] section for more information.
 [`LinkTitle`]: /methods/page/linktitle/
 [`RelPermalink`]: /methods/page/relpermalink/
 [define menu entries]: /content-management/menus/
-[menu templates]: /templates/menu-templates/#page-references
+[menu templates]: /templates/menu/#page-references
 [methods]: /methods/page/
 @y
 [`LinkTitle`]: /methods/page/linktitle/
 [`RelPermalink`]: /methods/page/relpermalink/
 [define menu entries]: /content-management/menus/
-[menu templates]: /templates/menu-templates/#page-references
+[menu templates]: /templates/menu/#page-references
 [methods]: /methods/page/
 @z

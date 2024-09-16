@@ -16,8 +16,8 @@ keywords: []
 % snip code...
 
 @x
-The page group you get from `group` is of the same type you get from the built-in [group methods](/templates/lists#group-content) in Hugo. The above example can be [paginated](/templates/pagination/#list-paginator-pages).
+The page group you get from `group` is of the same type you get from the built-in [group methods](/quick-reference/page-collections/#group) in Hugo. The example above can be [paginated](/templates/pagination/).
 @y
-`group` によって得られるページグループは、ビルトインの [group メソッド](/templates/lists#group-content) によって得られるものと同じ型です。
-上の例は [ページネーション](/templates/pagination/#list-paginator-pages) を行うことができます。
+`group` によって得られるページグループは、ビルトインの [group メソッド](/quick-reference/page-collections/#group) によって得られるものと同じ型です。
+上の例は [ページネーション](/templates/pagination/) を行うことができます。
 @z

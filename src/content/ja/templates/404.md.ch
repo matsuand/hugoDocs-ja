@@ -3,16 +3,16 @@
 
 @x
 title: Custom 404 page
-linkTitle: 404 template
+linkTitle: 404 templates
 description: Create a template to render a 404 error page.
 categories: [templates]
-keywords: ['404',page not found]
+keywords: []
 @y
 title: 独自の 404 ページ
 linkTitle: 404 テンプレート
 description: Create a template to render a 404 error page.
 categories: [templates]
-keywords: ['404',page not found]
+keywords: []
 @z
 
 @x
@@ -83,7 +83,7 @@ Amazon S3|See [details](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Cu
 Apache|See [details](https://httpd.apache.org/docs/2.4/custom-error.html).
 Azure Static Web Apps|See [details](https://learn.microsoft.com/en-us/azure/static-web-apps/configuration#response-overrides).
 Azure Storage|See [details](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website#setting-up-a-static-website).
-Caddy|See [deatils](https://caddyserver.com/docs/caddyfile/directives/handle_errors).
+Caddy|See [details](https://caddyserver.com/docs/caddyfile/directives/handle_errors).
 Cloudflare Pages|See [details](https://developers.cloudflare.com/pages/configuration/serving-pages/#not-found-behavior).
 DigitalOcean App Platform|See [details](https://docs.digitalocean.com/products/app-platform/how-to/manage-static-sites/#configure-a-static-site).
 Firebase|See [details](https://firebase.google.com/docs/hosting/full-config#404).
@@ -99,7 +99,7 @@ Amazon S3|See [details](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Cu
 Apache|See [details](https://httpd.apache.org/docs/2.4/custom-error.html).
 Azure Static Web Apps|See [details](https://learn.microsoft.com/en-us/azure/static-web-apps/configuration#response-overrides).
 Azure Storage|See [details](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website#setting-up-a-static-website).
-Caddy|See [deatils](https://caddyserver.com/docs/caddyfile/directives/handle_errors).
+Caddy|See [details](https://caddyserver.com/docs/caddyfile/directives/handle_errors).
 Cloudflare Pages|See [details](https://developers.cloudflare.com/pages/configuration/serving-pages/#not-found-behavior).
 DigitalOcean App Platform|See [details](https://docs.digitalocean.com/products/app-platform/how-to/manage-static-sites/#configure-a-static-site).
 Firebase|See [details](https://firebase.google.com/docs/hosting/full-config#404).

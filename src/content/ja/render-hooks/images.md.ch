@@ -11,8 +11,8 @@ keywords: []
 menu:
   docs:
     parent: render-hooks
-    weight: 50
-weight: 50
+    weight: 60
+weight: 60
 toc: true
 ---
 @y
@@ -25,8 +25,8 @@ keywords: []
 menu:
   docs:
     parent: render-hooks
-    weight: 50
-weight: 50
+    weight: 60
+weight: 60
 toc: true
 ---
 @z
@@ -88,9 +88,15 @@ Image render hook templates receive the following context:
 @z
 
 @x
-(`map`) The Markdown attributes, available if you configure your site as follows:
+(`map`) The [Markdown attributes], available if you configure your site as follows:
 @y
-(`map`) The Markdown attributes, available if you configure your site as follows:
+(`map`) The [Markdown attributes], available if you configure your site as follows:
+@z
+
+@x
+[Markdown attributes]: /content-management/markdown-attributes/
+@y
+[Markdown attributes]: /content-management/markdown-attributes/
 @z
 
 @x
@@ -200,9 +206,9 @@ block = true
 @z
 
 @x
-(`string`) The image description.
+(`template.HTML`) The image description.
 @y
-(`string`) The image description.
+(`template.HTML`) The image description.
 @z
 
 @x
@@ -276,7 +282,7 @@ To render standalone images within `figure` elements:
     <img src="{{ .Destination | safeURL }}"
       {{- with .Text }} alt="{{ . }}"{{ end -}}
     >
-    <figcaption>{{ .Title }}</figcaption>
+    {{- with .Title }}<figcaption>{{ . }}</figcaption>{{ end -}}
   </figure>
 {{- else -}}
   <img src="{{ .Destination | safeURL }}"
@@ -292,7 +298,7 @@ To render standalone images within `figure` elements:
     <img src="{{ .Destination | safeURL }}"
       {{- with .Text }} alt="{{ . }}"{{ end -}}
     >
-    <figcaption>{{ .Title }}</figcaption>
+    {{- with .Title }}<figcaption>{{ . }}</figcaption>{{ end -}}
   </figure>
 {{- else -}}
   <img src="{{ .Destination | safeURL }}"
@@ -380,9 +386,9 @@ The embedded image render hook is automatically enabled for multilingual single-
 @z
 
 @x
-The embedded image render hook resolves internal Markdown destinations by looking for a matching [page resource], falling back to a matching [global resource]. Remote destinations are passed through, and the render hook will not throw an error or warning if it is unable to resolve a destination.
+The embedded image render hook resolves internal Markdown destinations by looking for a matching [page resource], falling back to a matching [global resource]. Remote destinations are passed through, and the render hook will not throw an error or warning if unable to resolve a destination.
 @y
-The embedded image render hook resolves internal Markdown destinations by looking for a matching [page resource], falling back to a matching [global resource]. Remote destinations are passed through, and the render hook will not throw an error or warning if it is unable to resolve a destination.
+The embedded image render hook resolves internal Markdown destinations by looking for a matching [page resource], falling back to a matching [global resource]. Remote destinations are passed through, and the render hook will not throw an error or warning if unable to resolve a destination.
 @z
 
 @x

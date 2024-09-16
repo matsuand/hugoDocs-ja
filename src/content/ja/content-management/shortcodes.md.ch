@@ -1183,18 +1183,18 @@ To learn more about creating custom shortcodes, see the [shortcode template docu
 
 @x
 [privacy protections]: /about/privacy/
-[partials]: /templates/partials/
+[partials]: /templates/partial/
 [quickstart]: /getting-started/quick-start/
-[sctemps]: /templates/shortcode-templates/
-[shortcode template documentation]: /templates/shortcode-templates/
+[sctemps]: /templates/shortcode/
+[shortcode template documentation]: /templates/shortcode/
 [Vimeo]: https://vimeo.com/
 [YouTube Videos]: https://www.youtube.com/
 @y
 [privacy protections]: /about/privacy/
-[partials]: /templates/partials/
+[partials]: /templates/partial/
 [quickstart]: /getting-started/quick-start/
-[sctemps]: /templates/shortcode-templates/
-[shortcode template documentation]: /templates/shortcode-templates/
+[sctemps]: /templates/shortcode/
+[shortcode template documentation]: /templates/shortcode/
 [Vimeo]: https://vimeo.com/
 [YouTube Videos]: https://www.youtube.com/
 @z

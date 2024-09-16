@@ -226,13 +226,13 @@ With the file structure from the [example above](#overview):
 @z
 
 @x
-Content directory|List page template
+Content directory|Section template
 :--|:--
 content/products|layouts/products/list.html
 content/products/product-1|layouts/products/list.html
 content/products/product-1/benefits|layouts/products/list.html
 @y
-Content directory|List page template
+Content directory|Section template
 :--|:--
 content/products|layouts/products/list.html
 content/products/product-1|layouts/products/list.html
@@ -240,13 +240,13 @@ content/products/product-1/benefits|layouts/products/list.html
 @z
 
 @x
-Content directory|Single page template
+Content directory|Single template
 :--|:--
 content/products|layouts/products/single.html
 content/products/product-1|layouts/products/single.html
 content/products/product-1/benefits|layouts/products/single.html
 @y
-Content directory|Single page template
+Content directory|Single template
 :--|:--
 content/products|layouts/products/single.html
 content/products/product-1|layouts/products/single.html
@@ -393,14 +393,14 @@ Home » Products » Product 1 » Benefits » Benefit 1
 [archetype]: /content-management/archetypes/
 [content type]: /content-management/types/
 [directory structure]: /getting-started/directory-structure/
-[section templates]: /templates/section-templates/
+[section templates]: /templates/types/#section
 [leaf bundles]: /content-management/page-bundles/#leaf-bundles
 [branch bundles]: /content-management/page-bundles/#branch-bundles
 @y
 [archetype]: /content-management/archetypes/
 [content type]: /content-management/types/
 [directory structure]: /getting-started/directory-structure/
-[section templates]: /templates/section-templates/
+[section templates]: /templates/types/#section
 [leaf bundles]: /content-management/page-bundles/#leaf-bundles
 [branch bundles]: /content-management/page-bundles/#branch-bundles
 @z

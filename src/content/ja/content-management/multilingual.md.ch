@@ -186,10 +186,10 @@ languageName
 
 @x
 title
-: (`string`) The site title for this langauge (optional).
+: (`string`) The site title for this language (optional).
 @y
 title
-: (`string`) The site title for this langauge (optional).
+: (`string`) The site title for this language (optional).
 @z
 
 @x
@@ -789,9 +789,9 @@ To create a list of links to translated content, use a template similar to the f
 @z
 
 @x
-The above can be put in a `partial` (i.e., inside `layouts/partials/`) and included in any template, whether a [single content page][contenttemplate] or the [homepage]. It will not print anything if there are no translations for a given page.
+The above can be put in a `partial` (i.e., inside `layouts/partials/`) and included in any template. It will not print anything if there are no translations for a given page.
 @y
-The above can be put in a `partial` (i.e., inside `layouts/partials/`) and included in any template, whether a [single content page][contenttemplate] or the [homepage]. It will not print anything if there are no translations for a given page.
+The above can be put in a `partial` (i.e., inside `layouts/partials/`) and included in any template. It will not print anything if there are no translations for a given page.
 @z
 
 @x

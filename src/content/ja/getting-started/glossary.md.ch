@@ -107,7 +107,7 @@ A classification of content inferred from the top-level directory name or the `t
 
 ###### content view
 
-A template called with the `.Page.Render` method. See&nbsp;[details](/templates/views/).
+A template called with the `.Page.Render` method. See&nbsp;[details](/templates/content-view/).
 
 ###### context
 
@@ -134,7 +134,6 @@ To determine the current environment within a template, use the [`hugo.Environme
 ###### field
 
 A predefined key-value pair in front matter such as `date` or `title`. See&nbsp;also&nbsp;[parameter](#parameter).
-
 
 ###### flag
 
@@ -215,6 +214,10 @@ A directory that contains an index.md file and zero or more [resources](#resourc
 
 Any [page kind](#page-kind) that receives a page [collection](#collection) in [context](#context). This includes the home page, [section pages](#section-page), [taxonomy pages](#taxonomy-page), and [term pages](#term-page).
 
+###### list template
+
+Any template that renders a [list page](#list-page). This includes [home](/templates/types/#home), [section](/templates/types/#section), [taxonomy](/templates/types/#taxonomy), and [term](/templates/types/#term) templates.
+
 ###### localization
 
 Adaptation of a site to meet language and regional requirements. This includes translations, language-specific media, date and currency formats, etc. See&nbsp;[details](/content-management/multilingual/) and the [W3C definition](https://www.w3.org/International/questions/qa-i18n). Abbreviated l10n.
@@ -259,7 +262,7 @@ A data structure with or without associated [methods](#method).
 
 ###### ordered taxonomy
 
-Created by invoking the [`Alphabetical`] or [`ByCount`] method on a [taxonomy object](#taxonomy-object), which is a [map](#map), an ordered taxonomy is a [slice](#slice), where each element is an object that contains the [term](#term) and a slice of its [weighted pages](#weighted-page).
+Created by invoking the [`Alphabetical`] or [`ByCount`] method on a [`Taxonomy`](#taxonomy-object) object, which is a [map](#map), an ordered taxonomy is a [slice](#slice), where each element is an object that contains the [term](#term) and a slice of its [weighted pages](#weighted-page).
 
 [`Alphabetical`]: /methods/taxonomy/alphabetical/
 [`ByCount`]: /methods/taxonomy/bycount/
@@ -274,7 +277,7 @@ A directory that encapsulates both content and associated [resources](#resource)
 
 ###### page collection
 
-A slice of page objects.
+A slice of `Page` objects.
 
 ###### page kind
 
@@ -290,15 +293,19 @@ A file within a [page bundle](#page-bundle). Capture one or more page resources 
 
 ###### pager
 
-Created during [pagination](#pagination), a pager contains a subset of a section list, and navigation links to other pagers.
+Created during [pagination](#pagination), a pager contains a subset of a list page and navigation links to other pagers.
 
 ###### paginate
 
-To split a [section](#section) list into two or more [pagers](#pager) See&nbsp;[details](/templates/pagination/).
+To split a list page into two or more subsets.
 
 ###### pagination
 
-The process of [paginating](#paginate) a [section](#section) list.
+The process of [paginating](#paginate) a list page. See&nbsp;[details](/templates/pagination/).
+
+###### paginator
+
+A collection of [pagers](#pager).
 
 ###### parameter
 
@@ -397,7 +404,7 @@ Raw string literals are character sequences between backticks, as in \`bar\`. Wi
 
 ###### taxonomic weight
 
-Defined in front matter and unique to each taxonomy, this [weight](#weight) determines the sort order of page collections contained within a [taxonomy object](#taxonomy-object). See&nbsp;[details](/templates/taxonomy-templates/#assign-weight).
+Defined in front matter and unique to each taxonomy, this [weight](#weight) determines the sort order of page collections contained within a [`Taxonomy`](#taxonomy-object) object. See&nbsp;[details](/content-management/taxonomies/#order-taxonomies).
 
 ###### taxonomy
 
@@ -457,7 +464,7 @@ Used to position an element within a collection sorted by weight. Assign weights
 
 ###### weighted page
 
-Contained within a [taxonomy object](#taxonomy-object), a weighted page is a [map](#map) with two elements: a `Page` object, and its [taxonomic weight](#taxonomic-weight) as defined in front matter. Access the elements using the `Page` and `Weight` keys.
+Contained within a [`Taxonomy`](#taxonomy-object) object, a weighted page is a [map](#map) with two elements: a `Page` object, and its [taxonomic weight](#taxonomic-weight) as defined in front matter. Access the elements using the `Page` and `Weight` keys.
 
 ###### zero time
 
@@ -524,7 +531,7 @@ A classification of content inferred from the top-level directory name or the `t
 ###### コンテントビュー (content view) {#content-view}
 
 `.Page.Render` メソッドを使って呼び出されるテンプレートのこと。
-詳細は [こちら](/templates/views/) を参照のこと。
+詳細は [こちら](/templates/content-view/) を参照のこと。
 
 ###### CJK
 
@@ -673,6 +680,10 @@ A directory that contains an index.md file and zero or more [resources](#resourc
 
 Any [page kind](#page-kind) that receives a page [collection](#collection) in [context](#context). This includes the home page, [section pages](#section-page), [taxonomy pages](#taxonomy-page), and [term pages](#term-page).
 
+###### list template
+
+Any template that renders a [list page](#list-page). This includes [home](/templates/types/#home), [section](/templates/types/#section), [taxonomy](/templates/types/#taxonomy), and [term](/templates/types/#term) templates.
+
 ###### localization
 
 Adaptation of a site to meet language and regional requirements. This includes translations, language-specific media, date and currency formats, etc. See&nbsp;[details](/content-management/multilingual/) and the [W3C definition](https://www.w3.org/International/questions/qa-i18n). Abbreviated l10n.
@@ -717,10 +728,10 @@ A data structure with or without associated [methods](#method).
 
 ###### ordered taxonomy
 
-Created by invoking the [`Alphabetical`] or [`ByCount`] method on a [taxonomy object](#taxonomy-object), which is a [map](#map), an ordered taxonomy is a [slice](#slice), where each element is an object that contains the [term](#term) and a slice of its [weighted pages](#weighted-page).
+Created by invoking the [`Alphabetical`] or [`ByCount`] method on a [`Taxonomy`](#taxonomy-object) object, which is a [map](#map), an ordered taxonomy is a [slice](#slice), where each element is an object that contains the [term](#term) and a slice of its [weighted pages](#weighted-page).
 
-[`Alphabetical`]: /methods/taxonomy/alphabetical
-[`ByCount`]: /methods/taxonomy/bycount
+[`Alphabetical`]: /methods/taxonomy/alphabetical/
+[`ByCount`]: /methods/taxonomy/bycount/
 
 ###### output format
 
@@ -732,7 +743,7 @@ A directory that encapsulates both content and associated [resources](#resource)
 
 ###### page collection
 
-A slice of page objects.
+A slice of `Page` objects.
 
 ###### page kind
 
@@ -748,15 +759,19 @@ A file within a [page bundle](#page-bundle). Capture one or more page resources 
 
 ###### pager
 
-Created during [pagination](#pagination), a pager contains a subset of a section list, and navigation links to other pagers.
+Created during [pagination](#pagination), a pager contains a subset of a list page and navigation links to other pagers.
 
 ###### paginate
 
-To split a [section](#section) list into two or more [pagers](#pager) See&nbsp;[details](/templates/pagination/).
+To split a list page into two or more subsets.
 
 ###### pagination
 
-The process of [paginating](#paginate) a [section](#section) list.
+The process of [paginating](#paginate) a list page. See&nbsp;[details](/templates/pagination/).
+
+###### paginator
+
+A collection of [pagers](#pager).
 
 ###### parameter
 
@@ -855,7 +870,7 @@ Raw string literals are character sequences between backticks, as in \`bar\`. Wi
 
 ###### taxonomic weight
 
-Defined in front matter and unique to each taxonomy, this [weight](#weight) determines the sort order of page collections contained within a [taxonomy object](#taxonomy-object). See&nbsp;[details](/templates/taxonomy-templates/#assign-weight).
+Defined in front matter and unique to each taxonomy, this [weight](#weight) determines the sort order of page collections contained within a [`Taxonomy`](#taxonomy-object) object. See&nbsp;[details](/content-management/taxonomies/#order-taxonomies).
 
 ###### taxonomy
 
@@ -911,7 +926,7 @@ Used to position an element within a collection sorted by weight. Assign weights
 
 ###### weighted page
 
-Contained within a [taxonomy object](#taxonomy-object), a weighted page is a [map](#map) with two elements: a `Page` object, and its [taxonomic weight](#taxonomic-weight) as defined in front matter. Access the elements using the `Page` and `Weight` keys.
+Contained within a [`Taxonomy`](#taxonomy-object) object, a weighted page is a [map](#map) with two elements: a `Page` object, and its [taxonomic weight](#taxonomic-weight) as defined in front matter. Access the elements using the `Page` and `Weight` keys.
 
 ###### zero time
 

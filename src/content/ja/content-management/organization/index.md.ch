@@ -121,11 +121,10 @@ The following demonstrates the relationships between your content organization a
 @z
 
 @x
-`_index.md` has a special role in Hugo. It allows you to add front matter and content to your [list templates][lists]. These templates include those for [section templates], [taxonomy templates], [taxonomy terms templates], and your [homepage template].
+`_index.md` has a special role in Hugo. It allows you to add front matter and content to `home`, `section`, `taxonomy`, and `term` pages. 
 @y
 Hugo において `_index.md` には特別な役割があります。
-
-It allows you to add front matter and content to your [list templates][lists]. These templates include those for [section templates], [taxonomy templates], [taxonomy terms templates], and your [homepage template].
+It allows you to add front matter and content to `home`, `section`, `taxonomy`, and `term` pages. 
 @z
 
 @x
@@ -141,9 +140,9 @@ It allows you to add front matter and content to your [list templates][lists]. T
 @z
 
 @x
-You can create one `_index.md` for your homepage and one in each of your content sections, taxonomies, and taxonomy terms. The following shows typical placement of an `_index.md` that would contain content and front matter for a `posts` section list page on a Hugo website:
+You can create one `_index.md` for your home page and one in each of your content sections, taxonomies, and terms. The following shows typical placement of an `_index.md` that would contain content and front matter for a `posts` section list page on a Hugo website:
 @y
-You can create one `_index.md` for your homepage and one in each of your content sections, taxonomies, and taxonomy terms. The following shows typical placement of an `_index.md` that would contain content and front matter for a `posts` section list page on a Hugo website:
+You can create one `_index.md` for your home page and one in each of your content sections, taxonomies, and terms. The following shows typical placement of an `_index.md` that would contain content and front matter for a `posts` section list page on a Hugo website:
 @z
 
 @x
@@ -213,9 +212,9 @@ The [sections] can be nested as deeply as you want. The important thing to under
 @z
 
 @x
-Single content files in each of your sections will be rendered as [single page templates][singles]. Here is an example of a single `post` within `posts`:
+Single content files in each of your sections will be rendered by a [single template]. Here is an example of a single `post` within `posts`:
 @y
-Single content files in each of your sections will be rendered as [single page templates][singles]. Here is an example of a single `post` within `posts`:
+Single content files in each of your sections will be rendered by a [single template]. Here is an example of a single `post` within `posts`:
 @z
 
 @x

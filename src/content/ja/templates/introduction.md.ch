@@ -672,9 +672,9 @@ Use the [`partial`] or [`partialCached`] function to include one or more [partia
 @z
 
 @x
-[partial templates]: /templates/partials
+[partial templates]: /templates/partial
 @y
-[partial templates]: /templates/partials
+[partial templates]: /templates/partial
 @z
 
 % snip code...

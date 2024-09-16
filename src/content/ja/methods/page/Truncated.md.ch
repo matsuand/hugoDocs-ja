@@ -28,35 +28,21 @@ action:
 @z
 
 @x
-There are three ways to define the [content summary]:
+You can define a [summary] manually, in front matter, or automatically. A manual summary takes precedence over a front matter summary, and a front matter summary takes precedence over an automatic summary.
 @y
-There are three ways to define the [content summary]:
+You can define a [summary] manually, in front matter, or automatically. A manual summary takes precedence over a front matter summary, and a front matter summary takes precedence over an automatic summary.
 @z
 
 @x
-1. Let Hugo create the summary based on the first 70 words. You can change the number of words by setting the `summaryLength` in your site configuration.
-2. Manually split the content with a `<--more-->` tag in Markdown. Everything before the tag is included in the summary.
-3. Create a `summary` field in front matter.
+[summary]: /content-management/summaries/
 @y
-1. Let Hugo create the summary based on the first 70 words. You can change the number of words by setting the `summaryLength` in your site configuration.
-2. Manually split the content with a `<--more-->` tag in Markdown. Everything before the tag is included in the summary.
-3. Create a `summary` field in front matter.
+[summary]: /content-management/summaries/
 @z
 
 @x
-{{% note %}}
-The `Truncated` method returns `false` if you define the summary in front matter.
-{{% /note %}}
+The `Truncated` method returns `true` if the content length exceeds the summary length. This is useful for conditionally rendering a "read more" link:
 @y
-{{% note %}}
-The `Truncated` method returns `false` if you define the summary in front matter.
-{{% /note %}}
-@z
-
-@x
-The `Truncated` method returns `true` if the content length exceeds the summary length. This is useful for rendering a "read more" link:
-@y
-The `Truncated` method returns `true` if the content length exceeds the summary length. This is useful for rendering a "read more" link:
+The `Truncated` method returns `true` if the content length exceeds the summary length. This is useful for conditionally rendering a "read more" link:
 @z
 
 @x
@@ -82,7 +68,11 @@ The `Truncated` method returns `true` if the content length exceeds the summary 
 @z
 
 @x
-[content summary]: /content-management/summaries/
+{{% note %}}
+The `Truncated` method returns `false` if you define the summary in front matter.
+{{% /note %}}
 @y
-[content summary]: /content-management/summaries/
+{{% note %}}
+The `Truncated` method returns `false` if you define the summary in front matter.
+{{% /note %}}
 @z

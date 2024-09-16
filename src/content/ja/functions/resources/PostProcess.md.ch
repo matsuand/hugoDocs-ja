@@ -10,10 +10,8 @@ keywords: []
 action:
   aliases: []
   related:
-    - functions/resources/Fingerprint
-    - functions/resources/Minify
-    - functions/resources/PostCSS
-    - functions/resources/ToCSS
+    - functions/css/PostCSS
+    - functions/css/Sass
   returnType: postpub.PostPublishedResource
   signatures: [resources.PostProcess RESOURCE]
 toc: true
@@ -27,10 +25,8 @@ keywords: []
 action:
   aliases: []
   related:
-    - functions/resources/Fingerprint
-    - functions/resources/Minify
-    - functions/resources/PostCSS
-    - functions/resources/ToCSS
+    - functions/css/PostCSS
+    - functions/css/Sass
   returnType: postpub.PostPublishedResource
   signatures: [resources.PostProcess RESOURCE]
 toc: true
@@ -370,13 +366,13 @@ You cannot manipulate the values returned from the resource’s methods. For exa
 @x
 ```go-html-template
 {{ $css := resources.Get "css/main.css" }}
-{{ $css = $css | resources.PostCSS | minify | fingerprint | resources.PostProcess }}
+{{ $css = $css | css.PostCSS | minify | fingerprint | resources.PostProcess }}
 {{ $css.RelPermalink | strings.ToUpper }}
 ```
 @y
 ```go-html-template
 {{ $css := resources.Get "css/main.css" }}
-{{ $css = $css | resources.PostCSS | minify | fingerprint | resources.PostProcess }}
+{{ $css = $css | css.PostCSS | minify | fingerprint | resources.PostProcess }}
 {{ $css.RelPermalink | strings.ToUpper }}
 ```
 @z

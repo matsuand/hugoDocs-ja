@@ -138,11 +138,11 @@ See the [menu templates] section for more information.
 @z
 
 @x
-[menu templates]: /templates/menu-templates/#menu-entry-parameters
+[menu templates]: /templates/menu/#menu-entry-parameters
 [in front matter]: /content-management/menus/#define-in-front-matter
 [in site configuration]: /content-management/menus/
 @y
-[menu templates]: /templates/menu-templates/#menu-entry-parameters
+[menu templates]: /templates/menu/#menu-entry-parameters
 [in front matter]: /content-management/menus/#define-in-front-matter
 [in site configuration]: /content-management/menus/
 @z

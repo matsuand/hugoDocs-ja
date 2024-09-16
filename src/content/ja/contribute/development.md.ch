@@ -125,12 +125,12 @@ To build the extended edition of Hugo from source you must:
 
 @x
 1. Install [Git]
-1. Install [Go] version 1.20 or later
+1. Install [Go] version 1.23.0 or later
 1. Install a C compiler, either [GCC] or [Clang]
 1. Update your `PATH` environment variable as described in the [Go documentation]
 @y
 1. Install [Git]
-1. Install [Go] version 1.20 or later
+1. Install [Go] version 1.23.0 or later
 1. Install a C compiler, either [GCC] or [Clang]
 1. Update your `PATH` environment variable as described in the [Go documentation]
 @z
@@ -417,11 +417,11 @@ To build and install a specific release:
 
 @x
 ```sh
-CGO_ENABLED=1 go install -tags extended github.com/gohugoio/hugo@v0.126.0
+CGO_ENABLED=1 go install -tags extended github.com/gohugoio/hugo@v0.128.0
 ```
 @y
 ```sh
-CGO_ENABLED=1 go install -tags extended github.com/gohugoio/hugo@v0.126.0
+CGO_ENABLED=1 go install -tags extended github.com/gohugoio/hugo@v0.128.0
 ```
 @z
 

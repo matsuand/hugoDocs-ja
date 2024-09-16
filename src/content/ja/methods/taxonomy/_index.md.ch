@@ -2,27 +2,15 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: Taxonomy methods
 linkTitle: Taxonomy
 description: Use these methods with Taxonomy objects.
 keywords: []
-menu:
-  docs:
-    identifier:
-    parent: methods
----
 @y
----
 title: Taxonomy methods
 linkTitle: Taxonomy
 description: Use these methods with Taxonomy objects.
 keywords: []
-menu:
-  docs:
-    identifier:
-    parent: methods
----
 @z
 
 @x

@@ -18,9 +18,9 @@ Before we can use a `Taxonomy` method, we need to capture a `Taxonomy` object.
 @z
 
 @x
-## Capture a taxonomy object
+## Capture a Taxonomy object
 @y
-## Capture a taxonomy object
+## Capture a Taxonomy object
 @z
 
 @x
@@ -72,9 +72,9 @@ content/
 @z
 
 @x
-To capture the "genres" taxonomy object from within any template, use the [`Taxonomies`] method on a `Site` object.
+To capture the "genres" `Taxonomy` object from within any template, use the [`Taxonomies`] method on a `Site` object.
 @y
-To capture the "genres" taxonomy object from within any template, use the [`Taxonomies`] method on a `Site` object.
+To capture the "genres" `Taxonomy` object from within any template, use the [`Taxonomies`] method on a `Site` object.
 @z
 
 @x
@@ -88,9 +88,9 @@ To capture the "genres" taxonomy object from within any template, use the [`Taxo
 @z
 
 @x
-To capture the "genres" taxonomy object when rendering its page with a taxonomy template, use the [`Terms`] method on the page's [`Data`] object:
+To capture the "genres" `Taxonomy` object when rendering its page with a taxonomy template, use the [`Terms`] method on the page's [`Data`] object:
 @y
-To capture the "genres" taxonomy object when rendering its page with a taxonomy template, use the [`Terms`] method on the page's [`Data`] object:
+To capture the "genres" `Taxonomy` object when rendering its page with a taxonomy template, use the [`Terms`] method on the page's [`Data`] object:
 @z
 
 @x

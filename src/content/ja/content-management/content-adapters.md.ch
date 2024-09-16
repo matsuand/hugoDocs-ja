@@ -314,7 +314,7 @@ This table describes the fields most commonly passed to the `AddPage` method.
 @z
 
 @x
-Key|Descripion|Required
+Key|Description|Required
 :--|:--|:-:
 `content.mediaType`|The content [media type]. Default is `text/markdown`. See [content formats] for examples.|&nbsp;
 `content.value`|The content value as a string.|&nbsp;
@@ -327,7 +327,7 @@ Key|Descripion|Required
 `path`|The page's [logical path] relative to the content adapter. Do not include a leading slash or file extension.|:heavy_check_mark:
 `title`|The page title.|&nbsp;
 @y
-Key|Descripion|Required
+Key|Description|Required
 :--|:--|:-:
 `content.mediaType`|The content [media type]. Default is `text/markdown`. See [content formats] for examples.|&nbsp;
 `content.value`|The content value as a string.|&nbsp;
@@ -370,7 +370,7 @@ Construct the map passed to the [`AddResource`](#addresource) method using the f
 @z
 
 @x
-Key|Descripion|Required
+Key|Description|Required
 :--|:--|:-:
 `content.mediaType`|The content [media type].|:heavy_check_mark:
 `content.value`|The content value as a string or resource.|:heavy_check_mark:
@@ -379,7 +379,7 @@ Key|Descripion|Required
 `path`|The resources's [logical path] relative to the content adapter. Do not include a leading slash.|:heavy_check_mark:
 `title`|The resource title.|&nbsp;
 @y
-Key|Descripion|Required
+Key|Description|Required
 :--|:--|:-:
 `content.mediaType`|The content [media type].|:heavy_check_mark:
 `content.value`|The content value as a string or resource.|:heavy_check_mark:
@@ -585,10 +585,10 @@ Step 3
 
 @x
 Step 4
-: Create a single page template to render each book review.
+: Create a single template to render each book review.
 @y
 Step 4
-: Create a single page template to render each book review.
+: Create a single template to render each book review.
 @z
 
 @x

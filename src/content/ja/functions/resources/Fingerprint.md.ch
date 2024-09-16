@@ -10,12 +10,11 @@ keywords: []
 action:
   aliases: [fingerprint]
   related:
-    - functions/js/Build
-    - functions/resources/Babel
     - functions/resources/Minify
-    - functions/resources/PostCSS
-    - functions/resources/PostProcess
-    - functions/resources/ToCSS
+    - functions/css/Sass
+    - functions/css/TailwindCSS
+    - functions/js/Build
+    - functions/js/Babel
   returnType: resource.Resource
   signatures: ['resources.Fingerprint [ALGORITHM] RESOURCE']
 ---
@@ -28,12 +27,11 @@ keywords: []
 action:
   aliases: [fingerprint]
   related:
-    - functions/js/Build
-    - functions/resources/Babel
     - functions/resources/Minify
-    - functions/resources/PostCSS
-    - functions/resources/PostProcess
-    - functions/resources/ToCSS
+    - functions/css/Sass
+    - functions/css/TailwindCSS
+    - functions/js/Build
+    - functions/js/Babel
   returnType: resource.Resource
   signatures: ['resources.Fingerprint [ALGORITHM] RESOURCE']
 ---

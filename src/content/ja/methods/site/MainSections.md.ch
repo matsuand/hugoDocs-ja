@@ -120,9 +120,9 @@ When creating a theme, instead of hardcoding section names when listing the most
 @z
 
 @x
-Then your home page template can do something like this:
+Then your home template can do something like this:
 @y
-Then your home page template can do something like this:
+Then your home template can do something like this:
 @z
 
 @x

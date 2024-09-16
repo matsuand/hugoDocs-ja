@@ -3,6 +3,7 @@
 ##
 
 bases = \
+	Babel.md  \
 	Build.md  \
 	_index.md
 

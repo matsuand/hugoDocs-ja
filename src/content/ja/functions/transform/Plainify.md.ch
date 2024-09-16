@@ -10,7 +10,7 @@ keywords: []
 action:
   aliases: [plainify]
   related: []
-  returnType: string
+  returnType: template.HTML
   signatures: [transform.Plainify INPUT]
 aliases: [/functions/plainify]
 ---
@@ -23,7 +23,7 @@ keywords: []
 action:
   aliases: [plainify]
   related: []
-  returnType: string
+  returnType: template.HTML
   signatures: [transform.Plainify INPUT]
 aliases: [/functions/plainify]
 ---

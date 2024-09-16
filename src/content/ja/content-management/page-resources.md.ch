@@ -3,12 +3,12 @@
 
 @x
 title: Page resources
-description: Page resources -- images, other pages, documents, etc. -- have page-relative URLs and their own metadata.
+description: Use page resources to logically associate assets with a page.
 categories: [content management]
 keywords: [bundle,content,resources]
 @y
 title: ページリソース
-description: イメージ、別ページ、ドキュメントなどのページリソースには、ページへの相対的な URL があり、個別にメタデータを持ちます。
+description: Use page resources to logically associate assets with a page.
 categories: [content management]
 keywords: [bundle,content,resources]
 @z
@@ -44,195 +44,197 @@ In this example, `first-post` is a page bundle with access to 10 page resources 
 @z
 
 @x
-## Properties
+## Examples
 @y
-## プロパティ {#properties}
+## Examples
 @z
 
 @x
-ResourceType
-: The main type of the resource's [Media Type](/templates/output-formats/#media-types). For example, a file of MIME type `image/jpeg` has the ResourceType `image`. A `Page` will have `ResourceType` with value `page`.
+Use any of these methods on a `Page` object to capture page resources:
 @y
-ResourceType
-: The main type of the resource's [Media Type](/templates/output-formats/#media-types). For example, a file of MIME type `image/jpeg` has the ResourceType `image`. A `Page` will have `ResourceType` with value `page`.
+Use any of these methods on a `Page` object to capture page resources:
 @z
 
 @x
-Name
-: Default value is the file name (relative to the owning page). Can be set in front matter.
+ - [`Resources.ByType`]
+ - [`Resources.Get`]
+ - [`Resources.GetMatch`]
+ - [`Resources.Match`]
 @y
-Name
-: Default value is the file name (relative to the owning page). Can be set in front matter.
+ - [`Resources.ByType`]
+ - [`Resources.Get`]
+ - [`Resources.GetMatch`]
+ - [`Resources.Match`]
 @z
 
 @x
-Title
-: Default value is the same as `.Name`. Can be set in front matter.
+ Once you have captured a resource, use any of the applicable [`Resource`] methods to return a value or perform an action. 
 @y
-Title
-: デフォルトは `.Name` と同じ。フロントマターで設定可。
+ Once you have captured a resource, use any of the applicable [`Resource`] methods to return a value or perform an action. 
 @z
 
 @x
-Permalink
-: The absolute URL to the resource. Resources of type `page` will have no value.
+[`Resource`]: /methods/resource
+[`Resources.ByType`]: /methods/page/resources#bytype
+[`Resources.GetMatch`]: /methods/page/resources#getmatch
+[`Resources.Get`]: /methods/page/resources#get
+[`Resources.Match`]: /methods/page/resources#match
 @y
-Permalink
-: リソースの絶対 URL。`page` タイプのリソースは値を持ちません。
+[`Resource`]: /methods/resource
+[`Resources.ByType`]: /methods/page/resources#bytype
+[`Resources.GetMatch`]: /methods/page/resources#getmatch
+[`Resources.Get`]: /methods/page/resources#get
+[`Resources.Match`]: /methods/page/resources#match
 @z
 
 @x
-RelPermalink
-: The relative URL to the resource. Resources of type `page` will have no value.
+The following examples assume this content structure:
 @y
-RelPermalink
-: リソースの相対 URL。`page` タイプのリソースは値を持ちません。
+The following examples assume this content structure:
 @z
 
 @x
-Content
-: The content of the resource itself. For most resources, this returns a string
-with the contents of the file. Use this to create inline resources.
+```text
+content/
+└── example/
+    ├── data/
+    │  └── books.json   <-- page resource
+    ├── images/
+    │  ├── a.jpg        <-- page resource
+    │  └── b.jpg        <-- page resource
+    ├── snippets/
+    │  └── text.md      <-- page resource
+    └── index.md
+```
 @y
-Content
-: リソースの内容そのもの。For most resources, this returns a string
-with the contents of the file. Use this to create inline resources.
+```text
+content/
+└── example/
+    ├── data/
+    │  └── books.json   <-- page resource
+    ├── images/
+    │  ├── a.jpg        <-- page resource
+    │  └── b.jpg        <-- page resource
+    ├── snippets/
+    │  └── text.md      <-- page resource
+    └── index.md
+```
+@z
+
+@x
+Render a single image, and throw an error if the file does not exist:
+@y
+Render a single image, and throw an error if the file does not exist:
 @z
 
 @x
 ```go-html-template
-{{ with .Resources.GetMatch "script.js" }}
-  <script>{{ .Content | safeJS }}</script>
+{{ $path := "images/a.jpg" }}
+{{ with .Resources.Get $path }}
+  <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="">
+{{ else }}
+  {{ errorf "Unable to get page resource %q" $path }}
 {{ end }}
+```
 @y
 ```go-html-template
-{{ with .Resources.GetMatch "script.js" }}
-  <script>{{ .Content | safeJS }}</script>
-{{ end }}
-@z
-
-@x
-{{ with .Resources.GetMatch "style.css" }}
-  <style>{{ .Content | safeCSS }}</style>
-{{ end }}
-@y
-{{ with .Resources.GetMatch "style.css" }}
-  <style>{{ .Content | safeCSS }}</style>
-{{ end }}
-@z
-
-@x
-{{ with .Resources.GetMatch "img.png" }}
-  <img src="data:{{ .MediaType.Type }};base64,{{ .Content | base64Encode }}">
-{{ end }}
-```
-@y
-{{ with .Resources.GetMatch "img.png" }}
-  <img src="data:{{ .MediaType.Type }};base64,{{ .Content | base64Encode }}">
+{{ $path := "images/a.jpg" }}
+{{ with .Resources.Get $path }}
+  <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="">
+{{ else }}
+  {{ errorf "Unable to get page resource %q" $path }}
 {{ end }}
 ```
 @z
 
 @x
-MediaType.Type
-: The media type (formerly known as a MIME type) of the resource (e.g., `image/jpeg`).
+Render all images, resized to 300 px wide:
 @y
-MediaType.Type
-: The media type (formerly known as a MIME type) of the resource (e.g., `image/jpeg`).
+Render all images, resized to 300 px wide:
 @z
 
 @x
-MediaType.MainType
-: The main type of the resource's media type (e.g., `image`).
-@y
-MediaType.MainType
-: The main type of the resource's media type (e.g., `image`).
-@z
-
-@x
-MediaType.SubType
-: The subtype of the resource's type (e.g., `jpeg`). This may or may not correspond to the file suffix.
-@y
-MediaType.SubType
-: The subtype of the resource's type (e.g., `jpeg`). This may or may not correspond to the file suffix.
-@z
-
-@x
-MediaType.Suffixes
-: A slice of possible file suffixes for the resource's media type (e.g., `[jpg jpeg jpe jif jfif]`).
-@y
-MediaType.Suffixes
-: A slice of possible file suffixes for the resource's media type (e.g., `[jpg jpeg jpe jif jfif]`).
-@z
-
-@x
-## Methods
-@y
-## メソッド {#methods}
-@z
-
-@x
-ByType
-: Returns the page resources of the given type.
-@y
-ByType
-: 指定されたタイプのページリソースを返します。
-@z
-
-% snip code...
-
-@x
-Match
-: Returns all the page resources (as a slice) whose `Name` matches the given Glob pattern ([examples](https://github.com/gobwas/glob/blob/master/readme.md)). The matching is case-insensitive.
-@y
-Match
-: Returns all the page resources (as a slice) whose `Name` matches the given Glob pattern ([examples](https://github.com/gobwas/glob/blob/master/readme.md)). The matching is case-insensitive.
-@z
-
-% snip code...
-
-@x
-GetMatch
-: Same as `Match` but will return the first match.
-@y
-GetMatch
-: Same as `Match` but will return the first match.
-@z
-
-@x
-### Pattern matching
-@y
-### パターンマッチング {#pattern-matching}
-@z
-
-@x
-```go
-// Using Match/GetMatch to find this images/sunset.jpg ?
-.Resources.Match "images/sun*" ✅
-.Resources.Match "**/sunset.jpg" ✅
-.Resources.Match "images/*.jpg" ✅
-.Resources.Match "**.jpg" ✅
-.Resources.Match "*" 🚫
-.Resources.Match "sunset.jpg" 🚫
-.Resources.Match "*sunset.jpg" 🚫
+```go-html-template
+{{ range .Resources.ByType "image" }}
+  {{ with .Resize "300x" }}
+    <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="">
+  {{ end }}
+{{ end }}
 ```
 @y
-```go
-// Using Match/GetMatch to find this images/sunset.jpg ?
-.Resources.Match "images/sun*" ✅
-.Resources.Match "**/sunset.jpg" ✅
-.Resources.Match "images/*.jpg" ✅
-.Resources.Match "**.jpg" ✅
-.Resources.Match "*" 🚫
-.Resources.Match "sunset.jpg" 🚫
-.Resources.Match "*sunset.jpg" 🚫
+```go-html-template
+{{ range .Resources.ByType "image" }}
+  {{ with .Resize "300x" }}
+    <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="">
+  {{ end }}
+{{ end }}
+```
+@z
+
+@x
+Render the markdown snippet:
+@y
+Render the markdown snippet:
+@z
+
+@x
+```go-html-template
+{{ with .Resources.Get "snippets/text.md" }}
+  {{ .Content }}
+{{ end }}
+```
+@y
+```go-html-template
+{{ with .Resources.Get "snippets/text.md" }}
+  {{ .Content }}
+{{ end }}
+```
+@z
+
+@x
+List the titles in the data file, and throw an error if the file does not exist.
+@y
+List the titles in the data file, and throw an error if the file does not exist.
+@z
+
+@x
+```go-html-template
+{{ $path := "data/books.json" }}
+{{ with .Resources.Get $path }}
+  {{ with . | transform.Unmarshal }}
+    <p>Books:</p>
+    <ul>
+      {{ range . }}
+        <li>{{ .title }}</li>
+      {{ end }}
+    </ul>
+  {{ end }}
+{{ else }}
+  {{ errorf "Unable to get page resource %q" $path }}
+{{ end }}
+```
+@y
+```go-html-template
+{{ $path := "data/books.json" }}
+{{ with .Resources.Get $path }}
+  {{ with . | transform.Unmarshal }}
+    <p>Books:</p>
+    <ul>
+      {{ range . }}
+        <li>{{ .title }}</li>
+      {{ end }}
+    </ul>
+  {{ end }}
+{{ else }}
+  {{ errorf "Unable to get page resource %q" $path }}
+{{ end }}
 ```
 @z
 
 @x
 ## Metadata
 @y
-## メタデータ {#metadata}
+## Metadata
 @z
 
 @x
@@ -253,10 +255,10 @@ Resources of type `page` get `Title` etc. from their own front matter.
 
 @x
 name
-: Sets the value returned in `Name`.
+: (`string`) Sets the value returned in `Name`.
 @y
 name
-: Sets the value returned in `Name`.
+: (`string`) Sets the value returned in `Name`.
 @z
 
 @x
@@ -271,28 +273,28 @@ The methods `Match`, `Get` and `GetMatch` use `Name` to match the resources.
 
 @x
 title
-: Sets the value returned in `Title`
+: (`string`) Sets the value returned in `Title`
 @y
 title
-: Sets the value returned in `Title`
+: (`string`) Sets the value returned in `Title`
 @z
 
 @x
 params
-: A map of custom key-value pairs.
+: (`map`) A map of custom key-value pairs.
 @y
 params
-: A map of custom key-value pairs.
+: (`map`) A map of custom key-value pairs.
 @z
 
 @x
 ### Resources metadata example
 @y
-### リソースのメタデータ例 {#resources-metadata-example}
+### Resources metadata example
 @z
 
 @x
-{{< code-toggle >}}
+{{< code-toggle file=content/example.md fm=true >}}
 title: Application
 date : 2018-01-25
 resources :
@@ -317,7 +319,7 @@ resources :
     icon : "word"
 {{</ code-toggle >}}
 @y
-{{< code-toggle >}}
+{{< code-toggle file=content/example.md fm=true >}}
 title: Application
 date : 2018-01-25
 resources :
@@ -367,11 +369,11 @@ From the example above:
 
 @x
 {{% note %}}
-The __order matters__ --- Only the **first set** values of the `title`, `name` and `params`-**keys** will be used. Consecutive parameters will be set only for the ones not already set. In the above example, `.Params.icon` is first set to `"photo"` in `src = "documents/photo_specs.pdf"`. So that would not get overridden to `"pdf"` by the later set `src = "**.pdf"` rule.
+The order matters; only the first set values of the `title`, `name` and `params` keys will be used. Consecutive parameters will be set only for the ones not already set. In the above example, `.Params.icon` is first set to `"photo"` in `src = "documents/photo_specs.pdf"`. So that would not get overridden to `"pdf"` by the later set `src = "**.pdf"` rule.
 {{% /note %}}
 @y
 {{% note %}}
-The __order matters__ --- Only the **first set** values of the `title`, `name` and `params`-**keys** will be used. Consecutive parameters will be set only for the ones not already set. In the above example, `.Params.icon` is first set to `"photo"` in `src = "documents/photo_specs.pdf"`. So that would not get overridden to `"pdf"` by the later set `src = "**.pdf"` rule.
+The order matters; only the first set values of the `title`, `name` and `params` keys will be used. Consecutive parameters will be set only for the ones not already set. In the above example, `.Params.icon` is first set to `"photo"` in `src = "documents/photo_specs.pdf"`. So that would not get overridden to `"pdf"` by the later set `src = "**.pdf"` rule.
 {{% /note %}}
 @z
 
@@ -441,4 +443,260 @@ the `Name` and `Title` will be assigned to the resource files as follows:
 | guide.pdf         | `"pdf-file-2.pdf` | `"guide.pdf"`         |
 | other\_specs.pdf  | `"pdf-file-3.pdf` | `"Specification #1"` |
 | photo\_specs.pdf  | `"pdf-file-4.pdf` | `"Specification #2"` |
+@z
+
+@x
+## Multilingual
+@y
+## Multilingual
+@z
+
+@x
+{{< new-in 0.123.0 >}}
+@y
+{{< new-in 0.123.0 >}}
+@z
+
+@x
+By default, with a multilingual single-host site, Hugo does not duplicate shared page resources when building the site.
+@y
+By default, with a multilingual single-host site, Hugo does not duplicate shared page resources when building the site.
+@z
+
+@x
+{{% note %}}
+This behavior is limited to Markdown content. Shared page resources for other [content formats] are copied into each language bundle.
+@y
+{{% note %}}
+This behavior is limited to Markdown content. Shared page resources for other [content formats] are copied into each language bundle.
+@z
+
+@x
+[content formats]: /content-management/formats/
+{{% /note %}}
+@y
+[content formats]: /content-management/formats/
+{{% /note %}}
+@z
+
+@x
+Consider this site configuration:
+@y
+Consider this site configuration:
+@z
+
+@x
+{{< code-toggle file=hugo >}}
+defaultContentLanguage = 'de'
+defaultContentLanguageInSubdir = true
+@y
+{{< code-toggle file=hugo >}}
+defaultContentLanguage = 'de'
+defaultContentLanguageInSubdir = true
+@z
+
+@x
+[languages.de]
+languageCode = 'de-DE'
+languageName = 'Deutsch'
+weight = 1
+@y
+[languages.de]
+languageCode = 'de-DE'
+languageName = 'Deutsch'
+weight = 1
+@z
+
+@x
+[languages.en]
+languageCode = 'en-US'
+languageName = 'English'
+weight = 2
+{{< /code-toggle >}}
+@y
+[languages.en]
+languageCode = 'en-US'
+languageName = 'English'
+weight = 2
+{{< /code-toggle >}}
+@z
+
+@x
+And this content:
+@y
+And this content:
+@z
+
+@x
+```text
+content/
+└── my-bundle/
+    ├── a.jpg     <-- shared page resource
+    ├── b.jpg     <-- shared page resource
+    ├── c.de.jpg
+    ├── c.en.jpg
+    ├── index.de.md
+    └── index.en.md
+```
+@y
+```text
+content/
+└── my-bundle/
+    ├── a.jpg     <-- shared page resource
+    ├── b.jpg     <-- shared page resource
+    ├── c.de.jpg
+    ├── c.en.jpg
+    ├── index.de.md
+    └── index.en.md
+```
+@z
+
+@x
+With v0.122.0 and earlier, Hugo duplicated the shared page resources, creating copies for each language:
+@y
+With v0.122.0 and earlier, Hugo duplicated the shared page resources, creating copies for each language:
+@z
+
+@x
+```text
+public/
+├── de/
+│   ├── my-bundle/
+│   │   ├── a.jpg     <-- shared page resource
+│   │   ├── b.jpg     <-- shared page resource
+│   │   ├── c.de.jpg
+│   │   └── index.html
+│   └── index.html
+├── en/
+│   ├── my-bundle/
+│   │   ├── a.jpg     <-- shared page resource (duplicate)
+│   │   ├── b.jpg     <-- shared page resource (duplicate)
+│   │   ├── c.en.jpg
+│   │   └── index.html
+│   └── index.html
+└── index.html
+@y
+```text
+public/
+├── de/
+│   ├── my-bundle/
+│   │   ├── a.jpg     <-- shared page resource
+│   │   ├── b.jpg     <-- shared page resource
+│   │   ├── c.de.jpg
+│   │   └── index.html
+│   └── index.html
+├── en/
+│   ├── my-bundle/
+│   │   ├── a.jpg     <-- shared page resource (duplicate)
+│   │   ├── b.jpg     <-- shared page resource (duplicate)
+│   │   ├── c.en.jpg
+│   │   └── index.html
+│   └── index.html
+└── index.html
+@z
+
+@x
+```
+@y
+```
+@z
+
+@x
+With v0.123.0 and later, Hugo places the shared resources in the page bundle for the default content language:
+@y
+With v0.123.0 and later, Hugo places the shared resources in the page bundle for the default content language:
+@z
+
+@x
+```text
+public/
+├── de/
+│   ├── my-bundle/
+│   │   ├── a.jpg     <-- shared page resource
+│   │   ├── b.jpg     <-- shared page resource
+│   │   ├── c.de.jpg
+│   │   └── index.html
+│   └── index.html
+├── en/
+│   ├── my-bundle/
+│   │   ├── c.en.jpg
+│   │   └── index.html
+│   └── index.html
+└── index.html
+```
+@y
+```text
+public/
+├── de/
+│   ├── my-bundle/
+│   │   ├── a.jpg     <-- shared page resource
+│   │   ├── b.jpg     <-- shared page resource
+│   │   ├── c.de.jpg
+│   │   └── index.html
+│   └── index.html
+├── en/
+│   ├── my-bundle/
+│   │   ├── c.en.jpg
+│   │   └── index.html
+│   └── index.html
+└── index.html
+```
+@z
+
+@x
+This approach reduces build times, storage requirements, bandwidth consumption, and deployment times, ultimately reducing cost.
+@y
+This approach reduces build times, storage requirements, bandwidth consumption, and deployment times, ultimately reducing cost.
+@z
+
+@x
+{{% note %}}
+To resolve Markdown link and image destinations to the correct location, you must use link and image render hooks that capture the page resource with the [`Resources.Get`] method, and then invoke its [`RelPermalink`] method.
+@y
+{{% note %}}
+To resolve Markdown link and image destinations to the correct location, you must use link and image render hooks that capture the page resource with the [`Resources.Get`] method, and then invoke its [`RelPermalink`] method.
+@z
+
+@x
+By default, with multilingual single-host sites, Hugo enables its [embedded link render hook] and [embedded image render hook] to resolve Markdown link and image destinations.
+@y
+By default, with multilingual single-host sites, Hugo enables its [embedded link render hook] and [embedded image render hook] to resolve Markdown link and image destinations.
+@z
+
+@x
+You may override the embedded render hooks as needed, provided they capture the resource as described above.
+@y
+You may override the embedded render hooks as needed, provided they capture the resource as described above.
+@z
+
+@x
+[embedded link render hook]: /render-hooks/links/#default
+[embedded image render hook]: /render-hooks/images/#default
+[`Resources.Get`]: /methods/page/resources/#get
+[`RelPermalink`]: /methods/resource/relpermalink/
+{{% /note %}}
+@y
+[embedded link render hook]: /render-hooks/links/#default
+[embedded image render hook]: /render-hooks/images/#default
+[`Resources.Get`]: /methods/page/resources/#get
+[`RelPermalink`]: /methods/resource/relpermalink/
+{{% /note %}}
+@z
+
+@x
+Although duplicating shared page resources is inefficient, you can enable this feature in your site configuration if desired:
+@y
+Although duplicating shared page resources is inefficient, you can enable this feature in your site configuration if desired:
+@z
+
+@x
+{{< code-toggle file=hugo >}}
+[markup.goldmark]
+duplicateResourceFiles = true
+{{< /code-toggle >}}
+@y
+{{< code-toggle file=hugo >}}
+[markup.goldmark]
+duplicateResourceFiles = true
+{{< /code-toggle >}}
 @z

@@ -285,11 +285,14 @@ top_srcdir = @top_srcdir@
 SUBDIRS = _common
 bases = \
 	_index.md       \
+	blockquotes.md  \
 	code-blocks.md  \
 	headings.md     \
 	images.md       \
 	introduction.md \
-	links.md
+	links.md        \
+	passthrough.md  \
+	tables.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

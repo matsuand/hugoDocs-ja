@@ -13,6 +13,7 @@ bases = \
 	PageNumber.md            \
 	PageSize.md              \
 	Pagers.md                \
+	PagerSize.md             \
 	Pages.md                 \
 	Prev.md                  \
 	TotalNumberOfElements.md \

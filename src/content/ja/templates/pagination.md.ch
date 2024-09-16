@@ -2,167 +2,485 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
----
 title: Pagination
-description: Hugo supports pagination for your homepage, section pages, and taxonomies.
+description: Split a list page into two or more subsets.
 categories: [templates]
-keywords: [lists,sections,pagination]
-menu:
-  docs:
-    parent: templates
-    weight: 100
-weight: 100
-toc: true
-aliases: [/extras/pagination,/doc/pagination/]
----
+keywords: []
 @y
----
 title: ページネーション
-description: Hugo supports pagination for your homepage, section pages, and taxonomies.
+description: Split a list page into two or more subsets.
 categories: [templates]
-keywords: [lists,sections,pagination]
-menu:
-  docs:
-    parent: templates
-    weight: 100
-weight: 100
-toc: true
-aliases: [/extras/pagination,/doc/pagination/]
----
+keywords: []
 @z
 
 @x
-The real power of Hugo pagination shines when combined with the [`where`] function and its SQL-like operators: [`first`], [`last`], and [`after`]. You can even [order the content][lists] the way you've become used to with Hugo.
+Displaying a large page collection on a list page is not user-friendly:
 @y
-The real power of Hugo pagination shines when combined with the [`where`] function and its SQL-like operators: [`first`], [`last`], and [`after`]. You can even [order the content][lists] the way you've become used to with Hugo.
+Displaying a large page collection on a list page is not user-friendly:
 @z
 
 @x
-## Configure pagination
+- A massive list can be intimidating and difficult to navigate. Users may get lost in the sheer volume of information.
+- Large pages take longer to load, which can frustrate users and lead to them abandoning the site.
+- Without any filtering or organization, finding a specific item becomes a tedious scrolling exercise.
 @y
-## Configure pagination
+- A massive list can be intimidating and difficult to navigate. Users may get lost in the sheer volume of information.
+- Large pages take longer to load, which can frustrate users and lead to them abandoning the site.
+- Without any filtering or organization, finding a specific item becomes a tedious scrolling exercise.
 @z
 
 @x
-Pagination can be configured in your [site configuration][configuration]:
+Improve usability by paginating `home`, `section`, `taxonomy`, and `term` pages.
 @y
-Pagination can be configured in your [site configuration][configuration]:
-@z
-
-@x
-paginate
-: default = `10`. This setting can be overridden within the template.
-@y
-paginate
-: default = `10`. This setting can be overridden within the template.
-@z
-
-@x
-paginatePath
-: default = `page`. Allows you to set a different path for your pagination pages.
-@y
-paginatePath
-: default = `page`. Allows you to set a different path for your pagination pages.
-@z
-
-@x
-Setting `paginate` to a positive value will split the list pages for the homepage, sections and taxonomies into chunks of that size. But note that the generation of the pagination pages for sections, taxonomies and homepage is *lazy* --- the pages will not be created if not referenced by a `.Paginator` (see below).
-@y
-Setting `paginate` to a positive value will split the list pages for the homepage, sections and taxonomies into chunks of that size. But note that the generation of the pagination pages for sections, taxonomies and homepage is *lazy* --- the pages will not be created if not referenced by a `.Paginator` (see below).
-@z
-
-@x
-`paginatePath` is used to adapt the `URL` to the pages in the paginator (the default setting will produce URLs on the form `/page/1/`.
-@y
-`paginatePath` is used to adapt the `URL` to the pages in the paginator (the default setting will produce URLs on the form `/page/1/`.
-@z
-
-@x
-## List paginator pages
-@y
-## List paginator pages
+Improve usability by paginating `home`, `section`, `taxonomy`, and `term` pages.
 @z
 
 @x
 {{% note %}}
-Paginate a page collection in list templates for these page kinds: `home`, `section`, `taxonomy`, or `term`. You cannot paginate a page collection in a template for the `page` page kind.
+The most common templating mistake related to pagination is invoking pagination more than once for a given list page. See the [caching](#caching) section below.
 {{% /note %}}
 @y
 {{% note %}}
-Paginate a page collection in list templates for these page kinds: `home`, `section`, `taxonomy`, or `term`. You cannot paginate a page collection in a template for the `page` page kind.
+The most common templating mistake related to pagination is invoking pagination more than once for a given list page. See the [caching](#caching) section below.
 {{% /note %}}
 @z
 
 @x
-There are two ways to configure and use a `.Paginator`:
+## Terminology
 @y
-There are two ways to configure and use a `.Paginator`:
+## Terminology
 @z
 
 @x
-1. The simplest way is just to call `.Paginator.Pages` from a template. It will contain the pages for *that page*.
-2. Select another set of pages with the available template functions and ordering options, and pass the slice to `.Paginate`, e.g.
-  * `{{ range (.Paginate ( first 50 .Pages.ByTitle )).Pages }}` or
-  * `{{ range (.Paginate .RegularPagesRecursive).Pages }}`.
+paginate
+: To split a [list page] into two or more subsets.
 @y
-1. The simplest way is just to call `.Paginator.Pages` from a template. It will contain the pages for *that page*.
-2. Select another set of pages with the available template functions and ordering options, and pass the slice to `.Paginate`, e.g.
-  * `{{ range (.Paginate ( first 50 .Pages.ByTitle )).Pages }}` or
-  * `{{ range (.Paginate .RegularPagesRecursive).Pages }}`.
+paginate
+: To split a [list page] into two or more subsets.
 @z
 
 @x
-For a given **Page**, it's one of the options above. The `.Paginator` is static and cannot change once created.
+pagination
+: The process of paginating a list page.
 @y
-For a given **Page**, it's one of the options above. The `.Paginator` is static and cannot change once created.
+pagination
+: The process of paginating a list page.
 @z
 
 @x
-If you call `.Paginator` or `.Paginate` multiple times on the same page, you should ensure all the calls are identical. Once *either* `.Paginator` or `.Paginate` is called while generating a page, its result is cached, and any subsequent similar call will reuse the cached result. This means that any such calls which do not match the first one will not behave as written.
+pager
+: Created during pagination, a pager contains a subset of a list page and navigation links to other pagers.
 @y
-If you call `.Paginator` or `.Paginate` multiple times on the same page, you should ensure all the calls are identical. Once *either* `.Paginator` or `.Paginate` is called while generating a page, its result is cached, and any subsequent similar call will reuse the cached result. This means that any such calls which do not match the first one will not behave as written.
+pager
+: Created during pagination, a pager contains a subset of a list page and navigation links to other pagers.
 @z
 
 @x
-(Remember that function arguments are eagerly evaluated, so a call like `$paginator := cond x .Paginator (.Paginate .RegularPagesRecursive)` is an example of what you should *not* do. Use `if`/`else` instead to ensure exactly one evaluation.)
+paginator
+: A collection of pagers.
 @y
-(Remember that function arguments are eagerly evaluated, so a call like `$paginator := cond x .Paginator (.Paginate .RegularPagesRecursive)` is an example of what you should *not* do. Use `if`/`else` instead to ensure exactly one evaluation.)
+paginator
+: A collection of pagers.
 @z
 
 @x
-The global page size setting (`Paginate`) can be overridden by providing a positive integer as the last argument. The examples below will give five items per page:
+[list page]: /getting-started/glossary/#list-page
 @y
-The global page size setting (`Paginate`) can be overridden by providing a positive integer as the last argument. The examples below will give five items per page:
+[list page]: /getting-started/glossary/#list-page
 @z
 
 @x
-* `{{ range (.Paginator 5).Pages }}`
-* `{{ $paginator := .Paginate (where .Pages "Type" "posts") 5 }}`
+## Configuration
 @y
-* `{{ range (.Paginator 5).Pages }}`
-* `{{ $paginator := .Paginate (where .Pages "Type" "posts") 5 }}`
+## Configuration
 @z
 
 @x
-It is also possible to use the `GroupBy` functions in combination with pagination:
+Control pagination behavior in your site configuration. These are the default settings:
 @y
-It is also possible to use the `GroupBy` functions in combination with pagination:
+Control pagination behavior in your site configuration. These are the default settings:
+@z
+
+@x
+{{< code-toggle file=hugo config=pagination />}}
+@y
+{{< code-toggle file=hugo config=pagination />}}
+@z
+
+@x
+disableAliases
+: (`bool`) Whether to disable alias generation for the first pager. Default is `false`.
+@y
+disableAliases
+: (`bool`) Whether to disable alias generation for the first pager. Default is `false`.
+@z
+
+@x
+pagerSize
+: (`int`) The number of pages per pager. Default is `10`.
+@y
+pagerSize
+: (`int`) The number of pages per pager. Default is `10`.
+@z
+
+@x
+path
+: (`string`) The segment of each pager URL indicating that the target page is a pager. Default is `page`.
+@y
+path
+: (`string`) The segment of each pager URL indicating that the target page is a pager. Default is `page`.
+@z
+
+@x
+With multilingual sites you can define the pagination behavior for each language:
+@y
+With multilingual sites you can define the pagination behavior for each language:
+@z
+
+@x
+{{< code-toggle file=hugo >}}
+[languages.en]
+contentDir = 'content/en'
+languageCode = 'en-US'
+languageDirection = 'ltr'
+languageName = 'English'
+weight = 1
+[languages.en.pagination]
+disableAliases = true
+pagerSize = 10
+path = 'page'
+[languages.de]
+contentDir = 'content/de'
+languageCode = 'de-DE'
+languageDirection = 'ltr'
+languageName = 'Deutsch'
+weight = 2
+[languages.de.pagination]
+disableAliases = true
+pagerSize = 20
+path = 'blatt'
+{{< /code-toggle >}}
+@y
+{{< code-toggle file=hugo >}}
+[languages.en]
+contentDir = 'content/en'
+languageCode = 'en-US'
+languageDirection = 'ltr'
+languageName = 'English'
+weight = 1
+[languages.en.pagination]
+disableAliases = true
+pagerSize = 10
+path = 'page'
+[languages.de]
+contentDir = 'content/de'
+languageCode = 'de-DE'
+languageDirection = 'ltr'
+languageName = 'Deutsch'
+weight = 2
+[languages.de.pagination]
+disableAliases = true
+pagerSize = 20
+path = 'blatt'
+{{< /code-toggle >}}
+@z
+
+@x
+## Methods
+@y
+## Methods
+@z
+
+@x
+To paginate a `home`, `section`, `taxonomy`, or `term` page, invoke either of these methods on the `Page` object in the corresponding template:
+@y
+To paginate a `home`, `section`, `taxonomy`, or `term` page, invoke either of these methods on the `Page` object in the corresponding template:
+@z
+
+@x
+- [`Paginate`]
+- [`Paginator`]
+@y
+- [`Paginate`]
+- [`Paginator`]
+@z
+
+@x
+The `Paginate` method is more flexible, allowing you to:
+@y
+The `Paginate` method is more flexible, allowing you to:
+@z
+
+@x
+- Paginate any page collection
+- Filter, sort, and group the page collection
+- Override the number of pages per pager as defined in your site configuration
+@y
+- Paginate any page collection
+- Filter, sort, and group the page collection
+- Override the number of pages per pager as defined in your site configuration
+@z
+
+@x
+By comparison, the `Paginator` method paginates the page collection passed into the template, and you cannot override the number of pages per pager.
+@y
+By comparison, the `Paginator` method paginates the page collection passed into the template, and you cannot override the number of pages per pager.
+@z
+
+@x
+[`Paginate`]: /methods/page/paginate/
+[`Paginator`]: /methods/page/paginator/
+@y
+[`Paginate`]: /methods/page/paginate/
+[`Paginator`]: /methods/page/paginator/
+@z
+
+@x
+## Examples
+@y
+## Examples
+@z
+
+@x
+To paginate a list page using the `Paginate` method:
+@y
+To paginate a list page using the `Paginate` method:
 @z
 
 @x
 ```go-html-template
-{{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
-```
+{{ $pages := where site.RegularPages "Type" "posts" }}
+{{ $paginator := .Paginate $pages.ByTitle 7 }}
 @y
 ```go-html-template
-{{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
+{{ $pages := where site.RegularPages "Type" "posts" }}
+{{ $paginator := .Paginate $pages.ByTitle 7 }}
+@z
+
+@x
+{{ range $paginator.Pages }}
+  <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+{{ end }}
+@y
+{{ range $paginator.Pages }}
+  <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+{{ end }}
+@z
+
+@x
+{{ template "_internal/pagination.html" . }}
+```
+@y
+{{ template "_internal/pagination.html" . }}
 ```
 @z
 
 @x
-## Build the navigation
+In the example above, we:
 @y
-## Build the navigation
+In the example above, we:
+@z
+
+@x
+1. Build a page collection
+2. Sort the page collection by title
+3. Paginate the page collection, with 7 pages per pager
+4. Range over the paginated page collection, rendering a link to each page
+5. Call the embedded pagination template to create navigation links between pagers
+@y
+1. Build a page collection
+2. Sort the page collection by title
+3. Paginate the page collection, with 7 pages per pager
+4. Range over the paginated page collection, rendering a link to each page
+5. Call the embedded pagination template to create navigation links between pagers
+@z
+
+@x
+To paginate a list page using the `Paginator` method:
+@y
+To paginate a list page using the `Paginator` method:
+@z
+
+@x
+```go-html-template
+{{ range .Paginator.Pages }}
+  <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+{{ end }}
+@y
+```go-html-template
+{{ range .Paginator.Pages }}
+  <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+{{ end }}
+@z
+
+@x
+{{ template "_internal/pagination.html" . }}
+```
+@y
+{{ template "_internal/pagination.html" . }}
+```
+@z
+
+@x
+In the example above, we:
+@y
+In the example above, we:
+@z
+
+@x
+1. Paginate the page collection passed into the template, with the default number of pages per pager
+2. Range over the paginated page collection, rendering a link to each page
+3. Call the embedded pagination template to create navigation links between pagers
+@y
+1. Paginate the page collection passed into the template, with the default number of pages per pager
+2. Range over the paginated page collection, rendering a link to each page
+3. Call the embedded pagination template to create navigation links between pagers
+@z
+
+@x
+## Caching
+@y
+## Caching
+@z
+
+@x
+{{% note %}}
+The most common templating mistake related to pagination is invoking pagination more than once for a given list page.
+{{% /note %}}
+@y
+{{% note %}}
+The most common templating mistake related to pagination is invoking pagination more than once for a given list page.
+{{% /note %}}
+@z
+
+@x
+Regardless of pagination method, the initial invocation is cached and cannot be changed. If you invoke pagination more than once for a given list page, subsequent invocations use the cached result. This means that subsequent invocations will not behave as written.
+@y
+Regardless of pagination method, the initial invocation is cached and cannot be changed. If you invoke pagination more than once for a given list page, subsequent invocations use the cached result. This means that subsequent invocations will not behave as written.
+@z
+
+@x
+When paginating conditionally, do not use the `compare.Conditional` function due to its eager evaluation of arguments. Use an `if-else` construct instead.
+@y
+When paginating conditionally, do not use the `compare.Conditional` function due to its eager evaluation of arguments. Use an `if-else` construct instead.
+@z
+
+@x
+[`compare.Conditional`]: /functions/compare/conditional/
+@y
+[`compare.Conditional`]: /functions/compare/conditional/
+@z
+
+@x
+## Grouping
+@y
+## Grouping
+@z
+
+@x
+Use pagination with any of the [grouping methods]. For example:
+@y
+Use pagination with any of the [grouping methods]. For example:
+@z
+
+@x
+[grouping methods]: /quick-reference/page-collections/#group
+@y
+[grouping methods]: /quick-reference/page-collections/#group
+@z
+
+@x
+```go-html-template
+{{ $pages := where site.RegularPages "Type" "posts" }}
+{{ $paginator := .Paginate ($pages.GroupByDate "Jan 2006") }}
+@y
+```go-html-template
+{{ $pages := where site.RegularPages "Type" "posts" }}
+{{ $paginator := .Paginate ($pages.GroupByDate "Jan 2006") }}
+@z
+
+@x
+{{ range $paginator.PageGroups }}
+  <h2>{{ .Key }}</h2>
+  {{ range .Pages }}
+    <h3><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h3>
+  {{ end }}
+{{ end }}
+@y
+{{ range $paginator.PageGroups }}
+  <h2>{{ .Key }}</h2>
+  {{ range .Pages }}
+    <h3><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h3>
+  {{ end }}
+{{ end }}
+@z
+
+@x
+{{ template "_internal/pagination.html" . }}
+```
+@y
+{{ template "_internal/pagination.html" . }}
+```
+@z
+
+@x
+[grouping methods]: /quick-reference/page-collections/#group
+@y
+[grouping methods]: /quick-reference/page-collections/#group
+@z
+
+@x
+## Navigation
+@y
+## Navigation
+@z
+
+@x
+As shown in the examples above, the easiest way to add navigation between pagers is with Hugo's embedded pagination template:
+@y
+As shown in the examples above, the easiest way to add navigation between pagers is with Hugo's embedded pagination template:
+@z
+
+@x
+```go-html-template
+{{ template "_internal/pagination.html" . }}
+```
+@y
+```go-html-template
+{{ template "_internal/pagination.html" . }}
+```
+@z
+
+@x
+The embedded pagination template has two formats: `default` and `terse`. The above is equivalent to:
+@y
+The embedded pagination template has two formats: `default` and `terse`. The above is equivalent to:
+@z
+
+@x
+```go-html-template
+{{ template "_internal/pagination.html" (dict "page" . "format" "default") }}
+```
+@y
+```go-html-template
+{{ template "_internal/pagination.html" (dict "page" . "format" "default") }}
+```
+@z
+
+@x
+The `terse` format has fewer controls and page slots, consuming less space when styled as a horizontal list. To use the `terse` format:
+@y
+The `terse` format has fewer controls and page slots, consuming less space when styled as a horizontal list. To use the `terse` format:
+@z
+
+@x
+```go-html-template
+{{ template "_internal/pagination.html" (dict "page" . "format" "terse") }}
+```
+@y
+```go-html-template
+{{ template "_internal/pagination.html" (dict "page" . "format" "terse") }}
+```
 @z
 
 @x
@@ -174,9 +492,9 @@ To override Hugo's embedded pagination template, copy the [source code] to a fil
 @z
 
 @x
-`{{ partial "pagination" . }}`
+`{{ partial "pagination.html" . }}`
 @y
-`{{ partial "pagination" . }}`
+`{{ partial "pagination.html" . }}`
 @z
 
 @x
@@ -190,235 +508,217 @@ To override Hugo's embedded pagination template, copy the [source code] to a fil
 @z
 
 @x
-The easiest way to add this to your pages is to include the embedded template:
+Create custom navigation components using any of the `Pager` methods:
 @y
-The easiest way to add this to your pages is to include the embedded template:
+Create custom navigation components using any of the `Pager` methods:
 @z
 
 @x
-```go-html-template
-{{ template "_internal/pagination.html" . }}
+{{< list-pages-in-section path=/methods/pager >}}
+@y
+{{< list-pages-in-section path=/methods/pager >}}
+@z
+
+@x
+## Structure
+@y
+## Structure
+@z
+
+@x
+The example below depicts the published site structure when paginating a list page.
+@y
+The example below depicts the published site structure when paginating a list page.
+@z
+
+@x
+With this content:
+@y
+With this content:
+@z
+
+@x
+```text
+content/
+├── posts/
+│   ├── _index.md
+│   ├── post-1.md
+│   ├── post-2.md
+│   ├── post-3.md
+│   └── post-4.md
+└── _index.md
 ```
 @y
-```go-html-template
-{{ template "_internal/pagination.html" . }}
+```text
+content/
+├── posts/
+│   ├── _index.md
+│   ├── post-1.md
+│   ├── post-2.md
+│   ├── post-3.md
+│   └── post-4.md
+└── _index.md
 ```
 @z
 
 @x
-{{% note %}}
-If you use any filters or ordering functions to create your `.Paginator` *and* you want the navigation buttons to be shown before the page listing, you must create the `.Paginator` before it's used.
-{{% /note %}}
+And this site configuration:
 @y
-{{% note %}}
-If you use any filters or ordering functions to create your `.Paginator` *and* you want the navigation buttons to be shown before the page listing, you must create the `.Paginator` before it's used.
-{{% /note %}}
+And this site configuration:
 @z
 
 @x
-The following example shows how to create `.Paginator` before its used:
+{{< code-toggle file=hugo >}}
+[pagination]
+  disableAliases = false
+  pagerSize = 2
+  path = 'page'
+{{< /code-toggle >}}
 @y
-The following example shows how to create `.Paginator` before its used:
+{{< code-toggle file=hugo >}}
+[pagination]
+  disableAliases = false
+  pagerSize = 2
+  path = 'page'
+{{< /code-toggle >}}
+@z
+
+@x
+And this section template:
+@y
+And this section template:
 @z
 
 @x
 ```go-html-template
-{{ $paginator := .Paginate (where .Pages "Type" "posts") }}
-{{ template "_internal/pagination.html" . }}
-{{ range $paginator.Pages }}
-  {{ .Title }}
+{{ range (.Paginate .Pages).Pages }}
+  <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
 {{ end }}
-```
 @y
 ```go-html-template
-{{ $paginator := .Paginate (where .Pages "Type" "posts") }}
-{{ template "_internal/pagination.html" . }}
-{{ range $paginator.Pages }}
-  {{ .Title }}
+{{ range (.Paginate .Pages).Pages }}
+  <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
 {{ end }}
-```
 @z
 
 @x
-Without the `where` filter, the above example is even simpler:
-@y
-Without the `where` filter, the above example is even simpler:
-@z
-
-@x
-```go-html-template
 {{ template "_internal/pagination.html" . }}
-{{ range .Paginator.Pages }}
-  {{ .Title }}
-{{ end }}
 ```
 @y
-```go-html-template
 {{ template "_internal/pagination.html" . }}
-{{ range .Paginator.Pages }}
-  {{ .Title }}
-{{ end }}
 ```
 @z
 
 @x
-If you want to build custom navigation, you can do so using the `.Paginator` object, which includes the following properties:
+The published site has this structure:
 @y
-If you want to build custom navigation, you can do so using the `.Paginator` object, which includes the following properties:
+The published site has this structure:
 @z
 
 @x
-PageNumber
-: The current page's number in the pager sequence
-@y
-PageNumber
-: The current page's number in the pager sequence
-@z
-
-@x
-URL
-: The relative URL to the current pager
-@y
-URL
-: The relative URL to the current pager
-@z
-
-@x
-Pages
-: The pages in the current pager
-@y
-Pages
-: The pages in the current pager
-@z
-
-@x
-NumberOfElements
-: The number of elements on this page
-@y
-NumberOfElements
-: The number of elements on this page
-@z
-
-@x
-HasPrev
-: Whether there are page(s) before the current
-@y
-HasPrev
-: Whether there are page(s) before the current
-@z
-
-@x
-Prev
-: The pager for the previous page
-@y
-Prev
-: The pager for the previous page
-@z
-
-@x
-HasNext
-: Whether there are page(s) after the current
-@y
-HasNext
-: Whether there are page(s) after the current
-@z
-
-@x
-Next
-: The pager for the next page
-@y
-Next
-: The pager for the next page
-@z
-
-@x
-First
-: The pager for the first page
-@y
-First
-: The pager for the first page
-@z
-
-@x
-Last
-: The pager for the last page
-@y
-Last
-: The pager for the last page
-@z
-
-@x
-Pagers
-: A list of pagers that can be used to build a pagination menu
-@y
-Pagers
-: A list of pagers that can be used to build a pagination menu
-@z
-
-@x
-PageSize
-: Size of each pager
-@y
-PageSize
-: Size of each pager
-@z
-
-@x
-TotalPages
-: The number of pages in the paginator
-@y
-TotalPages
-: The number of pages in the paginator
-@z
-
-@x
-TotalNumberOfElements
-: The number of elements on all pages in this paginator
-@y
-TotalNumberOfElements
-: The number of elements on all pages in this paginator
-@z
-
-@x
-## Additional information
-@y
-## Additional information
-@z
-
-@x
-The pages are built on the following form (`BLANK` means no value):
-@y
-The pages are built on the following form (`BLANK` means no value):
-@z
-
-@x
-```txt
-[SECTION/TAXONOMY/BLANK]/index.html
-[SECTION/TAXONOMY/BLANK]/page/1/index.html => redirect to  [SECTION/TAXONOMY/BLANK]/index.html
-[SECTION/TAXONOMY/BLANK]/page/2/index.html
-....
+```text
+public/
+├── posts/
+│   ├── page/
+│   │   ├── 1/
+│   │   │   └── index.html  <-- alias to public/posts/index.html
+│   │   └── 2/
+│   │       └── index.html
+│   ├── post-1/
+│   │   └── index.html
+│   ├── post-2/
+│   │   └── index.html
+│   ├── post-3/
+│   │   └── index.html
+│   ├── post-4/
+│   │   └── index.html
+│   └── index.html
+└── index.html
 ```
 @y
-```txt
-[SECTION/TAXONOMY/BLANK]/index.html
-[SECTION/TAXONOMY/BLANK]/page/1/index.html => redirect to  [SECTION/TAXONOMY/BLANK]/index.html
-[SECTION/TAXONOMY/BLANK]/page/2/index.html
-....
+```text
+public/
+├── posts/
+│   ├── page/
+│   │   ├── 1/
+│   │   │   └── index.html  <-- alias to public/posts/index.html
+│   │   └── 2/
+│   │       └── index.html
+│   ├── post-1/
+│   │   └── index.html
+│   ├── post-2/
+│   │   └── index.html
+│   ├── post-3/
+│   │   └── index.html
+│   ├── post-4/
+│   │   └── index.html
+│   └── index.html
+└── index.html
 ```
 @z
 
 @x
-[`first`]: /functions/collections/first/
-[`last`]: /functions/collections/last/
-[`after`]: /functions/collections/after/
-[configuration]: /getting-started/configuration/
-[lists]: /templates/lists/
-[`where`]: /functions/collections/where/
+To disable alias generation for the first pager, change your site configuration:
 @y
-[`first`]: /functions/collections/first/
-[`last`]: /functions/collections/last/
-[`after`]: /functions/collections/after/
-[configuration]: /getting-started/configuration/
-[lists]: /templates/lists/
-[`where`]: /functions/collections/where/
+To disable alias generation for the first pager, change your site configuration:
+@z
+
+@x
+{{< code-toggle file=hugo >}}
+[pagination]
+  disableAliases = true
+  pagerSize = 2
+  path = 'page'
+{{< /code-toggle >}}
+@y
+{{< code-toggle file=hugo >}}
+[pagination]
+  disableAliases = true
+  pagerSize = 2
+  path = 'page'
+{{< /code-toggle >}}
+@z
+
+@x
+Now the published site will have this structure:
+@y
+Now the published site will have this structure:
+@z
+
+@x
+```text
+public/
+├── posts/
+│   ├── page/
+│   │   └── 2/
+│   │       └── index.html
+│   ├── post-1/
+│   │   └── index.html
+│   ├── post-2/
+│   │   └── index.html
+│   ├── post-3/
+│   │   └── index.html
+│   ├── post-4/
+│   │   └── index.html
+│   └── index.html
+└── index.html
+```
+@y
+```text
+public/
+├── posts/
+│   ├── page/
+│   │   └── 2/
+│   │       └── index.html
+│   ├── post-1/
+│   │   └── index.html
+│   ├── post-2/
+│   │   └── index.html
+│   ├── post-3/
+│   │   └── index.html
+│   ├── post-4/
+│   │   └── index.html
+│   └── index.html
+└── index.html
+```
 @z

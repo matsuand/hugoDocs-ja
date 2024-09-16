@@ -32,7 +32,7 @@ Rendered:
 @z
 
 @x
-![sreen capture](diff-screen-capture.png)
+![screen capture](diff-screen-capture.png)
 @y
-![sreen capture](diff-screen-capture.png)
+![screen capture](diff-screen-capture.png)
 @z

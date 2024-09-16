@@ -3,8 +3,9 @@
 ##
 
 bases = \
-	_index.md \
-	next-prev-on-page-vs-next-prev-on-pages.md
+	FNV32a.md \
+	XxHash.md \
+	_index.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/content.mk

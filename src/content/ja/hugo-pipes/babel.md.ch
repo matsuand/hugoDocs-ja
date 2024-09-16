@@ -15,7 +15,7 @@ weight: 70
 function:
   aliases: [babel]
   returnType: resource.Resource
-  signatures: ['resources.Babel [OPTIONS] RESOURCE']
+  signatures: ['js.Babel [OPTIONS] RESOURCE']
 ---
 @y
 ---
@@ -31,7 +31,7 @@ weight: 70
 function:
   aliases: [babel]
   returnType: resource.Resource
-  signatures: ['resources.Babel [OPTIONS] RESOURCE']
+  signatures: ['js.Babel [OPTIONS] RESOURCE']
 ---
 @z
 
@@ -42,9 +42,9 @@ function:
 @z
 
 @x
-Any JavaScript resource file can be transpiled to another JavaScript version using `resources.Babel` which takes for argument the resource object and an optional dict of options listed below. Babel uses the [babel cli](https://babeljs.io/docs/en/babel-cli).
+Any JavaScript resource file can be transpiled to another JavaScript version using `js.Babel` which takes for argument the resource object and an optional dict of options listed below. Babel uses the [babel cli](https://babeljs.io/docs/en/babel-cli).
 @y
-Any JavaScript resource file can be transpiled to another JavaScript version using `resources.Babel` which takes for argument the resource object and an optional dict of options listed below. Babel uses the [babel cli](https://babeljs.io/docs/en/babel-cli).
+Any JavaScript resource file can be transpiled to another JavaScript version using `js.Babel` which takes for argument the resource object and an optional dict of options listed below. Babel uses the [babel cli](https://babeljs.io/docs/en/babel-cli).
 @z
 
 @x

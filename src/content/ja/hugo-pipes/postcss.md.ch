@@ -16,7 +16,7 @@ toc: true
 action:
   aliases: [postCSS]
   returnType: resource.Resource
-  signatures: ['resources.PostCSS [OPTIONS] RESOURCE']
+  signatures: ['css.PostCSS [OPTIONS] RESOURCE']
 ---
 @y
 ---
@@ -33,7 +33,7 @@ toc: true
 action:
   aliases: [postCSS]
   returnType: resource.Resource
-  signatures: ['resources.PostCSS [OPTIONS] RESOURCE']
+  signatures: ['css.PostCSS [OPTIONS] RESOURCE']
 ---
 @z
 
@@ -127,10 +127,10 @@ Step 4
 
 @x
 Step 5
-: Capture the CSS file as a resource and pipe it through `resources.PostCSS` (alias `postCSS`):
+: Capture the CSS file as a resource and pipe it through `css.PostCSS` (alias `postCSS`):
 @y
 Step 5
-: Capture the CSS file as a resource and pipe it through `resources.PostCSS` (alias `postCSS`):
+: Capture the CSS file as a resource and pipe it through `css.PostCSS` (alias `postCSS`):
 @z
 
 @x
@@ -174,9 +174,9 @@ If starting with a Sass file within the `assets` directory:
 @z
 
 @x
-The `resources.PostCSS` method takes an optional map of options.
+The `css.PostCSS` method takes an optional map of options.
 @y
-The `resources.PostCSS` method takes an optional map of options.
+The `css.PostCSS` method takes an optional map of options.
 @z
 
 @x
@@ -210,11 +210,11 @@ Hugo will look for imports relative to the module mount and will respect theme o
 @z
 
 @x
-skipInlineImportsNotFound {{< new-in 0.99.0 >}}
-: (`bool`) Default is `false`. Before Hugo 0.99.0 when `inlineImports` was enabled and we failed to resolve an import, we logged it as a warning. We now fail the build. If you have regular CSS imports in your CSS that you want to preserve, you can either use imports with URL or media queries (Hugo does not try to resolve those) or set `skipInlineImportsNotFound` to true.
+skipInlineImportsNotFound
+: (`bool`) Default is `false`. If you have regular CSS imports in your CSS that you want to preserve, you can either use imports with URL or media queries (Hugo does not try to resolve those) or set `skipInlineImportsNotFound` to true.
 @y
-skipInlineImportsNotFound {{< new-in 0.99.0 >}}
-: (`bool`) Default is `false`. Before Hugo 0.99.0 when `inlineImports` was enabled and we failed to resolve an import, we logged it as a warning. We now fail the build. If you have regular CSS imports in your CSS that you want to preserve, you can either use imports with URL or media queries (Hugo does not try to resolve those) or set `skipInlineImportsNotFound` to true.
+skipInlineImportsNotFound
+: (`bool`) Default is `false`. If you have regular CSS imports in your CSS that you want to preserve, you can either use imports with URL or media queries (Hugo does not try to resolve those) or set `skipInlineImportsNotFound` to true.
 @z
 
 @x

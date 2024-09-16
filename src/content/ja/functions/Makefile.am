@@ -2,9 +2,9 @@
 ## This is part of Japanese translation version for Hugo Documantation.
 ##
 
-SUBDIRS = _common cast collections compare crypto data debug   \
-	diagrams encoding fmt global go-template hugo images   \
-	inflect js lang math openapi3 os partials path reflect \
+SUBDIRS = _common cast collections compare crypto css data debug  \
+	diagrams encoding fmt global go-template hash hugo images \
+	inflect js lang math openapi3 os partials path reflect    \
 	resources safe strings templates time transform urls
 
 bases = \

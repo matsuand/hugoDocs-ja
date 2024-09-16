@@ -62,7 +62,7 @@ Use with the [`else`] statement:
 @z
 
 @x
-Use `else if` to check multiple conditions.
+Use `else if` to check multiple conditions:
 @y
 複数の条件を切り分けるには `else if` を使います。
 @z

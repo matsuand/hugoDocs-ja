@@ -9,6 +9,8 @@ categories: []
 keywords: []
 action:
   related:
+    - methods/page/Summary
+    - methods/page/ContentWithoutSummary
     - methods/page/RawContent
     - methods/page/Plain
     - methods/page/PlainWords
@@ -24,6 +26,8 @@ categories: []
 keywords: []
 action:
   related:
+    - methods/page/Summary
+    - methods/page/ContentWithoutSummary
     - methods/page/RawContent
     - methods/page/Plain
     - methods/page/PlainWords
@@ -34,15 +38,9 @@ action:
 @z
 
 @x
-The `Content` method on a `Page` object renders Markdown and shortcodes to HTML. The content does not include front matter.
+The `Content` method on a `Page` object renders Markdown and shortcodes to HTML.
 @y
-The `Content` method on a `Page` object renders Markdown and shortcodes to HTML. The content does not include front matter.
-@z
-
-@x
-[shortcodes]: /getting-started/glossary/#shortcode
-@y
-[shortcodes]: /getting-started/glossary/#shortcode
+The `Content` method on a `Page` object renders Markdown and shortcodes to HTML.
 @z
 
 @x

@@ -52,9 +52,9 @@ Use this method with the [`IsMenuCurrent`] and [`HasMenuCurrent`] methods on a `
 @x
 [`HasMenuCurrent`]: /methods/page/hasmenucurrent/
 [`IsMenuCurrent`]: /methods/page/ismenucurrent/
-[this example]: /templates/menu-templates/#example
+[this example]: /templates/menu/#example
 @y
 [`HasMenuCurrent`]: /methods/page/hasmenucurrent/
 [`IsMenuCurrent`]: /methods/page/ismenucurrent/
-[this example]: /templates/menu-templates/#example
+[this example]: /templates/menu/#example
 @z

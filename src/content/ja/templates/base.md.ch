@@ -2,15 +2,15 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
-title: Base templates and blocks
-description: The base and block constructs allow you to define the outer shell of your master templates (i.e., the chrome of the page).
+title: Base templates
+description: The base and block construct allows you to define the outer shell of your master templates (i.e., the chrome of the page).
 categories: [templates,fundamentals]
-keywords: [blocks,base]
+keywords: []
 @y
-title: 基本テンプレートとブロック
-description: The base and block constructs allow you to define the outer shell of your master templates (i.e., the chrome of the page).
+title: 基本テンプレート
+description: The base and block construct allows you to define the outer shell of your master templates (i.e., the chrome of the page).
 categories: [templates,fundamentals]
-keywords: [blocks,base]
+keywords: []
 @z
 
 @x
@@ -108,9 +108,9 @@ The following defines a simple base template at `_default/baseof.html`. As a def
 @z
 
 @x
-From the above base template, you can define a [default list template][hugolists]. The default list template will inherit all of the code defined above and can then implement its own `"main"` block from:
+The default list template will inherit all of the code defined above and can then implement its own `"main"` block from:
 @y
-From the above base template, you can define a [default list template][hugolists]. The default list template will inherit all of the code defined above and can then implement its own `"main"` block from:
+The default list template will inherit all of the code defined above and can then implement its own `"main"` block from:
 @z
 
 @x
@@ -174,9 +174,9 @@ Code that you put outside the block definitions *can* break your layout. This ev
 @z
 
 @x
-The following shows how you can override both the `"main"` and `"title"` block areas from the base template with code unique to your [default single page template][singletemplate]:
+The following shows how you can override both the `"main"` and `"title"` block areas from the base template with code unique to your default [single template]:
 @y
-The following shows how you can override both the `"main"` and `"title"` block areas from the base template with code unique to your [default single page template][singletemplate]:
+The following shows how you can override both the `"main"` and `"title"` block areas from the base template with code unique to your default [single template]:
 @z
 
 @x
@@ -203,4 +203,8 @@ The following shows how you can override both the `"main"` and `"title"` block a
 {{< /code >}}
 @z
 
-% snip links...
+@x
+[single template]: /templates/types/#single
+@y
+[single template]: /templates/types/#single
+@z

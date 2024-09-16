@@ -567,9 +567,9 @@ public/
 @z
 
 @x
-Use these tokens when defining the URL pattern.
+Use these tokens when defining the URL pattern. These can both be used in the `permalinks` configuration and in the front matter [url](#permalinks-tokens-in-front-matter).
 @y
-Use these tokens when defining the URL pattern.
+Use these tokens when defining the URL pattern. These can both be used in the `permalinks` configuration and in the front matter [url](#permalinks-tokens-in-front-matter).
 @z
 
 @x

@@ -204,9 +204,9 @@ Use `:=` to initialize a variable, and use `=` to assign a value to a variable t
 @z
 
 @x
-You are probably invoking the [`Paginate`] or [`Paginator`] method more than once on the same page. See&nbsp;[details](/templates/pagination/#list-paginator-pages).
+You are probably invoking the [`Paginate`] or [`Paginator`] method more than once on the same page. See&nbsp;[details](/templates/pagination/).
 @y
-You are probably invoking the [`Paginate`] or [`Paginator`] method more than once on the same page. See&nbsp;[details](/templates/pagination/#list-paginator-pages).
+You are probably invoking the [`Paginate`] or [`Paginator`] method more than once on the same page. See&nbsp;[details](/templates/pagination/).
 @z
 
 @x
@@ -248,15 +248,99 @@ The most common causes are page collisions (publishing two pages to the same pat
 @z
 
 @x
+###### Why isn't Hugo's development server detecting file changes?
+@y
+###### Why isn't Hugo's development server detecting file changes?
+@z
+
+@x
+In its default configuration, Hugo's file watcher may not be able detect file changes when:
+@y
+In its default configuration, Hugo's file watcher may not be able detect file changes when:
+@z
+
+@x
+- Running Hugo within Windows Subsystem for Linux (WSL/WSL2) with project files on a Windows partition
+- Running Hugo locally with project files on a removable drive
+- Running Hugo locally with project files on a storage server accessed via the NFS, SMB, or CIFS protocols
+@y
+- Running Hugo within Windows Subsystem for Linux (WSL/WSL2) with project files on a Windows partition
+- Running Hugo locally with project files on a removable drive
+- Running Hugo locally with project files on a storage server accessed via the NFS, SMB, or CIFS protocols
+@z
+
+@x
+In these cases, instead of monitoring native file system events, use the `--poll` command line flag. For example, to poll the project files every 700 milliseconds, use `--poll 700ms`.
+@y
+In these cases, instead of monitoring native file system events, use the `--poll` command line flag. For example, to poll the project files every 700 milliseconds, use `--poll 700ms`.
+@z
+
+@x
+###### Why is my page Scratch or Store missing a value?
+@y
+###### Why is my page Scratch or Store missing a value?
+@z
+
+@x
+The [`Scratch`] and [`Store`] methods on a `Page` object allow you to create a [scratch pad] on the given page to store and manipulate data. Values are often set within a shortcode, a partial template called by a shortcode, or by a Markdown render hook. In all three cases, the scratch pad values are not determinate until Hugo renders the page content.
+@y
+The [`Scratch`] and [`Store`] methods on a `Page` object allow you to create a [scratch pad] on the given page to store and manipulate data. Values are often set within a shortcode, a partial template called by a shortcode, or by a Markdown render hook. In all three cases, the scratch pad values are not determinate until Hugo renders the page content.
+@z
+
+@x
+[scratch pad]: /getting-started/glossary/#scratch-pad
+@y
+[scratch pad]: /getting-started/glossary/#scratch-pad
+@z
+
+@x
+If you need to access a scratch pad value from a parent template, and the parent template has not yet rendered the page content, you can trigger content rendering by assigning the returned value to a [noop] variable:
+@y
+If you need to access a scratch pad value from a parent template, and the parent template has not yet rendered the page content, you can trigger content rendering by assigning the returned value to a [noop] variable:
+@z
+
+@x
+[noop]: /getting-started/glossary/#noop
+@y
+[noop]: /getting-started/glossary/#noop
+@z
+
+@x
+```go-html-template
+{{ $noop := .Content }}
+{{ .Store.Get "mykey" }}
+```
+@y
+```go-html-template
+{{ $noop := .Content }}
+{{ .Store.Get "mykey" }}
+```
+@z
+
+@x
+You can trigger content rendering with other methods as well. See next FAQ.
+@y
+You can trigger content rendering with other methods as well. See next FAQ.
+@z
+
+@x
+[`Scratch`]: /methods/page/scratch
+[`Store`]: /methods/page/store
+@y
+[`Scratch`]: /methods/page/scratch
+[`Store`]: /methods/page/store
+@z
+
+@x
 ###### Which page methods trigger content rendering?
 @y
 ###### Which page methods trigger content rendering?
 @z
 
 @x
-The following methods on a `Page` object trigger content rendering: `Content`, `FuzzyWordCount`, `Len`, `Plain`, `PlainWords`, `ReadingTime`, `Summary`, `Truncated`, and `WordCount`.
+The following methods on a `Page` object trigger content rendering: `Content`, `ContentWithoutSummary`, `FuzzyWordCount`, `Len`, `Plain`, `PlainWords`, `ReadingTime`, `Summary`, `Truncated`, and `WordCount`.
 @y
-The following methods on a `Page` object trigger content rendering: `Content`, `FuzzyWordCount`, `Len`, `Plain`, `PlainWords`, `ReadingTime`, `Summary`, `Truncated`, and `WordCount`.
+The following methods on a `Page` object trigger content rendering: `Content`, `ContentWithoutSummary`, `FuzzyWordCount`, `Len`, `Plain`, `PlainWords`, `ReadingTime`, `Summary`, `Truncated`, and `WordCount`.
 @z
 
 @x
@@ -277,4 +361,18 @@ For other questions please visit the [forum]. A quick search of over 20,000 topi
 {{% /note %}}
 @z
 
-% snip links...
+@x
+[`Paginate`]: /methods/page/paginate/
+[`Paginator`]: /methods/page/paginator/
+[context]: /getting-started/glossary/#context
+[forum]: https://discourse.gohugo.io
+[installation]: /installation/
+[requesting help]: https://discourse.gohugo.io/t/requesting-help/9132
+@y
+[`Paginate`]: /methods/page/paginate/
+[`Paginator`]: /methods/page/paginator/
+[context]: /getting-started/glossary/#context
+[forum]: https://discourse.gohugo.io
+[installation]: /installation/
+[requesting help]: https://discourse.gohugo.io/t/requesting-help/9132
+@z

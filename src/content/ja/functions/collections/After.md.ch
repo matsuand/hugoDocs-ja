@@ -2,15 +2,35 @@
 %This is part of Japanese translation version for Hugo Documantation.
 
 @x
+---
 title: collections.After
 description: Slices an array to the items after the Nth item.
 categories: []
 keywords: []
+action:
+  aliases: [after]
+  related:
+    - functions/collections/First
+    - functions/collections/Last
+  returnType: any
+  signatures: [collections.After INDEX COLLECTION]
+aliases: [/functions/after]
+---
 @y
+---
 title: collections.After
 description: Slices an array to the items after the Nth item.
 categories: []
 keywords: []
+action:
+  aliases: [after]
+  related:
+    - functions/collections/First
+    - functions/collections/Last
+  returnType: any
+  signatures: [collections.After INDEX COLLECTION]
+aliases: [/functions/after]
+---
 @z
 
 @x
@@ -19,7 +39,25 @@ The following shows `after` being used in conjunction with the [`slice`]function
 The following shows `after` being used in conjunction with the [`slice`]function:
 @z
 
-% snip code...
+@x
+```go-html-template
+{{ $data := slice "one" "two" "three" "four" }}
+<ul>
+  {{ range after 2 $data }}
+    <li>{{ . }}</li>
+  {{ end }}
+</ul>
+```
+@y
+```go-html-template
+{{ $data := slice "one" "two" "three" "four" }}
+<ul>
+  {{ range after 2 $data }}
+    <li>{{ . }}</li>
+  {{ end }}
+</ul>
+```
+@z
 
 @x
 The template above is rendered to:
@@ -27,7 +65,21 @@ The template above is rendered to:
 The template above is rendered to:
 @z
 
-% snip code...
+@x
+```html
+<ul>
+  <li>three</li>
+  <li>four</li>
+</ul>
+```
+@y
+```html
+<ul>
+  <li>three</li>
+  <li>four</li>
+</ul>
+```
+@z
 
 @x
 ## Example of `after` with `first`: 2nd&ndash;4th most recent articles
@@ -36,9 +88,9 @@ The template above is rendered to:
 @z
 
 @x
-You can use `after` in combination with the [`first`] function and Hugo's [powerful sorting methods][lists]. Let's assume you have a list page at `example.com/articles`. You have 10 articles, but you want your templating for the [list/section page] to show only two rows:
+You can use `after` in combination with the [`first`] function and Hugo's [powerful sorting methods](/quick-reference/page-collections/#sort). Let's assume you have a `section` page at `example.com/articles`. You have 10 articles, but you want your template to show only two rows:
 @y
-You can use `after` in combination with the [`first`] function and Hugo's [powerful sorting methods][lists]. Let's assume you have a list page at `example.com/articles`. You have 10 articles, but you want your templating for the [list/section page] to show only two rows:
+You can use `after` in combination with the [`first`] function and Hugo's [powerful sorting methods](/quick-reference/page-collections/#sort). Let's assume you have a `section` page at `example.com/articles`. You have 10 articles, but you want your template to show only two rows:
 @z
 
 @x
@@ -101,4 +153,10 @@ You can use `after` in combination with the [`first`] function and Hugo's [power
 {{< /code >}}
 @z
 
-% snip links...
+@x
+[`first`]: /functions/collections/first/
+[`slice`]: /functions/collections/slice/
+@y
+[`first`]: /functions/collections/first/
+[`slice`]: /functions/collections/slice/
+@z

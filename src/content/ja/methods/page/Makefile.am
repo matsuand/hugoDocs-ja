@@ -12,6 +12,7 @@ bases = \
 	BundleType.md               \
 	CodeOwners.md               \
 	Content.md                  \
+	ContentWithoutSummary.md    \
 	CurrentSection.md           \
 	Data.md                     \
 	Date.md                     \
